@@ -7,25 +7,25 @@ const StyledColor = styled.div`
 `;
 
 const darkTheme = {
-  body: "#333333",
+  body: "#222222",
   font: "#6FEFDE",
-  site: "#ffffff",
+  site: "#eeeeee",
   sun: "#b6b6b6",
   moon: "#b6b6b6",
   title: "#6FEFDE",
-  day: "#ffffff",
-  article: "#ffffff",
+  day: "#eeeeee",
+  article: "#eeeeee",
 }
 
 const lightTheme = {
-  body: "#ffffff",
-  font: "#444444",
-  site: "#444444",
-  sun: "#444444",
-  moon: "#444444",
+  body: "#fffefb",
+  font: "#555555",
+  site: "#222222",
+  sun: "#555555",
+  moon: "#555555",
   title: "#327AB7",
-  day: "#444444",
-  article: "#444444",
+  day: "#555555",
+  article: "#555555",
 }
 
 export { StyledColor, darkTheme, lightTheme };
