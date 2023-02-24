@@ -17,9 +17,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme} >
       <StyledColor>
-      <div className='container mx-auto pt-2 lg:px-96'>
+      <div className="mx-auto max-w-screen-md @screen px-8 md:px-0">
         <ToggleSwitch toggleTheme={toggleTheme}/>
-    </div>
+      </div>
         <Layout>
           <Component {...pageProps} />
         </Layout>
