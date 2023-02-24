@@ -6,10 +6,12 @@ import { useTheme } from 'styled-components';
 const PostDetail = ({ post }) => {
   const theme = useTheme()
 
+  // {console.log(post)}
+
   const getContentFragment = (index, text, obj, type) => {
     let modifiedText = text;
 
-    {console.log(index, type)}
+    // {console.log(index, text, obj, type)}
 
     if (obj) {
       if (obj.bold) {
@@ -27,11 +29,11 @@ const PostDetail = ({ post }) => {
 
     switch (type) {
       case 'heading-three':
-        return <h3 key={index} style = {{color: theme.article}} className="text-xl mb-4 pb-2 border-b">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h3>;
+        return <h3 key={index} style = {{color: theme.article}} className="text-xl mb-2 pb-2 border-b">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h3>;
       case 'paragraph':
         return <p key={index} className="mb-8">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</p>;
       case 'heading-four':
-        return <h4 key={index} style = {{color: theme.article}} className="text-md mb-4 pb-2 border-b">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h4>;
+        return <h4 key={index} style = {{color: theme.article}} className="text-md mb-2 pb-2 border-b">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h4>;
       case 'image':
         return (
           <div className='flex justify-center mt-20'>
@@ -43,6 +45,8 @@ const PostDetail = ({ post }) => {
               />
           </div>
         );
+      case 'code-block':
+          return <div className="mb-8" key={index} dangerouslySetInnerHTML={{__html: modifiedText}}></div>;
       default:
         return modifiedText;
     }
