@@ -6,7 +6,7 @@ import { getPosts } from '../services';
 const Home: NextPage = ({ posts }) => {
 
   return (
-      <div className="container mx-auto xl:px-96 mb-8">
+      <div className="mx-auto max-w-screen-md @screen px-8 md:px-0 mb-8 ">
         <Head>
           <title>CMS Blog</title>
           <link rel="icon" href="/favicon.ico" />
