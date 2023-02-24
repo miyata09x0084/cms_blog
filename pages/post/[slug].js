@@ -10,7 +10,7 @@ const PostDetails = ({ post }) => {
     return <Loader />
   }
   return (
-    <div className='container mx-auto'>
+    <div className="mx-auto max-w-screen-md @screen px-8 md:px-0 mb-8 ">
         <PostDetail post={post} />
     </div>
   )
