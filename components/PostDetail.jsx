@@ -54,7 +54,7 @@ const PostDetail = ({ post }) => {
 
   return (
     <div>
-        <div className='pt-12 pb-3 xl:px-96'>
+        <div className='pt-12 pb-3'>
           <h1 style = {{color: theme.article}} className='text-2xl pb-1 mb-1 border-b border-gray-300'>
               {post.title}
           </h1>
