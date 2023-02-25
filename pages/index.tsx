@@ -1,5 +1,5 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
+import type { GetStaticProps, NextPage } from 'next';
+import Head from 'next/head';
 import { PostCard, Categories} from '../components';
 import { getPosts } from '../services';
 
@@ -23,7 +23,15 @@ const Home: NextPage = ({ posts }) => {
   )
 }
 
-export async function getStaticProps() {
+// export async function getStaticProps() {
+//   const posts = (await getPosts()) || [];
+
+//   return {
+//     props: { posts }
+//   }
+// }
+
+export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   const posts = (await getPosts()) || [];
 
   return {
