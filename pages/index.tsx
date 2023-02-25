@@ -1,13 +1,13 @@
-import type { GetStaticProps, NextPage } from 'next';
-import Head from 'next/head';
+import type { NextPage } from 'next'
+import Head from 'next/head'
 import { PostCard, Categories} from '../components';
 import { getPosts } from '../services';
 
-interface HomeProps {
-  posts: any[]; // ここで適切な型を指定する
+interface Props {
+  posts: Array<any>;
 }
 
-const Home: NextPage = ({ posts }) => {
+const Home: NextPage<Props> = ({ posts }) => {
 
   return (
       <div className="mx-auto max-w-screen-md @screen px-8 md:px-0 mb-8">
@@ -23,15 +23,7 @@ const Home: NextPage = ({ posts }) => {
   )
 }
 
-// export async function getStaticProps() {
-//   const posts = (await getPosts()) || [];
-
-//   return {
-//     props: { posts }
-//   }
-// }
-
-export const getStaticProps: GetStaticProps<HomeProps> = async () => {
+export async function getStaticProps() {
   const posts = (await getPosts()) || [];
 
   return {
