@@ -3,6 +3,10 @@ import Head from 'next/head'
 import { PostCard, Categories} from '../components';
 import { getPosts } from '../services';
 
+interface HomeProps {
+  posts: any[]; // ここで適切な型を指定する
+}
+
 const Home: NextPage = ({ posts }) => {
 
   return (
