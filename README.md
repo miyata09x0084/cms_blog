@@ -2,7 +2,7 @@
 
 I created this blog site using React JS, Next.js, Tailwind CSS, GraphQL, and GraphCMS, which are all awesome technologies that make it easy to build amazing web applications.
 
-If you're interested in learning more about how we built this site, I followed a [tutorial video](Link to tutorial video) that you can check out.
+If you're interested in learning more about how we built this site, I followed a [tutorial video](https://www.youtube.com/watch?v=HYv55DhgTuA) that you can check out.
 
 This site features a minimal design, which I hope you find both elegant and simple to use. We wanted to keep the focus on the content, so we decided to let the design take a back seat.
 
@@ -31,7 +31,7 @@ yarn install
 ```
 
 ### Create a GraphCMS Schema
-Before starting the development server, you need to create a GraphCMS schema and add some content to it. Don't worry, it's easier than it sounds! You can follow the steps in this tutorial video to create a GraphCMS schema for your blog site.
+Before starting the development server, you need to create a GraphCMS schema and add some content to it. Don't worry, it's easier than it sounds! You can follow the steps in [this tutorial video](https://www.youtube.com/watch?v=HYv55DhgTuA&t=467s) to create a GraphCMS schema for your blog site.
 
 ### Start Development Server
 To start the development server, run the following command:
