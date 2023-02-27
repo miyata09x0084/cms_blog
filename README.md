@@ -44,7 +44,6 @@ Before starting the development server, you need to create a GraphCMS schema and
 To start the development server, run the following command:
 
 ```bash
-Copy code
 npm run dev
 # or
 yarn dev
