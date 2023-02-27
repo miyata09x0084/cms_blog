@@ -1,16 +1,16 @@
-# ミニマルなデザインのブログサイト
-このプロジェクトは、React JS、Next.js、Tailwind CSS、GraphQL、そしてGraphCMSを使用して作成されたミニマルなデザインのブログサイトです。
+# Minimal Design Blog Site
+This project is a minimal design blog site created using React JS, Next.js, Tailwind CSS, GraphQL, and GraphCMS.
 
-## 技術スタック
-- React JS - JavaScriptのライブラリで、UIの作成に特化しています。
--  Next.js - Reactアプリケーションのフレームワークで、サーバーサイドレンダリングをサポートしています。
--  Tailwind CSS - ユーティリティベースのCSSフレームワークで、コンポーネントのスタイルを簡単に作成できます。
--  GraphQL - クライアントとサーバー間のデータ取得に使用される問い合わせ言語です。
--  GraphCMS - ヘッドレスCMSで、GraphQLを使用してコンテンツを取得できます。
+## Tech Stack
+- React JS - A JavaScript library that is specialized in creating UI.
+- Next.js - A framework for React applications that supports server-side rendering.
+- Tailwind CSS - A utility-based CSS framework that allows you to easily create styles for components.
+- GraphQL - A query language used for fetching data between the client and the server.
+- GraphCMS - A headless CMS that allows you to fetch content using GraphQL.
 
-## セットアップ
-### インストール
-このプロジェクトをローカルにクローンして、次のコマンドで依存関係をインストールします。
+## Setup
+### Installation
+Clone this project to your local machine and install dependencies using the following command:
 
 ```bash
 npm install
@@ -18,8 +18,8 @@ npm install
 yarn install
 ```
 
-### 開発サーバーの起動
-次のコマンドで開発サーバーを起動します。
+### Start Development Server
+Start the development server using the following command:
 
 ```bash
 npm run dev
