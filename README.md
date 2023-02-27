@@ -6,10 +6,11 @@ If you're interested in learning more about how we built this site, I followed a
 
 This site features a minimal design, which I hope you find both elegant and simple to use. We wanted to keep the focus on the content, so we decided to let the design take a back seat.
 
-<div style="text-align: center">
-<img src="https://user-images.githubusercontent.com/59190800/221466118-e1fac935-8fcc-4ffb-9e55-be24ac63cc4f.png" width="400px">
-<img src="https://user-images.githubusercontent.com/59190800/221477076-06dd8b52-baf6-4cb7-911f-fda0c511d20c.png" width="400px">
+<div style="display: flex; justify-content: center;">
+  <img src="https://user-images.githubusercontent.com/59190800/221466118-e1fac935-8fcc-4ffb-9e55-be24ac63cc4f.png" width="400px">
+  <img src="https://user-images.githubusercontent.com/59190800/221477076-06dd8b52-baf6-4cb7-911f-fda0c511d20c.png" width="400px">
 </div>
+
 
 ## Tech Stack
 
