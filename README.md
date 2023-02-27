@@ -1,4 +1,4 @@
-# Minimal Design Blog Site ＼😌／
+# Minimal Design Blog Site ／😌＼
 This project is a minimal design blog site created using React JS, Next.js, Tailwind CSS, GraphQL, and GraphCMS.
 
 ## Tech Stack
