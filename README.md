@@ -4,7 +4,7 @@ I created this blog site using React JS, Next.js, Tailwind CSS, GraphQL, and Gra
 
 If you're interested in learning more about how I built this site, I followed a [tutorial video](https://www.youtube.com/watch?v=HYv55DhgTuA) that you can check out.
 
-This site features a minimal design, which I hope you find both elegant and simple to use. I wanted to keep the focus on the content, so I decided to let the design take a back seat.
+This site features a minimal design, which I hope you find both elegant and simple to use.
 
 <div style="display: flex; justify-content: center;">
   <img src="https://user-images.githubusercontent.com/59190800/221466118-e1fac935-8fcc-4ffb-9e55-be24ac63cc4f.png" width="450px">
