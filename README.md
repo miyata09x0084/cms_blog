@@ -23,6 +23,9 @@ npm install
 yarn install
 ```
 
+### Create a GraphCMS Schema
+Before starting the development server, you need to create a GraphCMS schema and add some content to it. You can follow the steps in [this tutorial video](https://www.youtube.com/watch?v=HYv55DhgTuA&t=467s) to create a GraphCMS schema for your blog site. 
+
 ### Start Development Server
 Start the development server using the following command:
 
