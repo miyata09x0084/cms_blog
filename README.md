@@ -1,7 +1,8 @@
 # Minimal Design Blog Site ／😌＼
 This project is a minimal design blog site created using React JS, Next.js, Tailwind CSS, GraphQL, and GraphCMS.
 
-https://user-images.githubusercontent.com/59190800/221466118-e1fac935-8fcc-4ffb-9e55-be24ac63cc4f.png
+![メイン画像]([http://i.imgur.com/Jjwsc.jpg](https://user-images.githubusercontent.com/59190800/221466118-e1fac935-8fcc-4ffb-9e55-be24ac63cc4f.png) "メインイメージ")
+
 
 ## Tech Stack
 - React JS - A JavaScript library that is specialized in creating UI.
