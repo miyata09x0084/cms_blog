@@ -9,7 +9,7 @@ const Header = () => {
         <Link href='/'>
             <h1 className='text-center text-4xl mt-24'>
                 <span style = {{color: theme.site}} className='cursor-pointer font-bold text-4x'>
-                  Satoshi Nakamoto's Website
+                  Your name's Website
                 </span>
             </h1>
         </Link>
