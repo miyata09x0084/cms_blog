@@ -6,10 +6,12 @@ If you're interested in learning more about how I built this site, I followed a 
 
 This site features a minimal design, which I hope you find both elegant and simple to use.
 
+</br>
 <div style="display: flex; justify-content: center;">
   <img src="https://user-images.githubusercontent.com/59190800/223641345-cbb29ad4-35ac-47ad-bd31-0908af55d3be.png" width="450px">
   <img src="https://user-images.githubusercontent.com/59190800/223641613-f48be0ae-340b-4aa3-97c3-b9ea124ba502.png" width="450px">
 </div>
+</br>
 
 
 
