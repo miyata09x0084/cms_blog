@@ -7,8 +7,8 @@ If you're interested in learning more about how I built this site, I followed a 
 This site features a minimal design, which I hope you find both elegant and simple to use.
 
 <div style="display: flex; justify-content: center;">
-  <img src="https://user-images.githubusercontent.com/59190800/221466118-e1fac935-8fcc-4ffb-9e55-be24ac63cc4f.png" width="450px">
-  <img src="https://user-images.githubusercontent.com/59190800/221477076-06dd8b52-baf6-4cb7-911f-fda0c511d20c.png" width="450px">
+  <img src="https://user-images.githubusercontent.com/59190800/223641345-cbb29ad4-35ac-47ad-bd31-0908af55d3be.png" width="450px">
+  <img src="https://user-images.githubusercontent.com/59190800/223641613-f48be0ae-340b-4aa3-97c3-b9ea124ba502.png" width="450px">
 </div>
 
 
