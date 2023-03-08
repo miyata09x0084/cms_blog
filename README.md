@@ -40,6 +40,9 @@ yarn install
 ### Create a GraphCMS Schema
 Before starting the development server, you need to create a GraphCMS schema and add some content to it. Don't worry, it's easier than it sounds! You can follow the steps in [this tutorial video](https://www.youtube.com/watch?v=HYv55DhgTuA&t=467s) to create a GraphCMS schema for your blog site.
 
+### Environment Variable Setup
+To fetch data from GraphCMS, you'll need to set up environment variables. Specifically, you'll need to create a .ENV file and set your GraphCMS API token. Please refer to [this tutorial video](https://www.youtube.com/watch?v=HYv55DhgTuA&t=3085s) for instructions on how to set up environment variables.
+
 ### Start Development Server
 To start the development server, run the following command:
 
