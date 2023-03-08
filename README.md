@@ -62,4 +62,3 @@ That's it. You're all set to start exploring the Minimal Design Blog Site. Enjoy
 [Tailwind CSS](https://tailwindcss.com/)</br>
 [GraphQL](https://graphql.org/)</br>
 [GraphCMS](https://hygraph.com/)</br>
-
