@@ -24,12 +24,10 @@ Here are some of the technologies I used to build this site:
 - Tailwind CSS - A utility-based CSS framework that allows you to easily create styles for components.
 - GraphQL - A query language used for fetching data between the client and the server.
 - GraphCMS - A headless CMS that allows you to fetch content using GraphQL.
-</br>
 
 ## Setup
 
 Setting up this site on your local machine is easy. Follow the steps below:
-</br>
 
 ### Installation
 Clone this project to your local machine.
@@ -43,11 +41,9 @@ yarn install
 
 ### Create a GraphCMS Schema
 Before starting the development server, you need to create a GraphCMS schema and add some content to it. Don't worry, it's easier than it sounds! You can follow the steps in [this tutorial video](https://www.youtube.com/watch?v=HYv55DhgTuA&t=467s) to create a GraphCMS schema for your blog site.
-</br>
 
 ### Environment Variable Setup
 To fetch data from GraphCMS, you'll need to set up environment variables. Specifically, you'll need to create a .ENV file and set your GraphCMS API token. Please refer to [this tutorial video](https://www.youtube.com/watch?v=HYv55DhgTuA&t=3085s) for instructions on how to set up environment variables.
-</br>
 
 ### Start Development Server
 To start the development server, run the following command:
