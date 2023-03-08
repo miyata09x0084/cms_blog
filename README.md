@@ -1,4 +1,4 @@
-# Welcome to the Minimal Design Blog Site ＼😌／
+# Welcome to the Minimal Design Blog Site 
 
 I created this blog site using React JS, Next.js, Tailwind CSS, GraphQL, and GraphCMS, which are all awesome technologies that make it easy to build amazing web applications.
 
@@ -54,7 +54,7 @@ npm run dev
 yarn dev
 ```
 
-That's it. You're all set to start exploring the Minimal Design Blog Site. Enjoy.
+That's it. You're all set to start exploring the Minimal Design Blog Site. Enjoy＼😌／
 
 ### Quick Link
 [React JS](https://reactjs.org/)</br>
