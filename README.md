@@ -40,7 +40,6 @@ npm install
 # or
 yarn install
 ```
-</br>
 
 ### Create a GraphCMS Schema
 Before starting the development server, you need to create a GraphCMS schema and add some content to it. Don't worry, it's easier than it sounds! You can follow the steps in [this tutorial video](https://www.youtube.com/watch?v=HYv55DhgTuA&t=467s) to create a GraphCMS schema for your blog site.
@@ -58,6 +57,5 @@ npm run dev
 # or
 yarn dev
 ```
-</br>
 
 That's it. You're all set to start exploring the Minimal Design Blog Site. Enjoy.
