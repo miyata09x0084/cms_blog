@@ -57,9 +57,9 @@ yarn dev
 That's it. You're all set to start exploring the Minimal Design Blog Site. Enjoy.
 
 ### Quick Link
-[React JS](https://reactjs.org/)
-[Next.js](https://nextjs.org/)
-[Tailwind CSS](https://tailwindcss.com/)
-[GraphQL](https://graphql.org/)
-[GraphCMS](https://hygraph.com/)
+[React JS](https://reactjs.org/)</br>
+[Next.js](https://nextjs.org/)</br>
+[Tailwind CSS](https://tailwindcss.com/)</br>
+[GraphQL](https://graphql.org/)</br>
+[GraphCMS](https://hygraph.com/)</br>
 
