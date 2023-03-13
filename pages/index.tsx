@@ -12,7 +12,7 @@ const Home: NextPage<Props> = ({ posts }) => {
   return (
       <div className="mx-auto max-w-screen-md @screen px-8 md:px-0 mb-8">
         <Head>
-          <title>Your name's Blog</title>
+          <title>Rio Miyata's Blog</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
             <div className='text-center pt-8 pb-8 border-b border-t border-gray-300 mt-8 mb-12'>
