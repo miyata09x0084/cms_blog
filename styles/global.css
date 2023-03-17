@@ -2,20 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
-
-.text-myblue {
-  color: #327AB7;
-}
-
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'IBM Plex Sans JP', sans-serif;
-  color: #292929;
-  letter-spacing: 0.08rem;
-  background-color: #fffefb;
 }
 
 html:before,
@@ -31,6 +21,7 @@ body:before {
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: #fcf9f4;
 }
 
 .adjacent-post .arrow-btn {
@@ -111,4 +102,25 @@ a {
 }
 .toggle-switch input[type="checkbox"]:checked + .switch {
   background-color: #BB86FC;
+}
+
+/* tailwindcss-custom */
+.text-myblue {
+  color: #327AB7;
+}
+
+.font-SourceCodePro {
+  font-family: 'Source Code Pro', monospace;
+}
+
+.font-MplusRounded {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.button-mycolor{
+  background-color:#F1FAEE;
+}
+
+.font-mycolor {
+  color: #524C44;
 }
