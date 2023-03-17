@@ -20,7 +20,7 @@ const darkTheme = {
 const lightTheme = {
   body: "#fffefb",
   font: "#555555",
-  site: "#222222",
+  site: "#3D3F3A",
   sun: "#555555",
   moon: "#555555",
   title: "#327AB7",
