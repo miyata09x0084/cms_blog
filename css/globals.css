@@ -1,12 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@100;200;300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'IBM Plex Sans JP', sans-serif;
 }
 html:before,
 body:before {
