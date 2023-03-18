@@ -13,7 +13,7 @@ body:before {
   content: '';
   content: "";
   width: 100%;
-  height: 100vh;
+  height: 100%;
   position: fixed;
   left: 0;
   top: 0;
@@ -123,4 +123,8 @@ a {
 
 .font-mycolor {
   color: #524C44;
+}
+
+.logo-size {
+  width: 22px;
 }
