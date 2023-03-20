@@ -2,6 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import Link from 'next/link';
 import { useTheme } from 'styled-components';
+import { Box, Heading,VStack } from '@chakra-ui/react';
 
 const PostDetail = ({ post }) => {
   const theme = useTheme()
@@ -53,22 +54,22 @@ const PostDetail = ({ post }) => {
   };
 
   return (
-    <div>
-        <div className='pt-12 pb-3'>
-          <h1 style = {{color: theme.article}} className='text-2xl pb-1 mb-1 border-b border-gray-300'>
-              {post.title}
-          </h1>
-          <div className='mb-4'>
-            <span style = {{color: theme.article}}>
+    <VStack align="start" color="var(--primary-text)">
+        <Box pt="12px" pb="3px">
+          <Heading as="h1" size="md" style = {{color: theme.article}} className='pb-1 mb-1 border-b border-gray-300'>
+            {post.title}
+          </Heading>
+          <VStack align="start" mb="4px">
+            <Box style = {{color: theme.article}}>
               {moment(post.createdAt).format('MMM DD YYYY')}
-            </span>
-          </div>
+            </Box>
+          </VStack>
           {post.content.raw.children.map((typeObj, index) => {
             const children =typeObj.children.map((item, itemIndex) => getContentFragment(itemIndex, item.text, item))
             return getContentFragment(index, children, typeObj, typeObj.type)
           })}
-        </div>
-    </div>
+        </Box>
+    </VStack>
   )
 }
 
