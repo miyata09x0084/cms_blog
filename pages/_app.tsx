@@ -5,6 +5,18 @@ import '../styles/global.css';
 import { ThemeProvider } from 'styled-components';
 import { StyledColor, lightTheme, darkTheme } from '../components/ColorTheme';
 import ToggleSwitch from '../components/ToggleSwitch';
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import chakraTheme from '@chakra-ui/theme';
+import "../styles/global.css"
+
+const Text = chakraTheme.components;
+
+const themeChakra = extendTheme({
+  fonts: {
+    body: "M PLUS Rounded 1c, sans-serif",
+    heading: "M PLUS Rounded 1c, sans-serif",
+  }
+});
 
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -15,16 +27,18 @@ function MyApp({ Component, pageProps }: AppProps) {
   }
 
   return (
-    <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme} >
-      <StyledColor>
-      <div className="mx-auto max-w-screen-md @screen px-8 md:px-0">
-        <ToggleSwitch toggleTheme={toggleTheme}/>
-      </div>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </StyledColor>
-    </ThemeProvider>
+    <ChakraProvider theme={ themeChakra } >
+      <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme} >
+        <StyledColor>
+        <div className="mx-auto max-w-screen-md @screen px-8 md:px-0">
+          <ToggleSwitch toggleTheme={toggleTheme}/>
+        </div>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </StyledColor>
+      </ThemeProvider>
+    </ChakraProvider>
   )
 }
 
