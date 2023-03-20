@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "./colors.css";
 
 html,
 body {
@@ -21,7 +22,7 @@ body:before {
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #fcf9f4;
+  background-color: var(--primary-bg);
 }
 
 .adjacent-post .arrow-btn {
@@ -55,60 +56,7 @@ a {
 }
 /*# sourceMappingURL=globals.css.map */
 
-
-
-/* ToggleSwitch css */
-.toggle-wrap {
-  display: flex;
-  justify-content: right;
-  padding-top: 1rem;
-}
-
-.toggle-switch {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 25px;
-  margin: 0 0.2rem;
-}
-.toggle-switch input[type="checkbox"] {
-  display: none;
-}
-.toggle-switch .switch {
-  position: absolute;
-  cursor: pointer;
-  background-color: #dac500;
-  border-radius: 25px;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  transition: background-color 0.2s ease;
-}
-.toggle-switch .switch::before {
-  position: absolute;
-  content: "";
-  left: 2px;
-  top: 2px;
-  width: 21px;
-  height: 21px;
-  background-color: #565656;
-  border-radius: 50%;
-  transition: transform 0.3s ease;
-}
-.toggle-switch input[type="checkbox"]:checked + .switch::before {
-  transform: translateX(25px);
-  background-color: #292929;
-}
-.toggle-switch input[type="checkbox"]:checked + .switch {
-  background-color: #BB86FC;
-}
-
 /* tailwindcss-custom */
-.text-myblue {
-  color: #327AB7;
-}
-
 .font-SourceCodePro {
   font-family: 'Source Code Pro', monospace;
 }
@@ -128,3 +76,49 @@ a {
 .logo-size {
   width: 22px;
 }
+
+.toggle-container {
+  padding-top: 20px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.theme-toggle-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.theme-toggle-button:active {
+}
+
+.theme-toggle-button.sun {
+  /* Add any styles specific to the sun state */
+  animation: rotateSun 0.9s ease-in-out forwards;
+}
+
+.theme-toggle-button.moon {
+  /* Add any styles specific to the moon state */
+  animation: rotateMoon 0.3s ease-in-out forwards;
+}
+
+@keyframes rotateSun {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes rotateMoon {
+  0% {
+    transform: rotate(30deg); /* Match the initial rotation angle */
+  }
+  100% {
+    transform: rotate(210deg); /* Rotate 180 degrees from the initial angle */
+  }
+}
+
