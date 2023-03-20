@@ -11,7 +11,7 @@ const CategoryPost = ({ posts }) => {
   }
 
   return (
-    <div className="mx-auto max-w-screen-md @screen px-8 md:px-0 mb-8 ">
+    <div className="mx-auto max-w-screen-md @screen px-8 md:px-0 mb-8 font-MplusRounded">
         <div className='text-center pt-8 pb-8 border-b border-t border-gray-300 mt-8 mb-12'>
             <Categories />
         </div>
