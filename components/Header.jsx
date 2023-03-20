@@ -1,47 +1,58 @@
 import React, { useContext, useState } from 'react';
-import Link from 'next/link';
 import { useTheme } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDove, faBars } from '@fortawesome/free-solid-svg-icons';
-import { Menu, MenuButton, MenuItem, MenyItemOption, MenuGroup, MenuOptionGroup, MenuDivider, Show, Hide, Box } from '@chakra-ui/react';
+import { Box, Flex, Text, Spacer, Link, HStack, IconButton, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, VStack, useDisclosure} from '@chakra-ui/react';
+import { HamburgerIcon } from '@chakra-ui/icons';
 
 
 const Header = () => {
   const theme = useTheme()
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const MenuItems = () => (
+    <>
+      <Link href="/post">Post</Link>
+      <Link href="/work">Work</Link>
+      <Link href="https://github.com/miyata09x0084">GitHub</Link>
+    </>
+  );
+
   return (
     <header>
-        <div className='flex justify-between mx-auto max-w-screen-md @screen py-4 px-10 md:px-0 mb-8 font-MplusRounded text-xl font-mycolor'>
-          <div style = {{color: theme.site}} className='cursor-pointer items-center font-bold flex'>
-            <FontAwesomeIcon icon={faDove} className="mr-1 logo-size"/>
-            <Link href='/' className="tracking-tighter">
-              Rio Miyata
-            </Link>
-          </div>
-          <Show above="sm">
-            <nav>
-              <ul className="flex space-x-3">
-                <li>
-                  <Link href="/blog">
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/work">
-                    Work
-                  </Link>
-                </li>
-                <li>
-                  <Link href="https://github.com/miyata09x0084">
-                    Github
-                  </Link>
-                </li>
-              </ul>
-            </nav>
-          </Show>
-          <Hide above="sm">
-              <FontAwesomeIcon icon={faBars} width="18px"/>
-          </Hide>
-        </div>
+      <Box className="font-MplusRounded" w="100%" mt="10px" mb="30px" fontSize="xl" px={{base: 8, md: 0}} maxWidth="768px" mx="auto" style={{color: theme.font}}>
+        <Flex>
+            <FontAwesomeIcon icon={faDove} width="20px"/>
+            <Text mx={1}  fontWeight="bold" display="flex" alignItems="center">
+              <Link href="/">Rio Miyata</Link>
+            </Text>
+            <Spacer />
+            <HStack spacing={4} display={{base: "none", md: "flex"}}>
+              <MenuItems />
+            </HStack>
+            <IconButton
+              display={{base: "flex", md: "none"}}
+              aria-label="Open menu"
+              bg="#524C44"
+              icon ={<HamburgerIcon color="#fcf9f4"/>}
+              onClick={onOpen}
+            />
+        </Flex>
+        <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
+          <DrawerOverlay>
+            <DrawerContent color="var(--primary-text)" className="font-MplusRounded">
+              <DrawerCloseButton/>
+              <DrawerHeader borderBottomWidth="1px"  bg="#fcf9f4">Menu</DrawerHeader>
+              <DrawerBody  fontWeight="medium" bg="#fcf9f4">
+                <VStack align="start">
+                  <MenuItems />
+                </VStack>
+              </DrawerBody>
+            </DrawerContent>
+          </DrawerOverlay>
+        </Drawer>
+      </Box>
     </header>
   )
 }
