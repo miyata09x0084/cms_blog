@@ -1,0 +1,15 @@
+:root {
+    --primary-bg: #fcf9f4;
+    --primary-text: #524C44;
+    --primary-button: #F4B942;
+    --secondary-button: #67C46A;
+    --secondary-bg: #ffffff;
+    --secondary-text: #ffffff;
+    --dark-bg: #222222;
+    --dark-bg-sub: #524C44;
+    --dark-text: #6FEFDE;
+    --dark-text-sub: #fcf9f4;
+    --dark-button: #6FEFDE;
+    --sun-icon:#dac500;
+    --moon-icon:#BB86FC;
+}
