@@ -2,16 +2,19 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { Box, Text, Image, Flex, Heading, VStack, HStack, Button } from '@chakra-ui/react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { PixelArt } from '../components';
+import { useTheme } from 'styled-components';
 
 interface Props {
   posts: Array<any>;
 }
 
 const Home: NextPage<Props> = () => {
+  const theme = useTheme();
 
   return (
-    <div className="mx-auto max-w-screen-md @screen px-8 md:px-0 mb-8 font-MplusRounded font-mycolor tracking-tight">
+    <Box style={{color: theme.font}} className="mx-auto max-w-screen-md @screen px-8 md:px-0 pb-8 font-MplusRounded">
       <Head>
         <title>Rio Miyata's Website</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,12 +22,12 @@ const Home: NextPage<Props> = () => {
         <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
       </Head>
       {/* ChakraUi */}
-      <Box width="570px" height="100vh" mx="auto">
+      <Box w="100%" maxWidth="600px" mx="auto">
         <Box boxSize='300px' mx="auto" marginBottom="30px" >
           <Image src='/assets/images/computer-icon2.png' alt='computer' borderRadius="20px" />
         </Box>
-        <Box display="flex" justifyContent="center" flex="1">
-          <Text fontFamily="Source Code Pro" backgroundColor="white" borderRadius="20px" padding=" 20px 30px" fontWeight="bold">Welcome, I'm Web Developer/Blockchain Enthusiast 👋</Text>
+        <Box>
+          <Text style={{backgroundColor: theme.space}} w="100%" textAlign="center" fontFamily="Source Code Pro" borderRadius="20px" padding=" 20px 30px" fontWeight="bold">Welcome, I'm Web Developer/Blockchain Enthusiast 👋</Text>
         </Box>
         <Flex width="100%" justifyContent="center" marginTop="20px" alignItems="center">
           <Text fontSize="3xl" fontWeight="bold" marginRight="12px" marginLeft="15px">Rio Miyata</Text>
@@ -76,7 +79,10 @@ const Home: NextPage<Props> = () => {
             <Text>I am a full stack engineer. I like to build things since I was a little kid.I am a full stack engineer. I like to build things since I was a little kid.I am a full stack engineer. I like to build things since I was a little kid.I am a full stack engineer. I like to build things since I was a little kid.I am a full stack engineer. I like to build things since I was a little kid.</Text>
           </VStack>
           <Flex justifyContent="center" marginTop="20px">
-            <Button backgroundColor="#F4B942" color="#ffffff">Portfolio</Button>
+            <Button backgroundColor="var(--primary-button)" color="var(--secondary-text)" pl="16px" pr="18px">
+              <Text mr="28px">Portfolio</Text>
+              <FontAwesomeIcon icon={faAngleRight} width="7px"/>
+            </Button>
           </Flex>
           <VStack align="start" marginBottom="16px">
             <Heading as="h2" size="md" marginTop="10px" fontFamily="M PLUS Rounded 1c">
@@ -89,10 +95,13 @@ const Home: NextPage<Props> = () => {
           </Flex>
         </Box>
         <Flex justifyContent="center">
-          <Button backgroundColor="#67C46A" color="#ffffff" marginTop="20px">Portfolio</Button>
+          <Button backgroundColor="var(--secondary-button)" color="var(--secondary-text)" mt="18px" pl="16px" pr="18px">
+            <Text mr="28px">Portfolio</Text>
+            <FontAwesomeIcon icon={faAngleRight} width="7px"/>
+          </Button>
         </Flex>
       </Box>
-    </div>
+    </Box>
   )
 }
 
