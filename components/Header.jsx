@@ -13,9 +13,9 @@ const Header = () => {
 
   const MenuItems = () => (
     <>
-      <Link href="/post">Post</Link>
-      <Link href="/work">Work</Link>
-      <Link href="https://github.com/miyata09x0084">GitHub</Link>
+      <Link href="/post" _hover={{ textDecoration: 'none' }}>Post</Link>
+      <Link href="/work" _hover={{ textDecoration: 'none' }}>Work</Link>
+      <Link href="https://github.com/miyata09x0084" _hover={{ textDecoration: 'none' }}>GitHub</Link>
     </>
   );
 
@@ -27,7 +27,7 @@ const Header = () => {
               <FontAwesomeIcon icon={faDove}/>
             </Flex>
             <Text mx={1}  fontWeight="bold" display="flex" alignItems="center">
-              <Link href="/">Rio Miyata</Link>
+              <Link href="/" _hover={{ textDecoration: 'none' }}>Rio Miyata</Link>
             </Text>
             <Spacer />
             <HStack spacing={4} display={{base: "none", md: "flex"}}>
@@ -37,6 +37,7 @@ const Header = () => {
               display={{base: "flex", md: "none"}}
               aria-label="Open menu"
               bg="#524C44"
+              _hover ={{ bg: '#524C44' }}
               icon ={<HamburgerIcon color="#fcf9f4"/>}
               onClick={onOpen}
             />
@@ -45,7 +46,7 @@ const Header = () => {
           <DrawerOverlay>
             <DrawerContent color="var(--primary-text)">
               <DrawerCloseButton/>
-              <DrawerHeader borderBottomWidth="1px"  bg="#fcf9f4">Menu</DrawerHeader>
+              <DrawerHeader borderBottomWidth="1px" bg="#fcf9f4">Menu</DrawerHeader>
               <DrawerBody  fontWeight="medium" bg="#fcf9f4">
                 <VStack align="start">
                   <MenuItems />

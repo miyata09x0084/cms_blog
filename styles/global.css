@@ -23,6 +23,7 @@ body:before {
   background-repeat: no-repeat;
   background-size: cover;
   background-color: var(--primary-bg);
+  text-decoration: none;
 }
 
 .adjacent-post .arrow-btn {
@@ -151,4 +152,8 @@ a {
 
 .rotate-image{
   transform: rotate(50deg);
+}
+
+a:hover {
+  text-decoration: none;
 }
