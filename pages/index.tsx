@@ -1,23 +1,12 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { Box, Text, Image, Flex, Heading, VStack, Button } from '@chakra-ui/react'
-import { useTheme, DefaultTheme } from 'styled-components';
+import { useTheme } from 'styled-components';
 import { useSpring, animated, config, to } from 'react-spring';
 import { WavingImage }from '../components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro';
 
-
-interface Theme {
-  body: string;
-  font: string;
-  sun: string;
-  moon: string;
-  title: string;
-  day: string;
-  article: string;
-  space: string;
-}
 
 interface Props {
   posts: Array<any>;
@@ -28,7 +17,7 @@ const AnimatedText = animated(Text);
 const AnimatedImage = animated(Image);
 
 const Home: NextPage<Props> = () => {
-  const theme: DefaultTheme & Theme = useTheme();
+  const theme = useTheme();
 
   const fadeIn = useSpring({
     from: { opacity: 0 },
