@@ -13,9 +13,9 @@ const Header = () => {
 
   const MenuItems = () => (
     <>
-      <Link href="/post" _hover={{ textDecoration: 'none' }}>Post</Link>
-      <Link href="/work" _hover={{ textDecoration: 'none' }}>Work</Link>
-      <Link href="https://github.com/miyata09x0084" _hover={{ textDecoration: 'none' }}>GitHub</Link>
+      <Link href="/post" _hover={{ textDecoration: 'none' }} prefetch>Post</Link>
+      <Link href="/work" _hover={{ textDecoration: 'none' }} prefetch>Work</Link>
+      <Link href="https://github.com/miyata09x0084" _hover={{ textDecoration: 'none' }} prefetch>GitHub</Link>
     </>
   );
 
