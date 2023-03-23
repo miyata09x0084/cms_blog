@@ -64,7 +64,7 @@ const Home: NextPage<Props> = () => {
               {/* <div className="triangle"></div> */}
             </Box>
             <Box>
-                <Flex w="100%" justifyContent="center" alignItems="center"  fontFamily="Source Code Pro" borderRadius="20px" padding=" 20px 30px" fontWeight="bold">
+                <Flex style={{backgroundColor: theme.space}} w="100%" justifyContent="center" alignItems="center"  fontFamily="Source Code Pro" borderRadius="20px" padding=" 20px 30px" fontWeight="bold">
                     <Text mr="4px">Welcome, I'm Web Developer / Blockchain Enthusiast</Text>
                   <FontAwesomeIcon icon={icon({name: 'hand', style: 'solid'})} width="14px" className="rotate-image"/>
                 </Flex>
