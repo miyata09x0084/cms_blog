@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import MoonIcon from "./icons/MoonIcon";
 import SunIcon from "./icons/SunIcon";
+import { Box, Button } from "@chakra-ui/react";
 
 function ToggleSwitch({ toggleTheme }) {
   const [isToggled, setIsToggled] = useState(false);
@@ -11,7 +12,7 @@ function ToggleSwitch({ toggleTheme }) {
   };
 
   return (
-    <div className="toggle-container">
+    <Box className="toggle-container" px={{base: 8, md: 0}} maxW="768px" mx="auto">
       <button
         className={`theme-toggle-button ${isToggled ? "sun" : "moon"}`}
         onClick={onToggle}
@@ -19,7 +20,7 @@ function ToggleSwitch({ toggleTheme }) {
       >
         {isToggled ? <SunIcon /> : <MoonIcon />}
       </button>
-    </div>
+    </Box>
   );
 }
 
