@@ -54,16 +54,10 @@ a {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-/*# sourceMappingURL=globals.css.map */
 
-/* tailwindcss-custom */
-.font-SourceCodePro {
-  font-family: 'Source Code Pro', monospace;
-}
-
-.font-MplusRounded {
+/* .font-MplusRounded {
   font-family: 'M PLUS Rounded 1c', sans-serif;
-}
+} */
 
 .button-mycolor{
   background-color:#F1FAEE;
@@ -96,12 +90,12 @@ a {
 
 .theme-toggle-button.sun {
   /* Add any styles specific to the sun state */
-  animation: rotateSun 0.9s ease-in-out forwards;
+  animation: rotateSun 1.0s ease-in-out forwards;
 }
 
 .theme-toggle-button.moon {
   /* Add any styles specific to the moon state */
-  animation: rotateMoon 0.3s ease-in-out forwards;
+  animation: rotateMoon 0.5s ease-in-out forwards;
 }
 
 @keyframes rotateSun {
@@ -122,3 +116,39 @@ a {
   }
 }
 
+.triangle {
+  position: relative;
+  width: 0;
+  height: 0;
+  border-left: 60px solid transparent;
+  border-right: 0px solid transparent;
+  border-bottom: 40px solid var(--secondary-bg);
+  right: 110px;
+  bottom: -60px;
+}
+
+.triangle::before,
+.triangle::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+}
+
+.triangle::before {
+  transform: translate(100%, 100%) rotate(120deg);
+}
+
+.triangle::after {
+  transform: translate(-50%, -50%) rotate(-120deg);
+}
+
+.inverted-image {
+  /* filter: invert(0%); */
+  transform: scaleX(-1);
+}
+
+.rotate-image{
+  transform: rotate(50deg);
+}
