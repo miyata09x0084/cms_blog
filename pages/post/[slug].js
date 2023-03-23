@@ -9,10 +9,9 @@ const PostDetails = ({ post }) => {
   if(router.isFallback) {
     return <Loader />
   }
+
   return (
-    <div className="mx-auto max-w-screen-md @screen px-8 md:px-0 mb-8 ">
-        <PostDetail post={post} />
-    </div>
+    <PostDetail post={post} />
   )
 }
 
