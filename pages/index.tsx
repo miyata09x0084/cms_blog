@@ -1,6 +1,7 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import { Box, Text, Image, Flex, Heading, VStack, Button } from '@chakra-ui/react'
+import type { NextPage } from 'next';
+import Link from 'next/link';
+import Head from 'next/head';
+import { Box, Text, Image, Flex, Heading, VStack, Button } from '@chakra-ui/react';
 import { useTheme } from 'styled-components';
 import { useSpring, animated, config, to } from 'react-spring';
 import { WavingImage }from '../components';
@@ -120,10 +121,12 @@ const Home: NextPage<Props> = () => {
               </Text>
             </VStack>
             <Flex justifyContent="center" marginTop="20px">
-              <Button backgroundColor="var(--primary-button)" color="var(--secondary-text)" pl="22px" pr="22px" _hover={{bg: "var(--primary-button-hover)"}}>
-                <Text mr="8px">Post</Text>
-                {/* <FontAwesomeIcon icon={faRightLong} width="18px"/> */}
-              </Button>
+              <Link href="/post">
+                <Button backgroundColor="var(--primary-button)" color="var(--secondary-text)" pl="22px" pr="22px" _hover={{bg: "var(--primary-button-hover)"}}>
+                  <Text mr="8px">Post</Text>
+                  {/* <FontAwesomeIcon icon={faRightLong} width="18px"/> */}
+                </Button>
+              </Link>
             </Flex>
             <VStack align="start" marginBottom="16px">
               <Heading as="h2" size="md" marginTop="10px">
@@ -136,10 +139,12 @@ const Home: NextPage<Props> = () => {
             </Flex>
           </Box>
           <Flex justifyContent="center">
-            <Button backgroundColor="var(--secondary-button)" color="var(--secondary-text)" mt="18px" pl="22px" pr="22px" _hover={{bg: "var(--secondary-button-hover)"}}>
-              <Text mr="8px">Portfolio</Text>
-              {/* <FontAwesomeIcon icon={faRightLong} width="18px"/> */}
-            </Button>
+            <Link href="/work">
+              <Button backgroundColor="var(--secondary-button)" color="var(--secondary-text)" mt="18px" pl="22px" pr="22px" _hover={{bg: "var(--secondary-button-hover)"}}>
+                <Text mr="8px">Portfolio</Text>
+                {/* <FontAwesomeIcon icon={faRightLong} width="18px"/> */}
+              </Button>
+            </Link>
           </Flex>
         </AnimatedBox>
       </AnimatedBox>
