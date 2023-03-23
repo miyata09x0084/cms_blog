@@ -49,7 +49,7 @@ const Home: NextPage<Props> = () => {
         <title>Rio Miyata's Website</title>
       </Head>
       {/* ChakraUi */}
-      <AnimatedBox style={fadeIn}>
+      <AnimatedBox style={fadeIn} color="var(--primary-text)">
         <AnimatedBox maxWidth="600px" mx="auto" px={{base: 8, md: 0}} style={slideIn}>
             <Box boxSize='300px' mx="auto" mt="40px" mb="30px">
               <AnimatedBox style={{
@@ -64,7 +64,7 @@ const Home: NextPage<Props> = () => {
               {/* <div className="triangle"></div> */}
             </Box>
             <Box>
-                <Flex style={{backgroundColor: theme.space}} w="100%" justifyContent="center" alignItems="center"  fontFamily="Source Code Pro" borderRadius="20px" padding=" 20px 30px" fontWeight="bold">
+                <Flex w="100%" justifyContent="center" alignItems="center"  fontFamily="Source Code Pro" borderRadius="20px" padding=" 20px 30px" fontWeight="bold" bg="var(--secondary-bg)">
                     <Text mr="4px">Welcome, I'm Web Developer / Blockchain Enthusiast</Text>
                   <FontAwesomeIcon icon={icon({name: 'hand', style: 'solid'})} width="14px" className="rotate-image"/>
                 </Flex>
