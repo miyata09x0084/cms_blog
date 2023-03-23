@@ -2,6 +2,7 @@ import React from 'react'
 import { useRouter } from 'next/router';
 import { getCategories, getCategoryPost } from '../../services';
 import { PostCard, Loader, Categories } from '../../components';
+import { VStack, Box, Flex, Text } from '@chakra-ui/react';
 
 const CategoryPost = ({ posts }) => {
   const router = useRouter();
@@ -11,14 +12,12 @@ const CategoryPost = ({ posts }) => {
   }
 
   return (
-    <div className="mx-auto max-w-screen-md @screen px-8 md:px-0 mb-8 font-MplusRounded">
-        <div className='text-center pt-8 pb-8 border-b border-t border-gray-300 mt-8 mb-12'>
-            <Categories />
-        </div>
-        {posts.map((post, index) => (
-            <PostCard key={index} post={post.node} />
-        ))}
-    </div>
+    <Box align="start" mx="auto" maxW="768px" px={{ base: "8", md: "0" }} mb="8">
+    <Categories />
+    {posts.map((post, index) => (
+        <PostCard key={index} post={post.node} />
+    ))}
+</Box>
   )
 }
 
