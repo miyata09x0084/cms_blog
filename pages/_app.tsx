@@ -1,23 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import { Layout } from '../components';
+import React, { useState } from 'react';
+import { Layout, ChakraTheme } from '../components';
 import type { AppProps } from 'next/app';
 import '../styles/global.css';
 import { ThemeProvider } from 'styled-components';
 import { StyledColor, lightTheme, darkTheme } from '../components/ColorTheme';
 import ToggleSwitch from '../components/ToggleSwitch';
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
-import chakraTheme from '@chakra-ui/theme';
-import "../styles/global.css"
-
-const Text = chakraTheme.components;
-
-const themeChakra = extendTheme({
-  fonts: {
-    body: "M PLUS Rounded 1c, sans-serif",
-    heading: "M PLUS Rounded 1c, sans-serif",
-  }
-});
-
+import { ChakraProvider } from "@chakra-ui/react";
+import Head from 'next/head';
+import { extendTheme } from "@chakra-ui/react";
+// import { M_PLUS_Rounded_1c, Roboto, Inter } from '@next/font/google';
+// const mPlusRounded1c = M_PLUS_Rounded_1c({
+//   style: ['normal'],
+//   subsets: ['latin'],
+//   weight: ['100', '300', '400', '500', '700'],
+// });
+// console.log(mPlusRounded1c);
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [theme, setTheme] = useState(lightTheme);
@@ -26,19 +23,31 @@ function MyApp({ Component, pageProps }: AppProps) {
     setTheme(isDarkTheme ? lightTheme : darkTheme);
   }
 
+  const googleFont = extendTheme({
+    fonts: {
+      heading: `'M PLUS Rounded 1c', sans-serif`,
+      body: `'M PLUS Rounded 1c', sans-serif`,
+    },
+  })
+
   return (
-    <ChakraProvider theme={ themeChakra } >
-      <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme} >
-        <StyledColor>
-        <div className="mx-auto max-w-screen-md @screen px-8 md:px-0">
-          <ToggleSwitch toggleTheme={toggleTheme}/>
-        </div>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </StyledColor>
-      </ThemeProvider>
-    </ChakraProvider>
+    <>
+      <Head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+      </Head>
+      <ChakraProvider theme={googleFont}>
+          <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme} >
+            <StyledColor>
+              <ToggleSwitch toggleTheme={toggleTheme}/>
+              <Layout>
+                <Component {...pageProps} />
+              </Layout>
+            </StyledColor>
+          </ThemeProvider>
+      </ChakraProvider>
+    </>
   )
 }
 
