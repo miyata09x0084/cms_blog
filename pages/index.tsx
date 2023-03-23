@@ -14,8 +14,6 @@ interface Props {
 }
 
 const AnimatedBox = animated(Box);
-const AnimatedText = animated(Text);
-const AnimatedImage = animated(Image);
 
 const Home: NextPage<Props> = () => {
   const theme = useTheme();
