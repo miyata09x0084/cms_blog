@@ -54,7 +54,7 @@ const PostDetail = ({ post }) => {
   };
 
   return (
-    <VStack align="start" color="var(--primary-text)">
+    <VStack align="start" color="var(--primary-text)" maxW="768px" mx="auto" px={{ base: "8", md: "0" }}>
         <Box pt="12px" pb="3px">
           <Heading as="h1" size="md" style = {{color: theme.article}} className='pb-1 mb-1 border-b border-gray-300'>
             {post.title}
