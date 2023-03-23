@@ -8,19 +8,11 @@ import ToggleSwitch from '../components/ToggleSwitch';
 import { ChakraProvider } from "@chakra-ui/react";
 import Head from 'next/head';
 import { extendTheme } from "@chakra-ui/react";
-// import { M_PLUS_Rounded_1c, Roboto, Inter } from '@next/font/google';
-// const mPlusRounded1c = M_PLUS_Rounded_1c({
-//   style: ['normal'],
-//   subsets: ['latin'],
-//   weight: ['100', '300', '400', '500', '700'],
-// });
-// console.log(mPlusRounded1c);
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [theme, setTheme] = useState(lightTheme);
-  const isDarkTheme = (theme === darkTheme);
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
   const toggleTheme = () => {
-    setTheme(isDarkTheme ? lightTheme : darkTheme);
+    setIsDarkTheme(!isDarkTheme);
   }
 
   const googleFont = extendTheme({
