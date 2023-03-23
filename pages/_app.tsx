@@ -32,7 +32,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ChakraProvider theme={googleFont}>
           <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme} >
             <StyledColor>
-              <ToggleSwitch toggleTheme={toggleTheme}/>
               <Layout>
                 <Component {...pageProps} />
               </Layout>
