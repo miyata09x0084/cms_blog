@@ -78,7 +78,6 @@ const Home: NextPage<Props> = () => {
               <Image
                 boxSize='70px'
                 borderRadius='full'
-                border="1px solid #fff"
                 src='https://avatars.githubusercontent.com/u/59190800?s=400&u=ea17e57c3dc9ef662b1f5ce525b8ebaf777e9713&v=4'
                 alt='Rio Miyata'
               />
