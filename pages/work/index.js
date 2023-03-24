@@ -9,8 +9,10 @@ const WorkIndex = () => {
  const colorSub = useColorModeValue("var(--secondary-text)", "var(--dark-bg)");
 
   return (
-    <Box align="start" mx="auto" maxW="768px" h="100vh" px={{ base: "8", md: "0" }} mb="8" className="M PLUS Rounded 1c" color={color} bg={bg} pt="40px">
-        現在作成中。
+    <Box w="100vw" bg={bg}>
+        <Box align="start" mx="auto" maxW="768px" h="100vh" px={{ base: "8", md: "0" }} mb="8" className="M PLUS Rounded 1c" color={color} pt="40px">
+            現在作成中。
+        </Box>
     </Box>
   )
 }
