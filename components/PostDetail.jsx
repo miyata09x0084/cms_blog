@@ -58,22 +58,24 @@ const PostDetail = ({ post }) => {
   };
 
   return (
-    <VStack align="start" maxW="768px" h="100vh" mx="auto" px={{ base: "8", md: "0" }} bg={bg} color={color} pt="40px">
-        <Box pt="12px" pb="3px">
-          <Heading as="h1" size="md" className='pb-1 mb-1 border-b border-gray-300'>
-            {post.title}
-          </Heading>
-          <VStack align="start" mb="4px">
-            <Box>
-              {moment(post.createdAt).format('MMM DD YYYY')}
-            </Box>
-          </VStack>
-          {post.content.raw.children.map((typeObj, index) => {
-            const children =typeObj.children.map((item, itemIndex) => getContentFragment(itemIndex, item.text, item))
-            return getContentFragment(index, children, typeObj, typeObj.type)
-          })}
-        </Box>
-    </VStack>
+    <Box w="100%" bg={bg}>
+      <VStack align="start" maxW="768px" h="100vh" mx="auto" px={{ base: "8", md: "0" }} color={color} pt="40px">
+          <Box pt="12px" pb="3px">
+            <Heading as="h1" size="md" className='pb-1 mb-1 border-b border-gray-300'>
+              {post.title}
+            </Heading>
+            <VStack align="start" mb="4px">
+              <Box>
+                {moment(post.createdAt).format('MMM DD YYYY')}
+              </Box>
+            </VStack>
+            {post.content.raw.children.map((typeObj, index) => {
+              const children =typeObj.children.map((item, itemIndex) => getContentFragment(itemIndex, item.text, item))
+              return getContentFragment(index, children, typeObj, typeObj.type)
+            })}
+          </Box>
+      </VStack>
+    </Box>
   )
 }
 
