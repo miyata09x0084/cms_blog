@@ -1,7 +1,7 @@
 import React from 'react'
 import { getPosts } from '../../services'
 import { Categories, PostCard } from '../../components'
-import { VStack, Box } from '@chakra-ui/react'
+import { VStack, Box, useColorMode, useColorModeValue } from '@chakra-ui/react'
 import { useSpring, animated, config, to } from 'react-spring';
 
 const AnimatedBox = animated(Box);
@@ -20,8 +20,14 @@ const PostIndex = ({posts}) => {
     config: config.slow,
   });
 
+  const { colorMode } = useColorMode();
+  const bg = useColorModeValue("var(--primary-bg)", "var(--dark-bg)");
+  const color = useColorModeValue("var(--primary-text)", "var(--dark-text)");
+  const colorSub = useColorModeValue("var(--secondary-text)", "var(--dark-bg)");
+
+
   return (
-    <AnimatedBox style={fadeIn}>
+    <AnimatedBox style={fadeIn} h="100vh" bg={bg}>
       <AnimatedBox style={slideIn}>
         <VStack align="start" mx="auto" maxW="768px" px={{ base: "8", md: "0" }} mb="8" className="M PLUS Rounded 1c">
             <Categories />
