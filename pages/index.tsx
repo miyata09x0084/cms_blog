@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
 import Head from 'next/head';
-import { Box, Text, Image, Flex, Heading, VStack, Button } from '@chakra-ui/react';
+import { Box, Text, Image, Flex, Heading, VStack, Button, useColorMode, useColorModeValue } from '@chakra-ui/react';
 import { useTheme } from 'styled-components';
 import { useSpring, animated, config, to } from 'react-spring';
 import { WavingImage }from '../components';
@@ -42,15 +42,20 @@ const Home: NextPage<Props> = () => {
     config: config.molasses,
   })
 
+  const { colorMode, toggleColorMode } = useColorMode();
+  const bg = useColorModeValue("var(--primary-bg)", "var(--dark-bg)");
+  const bgSub = useColorModeValue("var(--secondary-bg)", "var(--dark-bg-sub)");
+  const color = useColorModeValue("var(--primary-text)", "var(--dark-text)");
+
   return (
-    <Box>
+    <Box bg={bg}>
       <Head>
         <title>Rio Miyata's Website</title>
       </Head>
       {/* ChakraUi */}
-      <AnimatedBox style={fadeIn} color="var(--primary-text)">
+      <AnimatedBox style={fadeIn} color={color}>
         <AnimatedBox maxWidth="600px" mx="auto" px={{base: 8, md: 0}} style={slideIn}>
-            <Box boxSize='300px' mx="auto" mt="40px" mb="30px">
+            <Box boxSize='300px' mx="auto" pt="40px" mb="40px">
               <AnimatedBox style={{
                   transform: to(
                     [rotate.x, rotate.y, rotate.z, translate.tx, translate.ty, translate.tz],
@@ -63,7 +68,7 @@ const Home: NextPage<Props> = () => {
               {/* <div className="triangle"></div> */}
             </Box>
             <Box>
-                <Flex w="100%" justifyContent="center" alignItems="center"  fontFamily="Source Code Pro" borderRadius="20px" padding=" 20px 30px" fontWeight="bold" bg="var(--secondary-bg)">
+                <Flex w="100%" justifyContent="center" alignItems="center"  fontFamily="Source Code Pro" borderRadius="20px" padding=" 20px 30px" fontWeight="bold" bg={bgSub}>
                     <Text mr="4px">Welcome, I'm Web Developer / Blockchain Enthusiast</Text>
                   <FontAwesomeIcon icon={icon({name: 'hand', style: 'solid'})} width="14px" className="rotate-image"/>
                 </Flex>
