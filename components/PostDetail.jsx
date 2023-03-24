@@ -2,12 +2,16 @@ import React from 'react';
 import moment from 'moment';
 import Link from 'next/link';
 import { useTheme } from 'styled-components';
-import { Box, Heading,VStack } from '@chakra-ui/react';
+import { Box, Heading,VStack, useColorMode, useColorModeValue } from '@chakra-ui/react';
 
 const PostDetail = ({ post }) => {
   const theme = useTheme()
-
   // {console.log(post)}
+
+  const { colorMode } = useColorMode();
+  const bg = useColorModeValue("var(--primary-bg)", "var(--dark-bg)");
+  const color = useColorModeValue("var(--primary-text)", "var(--dark-text)");
+  const colorSub = useColorModeValue("var(--secondary-text)", "var(--dark-bg)");
 
   const getContentFragment = (index, text, obj, type) => {
     let modifiedText = text;
@@ -20,7 +24,7 @@ const PostDetail = ({ post }) => {
       }
 
       if (obj.italic) {
-        modifiedText = (<em style = {{color: theme.article}} className='flex justify-center mt-2 mb-16' key={index}>{text}</em>);
+        modifiedText = (<em className='flex justify-center mt-2 mb-16' key={index}>{text}</em>);
       }
 
       if (obj.underline) {
@@ -30,11 +34,11 @@ const PostDetail = ({ post }) => {
 
     switch (type) {
       case 'heading-three':
-        return <h3 key={index} style = {{color: theme.article}} className="text-xl mb-2 pb-2 border-b">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h3>;
+        return <h3 key={index} className="text-xl mb-2 pb-2 border-b">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h3>;
       case 'paragraph':
         return <p key={index} className="mb-8">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</p>;
       case 'heading-four':
-        return <h4 key={index} style = {{color: theme.article}} className="text-md mb-2 pb-2 border-b">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h4>;
+        return <h4 key={index} className="text-md mb-2 pb-2 border-b">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h4>;
       case 'image':
         return (
           <div className='flex justify-center mt-20'>
@@ -54,13 +58,13 @@ const PostDetail = ({ post }) => {
   };
 
   return (
-    <VStack align="start" color="var(--primary-text)" maxW="768px" mx="auto" px={{ base: "8", md: "0" }}>
+    <VStack align="start" maxW="768px" h="100vh" mx="auto" px={{ base: "8", md: "0" }} bg={bg} color={color} pt="40px">
         <Box pt="12px" pb="3px">
-          <Heading as="h1" size="md" style = {{color: theme.article}} className='pb-1 mb-1 border-b border-gray-300'>
+          <Heading as="h1" size="md" className='pb-1 mb-1 border-b border-gray-300'>
             {post.title}
           </Heading>
           <VStack align="start" mb="4px">
-            <Box style = {{color: theme.article}}>
+            <Box>
               {moment(post.createdAt).format('MMM DD YYYY')}
             </Box>
           </VStack>
