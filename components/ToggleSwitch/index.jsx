@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import MoonIcon from "./icons/MoonIcon";
 import SunIcon from "./icons/SunIcon";
-import { Box, Button } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 
 function ToggleSwitch({ toggleTheme }) {
   const [isToggled, setIsToggled] = useState(false);
