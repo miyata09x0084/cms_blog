@@ -5,7 +5,7 @@ import '../styles/global.css';
 import { ThemeProvider } from 'styled-components';
 import { StyledColor, lightTheme, darkTheme } from '../components/ColorTheme';
 // import ToggleSwitch from '../components/ToggleSwitch';
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { ChakraProvider, extendTheme, useColorModeValue } from "@chakra-ui/react";
 import Head from 'next/head';
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -21,6 +21,12 @@ function MyApp({ Component, pageProps }: AppProps) {
     },
   })
 
+
+  const bg = useColorModeValue("var(--primary-bg)", "var(--dark-bg)");
+  const color = useColorModeValue("var(--primary-text)", "var(--dark-text)");
+  const colorSub = useColorModeValue("var(--secondary-text)", "var(--dark-bg)");
+  const icon = useColorModeValue("var(--sun-icon)", "var(--moon-icon)");
+
   return (
     <>
       <Head>
@@ -30,11 +36,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <ChakraProvider theme={googleFont}>
           {/* <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme} > */}
-            <StyledColor>
+            {/* <StyledColor> */}
               <Layout>
                 <Component {...pageProps} />
               </Layout>
-            </StyledColor>
+            {/* </StyledColor> */}
           {/* </ThemeProvider> */}
       </ChakraProvider>
     </>
