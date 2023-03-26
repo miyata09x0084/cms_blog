@@ -6,10 +6,11 @@ import { Box, Flex, Text, Spacer, Link, HStack, IconButton, Drawer, DrawerOverla
 import { HamburgerIcon } from '@chakra-ui/icons';
 import { useColorMode, useColorModeValue } from "@chakra-ui/react"
 import { motion } from 'framer-motion';
+import { SunIcon } from './ToggleSwitch/icons/SunIcon';
+import { MoonIcon } from './ToggleSwitch/icons/MoonIcon';
 
 
 const Header = () => {
-  const theme = useTheme()
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -25,37 +26,39 @@ const Header = () => {
   const bg = useColorModeValue("var(--primary-bg)", "var(--dark-bg)");
   const color = useColorModeValue("var(--primary-text)", "var(--dark-text)");
   const colorSub = useColorModeValue("var(--secondary-text)", "var(--dark-bg)");
+  const icon = useColorModeValue("var(--sun-icon)", "var(--moon-icon)");
 
-  const sunIcon = <FontAwesomeIcon icon={faSun} />
-  const moonIcon = <FontAwesomeIcon icon={faMoon} />
+  // const sunIcon = <FontAwesomeIcon icon={faSun} />
+  // const moonIcon = <FontAwesomeIcon icon={faMoon} />
+  const sunIcon = <FontAwesomeIcon icon={faSun} width="26px"/>
+  const moonIcon = <FontAwesomeIcon icon={faMoon} width="26px"/>
 
   const sunToMoonVariants = {
-    light: { rotate: 0, color: "var(--primary-text)" },
-    dark: { rotate: 180, color: "var(--dark-text)" },
+    light: { rotate: 0, transition: { duration: 1.4, ease: "easeInOut" } },
   };
 
   const moonToSunVariants = {
-    light: { rotate: 0, color: "var(--primary-text)" },
-    dark: { rotate: -180, color: "var(--dark-text)" },
+    dark: { rotate: -180, transition: { duration: 0.4, ease: "easeInOut" } },
   };
 
   return (
     <header>
-      <Box w="100vw" bg={bg}>
-        <Box maxWidth="768px" pt="10px" fontSize="xl" px={{base: 8, md: 0}}  mx="auto" color={color} bg={bg}>
+      <Box w="100vw" color={color} bg={bg}>
+        <Box maxWidth="768px" pt="10px" fontSize="xl" px={{base: 8, md: 0}}  mx="auto">
             <Flex justifyContent="right" py="10px">
                   <motion.div
                     animate={colorMode === 'light' ? 'dark' : 'light'}
-                    variants={colorMode === 'light' ? sunToMoonVariants : moonToSunVariants}
-                    transition={{ duration: 0.6 }}
+                    variants={colorMode === 'light' ? moonToSunVariants : sunToMoonVariants}
                   >
                     <IconButton
+                      className="rotate-image"
                       onClick={toggleColorMode}
-                      icon={colorMode === "light" ? sunIcon : moonIcon}
+                      icon={colorMode === "light" ? moonIcon : sunIcon}
                       aria-label="Toggle dark mode"
-                      color={color}
+                      color={icon}
                       _hover={{ bg: {bg} }}
                       bg={bg}
+                      fontSize="5px"
                     />
                   </motion.div>
             </Flex>
