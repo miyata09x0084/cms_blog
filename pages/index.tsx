@@ -5,7 +5,7 @@ import { Box, Text, Image, Flex, Heading, VStack, Button, useColorModeValue } fr
 import { useSpring, animated, config, to } from 'react-spring';
 import { WavingImage }from '../components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro';
+import { icon } from '@fortawesome/fontawesome-svg-core/import.macro';
 
 
 interface Props {
@@ -15,9 +15,7 @@ interface Props {
 const AnimatedBox = animated(Box);
 
 const Home: NextPage<Props> = () => {
-  const bg = useColorModeValue("var(--primary-bg)", "var(--dark-bg)");
   const bgSub = useColorModeValue("var(--secondary-bg)", "var(--dark-bg-sub)");
-  const color = useColorModeValue("var(--primary-text)", "var(--dark-text)");
 
   const fadeIn = useSpring({
     from: { opacity: 0 },
@@ -139,7 +137,6 @@ const Home: NextPage<Props> = () => {
               <Link href="/work">
                 <Button backgroundColor="var(--secondary-button)" color="var(--secondary-text)" mt="18px" pl="22px" pr="22px" _hover={{bg: "var(--secondary-button-hover)"}}>
                   <Text mr="8px">Portfolio</Text>
-                  {/* <FontAwesomeIcon icon={faRightLong} width="18px"/> */}
                 </Button>
               </Link>
             </Flex>
