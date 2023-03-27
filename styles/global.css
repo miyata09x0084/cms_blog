@@ -3,7 +3,7 @@
 @tailwind utilities;
 @import "./colors.css";
 
-html,
+/* html,
 body {
   padding: 0;
   margin: 0;
@@ -24,7 +24,7 @@ body:before {
   background-size: cover;
   background-color: var(--primary-bg);
   text-decoration: none;
-}
+} */
 
 .adjacent-post .arrow-btn {
   -webkit-transition: width 300ms ease;
@@ -46,7 +46,7 @@ body:before {
   width: 60px;
 }
 
-a {
+/* a {
   color: inherit;
   text-decoration: none;
 }
@@ -54,7 +54,7 @@ a {
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-}
+} */
 
 /* .font-MplusRounded {
   font-family: 'M PLUS Rounded 1c', sans-serif;
@@ -152,6 +152,10 @@ a {
 
 .rotate-image{
   transform: rotate(50deg);
+}
+
+.rotate-icon{
+  transform: rotate(180deg);
 }
 
 a:hover {
