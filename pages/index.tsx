@@ -26,7 +26,7 @@ const Home: NextPage<Props> = () => {
   });
 
   const slideIn = useSpring({
-    from: { transform: 'translate3d(0, 60px, 0)' },
+    from: { transform: 'translate3d(0, 70px, 0)' },
     to: { transform: 'translate3d(0, 0, 0)' },
     config: config.slow,
   });
@@ -48,8 +48,7 @@ const Home: NextPage<Props> = () => {
       <Head>
         <title>Rio Miyata's Website</title>
       </Head>
-      {/* ChakraUi */}
-      <Box color={color} bg={bg}>
+      <Box>
         <AnimatedBox style={slideIn} >
           <Box maxWidth="600px" mx="auto" px={{base: 8, md: 0}}>
               <Box boxSize='300px' mx="auto" pt="40px" mb="40px">
@@ -62,7 +61,6 @@ const Home: NextPage<Props> = () => {
                 }}>
                   <WavingImage className="inverted-image" src="/assets/images/computer-icon6.png" alt='computer' boxSize="250px" intensity={0.1} />
                 </AnimatedBox>
-                {/* <div className="triangle"></div> */}
               </Box>
               <Box>
                   <Flex w="100%" justifyContent="center" alignItems="center"  fontFamily="Source Code Pro" borderRadius="20px" padding=" 20px 30px" fontWeight="bold" bg={bgSub}>
