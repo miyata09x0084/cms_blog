@@ -13,11 +13,11 @@ const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const MenuItems = () => (
-    <Flex fontWeight="medium">
-      <Link href="/post" _hover={{ textDecoration: 'none' }} >Post</Link>
-      <Link href="/work" _hover={{ textDecoration: 'none' }} ml="12px">Work</Link>
-      <Link href="https://github.com/miyata09x0084" _hover={{ textDecoration: 'none' }} ml="12px">GitHub</Link>
-    </Flex>
+    <>
+      <Link href="/post" _hover={{ textDecoration: 'none' }} fontWeight="medium">Post</Link>
+      <Link href="/work" _hover={{ textDecoration: 'none' }} fontWeight="medium" ml="12px">Work</Link>
+      <Link href="https://github.com/miyata09x0084" _hover={{ textDecoration: 'none' }} fontWeight="medium" ml="12px">GitHub</Link>
+    </>
   );
 
   const { colorMode, toggleColorMode } = useColorMode();

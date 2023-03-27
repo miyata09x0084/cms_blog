@@ -24,7 +24,7 @@ const Home: NextPage<Props> = () => {
   });
 
   const slideIn = useSpring({
-    from: { transform: 'translate3d(0, 70px, 0)' },
+    from: { transform: 'translate3d(0, 60px, 0)' },
     to: { transform: 'translate3d(0, 0, 0)' },
     config: config.slow,
   });
@@ -40,6 +40,9 @@ const Home: NextPage<Props> = () => {
     to : {tx: 22, ty: 22, tz: 22},
     config: config.molasses,
   })
+
+  const color = useColorModeValue("var(--primary-text)", "var(--dark-text)");
+  const bg = useColorModeValue("var(--primary-bg)", "var(--dark-bg)");
 
   return (
     <Box>

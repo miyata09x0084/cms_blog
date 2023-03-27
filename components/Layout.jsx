@@ -1,19 +1,45 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Header } from './';
-import { useColorModeValue } from '@chakra-ui/react';
-import { Box } from '@chakra-ui/react';
+import { ChakraProvider, extendTheme, cookieStorageManagerSSR, localStorageManager, Box, useColorModeValue } from "@chakra-ui/react";
 
 const Layout = ({ children }) => {
+  const [isMounted, setIsMounted] = useState(false);
 
-  const bg = useColorModeValue("var(--primary-bg)", "var(--dark-bg)");
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  const colorModeManager =
+    typeof cookies === "string"
+      ? cookieStorageManagerSSR(cookies)
+      : localStorageManager
+
+  const googleFont = extendTheme({
+    fonts: {
+      heading: `'M PLUS Rounded 1c', sans-serif`,
+      body: `'M PLUS Rounded 1c', sans-serif`,
+    },
+  })
+
+  const bg= useColorModeValue("var(--primary-bg)", "var(--dark-bg)");
   const color = useColorModeValue("var(--primary-text)", "var(--dark-text)");
 
   return (
-    <Box bg={bg} color={color}>
-       <Header />
-       { children }
-    </Box>
+    isMounted ? (
+      <Box bg={bg} color={color}>
+          <Header />
+          {children}
+      </Box>
+    ) : null
   )
 }
 
 export default Layout
+
+export function getServerSideProps({ req }) {
+  return {
+    props: {
+      cookies: req.headers.cookie ?? "",
+    }
+  }
+}
