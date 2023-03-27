@@ -1,4 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @import "./colors.css";
+
+.button-mycolor{
+  background-color:#F1FAEE;
+}
+
+.font-mycolor {
+  color: #524C44;
+}
+
+.logo-size {
+  width: 22px;
+}
 
 .toggle-container {
   padding-top: 20px;
