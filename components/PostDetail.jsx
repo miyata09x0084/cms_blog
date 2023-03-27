@@ -1,6 +1,5 @@
 import React from 'react';
 import moment from 'moment';
-import Link from 'next/link';
 import { useTheme } from 'styled-components';
 import { Box, Heading,VStack, useColorMode, useColorModeValue } from '@chakra-ui/react';
 
