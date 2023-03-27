@@ -1,4 +1,4 @@
-import { ChakraProvider, cookieStorageManagerSSR, localStorageManager } from "@chakra-ui/react";
+import { ChakraProvider, extendTheme, cookieStorageManagerSSR, localStorageManager } from "@chakra-ui/react";
 
 export function Chakra({ cookies, children}) {
     const colorModeManager =
@@ -6,8 +6,15 @@ export function Chakra({ cookies, children}) {
             ? cookieStorageManagerSSR(cookies)
             : localStorageManager
 
+    const googleFont = extendTheme({
+        fonts: {
+            heading: `'M PLUS Rounded 1c', sans-serif`,
+            body: `'M PLUS Rounded 1c', sans-serif`,
+        },
+        })
+
     return (
-        <ChakraProvider colorModeManager={colorModeManager}>
+        <ChakraProvider colorModeManager={colorModeManager} theme={googleFont}>
             {children}
         </ChakraProvider>
     )
