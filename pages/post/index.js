@@ -27,7 +27,7 @@ const PostIndex = ({posts}) => {
 
 
   return (
-    <AnimatedBox style={fadeIn} h="100vh" bg={bg}>
+    <AnimatedBox style={fadeIn} h="100vh">
       <AnimatedBox style={slideIn}>
         <VStack align="start" mx="auto" maxW="768px" px={{ base: "8", md: "0" }} mb="8" className="M PLUS Rounded 1c">
             <Categories />
