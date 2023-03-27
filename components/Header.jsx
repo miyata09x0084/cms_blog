@@ -34,7 +34,7 @@ const Header = () => {
   const moonIcon = <FontAwesomeIcon icon={faMoon} width="26px"/>
 
   const sunToMoonVariants = {
-    light: { rotate: 0, transition: { duration: 1.4, ease: "easeInOut" } },
+    light: { rotate: 0, transition: { duration: 1.5, ease: "easeInOut" } },
   };
 
   const moonToSunVariants = {
@@ -43,7 +43,7 @@ const Header = () => {
 
   return (
     <header>
-      <Box w="100vw" color={color} bg={bg}>
+      <Box w="100vw">
         <Box maxWidth="768px" pt="10px" fontSize="xl" px={{base: 8, md: 0}}  mx="auto">
             <Flex justifyContent="right" py="10px">
                   <motion.div
@@ -51,14 +51,13 @@ const Header = () => {
                     variants={colorMode === 'light' ? moonToSunVariants : sunToMoonVariants}
                   >
                     <IconButton
-                      className="rotate-image"
+                      className="rotate-icon"
                       onClick={toggleColorMode}
                       icon={colorMode === "light" ? moonIcon : sunIcon}
                       aria-label="Toggle dark mode"
                       color={icon}
                       _hover={{ bg: {bg} }}
                       bg={bg}
-                      fontSize="5px"
                     />
                   </motion.div>
             </Flex>
@@ -84,10 +83,10 @@ const Header = () => {
           </Flex>
           <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
             <DrawerOverlay>
-              <DrawerContent color={color}>
+              <DrawerContent>
                 <DrawerCloseButton/>
-                <DrawerHeader borderBottomWidth="1px" bg={bg}>Menu</DrawerHeader>
-                <DrawerBody  fontWeight="medium" bg={bg}>
+                <DrawerHeader borderBottomWidth="1px">Menu</DrawerHeader>
+                <DrawerBody  fontWeight="medium">
                   <VStack align="start">
                     <MenuItems />
                   </VStack>
