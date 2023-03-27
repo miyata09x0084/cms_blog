@@ -1,13 +1,11 @@
 import React from 'react';
-import { useTheme } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDove, faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+import { faDove } from '@fortawesome/free-solid-svg-icons';
 import { Box, Flex, Text, Spacer, Link, HStack, IconButton, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, VStack, useDisclosure, Button } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import { useColorMode, useColorModeValue } from "@chakra-ui/react"
-import { motion } from 'framer-motion';
-import { SunIcon } from './ToggleSwitch/icons/SunIcon';
-import { MoonIcon } from './ToggleSwitch/icons/MoonIcon';
+import SunIcon from './ToggleSwitch/icons/SunIcon';
+import MoonIcon from './ToggleSwitch/icons/MoonIcon';
 
 
 const Header = () => {
@@ -28,38 +26,23 @@ const Header = () => {
   const colorSub = useColorModeValue("var(--secondary-text)", "var(--dark-bg)");
   const icon = useColorModeValue("var(--sun-icon)", "var(--moon-icon)");
 
-  // const sunIcon = <FontAwesomeIcon icon={faSun} />
-  // const moonIcon = <FontAwesomeIcon icon={faMoon} />
-  const sunIcon = <FontAwesomeIcon icon={faSun} width="26px"/>
-  const moonIcon = <FontAwesomeIcon icon={faMoon} width="26px"/>
-
-  const sunToMoonVariants = {
-    light: { rotate: 0, transition: { duration: 1.5, ease: "easeInOut" } },
-  };
-
-  const moonToSunVariants = {
-    dark: { rotate: -180, transition: { duration: 0.4, ease: "easeInOut" } },
-  };
+  const sunIcon = <SunIcon/>
+  const moonIcon = <MoonIcon/>
 
   return (
     <header>
       <Box w="100vw">
         <Box maxWidth="768px" pt="10px" fontSize="xl" px={{base: 8, md: 0}}  mx="auto">
             <Flex justifyContent="right" py="10px">
-                  <motion.div
-                    animate={colorMode === 'light' ? 'dark' : 'light'}
-                    variants={colorMode === 'light' ? moonToSunVariants : sunToMoonVariants}
-                  >
-                    <IconButton
-                      className="rotate-icon"
-                      onClick={toggleColorMode}
-                      icon={colorMode === "light" ? moonIcon : sunIcon}
-                      aria-label="Toggle dark mode"
-                      color={icon}
-                      _hover={{ bg: {bg} }}
-                      bg={bg}
-                    />
-                  </motion.div>
+              <IconButton
+                className={`theme-toggle-button ${colorMode === "light" ? "moon" : "sun"}`}
+                onClick={toggleColorMode}
+                icon={colorMode === "light" ? moonIcon : sunIcon}
+                aria-label="Toggle dark mode"
+                color={icon}
+                _hover={{ bg: {bg} }}
+                bg={bg}
+              />
             </Flex>
           <Flex>
               <Flex alignItems="center" w="20px">
@@ -83,10 +66,10 @@ const Header = () => {
           </Flex>
           <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
             <DrawerOverlay>
-              <DrawerContent>
+              <DrawerContent color={color}>
                 <DrawerCloseButton/>
-                <DrawerHeader borderBottomWidth="1px">Menu</DrawerHeader>
-                <DrawerBody  fontWeight="medium">
+                <DrawerHeader borderBottomWidth="1px" bg={bg}>Menu</DrawerHeader>
+                <DrawerBody  fontWeight="medium" bg={bg}>
                   <VStack align="start">
                     <MenuItems />
                   </VStack>
