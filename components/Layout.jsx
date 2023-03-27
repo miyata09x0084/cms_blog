@@ -25,10 +25,12 @@ const Layout = ({ children }) => {
   const color = useColorModeValue("var(--primary-text)", "var(--dark-text)");
 
   return (
+    isMounted ? (
       <Box bg={bg} color={color}>
           <Header />
           {children}
       </Box>
+    ) : null
   )
 }
 
