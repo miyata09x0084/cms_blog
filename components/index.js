@@ -6,3 +6,4 @@ export { default as Header } from './Header';
 export { default as Loader } from './Loader';
 export { default as ZoomInFocusImage } from './ZoomInFocusImage'
 export { default as WavingImage } from './WavingImage'
+export { default as Footer } from './Footer'
