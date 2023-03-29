@@ -11,7 +11,7 @@ export function Chakra({ cookies, children}) {
             heading: `'M PLUS Rounded 1c', sans-serif`,
             body: `'M PLUS Rounded 1c', sans-serif`,
         },
-        })
+    })
 
     return (
         <ChakraProvider colorModeManager={colorModeManager} theme={googleFont}>
