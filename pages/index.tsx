@@ -48,9 +48,9 @@ const Home: NextPage<Props> = () => {
       <Head>
         <title>Rio Miyata's Website</title>
       </Head>
-      <Box >
+      <Box>
         <AnimatedBox style={slideIn} >
-          <Box w="100%" h="100vh" maxWidth="600px" mx="auto" px={{base: 8, md: 0}}>
+          <Box maxWidth="600px" mx="auto" px={{base: 8, md: 0}}>
               <Box boxSize='300px' mx="auto" pt="40px" mb="40px">
                 <AnimatedBox style={{
                     transform: to(
@@ -93,9 +93,8 @@ const Home: NextPage<Props> = () => {
               </VStack>
               <Flex justifyContent="center" mt={4} mb={8}>
                 <Link href="/work">
-                  <Button backgroundColor="var(--secondary-button)" color="var(--secondary-text)" px={4} _hover={{bg: "var(--secondary-button-hover)"}}>
-                    <Text mr={5}>Works</Text>
-                    <FontAwesomeIcon icon={faArrowRightLong} width="10px" className="rotate-arrow" />
+                  <Button backgroundColor="var(--secondary-button)" color="var(--secondary-text)" px={8} _hover={{bg: "var(--secondary-button-hover)"}}>
+                    <Text>Works</Text>
                   </Button>
                 </Link>
               </Flex>
@@ -132,9 +131,8 @@ const Home: NextPage<Props> = () => {
               </VStack>
               <Flex justifyContent="center" mt={4} mb={10}>
                 <Link href="/post">
-                  <Button backgroundColor="var(--primary-button)" color="var(--secondary-text)" px={4} _hover={{bg: "var(--primary-button-hover)"}}>
-                    <Text mr={5}>Posts</Text>
-                    <FontAwesomeIcon icon={faArrowRightLong} width="10px" className="rotate-arrow" />
+                  <Button backgroundColor="var(--primary-button)" color="var(--secondary-text)" px={8} _hover={{bg: "var(--primary-button-hover)"}}>
+                    <Text>Posts</Text>
                   </Button>
                 </Link>
               </Flex>
