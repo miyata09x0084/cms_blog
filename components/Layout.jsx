@@ -14,13 +14,6 @@ const Layout = ({ children }) => {
       ? cookieStorageManagerSSR(cookies)
       : localStorageManager
 
-  const googleFont = extendTheme({
-    fonts: {
-      heading: `'M PLUS Rounded 1c', sans-serif`,
-      body: `'M PLUS Rounded 1c', sans-serif`,
-    },
-  })
-
   const bg= useColorModeValue("var(--primary-bg)", "var(--dark-bg)");
   const color = useColorModeValue("var(--primary-text)", "var(--dark-text)");
 
