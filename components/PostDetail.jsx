@@ -58,7 +58,7 @@ const PostDetail = ({ post }) => {
 
   return (
     <Box w="100%" h="100vh" bg={bg} >
-      <VStack align="start" maxW="768px" h="100%" mx="auto" px={{ base: "8", md: "0" }} color={color} pt="40px">
+      <VStack align="start" maxW="600px" h="100%" mx="auto" px={{ base: "8", md: "0" }} color={color} pt="40px">
           <Box pt="12px" pb="3px">
             <Heading as="h1" size="md" className='pb-1 mb-1 border-b border-gray-300'>
               {post.title}
