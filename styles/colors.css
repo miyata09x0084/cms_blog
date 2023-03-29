@@ -1,17 +1,17 @@
 :root {
-    --primary-bg: #fcf9f4;
-    --primary-text: #524C44;
-    --primary-button: #F4B942;
-    --primary-button-hover: #FFCA6A;
-    --secondary-button: #67C46A;
-    --secondary-button-hover: #7CD683;
-    --secondary-bg: #ffffff;
-    --secondary-text: #ffffff;
+    --primary-bg: #f8f5ef;
+    --primary-text: #4A4238;
+    --primary-button: #F2B33D;
+    --primary-button-hover: #d99e1a;
+    --secondary-button: #5DBA5A;
+    --secondary-button-hover: #419c3e;
+    --secondary-bg: #fefefe;
+    --secondary-text: #fefefe;
     --dark-bg: #222222;
     --dark-bg-sub: #524C44;
     --dark-text: #6FEFDE;
     --dark-text-sub: #fcf9f4;
     --dark-button: #6FEFDE;
-    --sun-icon:#dac500;
-    --moon-icon:#BB86FC;
+    --sun-icon: #dac500;
+    --moon-icon: #BB86FC;
 }
