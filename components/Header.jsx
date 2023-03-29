@@ -1,11 +1,12 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDove } from '@fortawesome/free-solid-svg-icons';
-import { Box, Flex, Text, Spacer, Link, HStack, IconButton, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, VStack, useDisclosure, Button } from '@chakra-ui/react';
+import { Box, Flex, Text, Spacer, HStack, IconButton, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, VStack, useDisclosure, Button } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import { useColorMode, useColorModeValue } from "@chakra-ui/react"
 import SunIcon from './ToggleSwitch/icons/SunIcon';
 import MoonIcon from './ToggleSwitch/icons/MoonIcon';
+import Link from 'next/link';
 
 
 const Header = () => {
@@ -31,13 +32,13 @@ const Header = () => {
 
   return (
     <header>
-      <Box w="100vw" pt={8}>
-        <Box maxWidth="768px" pt="10px" fontSize="xl" px={{base: 8, md: 0}}  mx="auto">
+      <Box w="100vw" pt={10}>
+        <Box maxWidth="768px" fontSize="xl" px={{base: 8, md: 0}}  mx="auto">
           <Flex>
               <Flex alignItems="center" w="20px">
                 <FontAwesomeIcon icon={faDove}/>
               </Flex>
-              <Text mx={1} letterSpacing="-1px"  fontWeight="bold" display="flex" alignItems="center">
+              <Text mx={0.5} letterSpacing="-1px"  fontWeight="bold" display="flex" alignItems="center">
                 <Link href="/" _hover={{ textDecoration: 'none' }}>Rio Miyata</Link>
               </Text>
               <Spacer />
