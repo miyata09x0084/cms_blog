@@ -1,11 +1,12 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
 import Head from 'next/head';
-import { Box, Text, Image, Flex, Heading, VStack, Button, useColorModeValue } from '@chakra-ui/react';
+import { Box, Text, Image, Flex, Heading, VStack, HStack, Button, useColorModeValue } from '@chakra-ui/react';
 import { useSpring, animated, config, to } from 'react-spring';
 import { WavingImage }from '../components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { icon } from '@fortawesome/fontawesome-svg-core/import.macro';
+import { faChevronRight, faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
 
 
 interface Props {
@@ -16,6 +17,7 @@ const AnimatedBox = animated(Box);
 
 const Home: NextPage<Props> = () => {
   const bgSub = useColorModeValue("var(--secondary-bg)", "var(--dark-bg-sub)");
+  const textSub = useColorModeValue("var(--third-text)", "var(--dark-text-sub)");
 
   const fadeIn = useSpring({
     from: { opacity: 0 },
@@ -41,17 +43,14 @@ const Home: NextPage<Props> = () => {
     config: config.molasses,
   })
 
-  const color = useColorModeValue("var(--primary-text)", "var(--dark-text)");
-  const bg = useColorModeValue("var(--primary-bg)", "var(--dark-bg)");
-
   return (
     <Box>
       <Head>
         <title>Rio Miyata's Website</title>
       </Head>
-      <Box>
+      <Box >
         <AnimatedBox style={slideIn} >
-          <Box maxWidth="600px" mx="auto" px={{base: 8, md: 0}}>
+          <Box w="100%" h="100vh" maxWidth="600px" mx="auto" px={{base: 8, md: 0}}>
               <Box boxSize='300px' mx="auto" pt="40px" mb="40px">
                 <AnimatedBox style={{
                     transform: to(
@@ -64,26 +63,47 @@ const Home: NextPage<Props> = () => {
                 </AnimatedBox>
               </Box>
               <Box>
-                  <Flex w="100%" justifyContent="center" alignItems="center"  fontFamily="Source Code Pro" borderRadius="20px" padding=" 20px 30px" fontWeight="bold" bg={bgSub}>
-                      <Text mr="4px">Welcome, I'm Web Developer / Blockchain Enthusiast</Text>
-                    <FontAwesomeIcon icon={icon({name: 'hand', style: 'solid'})} width="14px" className="rotate-image"/>
+                  <Flex w="100%" justifyContent="center" alignItems="center"  borderRadius="25px" padding=" 20px 30px" fontFamily="Source Code Pro" fontWeight="bold" bg={bgSub}>
+                      <Text textAlign="center" mr="9px">
+                        GM, I'm Web Developer / Blockchain Enthusiast
+                      </Text>
+                      <FontAwesomeIcon icon={icon({name: 'hand', style: 'solid'})} width="13.4px" className="rotate-image"/>
                   </Flex>
               </Box>
-              <Flex width="100%" justifyContent="center" marginTop="20px" alignItems="center">
-                <Text fontSize="3xl" fontWeight="bold" marginRight="12px" marginLeft="15px">Rio Miyata</Text>
+              <Flex width="100%" justifyContent="center" mt={10} alignItems="center">
                 <Image
-                  boxSize='70px'
+                  boxSize='68px'
                   borderRadius='full'
                   src='https://avatars.githubusercontent.com/u/59190800?s=400&u=ea17e57c3dc9ef662b1f5ce525b8ebaf777e9713&v=4'
                   alt='Rio Miyata'
                 />
+                <Box ml="10px">
+                  <Text fontSize="2xl" fontWeight="bold">Rio Miyata</Text>
+                  <Text fontSize="md">Creator / Developer / Designer </Text>
+                </Box>
               </Flex>
-            <Box marginLeft="8px" marginTop="40px" >
-              <VStack align="start" spacing={3}>
+            <Box marginLeft="8px" mt={12} >
+              <VStack align="start" spacing={4}>
+                <Heading as="h2" size="md">
+                  Works
+                </Heading>
+                <Text>
+                  Hey there! I'm  full-stack engineer who loves bringing ideas to life through code. Ever since I was a kid, I've enjoyed building things, and that passion has only grown with time. Let's dive into my journey so far!
+                </Text>
+              </VStack>
+              <Flex justifyContent="center" mt={4} mb={8}>
+                <Link href="/work">
+                  <Button backgroundColor="var(--secondary-button)" color="var(--secondary-text)" px={4} _hover={{bg: "var(--secondary-button-hover)"}}>
+                    <Text mr={5}>Works</Text>
+                    <FontAwesomeIcon icon={faArrowRightLong} width="10px" className="rotate-arrow" />
+                  </Button>
+                </Link>
+              </Flex>
+              <VStack align="start" spacing={4} mb={8}>
                 <Heading as="h2" size="md">
                   Experience
                 </Heading>
-                <VStack align="start" spacing={2}>
+                <VStack align="start" spacing={3}>
                   <Flex>
                     <Text mr="9px" fontWeight="medium">2014</Text>
                     <Text>Master of Science in Engineering from Hosei University</Text>
@@ -102,47 +122,23 @@ const Home: NextPage<Props> = () => {
                   </Flex>
                 </VStack>
               </VStack>
-              <VStack align="start" spacing={3} marginTop="25px">
+              <VStack align="start" spacing={4}>
                 <Heading as="h2" size="md">
-                  About me
-                </Heading>
-                <Text>
-                  Hey there! I'm a full-stack engineer who loves bringing ideas to life through code. Ever since I was a kid, I've enjoyed building things, and that passion has only grown with time. Let's dive into my journey so far!
-                </Text>
-              </VStack>
-              <VStack align="start" spacing={3} marginTop="25px">
-                <Heading as="h2" size="md" marginTop="10px">
                   Interests
                 </Heading>
                 <Text>
                   When I'm not coding, you can find me exploring the outdoors, trying out new recipes, and playing board games with friends. I'm always eager to learn new things and connect with like-minded people!
                 </Text>
               </VStack>
-              <Flex justifyContent="center" marginTop="20px">
+              <Flex justifyContent="center" mt={4} mb={10}>
                 <Link href="/post">
-                  <Button backgroundColor="var(--primary-button)" color="var(--secondary-text)" pl="22px" pr="22px" _hover={{bg: "var(--primary-button-hover)"}}>
-                    <Text mr="8px">Post</Text>
-                    {/* <FontAwesomeIcon icon={faRightLong} width="18px"/> */}
+                  <Button backgroundColor="var(--primary-button)" color="var(--secondary-text)" px={4} _hover={{bg: "var(--primary-button-hover)"}}>
+                    <Text mr={5}>Posts</Text>
+                    <FontAwesomeIcon icon={faArrowRightLong} width="10px" className="rotate-arrow" />
                   </Button>
                 </Link>
               </Flex>
-              <VStack align="start" marginBottom="16px">
-                <Heading as="h2" size="md" marginTop="10px">
-                  Work
-                </Heading>
-              </VStack>
-              <Flex flexWrap="wrap" justifyContent="space-around">
-                  <Image  src="/assets/images/computer-icon3.png" boxSize="250px" borderRadius="54px"/>
-                  <Image  src="/assets/images/computer-icon5.png" boxSize="250px" borderRadius="54px"/>
-              </Flex>
             </Box>
-            <Flex justifyContent="center">
-              <Link href="/work">
-                <Button backgroundColor="var(--secondary-button)" color="var(--secondary-text)" mt="18px" pl="22px" pr="22px" _hover={{bg: "var(--secondary-button-hover)"}}>
-                  <Text mr="8px">Portfolio</Text>
-                </Button>
-              </Link>
-            </Flex>
           </Box>
         </AnimatedBox>
       </Box>
