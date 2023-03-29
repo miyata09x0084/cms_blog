@@ -14,9 +14,9 @@ const Header = () => {
 
   const MenuItems = () => (
     <>
-      {/* <Link href="/post" _hover={{ textDecoration: 'none' }} fontWeight="medium">Post</Link> */}
-      <Link href="/work" _hover={{ textDecoration: 'none' }} fontWeight="medium" ml="12px">Work</Link>
-      <Link href="https://github.com/miyata09x0084" _hover={{ textDecoration: 'none' }} fontWeight="medium" ml="12px">GitHub</Link>
+      <Link href="/work" _hover={{ textDecoration: 'none' }} fontWeight="medium">Works</Link>
+      <Link href="/post" _hover={{ textDecoration: 'none' }} fontWeight="medium">Post</Link>
+      <Link href="https://github.com/miyata09x0084" target="_blank" rel="noopener noreferrer" _hover={{ textDecoration: 'none' }} fontWeight="medium">GitHub</Link>
     </>
   );
 
@@ -31,19 +31,8 @@ const Header = () => {
 
   return (
     <header>
-      <Box w="100vw">
+      <Box w="100vw" pt={8}>
         <Box maxWidth="768px" pt="10px" fontSize="xl" px={{base: 8, md: 0}}  mx="auto">
-            <Flex justifyContent="right" py="10px">
-              <IconButton
-                className={`theme-toggle-button ${colorMode === "light" ? "moon" : "sun"}`}
-                onClick={toggleColorMode}
-                icon={colorMode === "light" ? moonIcon : sunIcon}
-                aria-label="Toggle dark mode"
-                color={icon}
-                _hover={{ bg: {bg} }}
-                bg={bg}
-              />
-            </Flex>
           <Flex>
               <Flex alignItems="center" w="20px">
                 <FontAwesomeIcon icon={faDove}/>
@@ -54,6 +43,15 @@ const Header = () => {
               <Spacer />
               <HStack spacing={4} display={{base: "none", md: "flex"}}>
                 <MenuItems />
+                <IconButton
+                  className={`theme-toggle-button ${colorMode === "light" ? "moon" : "sun"}`}
+                  onClick={toggleColorMode}
+                  icon={colorMode === "light" ? moonIcon : sunIcon}
+                  aria-label="Toggle dark mode"
+                  color={icon}
+                  _hover={{ bg: {bg} }}
+                  bg={bg}
+                />
               </HStack>
               <IconButton
                 display={{base: "flex", md: "none"}}
