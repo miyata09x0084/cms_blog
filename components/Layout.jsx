@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Header } from './';
-import { ChakraProvider, extendTheme, cookieStorageManagerSSR, localStorageManager, Box, useColorModeValue } from "@chakra-ui/react";
+import { Header, Footer } from './';
+import { cookieStorageManagerSSR, localStorageManager, Box, useColorModeValue } from "@chakra-ui/react";
 
 const Layout = ({ children }) => {
   const [isMounted, setIsMounted] = useState(false);
@@ -22,6 +22,7 @@ const Layout = ({ children }) => {
       <Box bg={bg} color={color}>
           <Header />
           {children}
+          <Footer />
       </Box>
     ) : null
   )
