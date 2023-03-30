@@ -3,11 +3,6 @@ import { Header, Footer } from './';
 import { cookieStorageManagerSSR, localStorageManager, Box, useColorModeValue } from "@chakra-ui/react";
 
 const Layout = ({ children }) => {
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
 
   const colorModeManager =
     typeof cookies === "string"
@@ -18,13 +13,11 @@ const Layout = ({ children }) => {
   const color = useColorModeValue("var(--primary-text)", "var(--dark-text)");
 
   return (
-    isMounted ? (
       <Box bg={bg} color={color}>
           <Header />
           {children}
           <Footer />
       </Box>
-    ) : null
   )
 }
 
