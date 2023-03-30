@@ -13,7 +13,7 @@ const Footer = () => {
         <Box maxWidth="600px" fontSize="xl" px={{base: 8, md: 0}}  mx="auto">
             <Flex justifyContent="space-between" alignItems="center">
                 <HStack mx={1} spacing={6} display="flex" alignItems="center">
-                    <Link href="https://github.com/miyata09x0084">
+                    <Link href="https://github.com/miyata09x0084" target="_blank" rel="noopener noreferrer">
                         <Flex alignItems="center">
                             <FontAwesomeIcon icon={faGithub}/>
                             <Text ml={0.5}>Github</Text>
