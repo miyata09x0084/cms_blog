@@ -3,6 +3,7 @@ import { Box, Flex, Text, HStack, Image } from '@chakra-ui/react'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { TwitterFollowButton } from 'react-twitter-embed'
 
 const Footer = () => {
   const [isIconHover, setIsIconHover] = useState(false)
@@ -26,7 +27,8 @@ const Footer = () => {
                         </Flex>
                     </Link>
                 </HStack>
-                <Link href="/">
+                <Link href="https://twitter.com/ryo_miyata_twin?ref_src=twsrc%5Etfw" data-size="large" data-show-screen-name="false" data-show-count="false">
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                     <Flex
                         alignItems="center"
                         onMouseEnter={() => setIsIconHover(true)}
@@ -34,7 +36,7 @@ const Footer = () => {
                     >
                         {isIconHover ? (<FontAwesomeIcon icon={faTwitter} bounce/> )
                         : (<FontAwesomeIcon icon={faTwitter}/>)}
-                        <Text ml={0.5} mr={1}>Follow</Text>
+                        <Text ml={0.5}>Follow!</Text>
                     </Flex>
                 </Link>
             </Flex>
