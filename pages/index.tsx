@@ -6,7 +6,7 @@ import { useSpring, animated, config, to } from 'react-spring';
 import { WavingImage }from '../components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { icon } from '@fortawesome/fontawesome-svg-core/import.macro';
-import { faChevronRight, faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 
 interface Props {
@@ -94,7 +94,8 @@ const Home: NextPage<Props> = () => {
               <Flex justifyContent="center" mt={4} mb={8}>
                 <Link href="/work">
                   <Button backgroundColor="var(--secondary-button)" color="var(--secondary-text)" px={8} _hover={{bg: "var(--secondary-button-hover)"}}>
-                    <Text>Works</Text>
+                    <Text mr={2}>Works</Text>
+                    <FontAwesomeIcon icon={faAngleRight} width="6px"/>
                   </Button>
                 </Link>
               </Flex>
@@ -132,7 +133,8 @@ const Home: NextPage<Props> = () => {
               <Flex justifyContent="center" mt={4} mb={10}>
                 <Link href="/post">
                   <Button backgroundColor="var(--primary-button)" color="var(--secondary-text)" px={8} _hover={{bg: "var(--primary-button-hover)"}}>
-                    <Text>Posts</Text>
+                    <Text mr={2}>Posts</Text>
+                    <FontAwesomeIcon icon={faAngleRight} width="6px"/>
                   </Button>
                 </Link>
               </Flex>
