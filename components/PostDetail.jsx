@@ -1,16 +1,21 @@
 import React from 'react';
 import moment from 'moment';
-import { useTheme } from 'styled-components';
 import { Box, Heading,VStack, useColorMode, useColorModeValue } from '@chakra-ui/react';
+import { animated, useSpring, config } from 'react-spring';
 
 const PostDetail = ({ post }) => {
-  const theme = useTheme()
-  // {console.log(post)}
 
   const { colorMode } = useColorMode();
   const bg = useColorModeValue("var(--primary-bg)", "var(--dark-bg)");
   const color = useColorModeValue("var(--primary-text)", "var(--dark-text)");
   const colorSub = useColorModeValue("var(--secondary-text)", "var(--dark-bg)");
+
+  const AnimatedBox = animated(Box);
+  const slideIn = useSpring({
+    from: { transform: 'translate3d(0, 40px, 0)' },
+    to: { transform: 'translate3d(0, 0, 0)' },
+    config: config.slow,
+  });
 
   const getContentFragment = (index, text, obj, type) => {
     let modifiedText = text;
@@ -57,7 +62,7 @@ const PostDetail = ({ post }) => {
   };
 
   return (
-    <Box w="100%" h="100vh" bg={bg} >
+    <AnimatedBox w="100%" h="100vh" bg={bg} style={slideIn}>
       <VStack align="start" maxW="600px" h="100%" mx="auto" px={{ base: "8", md: "0" }} color={color} pt="40px">
           <Box pt="12px" pb="3px">
             <Heading as="h1" size="md" className='pb-1 mb-1 border-b border-gray-300'>
@@ -74,7 +79,7 @@ const PostDetail = ({ post }) => {
             })}
           </Box>
       </VStack>
-    </Box>
+    </AnimatedBox>
   )
 }
 
