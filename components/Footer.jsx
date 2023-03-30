@@ -3,7 +3,6 @@ import { Box, Flex, Text, HStack, Image } from '@chakra-ui/react'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons'
-import { faExclamation } from '@fortawesome/free-solid-svg-icons'
 
 const Footer = () => {
   const [isIconHover, setIsIconHover] = useState(false)
