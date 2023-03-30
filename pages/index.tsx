@@ -38,8 +38,8 @@ const Home: NextPage<Props> = () => {
   })
 
   const translate = useSpring({
-    form: {tx: 0, ty: 0, tz: 0},
-    to : {tx: 22, ty: 22, tz: 22},
+    form: {tx: 2000, ty: 2000, tz: 0},
+    to : {tx: 0, ty: 0, tz: 1000},
     config: config.wobbly,
   })
 
