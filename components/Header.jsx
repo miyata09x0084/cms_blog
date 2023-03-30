@@ -32,8 +32,7 @@ const Header = () => {
 
   return (
     <header>
-      <Box w="100vw" pt={10}>
-        <Box maxWidth="768px" fontSize="xl" px={{base: 8, md: 0}}  mx="auto">
+        <Box pt={10} maxWidth="768px" fontSize="xl" px={{base: 8, md: 0}}  mx="auto">
           <Flex>
               <Flex alignItems="center" w="20px">
                 <FontAwesomeIcon icon={faDove}/>
@@ -77,7 +76,6 @@ const Header = () => {
             </DrawerOverlay>
           </Drawer>
         </Box>
-      </Box>
     </header>
   )
 }
