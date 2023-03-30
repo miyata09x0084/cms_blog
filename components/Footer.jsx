@@ -20,7 +20,7 @@ const Footer = () => {
                             <Text ml={0.5}>Github</Text>
                         </Flex>
                     </Link>
-                    <Link href="/">
+                    <Link href="https://etherscan.io/address/0x906b1f02B8BBCA762896d368e40C77c857Db6A0B" target="_blank" rel="noopener noreferrer">
                         <Flex alignItems="center">
                             <Image src="/assets/images/etherscan-logo-circle.png" alt="github-icon" w="19px" h="19px" mr={0.5}/>
                             <Text>Etherscan</Text>
