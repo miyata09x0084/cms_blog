@@ -18,8 +18,8 @@ const WorkIndex = () => {
 
 
   return (
-    <AnimatedBox h="100%" style={slideIn}>
-        <Box align="start" mx="auto" maxW="768px" h="100vh" px={{ base: "8", md: "0" }} mb="8" className="M PLUS Rounded 1c" color={color} pt="40px">
+    <AnimatedBox style={slideIn}>
+        <Box align="start" mx="auto" maxW="600px" px={{ base: "8", md: "0" }} mb="8" className="M PLUS Rounded 1c" color={color} pt="40px">
             現在作成中。
         </Box>
     </AnimatedBox>
