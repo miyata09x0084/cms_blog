@@ -22,25 +22,25 @@ const Home: NextPage<Props> = () => {
   const fadeIn = useSpring({
     from: { opacity: 0 },
     to: { opacity: 1 },
-    config: config.slow,
+    config: config.gentle,
   });
 
   const slideIn = useSpring({
     from: { transform: 'translate3d(0, 40px, 0)' },
     to: { transform: 'translate3d(0, 0, 0)' },
-    config: config.slow,
+    config: config.gentle,
   });
 
   const rotate = useSpring({
     from: { x: -22, y: -22, z: - 17 },
     to: { x:  0, y: 0, z: 8 },
-    config: config.molasses,
+    config: config.wobbly,
   })
 
   const translate = useSpring({
     form: {tx: 0, ty: 0, tz: 0},
     to : {tx: 22, ty: 22, tz: 22},
-    config: config.molasses,
+    config: config.wobbly,
   })
 
   return (
