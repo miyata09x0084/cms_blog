@@ -19,57 +19,6 @@ body:before {
   text-decoration: none;
 }
 
-/* html:before,
-body:before {
-  content: '';
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: -1;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: var(--primary-bg);
-  text-decoration: none;
-}
-
-.adjacent-post .arrow-btn {
-  -webkit-transition: width 300ms ease;
-  transition: width 300ms ease;
-  width: 50px;
-}
-
-.adjacent-post:hover .arrow-btn {
-  width: 60px;
-}
-
-.react-multi-carousel-list .arrow-btn {
-  -webkit-transition: width 300ms ease;
-  transition: width 300ms ease;
-  width: 50px;
-}
-
-.react-multi-carousel-list .arrow-btn:hover {
-  width: 60px;
-} */
-
-/* a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-} */
-
-/* .font-MplusRounded {
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-} */
-
 .button-mycolor{
   background-color:#F1FAEE;
 }
@@ -130,12 +79,8 @@ body:before {
 }
 
 .rotate-image{
-  transform: rotate(-40deg);
+  transform: rotate(-46deg);
   margin-left: 4px;
-}
-
-.rotate-arrow{
-  /* transform: rotate(-45deg); */
 }
 
 a:hover {

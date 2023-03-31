@@ -1,6 +1,6 @@
 :root {
     --primary-bg: #f0ede7;
-    --primary-text: #231f18; /* darker text color */
+    --primary-text: #231f18;
     --primary-button: #F2B33D;
     --primary-button-hover: #d99e1a;
     --secondary-button: #5DBA5A;
@@ -8,7 +8,7 @@
     --secondary-bg: #f8f8f8;
     --secondary-text: #f8f8f8;
     --dark-bg: #222222;
-    --dark-bg-sub: #524C44;
+    --dark-bg-sub: #454545;
     --dark-text: #6FEFDE;
     --dark-text-sub: #fcf9f4;
     --dark-button: #6FEFDE;
