@@ -16,7 +16,7 @@ const Header = () => {
   const MenuItems = () => (
     <>
       <Link href="/work" _hover={{ textDecoration: 'none' }} fontWeight="medium">Works</Link>
-      <Link href="/post" _hover={{ textDecoration: 'none' }} fontWeight="medium">Post</Link>
+      <Link href="/post" _hover={{ textDecoration: 'none' }} fontWeight="medium">Posts</Link>
       <Link href="https://github.com/miyata09x0084" target="_blank" rel="noopener noreferrer" _hover={{ textDecoration: 'none' }} fontWeight="medium">GitHub</Link>
     </>
   );
