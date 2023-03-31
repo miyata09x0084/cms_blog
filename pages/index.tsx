@@ -67,7 +67,7 @@ const Home: NextPage<Props> = () => {
                       <Text textAlign="center" mr="9px">
                         GM, I'm Web Developer / Blockchain Enthusiast
                       </Text>
-                      <FontAwesomeIcon icon={icon({name: 'hand', style: 'solid'})} width="13.4px" className="rotate-image"/>
+                      <FontAwesomeIcon icon={icon({name: 'hand', style: 'solid'})} width="14px" className="rotate-image"/>
                   </Flex>
               </Box>
               <Flex width="100%" justifyContent="center" mt={12} alignItems="center">
