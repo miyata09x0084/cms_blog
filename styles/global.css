@@ -19,7 +19,6 @@ body:before {
   text-decoration: none;
 }
 
-
 /* html:before,
 body:before {
   content: '';
@@ -131,11 +130,12 @@ body:before {
 }
 
 .rotate-image{
-  transform: rotate(50deg);
+  transform: rotate(-40deg);
+  margin-left: 4px;
 }
 
-.rotate-icon{
-  transform: rotate(180deg);
+.rotate-arrow{
+  /* transform: rotate(-45deg); */
 }
 
 a:hover {
