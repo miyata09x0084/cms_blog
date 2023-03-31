@@ -32,15 +32,15 @@ const Home: NextPage<Props> = () => {
   });
 
   const rotate = useSpring({
-    from: { x: -22, y: -22, z: - 210 },
+    from: { x: -22, y: -22, z: - 180 },
     to: { x:  0, y: 0, z: 8 },
-    config: config.stiff,
+    config: {tension: 90, friction: 3},
   })
 
   const translate = useSpring({
     form: {tx: 2000, ty: 2000, tz: 0},
     to : {tx: 0, ty: 0, tz: 400},
-    config: config.wobbly,
+    config: {tension: 20, friction: 1},
   })
 
   return (
