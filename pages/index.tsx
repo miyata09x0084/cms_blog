@@ -70,17 +70,17 @@ const Home: NextPage<Props> = () => {
                       <FontAwesomeIcon icon={icon({name: 'hand', style: 'solid'})} width="13.4px" className="rotate-image"/>
                   </Flex>
               </Box>
-              <Flex width="100%" justifyContent="center" mt={10} alignItems="center">
+              <Flex width="100%" justifyContent="center" mt={12} alignItems="center">
+                <Box mr="2px">
+                  <Text fontSize="4xl" fontWeight="bold" mb="-7px">Rio Miyata</Text>
+                  <Text fontSize="md">Creator / Developer / Designer </Text>
+                </Box>
                 <Image
                   boxSize='68px'
                   borderRadius='full'
                   src='https://avatars.githubusercontent.com/u/59190800?s=400&u=ea17e57c3dc9ef662b1f5ce525b8ebaf777e9713&v=4'
                   alt='Rio Miyata'
                 />
-                <Box ml="10px">
-                  <Text fontSize="2xl" fontWeight="bold">Rio Miyata</Text>
-                  <Text fontSize="md">Creator / Developer / Designer </Text>
-                </Box>
               </Flex>
             <Box marginLeft="8px" mt={12} >
               <VStack align="start" spacing={4}>
