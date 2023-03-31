@@ -43,15 +43,16 @@ const Header = () => {
               <Spacer />
               <HStack spacing={4} display={{base: "none", md: "flex"}}>
                 <MenuItems />
-                <IconButton
-                  className={`theme-toggle-button ${colorMode === "light" ? "moon" : "sun"}`}
-                  onClick={toggleColorMode}
-                  icon={colorMode === "light" ? moonIcon : sunIcon}
-                  aria-label="Toggle dark mode"
-                  color={icon}
-                  _hover={{ bg: {bg} }}
-                  bg={bg}
-                />
+                  <IconButton
+                    className={`theme-toggle-button ${colorMode === "light" ? "moon" : "sun"}`}
+                    onClick={toggleColorMode}
+                    w="40px"
+                    icon={colorMode === "light" ? moonIcon : sunIcon}
+                    aria-label="Toggle dark mode"
+                    color={icon}
+                    _hover={{ bg: {bg} }}
+                    bg={bg}
+                  />
               </HStack>
               <IconButton
                 display={{base: "flex", md: "none"}}
