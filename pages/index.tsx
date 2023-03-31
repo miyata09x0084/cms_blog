@@ -95,7 +95,7 @@ const Home: NextPage<Props> = () => {
                 <Link href="/work">
                   <Button backgroundColor="var(--secondary-button)" color="var(--secondary-text)" px={8} _hover={{bg: "var(--secondary-button-hover)"}}>
                     <Text mr={2}>Works</Text>
-                    <FontAwesomeIcon icon={faAngleRight} width="6px"/>
+                    <FontAwesomeIcon icon={faAngleRight} width="7px" height="7px"/>
                   </Button>
                 </Link>
               </Flex>
@@ -134,7 +134,7 @@ const Home: NextPage<Props> = () => {
                 <Link href="/post">
                   <Button backgroundColor="var(--primary-button)" color="var(--secondary-text)" px={8} _hover={{bg: "var(--primary-button-hover)"}}>
                     <Text mr={2}>Posts</Text>
-                    <FontAwesomeIcon icon={faAngleRight} width="6px"/>
+                    <FontAwesomeIcon icon={faAngleRight} width="7px" height="7px"/>
                   </Button>
                 </Link>
               </Flex>
