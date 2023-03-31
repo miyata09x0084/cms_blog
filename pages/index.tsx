@@ -88,7 +88,7 @@ const Home: NextPage<Props> = () => {
                   Works
                 </Heading>
                 <Text>
-                  Hey there! I'm  full-stack engineer who loves bringing ideas to life through code. Ever since I was a kid, I've enjoyed building things, and that passion has only grown with time. Let's dive into my journey so far!
+                 Hi there! I'm a full-stack engineer who enjoys giving form to ideas and expressing them through code. Ever since I was a kid, I've loved building things and believe that technology can dramatically change people's lives. Let's dive into my journey so far as a private developer.
                 </Text>
               </VStack>
               <Flex justifyContent="center" mt={4} mb={8}>
@@ -127,7 +127,7 @@ const Home: NextPage<Props> = () => {
                   Interests
                 </Heading>
                 <Text>
-                  When I'm not coding, you can find me exploring the outdoors, trying out new recipes, and playing board games with friends. I'm always eager to learn new things and connect with like-minded people!
+                  When I'm not coding, you can find me exploring the outdoors, trying out new recipes, and playing board games with friends. I'm always eager to learn new things and connect with like-minded people.
                 </Text>
               </VStack>
               <Flex justifyContent="center" mt={4} mb={10}>
