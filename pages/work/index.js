@@ -43,7 +43,7 @@ const WorkIndex = () => {
         <Flex justifyContent="space-between" width="100%" height="100%">
           <Box width="370px">
             <Link href="https://merkletree-dapp.web.app" _hover={{ textDecoration: 'none' }} target="_blank" rel="noopener noreferrer">
-              <Image src="/assets/images/nft-mint-dapp.png" alt="Image 1" borderRadius="xl" boxShadow="lg"/>
+              <Image src="/assets/images/nft-mint-dapp.png" alt="Image 1" borderRadius="lg" boxShadow="1px 2px 28px rgb(35, 31, 24, 0.05)"/>
               <Text fontWeight="bold" fontSize="xl" mt="4">NFT Minting DApp</Text>
               <Text fontSize="md" mt="1">A decentralized application for creating and managing NFTs on the blockchain.</Text>
             </Link>
