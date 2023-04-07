@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <footer>
       <Box w="100vw" h="100%" pt={10} pb={16}>
-        <Box maxWidth="600px" fontSize="xl" px={{base: 8, md: 0}}  mx="auto">
+        <Box maxWidth="768px" fontSize="xl" px={{base: 8, md: 0}}  mx="auto">
             <Flex justifyContent="space-between" alignItems="center">
                 <HStack mx={1} spacing={6} display="flex" alignItems="center">
                     <Link href="https://github.com/miyata09x0084" target="_blank" rel="noopener noreferrer">
