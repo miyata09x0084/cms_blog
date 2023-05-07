@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDove } from '@fortawesome/free-solid-svg-icons';
+import { faHand } from '@fortawesome/free-solid-svg-icons';
 import { Box, Flex, Text, Spacer, HStack, IconButton, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, VStack, useDisclosure, Button } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import { useColorMode, useColorModeValue } from "@chakra-ui/react"
@@ -35,9 +35,8 @@ const Header = () => {
         <Box pt={10} maxWidth="768px" fontSize="xl" px={{base: 8, md: 0}}  mx="auto">
           <Flex>
               <Flex alignItems="center" w="20px">
-                <FontAwesomeIcon icon={faDove}/>
               </Flex>
-              <Text mx={0.5} letterSpacing="-1px"  fontWeight="bold" display="flex" alignItems="center">
+              <Text mx={0.5} letterSpacing="-1.2px"  fontWeight="800" display="flex" alignItems="center">
                 <Link href="/" _hover={{ textDecoration: 'none' }}>Rio Miyata</Link>
               </Text>
               <Spacer />
