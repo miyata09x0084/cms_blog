@@ -1,12 +1,12 @@
 :root {
-    --primary-bg: #f0ede7;
-    --primary-text: #231f18;
+    --primary-bg: #e0dbd2;
+    --primary-text: #201b14;
     --primary-button: #F2B33D;
     --primary-button-hover: #d99e1a;
     --secondary-button: #5DBA5A;
     --secondary-button-hover: #419c3e;
-    --secondary-bg: #f8f8f8;
-    --secondary-text: #f8f8f8;
+    --secondary-bg: #f0eee6;
+    --secondary-text: #f5f4ed;
     --dark-bg: #222222;
     --dark-bg-sub: #454545;
     --dark-text: #6FEFDE;
@@ -14,4 +14,4 @@
     --dark-button: #6FEFDE;
     --sun-icon: #dac500;
     --moon-icon: #BB86FC;
-}
+}   
