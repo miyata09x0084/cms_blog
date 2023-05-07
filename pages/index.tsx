@@ -58,7 +58,7 @@ const Home: NextPage<Props> = () => {
                     ),
                     marginLeft: "- 18px"
                 }}>
-                  <WavingImage className="inverted-image" src="/assets/images/computer-icon8.png" alt='computer' boxSize="250px" intensity={0.1} />
+                  <WavingImage className="inverted-image" src="/assets/images/computer-icon6.png" alt='computer' boxSize="250px" intensity={0.1} />
                 </AnimatedBox>
               </Box>
               <Box>
