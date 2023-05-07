@@ -57,7 +57,7 @@ const Home: NextPage<Props> = () => {
                       (x, y, z, tx, ty, tz) => `rotateX(${x}deg) rotateY(${y}deg) rotateZ(${z}deg) translate3d(${tx}px, ${ty}px, ${tz}px)`
                     ),
                 }}>
-                  <WavingImage className="inverted-image" src="/assets/images/computer-icon6.png" alt='computer' boxSize="250px" />
+                  <WavingImage className="inverted-image" src="/assets/images/computer-icon17.png" alt='computer' boxSize="250px" />
                 </AnimatedBox>
               </Box>
               <Box>
