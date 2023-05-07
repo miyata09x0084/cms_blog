@@ -15,9 +15,9 @@ const Header = () => {
 
   const MenuItems = () => (
     <>
-      <Link href="/work" _hover={{ textDecoration: 'none' }} fontWeight="medium">Works</Link>
-      <Link href="/post" _hover={{ textDecoration: 'none' }} fontWeight="medium">Posts</Link>
-      <Link href="https://github.com/miyata09x0084" target="_blank" rel="noopener noreferrer" _hover={{ textDecoration: 'none' }} fontWeight="medium">GitHub</Link>
+      <Link href="/work" _hover={{ textDecoration: 'none' }} >Works</Link>
+      <Link href="/post" _hover={{ textDecoration: 'none' }} >Posts</Link>
+      <Link href="https://github.com/miyata09x0084" target="_blank" rel="noopener noreferrer" _hover={{ textDecoration: 'none' }}>GitHub</Link>
     </>
   );
 
@@ -38,8 +38,8 @@ const Header = () => {
                 <Link href="/" _hover={{ textDecoration: 'none' }}>Rio Miyata</Link>
               </Text>
               <Spacer />
-              <HStack spacing={4} display={{base: "none", md: "flex"}}>
-                <MenuItems />
+              <HStack spacing={4} display={{base: "none", md: "flex"}} fontWeight="500">
+                <MenuItems/>
                   <IconButton
                     className={`theme-toggle-button ${colorMode === "light" ? "moon" : "sun"}`}
                     onClick={toggleColorMode}
@@ -65,7 +65,7 @@ const Header = () => {
               <DrawerContent color={color}>
                 <DrawerCloseButton/>
                 <DrawerHeader borderBottomWidth="1px" bg={bg}>Menu</DrawerHeader>
-                <DrawerBody  fontWeight="medium" bg={bg}>
+                <DrawerBody  fontWeight="500" bg={bg}>
                   <VStack align="start">
                     <MenuItems />
                   </VStack>
