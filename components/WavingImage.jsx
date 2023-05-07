@@ -25,7 +25,7 @@ const WavingImage = ({
 
   // Add subtle rotation effect when the component is mounted
   useEffect(() => {
-    set({ xys: [0, 0, 1.05] });
+    set({ xys: [0, 0, 0.83] });
   }, []);
 
   return (
