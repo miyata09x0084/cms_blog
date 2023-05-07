@@ -5,7 +5,6 @@ import { Box, Text, Image, Flex, Heading, VStack, HStack, Button, useColorModeVa
 import { useSpring, animated, config, to } from 'react-spring';
 import { WavingImage }from '../components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { icon } from '@fortawesome/fontawesome-svg-core/import.macro';
 import { faChevronRight, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -50,7 +49,7 @@ const Home: NextPage<Props> = () => {
       </Head>
       <Box>
         <AnimatedBox style={slideIn} >
-          <Box maxWidth="600px" mx="auto" px={{base: 8, md: 0}}>
+          <Box maxWidth="600px" mx="auto" px={{base: 8, md: 0}} fontSize="17px">
               <Box boxSize='300px' mx="auto" pt="40px" mb="40px">
                 <AnimatedBox style={{
                     transform: to(
@@ -59,33 +58,33 @@ const Home: NextPage<Props> = () => {
                     ),
                     marginLeft: "- 18px"
                 }}>
-                  <WavingImage className="inverted-image" src="/assets/images/computer-icon6.png" alt='computer' boxSize="250px" intensity={0.1} />
+                  <WavingImage className="inverted-image" src="/assets/images/computer-icon8.png" alt='computer' boxSize="250px" intensity={0.1} />
                 </AnimatedBox>
               </Box>
               <Box>
                   <Flex w="100%" justifyContent="center" alignItems="center"  borderRadius="25px" padding=" 20px 30px" fontFamily="Source Code Pro" fontWeight="bold" bg={bgSub}>
                       <Text textAlign="center" mr="9px">
-                        GM, I'm Web Developer / Blockchain Enthusiast
+                        Hello, I'm Software Developer based in Japan.
                       </Text>
-                      <FontAwesomeIcon icon={icon({name: 'hand', style: 'solid'})} width="14px" className="rotate-image"/>
                   </Flex>
               </Box>
               <Flex width="100%" justifyContent="center" mt={12} alignItems="center">
                 <Box mr="2px">
-                  <Text fontSize="4xl" fontWeight="bold" mb="-7px">Rio Miyata</Text>
-                  <Text fontSize="md">Creator / Developer / Designer </Text>
+                  <Text fontSize="4xl" fontWeight="800" mb="-5px">Rio Miyata</Text>
+                  <Text >Developer / Artist / Designer </Text>
                 </Box>
                 <Image
-                  boxSize='68px'
+                  boxSize='69px'
                   borderRadius='full'
                   src='https://avatars.githubusercontent.com/u/59190800?s=400&u=ea17e57c3dc9ef662b1f5ce525b8ebaf777e9713&v=4'
                   alt='Rio Miyata'
+                  ml="2"
                 />
               </Flex>
             <Box marginLeft="8px" mt={12} >
               <VStack align="start" spacing={4}>
-                <Heading as="h2" size="md">
-                  Works
+                <Heading as="h2" size="md" fontWeight="800">
+                  / works
                 </Heading>
                 <Text>
                  Hi there! I'm a full-stack engineer who enjoys giving form to ideas and expressing them through code. Ever since I was a kid, I've loved building things and believe that technology can dramatically change people's lives. Let's dive into my journey so far as a private developer.
@@ -100,10 +99,10 @@ const Home: NextPage<Props> = () => {
                 </Link>
               </Flex>
               <VStack align="start" spacing={4} mb={8}>
-                <Heading as="h2" size="md">
-                  Experience
+                <Heading as="h2" size="md" fontWeight="800">
+                  / experience
                 </Heading>
-                <VStack align="start" spacing={3}>
+                <VStack align="start" spacing={2}>
                   <Flex>
                     <Text mr="9px" fontWeight="medium">2014</Text>
                     <Text>Master of Science in Engineering from Hosei University</Text>
@@ -123,8 +122,8 @@ const Home: NextPage<Props> = () => {
                 </VStack>
               </VStack>
               <VStack align="start" spacing={4}>
-                <Heading as="h2" size="md">
-                  Interests
+                <Heading as="h2" size="md" fontWeight="800">
+                  / interests
                 </Heading>
                 <Text>
                   When I'm not coding, you can find me exploring the outdoors, trying out new recipes, and playing board games with friends. I'm always eager to learn new things and connect with like-minded people.
