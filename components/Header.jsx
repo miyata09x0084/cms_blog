@@ -34,8 +34,6 @@ const Header = () => {
     <header>
         <Box pt={10} maxWidth="768px" fontSize="xl" px={{base: 8, md: 0}}  mx="auto">
           <Flex>
-              <Flex alignItems="center" w="20px">
-              </Flex>
               <Text mx={0.5} letterSpacing="-1.2px"  fontWeight="800" display="flex" alignItems="center">
                 <Link href="/" _hover={{ textDecoration: 'none' }}>Rio Miyata</Link>
               </Text>
