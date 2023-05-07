@@ -7,7 +7,7 @@ const PostCard = ({ post }) => {
 
   return (
     <VStack align="start" pb="20px">
-      <Text borderBottom="1px solid lightgray" pb="6px">
+      <Text borderBottom="1px solid #ababab" pb="6px">
         {moment(post.createdAt).format('MMM DD YYYY')}
       </Text>
       <Heading as="h1" size="md">
