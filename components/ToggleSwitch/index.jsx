@@ -12,7 +12,12 @@ function ToggleSwitch({ toggleTheme }) {
   };
 
   return (
-    <Box className="toggle-container" px={{base: 8, md: 0}} maxW="768px" mx="auto">
+    <Box
+      className="toggle-container"
+      px={{base: 8, md: 0}}
+      maxW="768px"
+      mx="auto"
+    >
       <button
         className={`theme-toggle-button ${isToggled ? "sun" : "moon"}`}
         onClick={onToggle}

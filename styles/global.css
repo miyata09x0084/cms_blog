@@ -39,20 +39,24 @@ body:before {
 }
 
 .theme-toggle-button {
-  background-color: transparent;
   border: none;
   cursor: pointer;
   padding: 0;
+
 }
 
 .theme-toggle-button.sun {
   /* Add any styles specific to the sun state */
   animation: rotateSun 1.0s ease-in-out forwards;
+  background-color: #fff;
+  border-radius: 100%;
 }
 
 .theme-toggle-button.moon {
   /* Add any styles specific to the moon state */
   animation: rotateMoon 0.5s ease-in-out forwards;
+  background-color: #fff;
+  border-radius: 100%;
 }
 
 @keyframes rotateSun {
