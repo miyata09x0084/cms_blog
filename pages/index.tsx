@@ -49,22 +49,21 @@ const Home: NextPage<Props> = () => {
       </Head>
       <Box>
         <AnimatedBox style={slideIn} >
-          <Box maxWidth="600px" mx="auto" px={{base: 8, md: 0}} fontSize="17px">
-              <Box boxSize='300px' mx="auto" pt="40px" mb="40px">
+          <Box maxWidth="600px" mx="auto" px={{base: 8, md: 0}} fontSize="16px">
+              <Box boxSize='300px' mx="auto" pt="30px" mb="20px">
                 <AnimatedBox style={{
                     transform: to(
                       [rotate.x, rotate.y, rotate.z, translate.tx, translate.ty, translate.tz],
                       (x, y, z, tx, ty, tz) => `rotateX(${x}deg) rotateY(${y}deg) rotateZ(${z}deg) translate3d(${tx}px, ${ty}px, ${tz}px)`
                     ),
-                    marginLeft: "- 18px"
                 }}>
-                  <WavingImage className="inverted-image" src="/assets/images/computer-icon6.png" alt='computer' boxSize="250px" intensity={0.1} />
+                  <WavingImage className="inverted-image" src="/assets/images/computer-icon6.png" alt='computer' boxSize="250px" />
                 </AnimatedBox>
               </Box>
               <Box>
-                  <Flex w="100%" justifyContent="center" alignItems="center"  borderRadius="25px" padding=" 20px 30px" fontFamily="Source Code Pro" fontWeight="bold" bg={bgSub}>
+                  <Flex w="100%" justifyContent="center" alignItems="center"  borderRadius="full" padding=" 20px 30px" fontFamily="Source Code Pro" fontWeight="bold" bg={bgSub}>
                       <Text textAlign="center" mr="9px">
-                        Hello, I'm Software Developer based in Japan.
+                        Hello, I'm Full Stack Developer based in Japan.
                       </Text>
                   </Flex>
               </Box>
