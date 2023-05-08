@@ -1,12 +1,11 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHand } from '@fortawesome/free-solid-svg-icons';
 import { Box, Flex, Text, Spacer, HStack, IconButton, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, VStack, useDisclosure, Button } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import { useColorMode, useColorModeValue } from "@chakra-ui/react"
 import SunIcon from './ToggleSwitch/icons/SunIcon';
 import MoonIcon from './ToggleSwitch/icons/MoonIcon';
 import Link from 'next/link';
+import Image from 'next/image';
 
 
 const Header = () => {
@@ -35,6 +34,13 @@ const Header = () => {
         <Box pt={10} maxWidth="768px" fontSize="xl" px={{base: 8, md: 0}}  mx="auto">
           <Flex>
               <Text mx={0.5} letterSpacing="-1.2px"  fontWeight="800" display="flex" alignItems="center">
+                {/* <Image
+                    width={20}
+                    height={20}
+                    borderRadius='full'
+                    src='/assets/images/waving-hand.png'
+                    alt='Rio Miyata'
+                /> */}
                 <Link href="/" _hover={{ textDecoration: 'none' }}>Rio Miyata</Link>
               </Text>
               <Spacer />
