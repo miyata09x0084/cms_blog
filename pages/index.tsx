@@ -101,7 +101,7 @@ const Home: NextPage<Props> = () => {
                 <Heading as="h2" size="md" fontWeight="800">
                   / experience
                 </Heading>
-                <VStack align="start" spacing={2}>
+                <VStack align="start" spacing={3}>
                   <Flex>
                     <Text mr="9px" fontWeight="medium">2014</Text>
                     <Text>Master of Science in Engineering from Hosei University</Text>
