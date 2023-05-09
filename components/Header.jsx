@@ -33,7 +33,7 @@ const Header = () => {
     <header>
         <Box pt={10} maxWidth="768px" fontSize="xl" px={{base: 8, md: 0}}  mx="auto">
           <Flex>
-              <Text mx={0.5} letterSpacing="-1.2px"  fontWeight="800" display="flex" alignItems="center">
+              <Text mx={0.5} letterSpacing="-1.4px"  fontWeight="800" display="flex" alignItems="center">
                 {/* <Image
                     width={20}
                     height={20}
@@ -44,7 +44,7 @@ const Header = () => {
                 <Link href="/" _hover={{ textDecoration: 'none' }}>Rio Miyata</Link>
               </Text>
               <Spacer />
-              <HStack spacing={4} display={{base: "none", md: "flex"}} fontWeight="500">
+              <HStack spacing={5} display={{base: "none", md: "flex"}} fontWeight="500">
                 <MenuItems/>
                   <IconButton
                     className={`theme-toggle-button ${colorMode === "light" ? "moon" : "sun"}`}
