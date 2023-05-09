@@ -88,3 +88,41 @@ body:before {
 a:hover {
   text-decoration: none;
 }
+
+.typing-animation {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  animation: typing 4s steps(33, end) forwards;
+  padding-right: 5px;
+}
+
+.typing-animation::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 2px;
+  background-color: currentColor;
+  animation: blink-caret 1.5s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}

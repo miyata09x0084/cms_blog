@@ -63,7 +63,7 @@ const Home: NextPage<Props> = () => {
               <Box>
                   <Flex w="100%" justifyContent="center" alignItems="center"  borderRadius="full" padding=" 20px 30px" fontFamily="Source Code Pro" fontWeight="bold" bg={bgSub}>
                       <Text textAlign="center" mr="9px">
-                        Hello, I'm Full Stack Developer based in Japan.
+                        <span className='typing-animation'>Hello, I'm Full Stack Developer based in Japan.</span>
                       </Text>
                   </Flex>
               </Box>
@@ -83,7 +83,7 @@ const Home: NextPage<Props> = () => {
             <Box marginLeft="8px" mt={12} >
               <VStack align="start" spacing={4}>
                 <Heading as="h2" size="md" fontWeight="800">
-                  / Works
+                  / Creations
                 </Heading>
                 <Text>
                  Hi there! I'm a full-stack engineer who enjoys giving form to ideas and expressing them through code. Ever since I was a kid, I've loved building things and believe that technology can dramatically change people's lives. Let's dive into my journey so far as a private developer.
