@@ -31,7 +31,7 @@ const Header = () => {
 
   return (
     <header>
-        <Box pt={10} maxWidth="768px" fontSize="xl" px={{base: 8, md: 0}}  mx="auto">
+        <Box pt={8} maxWidth="768px" fontSize="xl" px={{base: 8, md: 0}}  mx="auto">
           <Flex>
               <Text mx={0.5} letterSpacing="-1.4px"  fontWeight="800" display="flex" alignItems="center">
                 {/* <Image
