@@ -83,7 +83,7 @@ const Home: NextPage<Props> = () => {
             <Box marginLeft="8px" mt={12} >
               <VStack align="start" spacing={4}>
                 <Heading as="h2" size="md" fontWeight="800">
-                  / works
+                  / Works
                 </Heading>
                 <Text>
                  Hi there! I'm a full-stack engineer who enjoys giving form to ideas and expressing them through code. Ever since I was a kid, I've loved building things and believe that technology can dramatically change people's lives. Let's dive into my journey so far as a private developer.
@@ -99,12 +99,12 @@ const Home: NextPage<Props> = () => {
               </Flex>
               <VStack align="start" spacing={4} mb={8}>
                 <Heading as="h2" size="md" fontWeight="800">
-                  / experience
+                  / Experience
                 </Heading>
                 <VStack align="start" spacing={3}>
                   <Flex>
                     <Text mr="9px" fontWeight="medium">2014</Text>
-                    <Text>Master of Science in Engineering from Hosei University</Text>
+                    <Text>Master of Science in Mechanical Engineering from Hosei University</Text>
                   </Flex>
                   <Flex>
                     <Text mr="9px" fontWeight="medium">2019</Text>
@@ -112,7 +112,7 @@ const Home: NextPage<Props> = () => {
                   </Flex>
                   <Flex>
                     <Text mr="9px" fontWeight="medium">2020</Text>
-                    <Text>Joined AnkhSystems Inc. as an Web Developer</Text>
+                    <Text>AnkhSystems Inc. as an Web Developer</Text>
                   </Flex>
                   <Flex>
                     <Text mr="9px" fontWeight="medium">2022</Text>
@@ -122,7 +122,7 @@ const Home: NextPage<Props> = () => {
               </VStack>
               <VStack align="start" spacing={4}>
                 <Heading as="h2" size="md" fontWeight="800">
-                  / interests
+                  / Interests
                 </Heading>
                 <Text>
                   When I'm not coding, you can find me exploring the outdoors, trying out new recipes, and playing board games with friends. I'm always eager to learn new things and connect with like-minded people.
