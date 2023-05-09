@@ -10,7 +10,7 @@ const Footer = () => {
 
   return (
     <footer>
-      <Box w="100vw" h="100%" pt={10} pb={16}>
+      <Box w="100vw" h="100%" pt={10} pb={6}>
         <Box maxWidth="768px" fontSize="xl" px={{base: 8, md: 0}}  mx="auto">
             <Flex justifyContent="space-between" alignItems="center">
                 <HStack mx={1} spacing={6} display="flex" alignItems="center">
@@ -27,7 +27,7 @@ const Footer = () => {
                         </Flex>
                     </Link>
                 </HStack>
-                <Link href="https://twitter.com/ryo_miyata_twin?ref_src=twsrc%5Etfw" data-size="large" data-show-screen-name="false" data-show-count="false">
+                <Link href="https://twitter.com/riomiyatta?ref_src=twsrc%5Etfw" data-size="large" data-show-screen-name="false" data-show-count="false">
                 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                     <Flex
                         alignItems="center"
@@ -41,6 +41,10 @@ const Footer = () => {
                 </Link>
             </Flex>
         </Box>
+      </Box>
+      <Box maxWidth="768px" fontSize="sm" px={{base: 8, md: 0}} mx="auto" mb={10} textAlign="center">
+        <Text>Built and designed by Rio Miyata. </Text>
+        <Text>All rights reserved. ©</Text>
       </Box>
     </footer>
   )
