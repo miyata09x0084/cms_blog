@@ -5,7 +5,7 @@ import { Box, Text, Image, Flex, Heading, VStack, HStack, Button, useColorModeVa
 import { useSpring, animated, config, to } from 'react-spring';
 import { WavingImage }from '../components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronRight, faAngleRight, faPerson } from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight, faPerson } from '@fortawesome/free-solid-svg-icons';
 
 
 interface Props {
@@ -107,7 +107,7 @@ const Home: NextPage<Props> = () => {
               <VStack align="start" spacing={4}>
                 <Heading as="h2" size="md" fontWeight="800">
                   <Flex alignItems="center">
-                    <Text marginRight="3px">/ About</Text>
+                    <Text marginRight="4px">/ About</Text>
                     <FontAwesomeIcon icon={faPerson} fontSize="22px"/>
                   </Flex>
                 </Heading>
@@ -126,7 +126,7 @@ const Home: NextPage<Props> = () => {
                 <Link href="/work">
                   <Button backgroundColor="var(--secondary-button)" color="var(--secondary-text)" px={8} _hover={{bg: "var(--secondary-button-hover)"}}>
                     <Text mr={2}>Creations</Text>
-                    <FontAwesomeIcon icon={faAngleRight} width="7px" height="7px"/>
+                    <FontAwesomeIcon icon={faChevronRight} width="7px" height="7px"/>
                   </Button>
                 </Link>
               </Flex>
@@ -142,7 +142,7 @@ const Home: NextPage<Props> = () => {
                 <Link href="/post">
                   <Button backgroundColor="var(--primary-button)" color="var(--secondary-text)" px={8} _hover={{bg: "var(--primary-button-hover)"}}>
                     <Text mr={2}>Posts</Text>
-                    <FontAwesomeIcon icon={faAngleRight} width="7px" height="7px"/>
+                    <FontAwesomeIcon icon={faChevronRight} width="7px" height="7px"/>
                   </Button>
                 </Link>
               </Flex>
