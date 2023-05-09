@@ -16,7 +16,7 @@ const AnimatedBox = animated(Box);
 
 const Home: NextPage<Props> = () => {
   const bgSub = useColorModeValue("var(--secondary-bg)", "var(--dark-bg-sub)");
-  const textSub = useColorModeValue("var(--third-text)", "var(--dark-text-sub)");
+  const color = useColorModeValue('var(--primary-text)', 'var(--dark-text)');
 
   const fadeIn = useSpring({
     from: { opacity: 0 },
@@ -104,7 +104,7 @@ const Home: NextPage<Props> = () => {
                   </Flex>
                 </VStack>
               </VStack>
-              <VStack align="start" spacing={4}>
+              <VStack align="start" spacing={4} mb={8}>
                 <Heading as="h2" size="md" fontWeight="800">
                   <Flex alignItems="center">
                     <Text marginRight="4px">/ About</Text>
@@ -115,14 +115,23 @@ const Home: NextPage<Props> = () => {
                  Hi there! I'm a full-stack engineer who enjoys giving form to ideas and expressing them through code. Ever since I was a kid, I've loved building things and believe that technology can dramatically change people's lives. Let's dive into my journey so far as a private developer.
                 </Text>
               </VStack>
-              <Flex justifyContent="center" mt={4} mb={8}>
-              </Flex>
-              <VStack align="start" spacing={4}>
+              <VStack align="start" spacing={4} mb={6}>
                 <Heading as="h2" size="md" fontWeight="800">
                   / Creations
                 </Heading>
+                <Box
+                  color={color}
+                >
+                  <Flex justifyContent="space-between" width="100%" height="100%">
+                    <Box width="45%">
+                      <Link href="https://merkletree-dapp.web.app" target="_blank" rel="noopener noreferrer">
+                        <Image src="/assets/images/nft-mint-dapp.png" alt="Image 1" borderRadius="10px"/>
+                      </Link>
+                    </Box>
+                  </Flex>
+                </Box>
               </VStack>
-              <Flex justifyContent="center" mt={4} mb={8}>
+              <Flex justifyContent="center" mb={8}>
                 <Link href="/work">
                   <Button backgroundColor="var(--secondary-button)" color="var(--secondary-text)" px={8} _hover={{bg: "var(--secondary-button-hover)"}}>
                     <Text mr={2}>Creations</Text>
