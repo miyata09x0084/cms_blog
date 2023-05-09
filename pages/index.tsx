@@ -5,7 +5,7 @@ import { Box, Text, Image, Flex, Heading, VStack, HStack, Button, useColorModeVa
 import { useSpring, animated, config, to } from 'react-spring';
 import { WavingImage }from '../components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronRight, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight, faAngleRight, faPerson } from '@fortawesome/free-solid-svg-icons';
 
 
 interface Props {
@@ -81,22 +81,6 @@ const Home: NextPage<Props> = () => {
                 />
               </Flex>
             <Box marginLeft="8px" mt={12} >
-              <VStack align="start" spacing={4}>
-                <Heading as="h2" size="md" fontWeight="800">
-                  / Creations
-                </Heading>
-                <Text>
-                 Hi there! I'm a full-stack engineer who enjoys giving form to ideas and expressing them through code. Ever since I was a kid, I've loved building things and believe that technology can dramatically change people's lives. Let's dive into my journey so far as a private developer.
-                </Text>
-              </VStack>
-              <Flex justifyContent="center" mt={4} mb={8}>
-                <Link href="/work">
-                  <Button backgroundColor="var(--secondary-button)" color="var(--secondary-text)" px={8} _hover={{bg: "var(--secondary-button-hover)"}}>
-                    <Text mr={2}>Creations</Text>
-                    <FontAwesomeIcon icon={faAngleRight} width="7px" height="7px"/>
-                  </Button>
-                </Link>
-              </Flex>
               <VStack align="start" spacing={4} mb={8}>
                 <Heading as="h2" size="md" fontWeight="800">
                   / Experience
@@ -122,7 +106,36 @@ const Home: NextPage<Props> = () => {
               </VStack>
               <VStack align="start" spacing={4}>
                 <Heading as="h2" size="md" fontWeight="800">
-                  / Interests
+                  <Flex alignItems="center">
+                    <Text marginRight="3px">/ About</Text>
+                    <FontAwesomeIcon icon={faPerson} fontSize="22px"/>
+                  </Flex>
+                </Heading>
+                <Text>
+                 Hi there! I'm a full-stack engineer who enjoys giving form to ideas and expressing them through code. Ever since I was a kid, I've loved building things and believe that technology can dramatically change people's lives. Let's dive into my journey so far as a private developer.
+                </Text>
+              </VStack>
+              <Flex justifyContent="center" mt={4} mb={8}>
+              </Flex>
+              <VStack align="start" spacing={4}>
+                <Heading as="h2" size="md" fontWeight="800">
+                  / Creations
+                </Heading>
+                <Text>
+                 Hi there! I'm a full-stack engineer who enjoys giving form to ideas and expressing them through code. Ever since I was a kid, I've loved building things and believe that technology can dramatically change people's lives. Let's dive into my journey so far as a private developer.
+                </Text>
+              </VStack>
+              <Flex justifyContent="center" mt={4} mb={8}>
+                <Link href="/work">
+                  <Button backgroundColor="var(--secondary-button)" color="var(--secondary-text)" px={8} _hover={{bg: "var(--secondary-button-hover)"}}>
+                    <Text mr={2}>Creations</Text>
+                    <FontAwesomeIcon icon={faAngleRight} width="7px" height="7px"/>
+                  </Button>
+                </Link>
+              </Flex>
+              <VStack align="start" spacing={4}>
+                <Heading as="h2" size="md" fontWeight="800">
+                  / Posts
                 </Heading>
                 <Text>
                   When I'm not coding, you can find me exploring the outdoors, trying out new recipes, and playing board games with friends. I'm always eager to learn new things and connect with like-minded people.
