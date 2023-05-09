@@ -92,7 +92,7 @@ const Home: NextPage<Props> = () => {
               <Flex justifyContent="center" mt={4} mb={8}>
                 <Link href="/work">
                   <Button backgroundColor="var(--secondary-button)" color="var(--secondary-text)" px={8} _hover={{bg: "var(--secondary-button-hover)"}}>
-                    <Text mr={2}>Works</Text>
+                    <Text mr={2}>Creations</Text>
                     <FontAwesomeIcon icon={faAngleRight} width="7px" height="7px"/>
                   </Button>
                 </Link>
