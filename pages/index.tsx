@@ -135,7 +135,6 @@ const Home: NextPage<Props> = () => {
                   / Posts
                 </Heading>
                 <Text>
-                  When I'm not coding, you can find me exploring the outdoors, trying out new recipes, and playing board games with friends. I'm always eager to learn new things and connect with like-minded people.
                 </Text>
               </VStack>
               <Flex justifyContent="center" mt={4} mb={10}>
