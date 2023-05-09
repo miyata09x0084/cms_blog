@@ -121,9 +121,6 @@ const Home: NextPage<Props> = () => {
                 <Heading as="h2" size="md" fontWeight="800">
                   / Creations
                 </Heading>
-                <Text>
-                 Hi there! I'm a full-stack engineer who enjoys giving form to ideas and expressing them through code. Ever since I was a kid, I've loved building things and believe that technology can dramatically change people's lives. Let's dive into my journey so far as a private developer.
-                </Text>
               </VStack>
               <Flex justifyContent="center" mt={4} mb={8}>
                 <Link href="/work">
