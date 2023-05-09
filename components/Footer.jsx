@@ -10,7 +10,7 @@ const Footer = () => {
 
   return (
     <footer>
-      <Box w="100vw" h="100%" pt={10} pb={6}>
+      <Box w="100vw" h="100%" pt={10} pb={14}>
         <Box maxWidth="768px" fontSize="xl" px={{base: 8, md: 0}}  mx="auto">
             <Flex justifyContent="space-between" alignItems="center">
                 <HStack mx={1} spacing={6} display="flex" alignItems="center">
@@ -42,7 +42,7 @@ const Footer = () => {
             </Flex>
         </Box>
       </Box>
-      <Box maxWidth="768px" fontSize="sm" px={{base: 8, md: 0}} mx="auto" mb={10} textAlign="center">
+      <Box maxWidth="768px" fontSize="sm" px={{base: 8, md: 0}} mx="auto" mb={6} textAlign="center">
         <Text>Built and designed by Rio Miyata. </Text>
         <Text>All rights reserved. ©</Text>
       </Box>
