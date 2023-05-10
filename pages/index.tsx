@@ -126,7 +126,7 @@ const Home: NextPage<Props> = () => {
                 <Box color={color}>
                   <Flex justifyContent="space-between" width="100%" height="100%">
                     <Box width="45%">
-                      <Link href="https://merkletree-dapp.web.app" _hover={{ textDecoration: 'none' }} target="_blank" rel="noopener noreferrer">
+                      <Link href="https://merkletree-dapp.web.app" target="_blank" rel="noopener noreferrer">
                         <Image src="/assets/images/nft-mint-dapp.png" alt="Image 1" borderRadius="lg" boxShadow="1px 2px 28px rgb(35, 31, 24, 0.05)"/>
                       </Link>
                     </Box>
