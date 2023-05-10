@@ -81,41 +81,45 @@ const Home: NextPage<Props> = () => {
                 />
               </Flex>
             <Box marginLeft="8px" mt={12} >
-              <VStack align="start" spacing={4} mb={8}>
+              <VStack align="start" spacing={8} mb={12}>
                 <Heading as="h2" fontSize="2xl" fontWeight="800">
                   Experience
                 </Heading>
-                <VStack align="start" spacing={3}>
-                  <Flex>
-                    <Text mr="9px" fontWeight="medium">2014</Text>
-                    <Text>Master of Science in Mechanical Engineering from Hosei University</Text>
-                  </Flex>
-                  <Flex>
-                    <Text mr="9px" fontWeight="medium">2019</Text>
-                    <Text>Server Side Engineer Course at Tech Camp</Text>
-                  </Flex>
-                  <Flex>
-                    <Text mr="9px" fontWeight="medium">2020</Text>
-                    <Text>AnkhSystems Inc. as an Web Developer</Text>
-                  </Flex>
-                  <Flex>
-                    <Text mr="9px" fontWeight="medium">2022</Text>
-                    <Text>Freelance</Text>
-                  </Flex>
-                </VStack>
+                <Box borderLeft="0.5px solid #b9afa1" paddingLeft={8}>
+                  <VStack align="start" spacing={3}>
+                    <Flex>
+                      <Text mr="9px" fontWeight="medium">2014</Text>
+                      <Text>Master of Science in Mechanical Engineering from Hosei University</Text>
+                    </Flex>
+                    <Flex>
+                      <Text mr="9px" fontWeight="medium">2019</Text>
+                      <Text>Server Side Engineer Course at Tech Camp</Text>
+                    </Flex>
+                    <Flex>
+                      <Text mr="9px" fontWeight="medium">2020</Text>
+                      <Text>AnkhSystems Inc. as an Web Developer</Text>
+                    </Flex>
+                    <Flex>
+                      <Text mr="9px" fontWeight="medium">2022</Text>
+                      <Text>Freelance</Text>
+                    </Flex>
+                  </VStack>
+                </Box>
               </VStack>
-              <VStack align="start" spacing={4} mb={8}>
+              <VStack align="start" spacing={8} mb={12}>
                 <Heading as="h2" fontSize="2xl" fontWeight="800">
                   <Flex alignItems="center">
                     <Text marginRight="2px">About</Text>
                     <FontAwesomeIcon icon={faFaceLaugh} fontSize="21px"/>
                   </Flex>
                 </Heading>
-                <Text>
-                 Hi there! I'm a full-stack engineer who enjoys giving form to ideas and expressing them through code. Ever since I was a kid, I've loved building things and believe that technology can dramatically change people's lives. Let's dive into my journey so far as a private developer.
-                </Text>
+                <Box borderLeft="0.5px solid #b9afa1" paddingLeft={8}>
+                  <Text>
+                   Hi there! I'm a full-stack engineer who enjoys giving form to ideas and expressing them through code. Ever since I was a kid, I've loved building things and believe that technology can dramatically change people's lives. Let's dive into my journey so far as a private developer.
+                  </Text>
+                </Box>
               </VStack>
-              <VStack align="start" spacing={4} mb={6}>
+              <VStack align="start" spacing={8} mb={8}>
                 <Heading as="h2" fontSize="2xl" fontWeight="800">
                   Creations
                 </Heading>
@@ -129,7 +133,7 @@ const Home: NextPage<Props> = () => {
                   </Flex>
                 </Box>
               </VStack>
-              <Flex justifyContent="center" mb={8}>
+              <Flex justifyContent="center" mb={12}>
                 <Link href="/work">
                   <Button backgroundColor="var(--secondary-button)" color="var(--secondary-text)" px={4} _hover={{bg: "var(--secondary-button-hover)"}}>
                     <Text mr={2}>Creations</Text>
@@ -137,14 +141,14 @@ const Home: NextPage<Props> = () => {
                   </Button>
                 </Link>
               </Flex>
-              <VStack align="start" spacing={4}>
+              <VStack align="start" spacing={8}>
                 <Heading as="h2" fontSize="2xl" fontWeight="800">
                   Posts
                 </Heading>
                 <Text>
                 </Text>
               </VStack>
-              <Flex justifyContent="center" mt={4} mb={10}>
+              <Flex justifyContent="center" mb={12}>
                 <Link href="/post">
                   <Button backgroundColor="var(--primary-button)" color="var(--secondary-text)" px={4} _hover={{bg: "var(--primary-button-hover)"}}>
                     <Text mr={2}>Posts</Text>
