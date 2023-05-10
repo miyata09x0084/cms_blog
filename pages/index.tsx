@@ -49,7 +49,7 @@ const Home: NextPage<Props> = () => {
       </Head>
       <Box>
         <AnimatedBox style={slideIn} >
-          <Box maxWidth="600px" mx="auto" px={{base: 8, md: 0}} fontSize="16px">
+          <Box maxWidth="600px" mx="auto" px={{base: 8, md: 0}} fontSize="17px" letterSpacing="0.03em" lineHeight="1.5">
               <Box boxSize='300px' mx="auto" pt={10} mb="20px">
                 <AnimatedBox style={{
                     transform: to(
@@ -69,8 +69,8 @@ const Home: NextPage<Props> = () => {
               </Box>
               <Flex width="100%" justifyContent="center" mt={12} alignItems="center">
                 <Box mr="2px">
-                  <Text fontSize="4xl" fontWeight="800" mb="-5px" >Rio Miyata</Text>
-                  <Text fontWeight="500" >Artist | Developer | Designer </Text>
+                  <Text fontSize="4xl" fontWeight="800" mb="-6px" >Rio Miyata</Text>
+                  <Text fontSize="lg" fontWeight="500" >Artist - Developer - Designer </Text>
                 </Box>
                 <Image
                   boxSize='69px'
@@ -82,8 +82,8 @@ const Home: NextPage<Props> = () => {
               </Flex>
             <Box marginLeft="8px" mt={12} >
               <VStack align="start" spacing={4} mb={8}>
-                <Heading as="h2" size="md" fontWeight="800">
-                  / Experience
+                <Heading as="h2" fontSize="2xl" fontWeight="800">
+                  Experience
                 </Heading>
                 <VStack align="start" spacing={3}>
                   <Flex>
@@ -105,9 +105,9 @@ const Home: NextPage<Props> = () => {
                 </VStack>
               </VStack>
               <VStack align="start" spacing={4} mb={8}>
-                <Heading as="h2" size="md" fontWeight="800">
+                <Heading as="h2" fontSize="2xl" fontWeight="800">
                   <Flex alignItems="center">
-                    <Text marginRight="4px">/ About</Text>
+                    <Text marginRight="4px">About</Text>
                     <FontAwesomeIcon icon={faPerson} fontSize="22px"/>
                   </Flex>
                 </Heading>
@@ -116,16 +116,14 @@ const Home: NextPage<Props> = () => {
                 </Text>
               </VStack>
               <VStack align="start" spacing={4} mb={6}>
-                <Heading as="h2" size="md" fontWeight="800">
-                  / Creations
+                <Heading as="h2" fontSize="2xl" fontWeight="800">
+                  Creations
                 </Heading>
-                <Box
-                  color={color}
-                >
+                <Box color={color}>
                   <Flex justifyContent="space-between" width="100%" height="100%">
                     <Box width="45%">
-                      <Link href="https://merkletree-dapp.web.app" target="_blank" rel="noopener noreferrer">
-                        <Image src="/assets/images/nft-mint-dapp.png" alt="Image 1" borderRadius="10px"/>
+                      <Link href="https://merkletree-dapp.web.app" _hover={{ textDecoration: 'none' }} target="_blank" rel="noopener noreferrer">
+                        <Image src="/assets/images/nft-mint-dapp.png" alt="Image 1" borderRadius="lg" boxShadow="1px 2px 28px rgb(35, 31, 24, 0.05)"/>
                       </Link>
                     </Box>
                   </Flex>
@@ -140,8 +138,8 @@ const Home: NextPage<Props> = () => {
                 </Link>
               </Flex>
               <VStack align="start" spacing={4}>
-                <Heading as="h2" size="md" fontWeight="800">
-                  / Posts
+                <Heading as="h2" fontSize="2xl" fontWeight="800">
+                  Posts
                 </Heading>
                 <Text>
                 </Text>
