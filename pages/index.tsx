@@ -5,7 +5,7 @@ import { Box, Text, Image, Flex, Heading, VStack, HStack, Button, useColorModeVa
 import { useSpring, animated, config, to } from 'react-spring';
 import { WavingImage }from '../components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronRight, faPerson } from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight, faPerson, faFaceLaugh } from '@fortawesome/free-solid-svg-icons';
 
 
 interface Props {
@@ -70,7 +70,7 @@ const Home: NextPage<Props> = () => {
               <Flex width="100%" justifyContent="center" mt={12} alignItems="center">
                 <Box mr="2px">
                   <Text fontSize="4xl" fontWeight="800" mb="-6px" >Rio Miyata</Text>
-                  <Text fontSize="lg" fontWeight="500" >Artist - Developer - Designer </Text>
+                  <Text fontSize="lg" fontWeight="500" >Artist-Developer-Designer </Text>
                 </Box>
                 <Image
                   boxSize='69px'
@@ -107,8 +107,8 @@ const Home: NextPage<Props> = () => {
               <VStack align="start" spacing={4} mb={8}>
                 <Heading as="h2" fontSize="2xl" fontWeight="800">
                   <Flex alignItems="center">
-                    <Text marginRight="4px">About</Text>
-                    <FontAwesomeIcon icon={faPerson} fontSize="22px"/>
+                    <Text marginRight="2px">About</Text>
+                    <FontAwesomeIcon icon={faFaceLaugh} fontSize="21px"/>
                   </Flex>
                 </Heading>
                 <Text>
