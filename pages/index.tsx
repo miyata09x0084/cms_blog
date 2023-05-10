@@ -69,8 +69,8 @@ const Home: NextPage<Props> = () => {
               </Box>
               <Flex width="100%" justifyContent="center" mt={12} alignItems="center">
                 <Box mr="2px">
-                  <Text fontSize="4xl" fontWeight="800" mb="-5px">Rio Miyata</Text>
-                  <Text fontWeight="500">Artist | Developer | Designer </Text>
+                  <Text fontSize="4xl" fontWeight="800" mb="-5px" >Rio Miyata</Text>
+                  <Text fontWeight="500" >Artist | Developer | Designer </Text>
                 </Box>
                 <Image
                   boxSize='69px'
