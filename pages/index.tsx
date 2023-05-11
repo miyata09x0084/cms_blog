@@ -1,11 +1,13 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
 import Head from 'next/head';
+import { getPosts } from '../services';
+import { Categories, PostCard } from '../components';
 import { Box, Text, Image, Flex, Heading, VStack, HStack, Button, useColorModeValue } from '@chakra-ui/react';
 import { useSpring, animated, config, to } from 'react-spring';
 import { WavingImage }from '../components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronRight, faPerson, faFaceLaugh } from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight, faFaceLaugh } from '@fortawesome/free-solid-svg-icons';
 
 
 interface Props {
@@ -14,7 +16,7 @@ interface Props {
 
 const AnimatedBox = animated(Box);
 
-const Home: NextPage<Props> = () => {
+const Home: NextPage<Props> = ({posts}) => {
   const bgSub = useColorModeValue("var(--secondary-bg)", "var(--dark-bg-sub)");
   const color = useColorModeValue('var(--primary-text)', 'var(--dark-text)');
 
@@ -75,7 +77,7 @@ const Home: NextPage<Props> = () => {
                 <Image
                   boxSize='69px'
                   borderRadius='full'
-                  src='https://user-images.githubusercontent.com/59190800/236665773-927089b7-c1cd-476a-b477-3a5626bde78f.png'
+                  src='/assets/images/rio-miyata.jpeg'
                   alt='Rio Miyata'
                   ml="2"
                 />
@@ -145,8 +147,9 @@ const Home: NextPage<Props> = () => {
                 <Heading as="h2" fontSize="2xl" fontWeight="800">
                   Posts
                 </Heading>
-                <Text>
-                </Text>
+                  <VStack align="start" mx="auto" maxW="600px" px={{ base: "8", md: "0" }} mb="8" className="M PLUS Rounded 1c">
+                      {posts.map((post, index) => (<PostCard post={post.node} key={index} />))}
+                  </VStack>
               </VStack>
               <Flex justifyContent="center" mb={12}>
                 <Link href="/post">
@@ -162,6 +165,14 @@ const Home: NextPage<Props> = () => {
       </Box>
     </Box>
   )
+}
+
+export async function getStaticProps() {
+  const posts = (await getPosts()) || [];
+
+  return {
+    props: { posts }
+  }
 }
 
 export default Home;
