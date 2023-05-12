@@ -59,19 +59,19 @@ const Home: NextPage<Props> = ({posts}) => {
                       (x, y, z, tx, ty, tz) => `rotateX(${x}deg) rotateY(${y}deg) rotateZ(${z}deg) translate3d(${tx}px, ${ty}px, ${tz}px)`
                     ),
                 }}>
-                  <WavingImage className="inverted-image" src="/assets/images/computer-icon19.png" alt='computer' boxSize="300px" />
+                  <WavingImage className="inverted-image" src="/assets/images/computer-icon19.png" alt='computer' boxSize="310px" />
                 </AnimatedBox>
               </Box>
               <Box>
-                  <Flex w="100%" justifyContent="center" alignItems="center"  borderRadius="32px" pt={5} pb={4} fontFamily="Source Code Pro" fontWeight="bold" bg={bgSub} fontWeight="600">
+                  <Flex w="100%" justifyContent="center" alignItems="center"  borderRadius="32px" pt={4} pb={3} fontFamily="Source Code Pro" fontWeight="bold" bg={bgSub} fontWeight="600">
                       <Text textAlign="center">
                         <span className='typing-animation'>Hi, I'm Full Stack Developer based in Japan :D</span>
                       </Text>
                   </Flex>
               </Box>
               <Flex width="100%" justifyContent="center" mt={14} alignItems="center">
-                <Box mr="2px">
-                  <Text fontSize="4xl" fontWeight="800" mb="-6px" >Rio Miyata</Text>
+                <Box mr="1px">
+                  <Text fontSize="4xl" fontWeight="800" mb="-7px" >Rio Miyata</Text>
                   <Text fontSize="lg" fontWeight="500" >Artist-Developer-Designer </Text>
                 </Box>
                 <Image
@@ -110,7 +110,7 @@ const Home: NextPage<Props> = ({posts}) => {
                   <Heading as="h2" fontSize="2xl" fontWeight="800" borderBottom="2px solid #e5e1dc">
                     <Flex alignItems="center">
                       <Text marginRight="2px">About</Text>
-                      <FontAwesomeIcon icon={faFaceLaugh} fontSize="21px"/>
+                      <FontAwesomeIcon icon={faFaceLaugh} fontSize="20px"/>
                     </Flex>
                   </Heading>
                 <Text>
