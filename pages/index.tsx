@@ -63,7 +63,7 @@ const Home: NextPage<Props> = ({posts}) => {
                 </AnimatedBox>
               </Box>
               <Box>
-                  <Flex w="100%" justifyContent="center" alignItems="center"  borderRadius="32px" pt={4} pb={3} fontFamily="Source Code Pro" fontWeight="bold" bg={bgSub} fontWeight="600">
+                  <Flex w="100%" justifyContent="center" alignItems="center"  borderRadius="32px" pt={4} pb={3} fontFamily="Source Code Pro" bg={bgSub} fontWeight="600">
                       <Text textAlign="center">
                         <span className='typing-animation'>Hi, I'm Full Stack Developer based in Japan :D</span>
                       </Text>
