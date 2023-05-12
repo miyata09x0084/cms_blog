@@ -123,7 +123,7 @@ const Home: NextPage<Props> = ({posts}) => {
                 </Heading>
                 <Box color={color}>
                   <Flex justifyContent="space-between" width="100%" height="100%">
-                    <Box width="45%">
+                    <Box w="280px">
                       <Link href="https://merkletree-dapp.web.app" target="_blank" rel="noopener noreferrer">
                         <Image src="/assets/images/nft-mint-dapp.png" alt="Image 1" borderRadius="15px" boxShadow="1px 2px 28px rgb(35, 31, 24, 0.05)"/>
                       </Link>

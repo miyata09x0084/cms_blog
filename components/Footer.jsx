@@ -3,7 +3,6 @@ import { Box, Flex, Text, HStack, Image } from '@chakra-ui/react'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons'
-import { TwitterFollowButton } from 'react-twitter-embed'
 
 const Footer = () => {
   const [isIconHover, setIsIconHover] = useState(false)
@@ -42,7 +41,7 @@ const Footer = () => {
             </Flex>
         </Box>
       </Box>
-      <Box maxWidth="768px" fontSize="sm" px={{base: 8, md: 0}} mx="auto" mb={6} textAlign="center">
+      <Box fontSize="sm" px={{base: 4, md: 0}} mx="auto" mb={6} textAlign="center">
         <Text>Built and designed by Rio Miyata. </Text>
         <Text>All rights reserved. ©</Text>
       </Box>
