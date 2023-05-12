@@ -52,14 +52,14 @@ const Home: NextPage<Props> = ({posts}) => {
       <Box>
         <AnimatedBox style={slideIn} >
           <Box maxWidth="590px" mx="auto" px={{base: 8, md: 0}} fontSize="17px" letterSpacing="0.03em" lineHeight="1.5">
-              <Box boxSize='240px' mx="auto" pt={4} mb={24}>
+              <Box boxSize='260px' mx="auto" pt={8} mb={24}>
                 <AnimatedBox style={{
                     transform: to(
                       [rotate.x, rotate.y, rotate.z, translate.tx, translate.ty, translate.tz],
                       (x, y, z, tx, ty, tz) => `rotateX(${x}deg) rotateY(${y}deg) rotateZ(${z}deg) translate3d(${tx}px, ${ty}px, ${tz}px)`
                     ),
                 }}>
-                  <WavingImage className="inverted-image" src="/assets/images/computer-icon19.png" alt='computer' boxSize="310px" />
+                  <WavingImage className="inverted-image" src="/assets/images/computer-icon19.png" alt='computer' boxSize="300px" />
                 </AnimatedBox>
               </Box>
               <Box>
