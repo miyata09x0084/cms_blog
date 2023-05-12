@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import { getPosts } from '../services';
 import { Categories, PostCard } from '../components';
-import { Box, Text, Image, Flex, Heading, VStack, HStack, Button, useColorModeValue } from '@chakra-ui/react';
+import { Box, Text, Image, Flex, Heading, VStack, HStack, Button, useColorModeValue, Highlight } from '@chakra-ui/react';
 import { useSpring, animated, config, to } from 'react-spring';
 import { WavingImage }from '../components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -51,25 +51,25 @@ const Home: NextPage<Props> = ({posts}) => {
       </Head>
       <Box>
         <AnimatedBox style={slideIn} >
-          <Box maxWidth="600px" mx="auto" px={{base: 8, md: 0}} fontSize="17px" letterSpacing="0.03em" lineHeight="1.5">
-              <Box boxSize='300px' mx="auto" pt={10} mb="20px">
+          <Box maxWidth="590px" mx="auto" px={{base: 8, md: 0}} fontSize="17px" letterSpacing="0.03em" lineHeight="1.5">
+              <Box boxSize='276px' mx="auto" pt={4} mb={16}>
                 <AnimatedBox style={{
                     transform: to(
                       [rotate.x, rotate.y, rotate.z, translate.tx, translate.ty, translate.tz],
                       (x, y, z, tx, ty, tz) => `rotateX(${x}deg) rotateY(${y}deg) rotateZ(${z}deg) translate3d(${tx}px, ${ty}px, ${tz}px)`
                     ),
                 }}>
-                  <WavingImage className="inverted-image" src="/assets/images/computer-icon19.png" alt='computer' boxSize="250px" />
+                  <WavingImage className="inverted-image" src="/assets/images/computer-icon19.png" alt='computer' boxSize="300px" />
                 </AnimatedBox>
               </Box>
               <Box>
-                  <Flex w="100%" justifyContent="center" alignItems="center"  borderRadius="full" padding=" 20px 30px" fontFamily="Source Code Pro" fontWeight="bold" bg={bgSub}>
-                      <Text textAlign="center" mr="9px">
+                  <Flex w="100%" justifyContent="center" alignItems="center"  borderRadius="32px" pt={5} pb={4} fontFamily="Source Code Pro" fontWeight="bold" bg={bgSub} fontWeight="600">
+                      <Text textAlign="center">
                         <span className='typing-animation'>Hi, I'm Full Stack Developer based in Japan :D</span>
                       </Text>
                   </Flex>
               </Box>
-              <Flex width="100%" justifyContent="center" mt={12} alignItems="center">
+              <Flex width="100%" justifyContent="center" mt={14} alignItems="center">
                 <Box mr="2px">
                   <Text fontSize="4xl" fontWeight="800" mb="-6px" >Rio Miyata</Text>
                   <Text fontSize="lg" fontWeight="500" >Artist-Developer-Designer </Text>
@@ -82,54 +82,50 @@ const Home: NextPage<Props> = ({posts}) => {
                   ml="2"
                 />
               </Flex>
-            <Box marginLeft="8px" mt={12} >
+            <Box marginLeft="8px" mt={14} >
               <VStack align="start" spacing={8} mb={12}>
-                <Heading as="h2" fontSize="2xl" fontWeight="800">
+                <Heading as="h2" fontSize="2xl" fontWeight="800" borderBottom="2px solid #e5e1dc">
                   Experience
                 </Heading>
-                <Box borderLeft="0.5px solid #b9afa1" paddingLeft={8}>
-                  <VStack align="start" spacing={3}>
-                    <Flex>
-                      <Text mr="9px" fontWeight="medium">2014</Text>
-                      <Text>Master of Science in Mechanical Engineering from Hosei University</Text>
-                    </Flex>
-                    <Flex>
-                      <Text mr="9px" fontWeight="medium">2019</Text>
-                      <Text>Server Side Engineer Course at Tech Camp</Text>
-                    </Flex>
-                    <Flex>
-                      <Text mr="9px" fontWeight="medium">2020</Text>
-                      <Text>AnkhSystems Inc. as an Web Developer</Text>
-                    </Flex>
-                    <Flex>
-                      <Text mr="9px" fontWeight="medium">2022</Text>
-                      <Text>Freelance</Text>
-                    </Flex>
-                  </VStack>
-                </Box>
+                <VStack align="start" spacing={1.5}>
+                  <Flex>
+                    <Text mr="9px" fontWeight="medium">2014</Text>
+                    <Text>Master of Science in Mechanical Engineering from Hosei University</Text>
+                  </Flex>
+                  <Flex>
+                    <Text mr="9px" fontWeight="medium">2019</Text>
+                    <Text>Server Side Engineer Course at Tech Camp</Text>
+                  </Flex>
+                  <Flex>
+                    <Text mr="9px" fontWeight="medium">2020</Text>
+                    <Text>AnkhSystems Inc. as an Web Developer</Text>
+                  </Flex>
+                  <Flex>
+                    <Text mr="9px" fontWeight="medium">2022</Text>
+                    <Text>Freelance</Text>
+                  </Flex>
+                </VStack>
               </VStack>
               <VStack align="start" spacing={8} mb={12}>
-                <Heading as="h2" fontSize="2xl" fontWeight="800">
-                  <Flex alignItems="center">
-                    <Text marginRight="2px">About</Text>
-                    <FontAwesomeIcon icon={faFaceLaugh} fontSize="21px"/>
-                  </Flex>
-                </Heading>
-                <Box borderLeft="0.5px solid #b9afa1" paddingLeft={8}>
-                  <Text>
-                   Hi there! I'm a full-stack engineer who enjoys giving form to ideas and expressing them through code. Ever since I was a kid, I've loved building things and believe that technology can dramatically change people's lives. Let's dive into my journey so far as a private developer.
-                  </Text>
-                </Box>
+                  <Heading as="h2" fontSize="2xl" fontWeight="800" borderBottom="2px solid #e5e1dc">
+                    <Flex alignItems="center">
+                      <Text marginRight="2px">About</Text>
+                      <FontAwesomeIcon icon={faFaceLaugh} fontSize="21px"/>
+                    </Flex>
+                  </Heading>
+                <Text>
+                  Hi there! I'm a full-stack engineer who enjoys giving form to ideas and expressing them through code. Ever since I was a kid, I've loved building things and believe that technology can dramatically change people's lives. Let's dive into my journey so far as a private developer.
+                </Text>
               </VStack>
               <VStack align="start" spacing={8} mb={8}>
-                <Heading as="h2" fontSize="2xl" fontWeight="800">
+                <Heading as="h2" fontSize="2xl" fontWeight="800" borderBottom="2px solid #e5e1dc">
                   Creations
                 </Heading>
                 <Box color={color}>
                   <Flex justifyContent="space-between" width="100%" height="100%">
                     <Box width="45%">
                       <Link href="https://merkletree-dapp.web.app" target="_blank" rel="noopener noreferrer">
-                        <Image src="/assets/images/nft-mint-dapp.png" alt="Image 1" borderRadius="lg" boxShadow="1px 2px 28px rgb(35, 31, 24, 0.05)"/>
+                        <Image src="/assets/images/nft-mint-dapp.png" alt="Image 1" borderRadius="15px" boxShadow="1px 2px 28px rgb(35, 31, 24, 0.05)"/>
                       </Link>
                     </Box>
                   </Flex>
@@ -137,14 +133,15 @@ const Home: NextPage<Props> = ({posts}) => {
               </VStack>
               <Flex justifyContent="center" mb={12}>
                 <Link href="/work">
-                  <Button backgroundColor="var(--secondary-button)" color="var(--secondary-text)" px={4} _hover={{bg: "var(--secondary-button-hover)"}}>
-                    <Text mr={2}>Creations</Text>
-                    <FontAwesomeIcon icon={faChevronRight} width="7px" height="7px"/>
-                  </Button>
+                    <Box backgroundColor="var(--secondary-button)" color="var(--secondary-text)" _hover={{bg: "var(--secondary-button-hover)"}} py={1.5} px={3}  fontWeight="600" borderRadius="4px">
+                    <Flex alignItems="center">
+                      <Text>Creations</Text>
+                    </Flex>
+                    </Box>
                 </Link>
               </Flex>
               <VStack align="start" spacing={8}>
-                <Heading as="h2" fontSize="2xl" fontWeight="800">
+                <Heading as="h2" fontSize="2xl" fontWeight="800" borderBottom="2px solid #e5e1dc">
                   Posts
                 </Heading>
                   <VStack align="start" mx="auto" maxW="600px" px={{ base: "8", md: "0" }} mb="8" className="M PLUS Rounded 1c">
@@ -153,10 +150,11 @@ const Home: NextPage<Props> = ({posts}) => {
               </VStack>
               <Flex justifyContent="center" mb={12}>
                 <Link href="/post">
-                  <Button backgroundColor="var(--primary-button)" color="var(--secondary-text)" px={4} _hover={{bg: "var(--primary-button-hover)"}}>
-                    <Text mr={2}>Posts</Text>
-                    <FontAwesomeIcon icon={faChevronRight} width="7px" height="7px"/>
-                  </Button>
+                  <Box backgroundColor="var(--primary-button)" color="var(--secondary-text)" _hover={{bg: "var(--primary-button-hover)"}} py={1.5} px={3} fontWeight="600" borderRadius="4px">
+                    <Flex alignItems="center">
+                      <Text>Posts</Text>
+                    </Flex>
+                  </Box>
                 </Link>
               </Flex>
             </Box>
