@@ -34,7 +34,7 @@ const Home: NextPage<Props> = ({posts}) => {
 
   const rotate = useSpring({
     from: { x: -22, y: -22, z: - 180 },
-    to: { x:  0, y: 0, z: 8 },
+    to: { x:  0, y: 0, z: 10 },
     config: {tension: 90, friction: 3},
   })
 
