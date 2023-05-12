@@ -94,8 +94,8 @@ a:hover {
   overflow: hidden;
   white-space: nowrap;
   position: relative;
-  animation: typing 5.5s steps(28, end) forwards;
-  padding-right: 7px;
+  animation: typing 5s steps(30, end) forwards;
+  padding-right: 3px;
 }
 
 .typing-animation::after {
