@@ -92,38 +92,45 @@ a:hover {
 .typing-animation {
   display: inline-block;
   overflow: hidden;
-  white-space: nowrap;
   position: relative;
-  animation: typing 5s steps(30, end) forwards;
   padding-right: 3px;
+  padding: 0 20px;
 }
 
-.typing-animation::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 2px;
-  background-color: currentColor;
-  animation: blink-caret 1.5s step-end infinite;
-}
+/* Screen width 768px以上でのみ適用 */
+@media screen and (min-width: 768px) {
+  .typing-animation {
+    white-space: nowrap;
+    animation: typing 5s steps(30, end) forwards;
+  }
 
-@keyframes typing {
-  from {
-    width: 0;
+  .typing-animation::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 2px;
+    background-color: currentColor;
+    animation: blink-caret 1.5s step-end infinite;
   }
-  to {
-    width: 100%;
-  }
-}
 
-@keyframes blink-caret {
-  from, to {
-    opacity: 1;
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
   }
-  50% {
-    opacity: 0;
+
+  @keyframes blink-caret {
+    from, to {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
   }
 }
 
