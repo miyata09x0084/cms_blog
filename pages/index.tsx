@@ -52,7 +52,7 @@ const Home: NextPage<Props> = ({posts}) => {
       <Box>
         <AnimatedBox style={slideIn} >
           <Box maxWidth="590px" mx="auto" px={{base: 8, md: 0}} fontSize="17px" letterSpacing="0.03em" lineHeight="1.5">
-              <Box boxSize='276px' mx="auto" pt={4} mb={16}>
+              <Box boxSize='240px' mx="auto" pt={4} mb={24}>
                 <AnimatedBox style={{
                     transform: to(
                       [rotate.x, rotate.y, rotate.z, translate.tx, translate.ty, translate.tz],
