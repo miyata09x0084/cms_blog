@@ -83,7 +83,7 @@ const Home: NextPage<Props> = ({posts}) => {
                 />
               </Flex>
             <Box marginLeft="8px" mt={14} >
-              <VStack align="start" spacing={8} mb={12}>
+              <VStack align="start" spacing={7} mb={14}>
                 <Heading as="h2" fontSize="2xl" fontWeight="800" borderBottom="2px solid #e5e1dc">
                   Experience
                 </Heading>
@@ -106,7 +106,7 @@ const Home: NextPage<Props> = ({posts}) => {
                   </Flex>
                 </VStack>
               </VStack>
-              <VStack align="start" spacing={8} mb={12}>
+              <VStack align="start" spacing={7} mb={14}>
                   <Heading as="h2" fontSize="2xl" fontWeight="800" borderBottom="2px solid #e5e1dc">
                     <Flex alignItems="center">
                       <Text marginRight="2px">About</Text>
@@ -117,7 +117,7 @@ const Home: NextPage<Props> = ({posts}) => {
                   Hi there! I'm a full-stack engineer who enjoys giving form to ideas and expressing them through code. Ever since I was a kid, I've loved building things and believe that technology can dramatically change people's lives. Let's dive into my journey so far as a private developer.
                 </Text>
               </VStack>
-              <VStack align="start" spacing={8} mb={8}>
+              <VStack align="start" spacing={7} mb={8}>
                 <Heading as="h2" fontSize="2xl" fontWeight="800" borderBottom="2px solid #e5e1dc">
                   Creations
                 </Heading>
@@ -131,7 +131,7 @@ const Home: NextPage<Props> = ({posts}) => {
                   </Flex>
                 </Box>
               </VStack>
-              <Flex justifyContent="center" mb={12}>
+              <Flex justifyContent="center" mb={14}>
                 <Link href="/work">
                     <Box backgroundColor="var(--secondary-button)" color="var(--secondary-text)" _hover={{bg: "var(--secondary-button-hover)"}} py={1.5} px={3}  fontWeight="600" borderRadius="4px">
                     <Flex alignItems="center">
@@ -140,7 +140,7 @@ const Home: NextPage<Props> = ({posts}) => {
                     </Box>
                 </Link>
               </Flex>
-              <VStack align="start" spacing={8}>
+              <VStack align="start" spacing={7}>
                 <Heading as="h2" fontSize="2xl" fontWeight="800" borderBottom="2px solid #e5e1dc">
                   Posts
                 </Heading>
@@ -148,7 +148,7 @@ const Home: NextPage<Props> = ({posts}) => {
                       {posts.map((post, index) => (<PostCard post={post.node} key={index} />))}
                   </VStack>
               </VStack>
-              <Flex justifyContent="center" mb={12}>
+              <Flex justifyContent="center" mb={14}>
                 <Link href="/post">
                   <Box backgroundColor="var(--primary-button)" color="var(--secondary-text)" _hover={{bg: "var(--primary-button-hover)"}} py={1.5} px={3} fontWeight="600" borderRadius="4px">
                     <Flex alignItems="center">
