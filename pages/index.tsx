@@ -51,8 +51,8 @@ const Home: NextPage<Props> = ({posts}) => {
       </Head>
       <Box>
         <AnimatedBox style={slideIn} >
-          <Box maxWidth="590px" mx="auto" px={{base: 8, md: 0}} fontSize="17px" letterSpacing="0.03em" lineHeight="1.5">
-              <Box boxSize='260px' mx="auto" pt={8} mb={24}>
+          <Box maxWidth="590px" mx="auto" px={{base: 5, md: 0}} fontSize="17px" letterSpacing="0.03em" lineHeight="1.5">
+              <Box boxSize='260px' mx="auto" mb={{base:12, md: 16}}>
                 <AnimatedBox style={{
                     transform: to(
                       [rotate.x, rotate.y, rotate.z, translate.tx, translate.ty, translate.tz],
@@ -64,7 +64,7 @@ const Home: NextPage<Props> = ({posts}) => {
               </Box>
               <Box>
                   <Flex w="100%" justifyContent="center" alignItems="center"  borderRadius="32px" pt={4} pb={3} fontFamily="Source Code Pro" bg={bgSub} fontWeight="600">
-                      <Text textAlign="center">
+                      <Text textAlign="center" px={{base: 2, md: 0}}>
                         <span className='typing-animation'>Hi, I'm Full Stack Developer based in Japan :D</span>
                       </Text>
                   </Flex>
@@ -144,7 +144,7 @@ const Home: NextPage<Props> = ({posts}) => {
                 <Heading as="h2" fontSize="2xl" fontWeight="800" borderBottom="2px solid #e5e1dc">
                   Posts
                 </Heading>
-                  <VStack align="start" mx="auto" maxW="600px" px={{ base: "8", md: "0" }} mb="8" className="M PLUS Rounded 1c">
+                  <VStack align="start">
                       {posts.map((post, index) => (<PostCard post={post.node} key={index} />))}
                   </VStack>
               </VStack>
