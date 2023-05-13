@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { Box, Flex, Text, HStack, Image } from '@chakra-ui/react'
+import { Box, Flex, Text, HStack, Image, useColorModeValue } from '@chakra-ui/react'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons'
 
 const Footer = () => {
   const [isIconHover, setIsIconHover] = useState(false)
+  const color = useColorModeValue('var(--tertiary-text)', 'var(--dark-text)');
 
   return (
     <footer>
@@ -35,13 +36,13 @@ const Footer = () => {
                     >
                         {isIconHover ? (<FontAwesomeIcon icon={faTwitter} bounce/> )
                         : (<FontAwesomeIcon icon={faTwitter}/>)}
-                        <Text ml={0.5}>Follow!</Text>
+                        <Text ml={0.5}>Follow</Text>
                     </Flex>
                 </Link>
             </Flex>
         </Box>
       </Box>
-      <Box fontSize="sm" px={{base: 4, md: 0}} mx="auto" mb={6} textAlign="center">
+      <Box fontSize="sm" px={{base: 4, md: 0}} mx="auto" mb={6} textAlign="center" color={color}>
         <Text>Built and designed by Rio Miyata. </Text>
         <Text>All rights reserved. ©</Text>
       </Box>
