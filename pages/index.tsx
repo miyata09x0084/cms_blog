@@ -2,12 +2,12 @@ import type { NextPage } from 'next';
 import Link from 'next/link';
 import Head from 'next/head';
 import { getPosts } from '../services';
-import { Categories, PostCard } from '../components';
-import { Box, Text, Image, Flex, Heading, VStack, HStack, Button, useColorModeValue, Highlight } from '@chakra-ui/react';
+import { PostCard } from '../components';
+import { Box, Text, Image, Flex, Heading, VStack, useColorModeValue } from '@chakra-ui/react';
 import { useSpring, animated, config, to } from 'react-spring';
 import { WavingImage }from '../components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronRight, faFaceLaugh } from '@fortawesome/free-solid-svg-icons';
+import { faFaceLaugh } from '@fortawesome/free-solid-svg-icons';
 
 
 interface Props {
@@ -19,12 +19,6 @@ const AnimatedBox = animated(Box);
 const Home: NextPage<Props> = ({posts}) => {
   const bgSub = useColorModeValue("var(--secondary-bg)", "var(--dark-bg-sub)");
   const color = useColorModeValue('var(--primary-text)', 'var(--dark-text)');
-
-  const fadeIn = useSpring({
-    from: { opacity: 0 },
-    to: { opacity: 1 },
-    config: config.gentle,
-  });
 
   const slideIn = useSpring({
     from: { transform: 'translate3d(0, 50px, 0)' },
