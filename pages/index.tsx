@@ -45,7 +45,7 @@ const Home: NextPage<Props> = ({posts}) => {
       </Head>
       <Box>
         <AnimatedBox style={slideIn} >
-          <Box maxWidth="590px" mx="auto" px={{base: 5, md: 0}} fontSize="17px" letterSpacing="0.03em" lineHeight="1.5">
+          <Box maxWidth="590px" mx="auto" px={{base: 5, md: 0}} fontSize="17px" letterSpacing="0.01em" lineHeight="1.5">
               <Box boxSize='260px' mx="auto" mb={{base:12, md: 16}}>
                 <AnimatedBox style={{
                     transform: to(
@@ -57,7 +57,7 @@ const Home: NextPage<Props> = ({posts}) => {
                 </AnimatedBox>
               </Box>
               <Box>
-                  <Flex w="100%" justifyContent="center" alignItems="center"  borderRadius="32px" pt={4} pb={3} fontFamily="Source Code Pro" bg={bgSub} fontWeight="600">
+                  <Flex w="100%" justifyContent="center" alignItems="center"  borderRadius="15px" pt={3} pb={2} fontFamily="Source Code Pro" bg={bgSub}>
                       <Text textAlign="center" px={{base: 2, md: 0}}>
                         <span className='typing-animation'>Hi, I'm Full Stack Developer based in Japan :D</span>
                       </Text>
@@ -77,30 +77,49 @@ const Home: NextPage<Props> = ({posts}) => {
                 />
               </Flex>
             <Box marginLeft="8px" mt={14} >
-              <VStack align="start" spacing={7} mb={14}>
+              <VStack align="start" spacing={6} mb={12}>
                 <Heading as="h2" fontSize="2xl" fontWeight="800" borderBottom="2px solid #e5e1dc">
                   Experience
                 </Heading>
-                <VStack align="start" spacing={1.5}>
+                <VStack align="start" spacing={1}>
                   <Flex>
-                    <Text mr="9px" fontWeight="medium">2014</Text>
-                    <Text>Master of Science in Mechanical Engineering from Hosei University</Text>
+                    <Text mr="10px" fontWeight="900">1989</Text>
+                      <Box>
+                        <Text>I was born in Aich</Text>
+                        <Text>愛知生まれ</Text>
+                      </Box>
                   </Flex>
                   <Flex>
-                    <Text mr="9px" fontWeight="medium">2019</Text>
-                    <Text>Server Side Engineer Course at Tech Camp</Text>
+                    <Text mr="10px" fontWeight="900">2014</Text>
+                    <Box>
+                      <Text>Master of Science in Mechanical Engineering from Hosei University</Text>
+                      <Text>法政大学 理工学研究科 修士課程</Text>
+                    </Box>
                   </Flex>
                   <Flex>
-                    <Text mr="9px" fontWeight="medium">2020</Text>
-                    <Text>AnkhSystems Inc. as an Web Developer</Text>
+                    <Text mr="10px" fontWeight="900">2019</Text>
+                    <Box>
+                      <Text>Server Side Engineer Course at Tech Camp</Text>
+                      <Text>サーバーサイドエンジニアを学ぶ</Text>
+                    </Box>
                   </Flex>
                   <Flex>
-                    <Text mr="9px" fontWeight="medium">2022</Text>
-                    <Text>Freelance</Text>
+                    <Text mr="10px" fontWeight="900">2020</Text>
+                    <Box>
+                      <Text>AnkhSystems Inc. as an Web Developer</Text>
+                      <Text>アンクシステムズでWebデベロッパー</Text>
+                    </Box>
+                  </Flex>
+                  <Flex>
+                    <Text mr="10px" fontWeight="900">2023</Text>
+                    <Box>
+                      <Text>Indie Developer</Text>
+                      <Text>個人開発</Text>
+                    </Box>
                   </Flex>
                 </VStack>
               </VStack>
-              <VStack align="start" spacing={7} mb={14}>
+              <VStack align="start" spacing={6} mb={12}>
                   <Heading as="h2" fontSize="2xl" fontWeight="800" borderBottom="2px solid #e5e1dc">
                     <Flex alignItems="center">
                       <Text marginRight="2px">About</Text>
@@ -108,10 +127,10 @@ const Home: NextPage<Props> = ({posts}) => {
                     </Flex>
                   </Heading>
                 <Text>
-                  Hi there! I'm a full-stack engineer who enjoys giving form to ideas and expressing them through code. Ever since I was a kid, I've loved building things and believe that technology can dramatically change people's lives. Let's dive into my journey so far as a private developer.
+                  I'm a Full Stack Developer based in Japan.
                 </Text>
               </VStack>
-              <VStack align="start" spacing={7} mb={8}>
+              <VStack align="start" spacing={6} mb={8}>
                 <Heading as="h2" fontSize="2xl" fontWeight="800" borderBottom="2px solid #e5e1dc">
                   Creations
                 </Heading>
@@ -125,7 +144,7 @@ const Home: NextPage<Props> = ({posts}) => {
                   </Flex>
                 </Box>
               </VStack>
-              <Flex justifyContent="center" mb={14}>
+              <Flex justifyContent="center" mb={12}>
                 <Link href="/work">
                     <Box backgroundColor="var(--secondary-button)" color="var(--secondary-text)" _hover={{bg: "var(--secondary-button-hover)"}} py={1.5} px={3}  fontWeight="600" borderRadius="4px">
                     <Flex alignItems="center">
@@ -134,7 +153,7 @@ const Home: NextPage<Props> = ({posts}) => {
                     </Box>
                 </Link>
               </Flex>
-              <VStack align="start" spacing={7}>
+              <VStack align="start" spacing={6}>
                 <Heading as="h2" fontSize="2xl" fontWeight="800" borderBottom="2px solid #e5e1dc">
                   Posts
                 </Heading>
@@ -142,7 +161,7 @@ const Home: NextPage<Props> = ({posts}) => {
                       {posts.map((post, index) => (<PostCard post={post.node} key={index} />))}
                   </VStack>
               </VStack>
-              <Flex justifyContent="center" mb={14}>
+              <Flex justifyContent="center" mb={12}>
                 <Link href="/post">
                   <Box backgroundColor="var(--primary-button)" color="var(--secondary-text)" _hover={{bg: "var(--primary-button-hover)"}} py={1.5} px={3} fontWeight="600" borderRadius="4px">
                     <Flex alignItems="center">
