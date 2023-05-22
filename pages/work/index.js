@@ -36,7 +36,6 @@ const WorkIndex = () => {
         height="100%"
         px={{ base: '8', md: '0' }}
         mb="8"
-        className="M PLUS Rounded 1c"
         color={color}
         pt="40px"
       >
