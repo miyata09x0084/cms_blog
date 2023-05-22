@@ -7,7 +7,7 @@ import { Box, Text, Image, Flex, Heading, VStack, useColorModeValue } from '@cha
 import { useSpring, animated, config, to } from 'react-spring';
 import { WavingImage }from '../components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFaceLaugh } from '@fortawesome/free-solid-svg-icons';
+import { faFaceSmile } from '@fortawesome/free-solid-svg-icons';
 
 
 interface Props {
@@ -57,16 +57,16 @@ const Home: NextPage<Props> = ({posts}) => {
                 </AnimatedBox>
               </Box>
               <Box>
-                  <Flex w="100%" justifyContent="center" alignItems="center"  borderRadius="15px" pt={3} pb={2} fontFamily="Source Code Pro" bg={bgSub}>
-                      <Text textAlign="center" px={{base: 2, md: 0}}>
-                        <span className='typing-animation'>Hi, I'm Full Stack Developer based in Japan :D</span>
+                  <Flex w="100%" justifyContent="center" alignItems="center" pt={3} fontFamily="Noto Sans JP">
+                      <Text textAlign="center" mx={{base: 2, md: 0}} bg={bgSub} borderRadius={8} pt={2} pb={3} px={4}>
+                        <Box className='typing-animation' px={1.5}>Hi, I'm Full Stack Developer based in Japan.</Box>
                       </Text>
                   </Flex>
               </Box>
               <Flex width="100%" justifyContent="center" mt={14} alignItems="center">
                 <Box mr="1px">
                   <Text fontSize="4xl" fontWeight="800" mb="-7px" >Rio Miyata</Text>
-                  <Text fontSize="lg" fontWeight="500" >Artist-Developer-Designer </Text>
+                  <Text fontSize="lg" fontWeight="500" >Developer-Artist-Designer </Text>
                 </Box>
                 <Image
                   boxSize='69px'
@@ -77,61 +77,61 @@ const Home: NextPage<Props> = ({posts}) => {
                 />
               </Flex>
             <Box marginLeft="8px" mt={14} >
-              <VStack align="start" spacing={6} mb={12}>
-                <Heading as="h2" fontSize="2xl" fontWeight="800" borderBottom="2px solid #e5e1dc">
+              <VStack align="start" spacing={5} mb={10}>
+                <Heading as="h2" fontSize="2xl" fontWeight="800" borderBottom="3px solid #dcd8d0">
                   Experience
                 </Heading>
-                <VStack align="start" spacing={1}>
+                <VStack align="start" spacing={1.5}>
                   <Flex>
                     <Text mr="10px" fontWeight="900">1989</Text>
                       <Box>
-                        <Text>I was born in Aich</Text>
-                        <Text>愛知生まれ</Text>
+                        <Text>Born in Aichi, japan </Text>
+                        <Text>日本の愛知県出身</Text>
                       </Box>
                   </Flex>
                   <Flex>
                     <Text mr="10px" fontWeight="900">2014</Text>
                     <Box>
-                      <Text>Master of Science in Mechanical Engineering from Hosei University</Text>
-                      <Text>法政大学 理工学研究科 修士課程</Text>
+                      <Text>Master's Degree, Graduate School of Science and Engineering @Hosei University</Text>
+                      <Text>法政大学理工学研究科 修士課程修了</Text>
                     </Box>
                   </Flex>
                   <Flex>
                     <Text mr="10px" fontWeight="900">2019</Text>
                     <Box>
-                      <Text>Server Side Engineer Course at Tech Camp</Text>
-                      <Text>サーバーサイドエンジニアを学ぶ</Text>
+                      <Text>Full Stack Engineering Course @Tech Camp</Text>
+                      <Text>フルスタックエンジニアコース修了</Text>
                     </Box>
                   </Flex>
                   <Flex>
                     <Text mr="10px" fontWeight="900">2020</Text>
                     <Box>
-                      <Text>AnkhSystems Inc. as an Web Developer</Text>
-                      <Text>アンクシステムズでWebデベロッパー</Text>
+                      <Text>Web Developer @AnkhSystems-Digital Media</Text>
+                      <Text>アンクシステムズ-デジタルメディア開発</Text>
                     </Box>
                   </Flex>
                   <Flex>
-                    <Text mr="10px" fontWeight="900">2023</Text>
+                    <Text mr="10px" fontWeight="900">2022</Text>
                     <Box>
-                      <Text>Indie Developer</Text>
-                      <Text>個人開発</Text>
+                      <Text>Indie Developer & Freelance Web Developer</Text>
+                      <Text>個人開発兼フリーランス</Text>
                     </Box>
                   </Flex>
                 </VStack>
               </VStack>
-              <VStack align="start" spacing={6} mb={12}>
-                  <Heading as="h2" fontSize="2xl" fontWeight="800" borderBottom="2px solid #e5e1dc">
+              <VStack align="start" spacing={5} mb={10}>
+                  <Heading as="h2" fontSize="2xl" fontWeight="800" borderBottom="3px solid #dcd8d0">
                     <Flex alignItems="center">
-                      <Text marginRight="2px">About</Text>
-                      <FontAwesomeIcon icon={faFaceLaugh} fontSize="20px"/>
+                      <Text marginRight="4px">About</Text>
+                      <FontAwesomeIcon icon={faFaceSmile}/>
                     </Flex>
                   </Heading>
                 <Text>
                   I'm a Full Stack Developer based in Japan.
                 </Text>
               </VStack>
-              <VStack align="start" spacing={6} mb={8}>
-                <Heading as="h2" fontSize="2xl" fontWeight="800" borderBottom="2px solid #e5e1dc">
+              <VStack align="start" spacing={5} mb={8}>
+                <Heading as="h2" fontSize="2xl" fontWeight="800" borderBottom="3px solid #dcd8d0">
                   Creations
                 </Heading>
                 <Box color={color}>
@@ -144,7 +144,7 @@ const Home: NextPage<Props> = ({posts}) => {
                   </Flex>
                 </Box>
               </VStack>
-              <Flex justifyContent="center" mb={12}>
+              <Flex justifyContent="center" mb={10}>
                 <Link href="/work">
                     <Box backgroundColor="var(--secondary-button)" color="var(--secondary-text)" _hover={{bg: "var(--secondary-button-hover)"}} py={1.5} px={3}  fontWeight="600" borderRadius="4px">
                     <Flex alignItems="center">
@@ -153,8 +153,8 @@ const Home: NextPage<Props> = ({posts}) => {
                     </Box>
                 </Link>
               </Flex>
-              <VStack align="start" spacing={6}>
-                <Heading as="h2" fontSize="2xl" fontWeight="800" borderBottom="2px solid #e5e1dc">
+              <VStack align="start" spacing={5}>
+                <Heading as="h2" fontSize="2xl" fontWeight="800" borderBottom="3px solid #dcd8d0">
                   Posts
                 </Heading>
                   <VStack align="start">
