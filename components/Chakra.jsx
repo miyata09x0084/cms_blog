@@ -8,8 +8,8 @@ export function Chakra({ cookies, children}) {
 
     const googleFont = extendTheme({
         fonts: {
-            heading: `'M PLUS 1p', sans-serif`,
-            body: `'M PLUS 1p', sans-serif`,
+            heading: `'Noto Sans JP', sans-serif`,
+            body: `'Noto Sans JP', sans-serif`,
         },
     })
 
