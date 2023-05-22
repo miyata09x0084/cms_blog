@@ -2,10 +2,12 @@ import React from 'react';
 import { Box, Flex, Text, Spacer, HStack, IconButton, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, VStack, useDisclosure, Button } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import { useColorMode, useColorModeValue } from "@chakra-ui/react"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCat } from '@fortawesome/free-solid-svg-icons';
 import SunIcon from './ToggleSwitch/icons/SunIcon';
 import MoonIcon from './ToggleSwitch/icons/MoonIcon';
+import { Link as ChakraLink } from '@chakra-ui/react';
 import Link from 'next/link';
-import Image from 'next/image';
 
 
 const Header = () => {
@@ -33,8 +35,27 @@ const Header = () => {
     <header>
         <Box pt={6} pb={9} maxWidth="768px" fontSize="xl" px={{base: 4, md: 0}}  mx="auto">
           <Flex>
-              <Text letterSpacing="-1.4px"  fontWeight="800" display="flex" alignItems="center">
-                <Link href="/" _hover={{ textDecoration: 'none' }}>Rio Miyata</Link>
+              <Text letterSpacing="-1px"  fontWeight="800" display="flex" alignItems="center">
+                <FontAwesomeIcon icon={faCat} />
+                <Flex w="100%" justifyContent="center" alignItems="center" pt={3} fontFamily="Noto Sans JP">
+                  <Text>
+                    <Link href="/" passHref>
+                      <ChakraLink textAlign="center" _hover={{ textDecoration: 'none' }}>
+                        <svg width="95px" height="50px">
+                          <defs>
+                            <filter id="squiggly-0">
+                              <feTurbulence id="turbulence" baseFrequency="0.001" numOctaves="6" result="noise" seed="0"/>
+                              <feDisplacementMap id="displacement" in="SourceGraphic" in2="noise" scale="3" />
+                            </filter>
+                          </defs>
+                          <text textAnchor="middle" x="50%" y="55%" filter="url(#squiggly-0)" fontFamily="Noto Sans JP">
+                            Rio Miyata
+                          </text>
+                        </svg>
+                      </ChakraLink>
+                    </Link>
+                  </Text>
+                </Flex>
               </Text>
               <Spacer />
               <HStack spacing={5} display={{base: "none", md: "flex"}} fontWeight="500">
