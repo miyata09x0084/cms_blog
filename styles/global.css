@@ -96,11 +96,11 @@ a:hover {
   padding-right: 3px;
 }
 
-/* Screen width 768px以上でのみ適用 */
 @media screen and (min-width: 768px) {
   .typing-animation {
     white-space: nowrap;
     animation: typing 5s steps(30, end) forwards;
+    margin-bottom: -7px;
   }
 
   .typing-animation::after {
@@ -109,9 +109,9 @@ a:hover {
     top: 0;
     right: 0;
     height: 100%;
-    width: 2px;
+    width: 1.5px;
     background-color: currentColor;
-    animation: blink-caret 1.5s step-end infinite;
+    animation: blink-caret 1.2s step-end infinite;
   }
 
   @keyframes typing {
