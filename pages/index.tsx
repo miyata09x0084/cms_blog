@@ -45,7 +45,7 @@ const Home: NextPage<Props> = ({posts}) => {
       </Head>
       <Box>
         <AnimatedBox style={slideIn} >
-          <Box maxWidth="590px" mx="auto" px={{base: 5, md: 0}} fontSize="17px" letterSpacing="0.01em" lineHeight="1.5">
+                <Box maxWidth="590px" mx="auto" px={{base: 5, md: 0}} fontSize="17px" letterSpacing="0.03em" lineHeight="1.5">
               <Box boxSize='260px' mx="auto" mb={{base:12, md: 16}}>
                 <AnimatedBox style={{
                     transform: to(
@@ -58,7 +58,7 @@ const Home: NextPage<Props> = ({posts}) => {
               </Box>
               <Box>
                   <Flex w="100%" justifyContent="center" alignItems="center" pt={3} fontFamily="Noto Sans JP">
-                      <Text textAlign="center" mx={{base: 2, md: 0}} bg={bgSub} borderRadius={8} pt={2} pb={3} px={4}>
+                      <Text textAlign="center" mx={{base: 2, md: 0}} bg={bgSub} borderRadius={8} pt={2} pb={3} px={6}>
                         <Box className='typing-animation' px={1.5}>Hi, I'm Full Stack Developer based in Japan.</Box>
                       </Text>
                   </Flex>
@@ -85,7 +85,7 @@ const Home: NextPage<Props> = ({posts}) => {
                   <Flex>
                     <Text mr="10px" fontWeight="900">1989</Text>
                       <Box>
-                        <Text>Born in Aichi, japan </Text>
+                        <Text>Born in Aichi, Japan </Text>
                         <Text>日本の愛知県出身</Text>
                       </Box>
                   </Flex>
@@ -106,7 +106,7 @@ const Home: NextPage<Props> = ({posts}) => {
                   <Flex>
                     <Text mr="10px" fontWeight="900">2020</Text>
                     <Box>
-                      <Text>Web Developer @AnkhSystems-Digital Media</Text>
+                      <Text>Web Developer @AnkhSystems(Digital Media)</Text>
                       <Text>アンクシステムズ-デジタルメディア開発</Text>
                     </Box>
                   </Flex>

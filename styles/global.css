@@ -109,7 +109,7 @@ a:hover {
     top: 0;
     right: 0;
     height: 100%;
-    width: 1.5px;
+    width: 2px;
     background-color: currentColor;
     animation: blink-caret 1.2s step-end infinite;
   }
