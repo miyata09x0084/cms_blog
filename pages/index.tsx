@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import { getPosts } from '../services';
 import { PostCard } from '../components';
-import { Box, Text, Image, Flex, Heading, VStack, useColorModeValue } from '@chakra-ui/react';
+import { Box, Text, Image, Flex, Heading, VStack, useColorModeValue, Button } from '@chakra-ui/react';
 import { useSpring, animated, config, to } from 'react-spring';
 import { WavingImage }from '../components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -77,7 +77,7 @@ const Home: NextPage<Props> = ({posts}) => {
                 />
               </Flex>
             <Box marginLeft="8px" mt={14} >
-              <VStack align="start" spacing={5} mb={10}>
+              <VStack align="start" spacing={5} mb={12}>
                 <Heading as="h2" fontSize="2xl" fontWeight="800" borderBottom="3px solid #dcd8d0">
                   Experience
                 </Heading>
@@ -119,7 +119,7 @@ const Home: NextPage<Props> = ({posts}) => {
                   </Flex>
                 </VStack>
               </VStack>
-              <VStack align="start" spacing={5} mb={10}>
+              <VStack align="start" spacing={5} mb={12}>
                   <Heading as="h2" fontSize="2xl" fontWeight="800" borderBottom="3px solid #dcd8d0">
                     <Flex alignItems="center">
                       <Text marginRight="4px">About</Text>
@@ -144,13 +144,13 @@ const Home: NextPage<Props> = ({posts}) => {
                   </Flex>
                 </Box>
               </VStack>
-              <Flex justifyContent="center" mb={10}>
+              <Flex justifyContent="center" mb={12}>
                 <Link href="/work">
-                    <Box backgroundColor="var(--secondary-button)" color="var(--secondary-text)" _hover={{bg: "var(--secondary-button-hover)"}} py={1.5} px={3}  fontWeight="600" borderRadius="4px">
+                    <Button backgroundColor="var(--secondary-button)" color="var(--secondary-text)" _hover={{bg: "var(--secondary-button-hover)"}} py={1.5} px={3}  fontWeight="600" borderRadius="4px">
                     <Flex alignItems="center">
                       <Text>Creations</Text>
                     </Flex>
-                    </Box>
+                    </Button>
                 </Link>
               </Flex>
               <VStack align="start" spacing={5}>
@@ -163,11 +163,11 @@ const Home: NextPage<Props> = ({posts}) => {
               </VStack>
               <Flex justifyContent="center" mb={12}>
                 <Link href="/post">
-                  <Box backgroundColor="var(--primary-button)" color="var(--secondary-text)" _hover={{bg: "var(--primary-button-hover)"}} py={1.5} px={3} fontWeight="600" borderRadius="4px">
+                  <Button backgroundColor="var(--primary-button)" color="var(--secondary-text)" _hover={{bg: "var(--primary-button-hover)"}} py={1.5} px={3} fontWeight="600" borderRadius="4px">
                     <Flex alignItems="center">
                       <Text>Posts</Text>
                     </Flex>
-                  </Box>
+                  </Button>
                 </Link>
               </Flex>
             </Box>

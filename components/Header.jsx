@@ -37,25 +37,9 @@ const Header = () => {
           <Flex>
               <Text letterSpacing="-1px"  fontWeight="800" display="flex" alignItems="center">
                 <FontAwesomeIcon icon={faCat} />
-                <Flex w="100%" justifyContent="center" alignItems="center" pt={3} fontFamily="Noto Sans JP">
-                  <Text>
-                    <Link href="/" passHref>
-                      <ChakraLink textAlign="center" _hover={{ textDecoration: 'none' }}>
-                        <svg width="95px" height="50px">
-                          <defs>
-                            <filter id="squiggly-0">
-                              <feTurbulence id="turbulence" baseFrequency="0.001" numOctaves="6" result="noise" seed="0"/>
-                              <feDisplacementMap id="displacement" in="SourceGraphic" in2="noise" scale="3" />
-                            </filter>
-                          </defs>
-                          <text textAnchor="middle" x="50%" y="55%" filter="url(#squiggly-0)" fontFamily="Noto Sans JP">
-                            Rio Miyata
-                          </text>
-                        </svg>
-                      </ChakraLink>
-                    </Link>
-                  </Text>
-                </Flex>
+                <Link href="/" passHref>
+                    Rio Miyata
+                </Link>
               </Text>
               <Spacer />
               <HStack spacing={5} display={{base: "none", md: "flex"}} fontWeight="500">
