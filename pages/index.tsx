@@ -114,7 +114,7 @@ const Home: NextPage<Props> = ({posts}) => {
                     <Text mr="10px" fontWeight="900">2022</Text>
                     <Box>
                       <Text>Indie Developer & Freelance Web Developer</Text>
-                      <Text>個人開発兼フリーランス</Text>
+                      <Text>個人開発者</Text>
                     </Box>
                   </Flex>
                 </VStack>
@@ -123,7 +123,12 @@ const Home: NextPage<Props> = ({posts}) => {
                   <Heading as="h2" fontSize="2xl" fontWeight="800" borderBottom="3px solid #dcd8d0">
                     <Flex alignItems="center">
                       <Text marginRight="4px">About</Text>
-                      <FontAwesomeIcon icon={faFaceSmile}/>
+                      <Image
+                        boxSize='23px'
+                        src='/assets/images/smiling-image.png '
+                        alt='Rio Miyata'
+                        ml="1"
+                      />
                     </Flex>
                   </Heading>
                 <Text>
