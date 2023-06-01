@@ -66,7 +66,7 @@ const Home: NextPage<Props> = ({posts}) => {
               <Flex width="100%" justifyContent="center" mt={14} alignItems="center">
                 <Box mr="1px">
                   <Text fontSize="4xl" fontWeight="800" mb="-7px" >Rio Miyata</Text>
-                  <Text fontSize="lg" fontWeight="500" >Developer-Artist-Designer </Text>
+                  <Text fontSize="lg" fontWeight="500" >Developer | Artist | Designer </Text>
                 </Box>
                 <Image
                   boxSize='69px'
@@ -74,6 +74,7 @@ const Home: NextPage<Props> = ({posts}) => {
                   src='/assets/images/rio-miyata.jpeg'
                   alt='Rio Miyata'
                   ml="2"
+                  border="1px solid #514331"
                 />
               </Flex>
             <Box marginLeft="8px" mt={14} >
