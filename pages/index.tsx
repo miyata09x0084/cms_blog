@@ -78,7 +78,7 @@ const Home: NextPage<Props> = ({posts}) => {
               </Flex>
             <Box marginLeft="8px" mt={14} >
               <VStack align="start" spacing={5} mb={12}>
-                <Heading as="h2" fontSize="2xl" fontWeight="800" borderBottom="3px solid #dcd8d0">
+                <Heading as="h2" fontSize="2xl" fontWeight="800">
                   Experience
                 </Heading>
                 <VStack align="start" spacing={1.5}>
@@ -120,7 +120,7 @@ const Home: NextPage<Props> = ({posts}) => {
                 </VStack>
               </VStack>
               <VStack align="start" spacing={5} mb={12}>
-                  <Heading as="h2" fontSize="2xl" fontWeight="800" borderBottom="3px solid #dcd8d0">
+                  <Heading as="h2" fontSize="2xl" fontWeight="800">
                     <Flex alignItems="center">
                       <Text marginRight="4px">About</Text>
                       <Image
@@ -136,7 +136,7 @@ const Home: NextPage<Props> = ({posts}) => {
                 </Text>
               </VStack>
               <VStack align="start" spacing={5} mb={8}>
-                <Heading as="h2" fontSize="2xl" fontWeight="800" borderBottom="3px solid #dcd8d0">
+                <Heading as="h2" fontSize="2xl" fontWeight="800">
                   Creations
                 </Heading>
                 <Box color={color}>
@@ -159,7 +159,7 @@ const Home: NextPage<Props> = ({posts}) => {
                 </Link>
               </Flex>
               <VStack align="start" spacing={5}>
-                <Heading as="h2" fontSize="2xl" fontWeight="800" borderBottom="3px solid #dcd8d0">
+                <Heading as="h2" fontSize="2xl" fontWeight="800">
                   Posts
                 </Heading>
                   <VStack align="start">
