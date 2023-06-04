@@ -71,10 +71,11 @@ const Home: NextPage<Props> = ({posts}) => {
                 <Image
                   boxSize='69px'
                   borderRadius='full'
-                  src='/assets/images/rio-miyata.jpeg'
+                  src='/assets/images/self-image.jpeg'
                   alt='Rio Miyata'
-                  ml="2"
+                  ml="1"
                   border="1px solid #a8a198"
+                  transform="scaleX(-1)"
                 />
               </Flex>
             <Box marginLeft="8px" mt={14} >
