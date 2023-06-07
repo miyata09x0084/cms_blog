@@ -68,15 +68,17 @@ const Home: NextPage<Props> = ({posts}) => {
                   <Text fontSize="4xl" fontWeight="800" mb="-7px" >Rio Miyata</Text>
                   <Text fontSize="lg" fontWeight="500" >Developer | Artist | Designer </Text>
                 </Box>
-                <Image
-                  boxSize='69px'
-                  borderRadius='full'
-                  src='/assets/images/self-image.jpeg'
-                  alt='Rio Miyata'
-                  ml="1"
-                  border="1px solid #a8a198"
-                  transform="scaleX(-1)"
-                />
+                <footer>
+                  <Image
+                    boxSize='69px'
+                    borderRadius='full'
+                    src='/assets/images/self-image.jpeg'
+                    alt='Rio Miyata'
+                    ml="1"
+                    border="1px solid #a8a198"
+                    transform="scaleX(-1)"
+                  />
+                </footer>
               </Flex>
             <Box marginLeft="8px" mt={14} >
               <VStack align="start" spacing={5} mb={12}>

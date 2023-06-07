@@ -43,8 +43,8 @@ const Footer = () => {
         </Box>
       </Box>
       <Box fontSize="sm" px={{base: 4, md: 0}} mx="auto" mb={6} textAlign="center" color={color}>
-        <Text>Built and designed by Rio Miyata. </Text>
-        <Text>All rights reserved. ©</Text>
+        <Text>© 2023 Meercaton. All rights reserved.</Text>
+        <Text>Thanks for reading!</Text>
       </Box>
     </footer>
   )
