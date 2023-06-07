@@ -59,7 +59,7 @@ const Home: NextPage<Props> = ({posts}) => {
               <Box>
                   <Flex w="100%" justifyContent="center" alignItems="center" pt={3} fontFamily="Noto Sans JP">
                       <Text mx={{base: 2, md: 0}}  px={6} fontWeight="900" border="1px solid #a8a198" pt={3} pb={4} borderRadius={12} textAlign="center">
-                        <Box className='typing-animation' px={1.5}>Hi, Full Stack Developer from Japan. Thanks for visiting.</Box>
+                        <Box className='typing-animation' px={1.5}>Hello, Full Stack Developer from Japan.</Box>
                       </Text>
                   </Flex>
               </Box>
