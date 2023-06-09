@@ -59,8 +59,8 @@ const Home: NextPage<Props> = ({posts}) => {
               </Box>
               <Box>
                   <Flex w="100%" justifyContent="center" alignItems="center" pt={3} fontFamily="Noto Sans JP">
-                      <Text mx={{base: 2, md: 0}}  px={3} fontWeight="1000" bg={bgSub} pt={0.5} pb={2} borderRadius={10} textAlign="center" color={colorSub}>
-                        <Box className='typing-animation' px={1.5}>Hello, Full Stack Developer from Japan.</Box>
+                      <Text mx={{base: 2, md: 0}}  px={3} fontWeight="900" bg={bgSub} pt={0.5} pb={2} borderRadius={12} textAlign="center" color={colorSub}>
+                        <Box className='typing-animation' px={1.5}>Hello, I'm Full Stack Developer from Japan.</Box>
                       </Text>
                   </Flex>
               </Box>
