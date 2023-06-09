@@ -19,6 +19,7 @@ const AnimatedBox = animated(Box);
 const Home: NextPage<Props> = ({posts}) => {
   const bgSub = useColorModeValue("var(--secondary-bg)", "var(--dark-bg-sub)");
   const color = useColorModeValue('var(--primary-text)', 'var(--dark-text)');
+  const colorSub = useColorModeValue('var(--secondary-text)', 'var(--dark-text)');
 
   const slideIn = useSpring({
     from: { transform: 'translate3d(0, 50px, 0)' },
@@ -58,7 +59,7 @@ const Home: NextPage<Props> = ({posts}) => {
               </Box>
               <Box>
                   <Flex w="100%" justifyContent="center" alignItems="center" pt={3} fontFamily="Noto Sans JP">
-                      <Text mx={{base: 2, md: 0}}  px={6} fontWeight="900" border="1px solid #a8a198" pt={3} pb={4} borderRadius={12} textAlign="center">
+                      <Text mx={{base: 2, md: 0}}  px={3} fontWeight="1000" bg={bgSub} pb={1.5} borderRadius={10} textAlign="center" color={colorSub}>
                         <Box className='typing-animation' px={1.5}>Hello, Full Stack Developer from Japan.</Box>
                       </Text>
                   </Flex>
