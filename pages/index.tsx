@@ -76,6 +76,7 @@ const Home: NextPage<Props> = ({posts}) => {
                     ml="1"
                     border="1px solid #664D03"
                     transform="scaleX(-1)"
+                    transform="scaleX(-1) rotate(-7deg)"
                     alt='Rio Miyata'
                   />
               </Flex>
