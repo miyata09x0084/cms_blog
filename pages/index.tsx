@@ -162,7 +162,7 @@ const Home: NextPage<Props> = ({posts}) => {
                 </Link>
               </Flex>
               <VStack align="start" spacing={5}>
-                <Heading as="h2" fontSize="2xl" fontWeight="800">
+                <Heading as="h2" fontSize="2xl" fontWeight="900">
                   Posts
                 </Heading>
                   <VStack align="start">
