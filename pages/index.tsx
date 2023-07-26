@@ -7,7 +7,7 @@ import { Box, Text, Image, Flex, Heading, VStack, useColorModeValue, Button } fr
 import { useSpring, animated, config, to } from 'react-spring';
 import { WavingImage }from '../components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFaceSmile } from '@fortawesome/free-solid-svg-icons';
+import { faHandPeace } from '@fortawesome/free-solid-svg-icons'
 
 
 interface Props {
@@ -126,16 +126,11 @@ const Home: NextPage<Props> = ({posts}) => {
                   <Heading as="h2" fontSize="2xl" fontWeight="900">
                     <Flex alignItems="center">
                       <Text marginRight="4px">About</Text>
-                      <Image
-                        boxSize='23px'
-                        src='/assets/images/smiling-image.png '
-                        alt='Rio Miyata'
-                        ml="1"
-                      />
+                      <FontAwesomeIcon icon={faHandPeace} />
                     </Flex>
                   </Heading>
                 <Text>
-                  I am the younger twin brother. My hobbies are camping and muscle training. I love the web3 and am learning more about it every day.
+                  I am the younger twin brother. I love the web3 and am learning more about it every day. My hobbies are camping and muscle training.
                 </Text>
               </VStack>
               <VStack align="start" spacing={5} mb={8}>
