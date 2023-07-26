@@ -74,7 +74,7 @@ const Home: NextPage<Props> = ({posts}) => {
                     boxSize='69px'
                     borderRadius='full'
                     ml="1"
-                    border="1px solid #a8a198"
+                    border="1px solid #664D03"
                     transform="scaleX(-1)"
                     alt='Rio Miyata'
                   />
