@@ -2,9 +2,9 @@
     --primary-bg: #EDDFD6;
     --primary-text: #000000;
     --primary-button: #049872; /* darkened from #F2B33D */
-    --primary-button-hover: #b88011; /* darkened from #d99e1a */
+    --primary-button-hover: #049872; /* darkened from #d99e1a */
     --secondary-button: #8505b0; /* darkened from #5DBA5A */
-    --secondary-button-hover: #408340; /* darkened from #419c3e */
+    --secondary-button-hover: #8505b0; /* darkened from #419c3e */
     --secondary-bg: #664D03;
     --secondary-text: #EDDFD6;
     --tertiary-text: #514331;
