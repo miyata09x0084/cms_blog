@@ -54,18 +54,24 @@ const Home: NextPage<Props> = ({posts}) => {
         <AnimatedBox style={fadeIn}>
           <AnimatedBox style={slideIn} >
                   <Box maxWidth="580px" mx="auto" px={{base: 5, md: 0}} fontSize="17px" letterSpacing="0.03em" lineHeight="1.5">
-                     <Image src="/assets/images/typing-image.png" alt='computer' height="100%" />
+                  <Image
+                      src="/assets/images/typing-image.png"
+                      alt='keyboard'
+                      width="100%"
+                      height={{ base: '240px', md: '330px' }}  // ここで高さを設定。スマホでは自動、デスクトップでは300pxに設定。必要に応じて調整
+                      // objectFit="contain"  // 画像のアスペクト比を保持
+                  />
                   <Box>
                     <Flex w="100%" justifyContent="center" alignItems="center" pt={1} fontFamily="Noto Sans JP">
                         <Text mx={{base: 2, md: 0}}  px={3} fontWeight="900" bg={bgSub} pt={0.5} pb={2} borderRadius={12} textAlign="center" color={colorSub}>
-                          <Box className='typing-animation' px={1.5}>Hello, I'm Full Stack Developer from Japan.</Box>
+                          <Box className='typing-animation' px={1.5}>Hello, I'm Full Stack Developer based in Japan.</Box>
                         </Text>
                     </Flex>
                 </Box>
                 <Flex width="100%" justifyContent="center" mt={14} alignItems="center">
                   <Box mr="1px">
                     <Text fontSize="4xl" fontWeight="800" mb="-7px" >Rio Miyata</Text>
-                    <Text fontSize="lg" fontWeight="500" >Developer | Artist | Designer </Text>
+                    <Text fontSize="lg" fontWeight="500" >Developer | Artist </Text>
                   </Box>
                     <Image
                       src='/assets/images/self-image.jpeg'
@@ -112,7 +118,7 @@ const Home: NextPage<Props> = ({posts}) => {
                       </Box>
                     </Flex>
                     <Flex>
-                      <Text mr="10px" fontWeight="900">2022</Text>
+                      <Text mr="10px" fontWeight="900">2023</Text>
                       <Box>
                         <Text>Indie Developer & Freelance Web Developer</Text>
                         <Text>個人開発者</Text>
@@ -128,7 +134,7 @@ const Home: NextPage<Props> = ({posts}) => {
                       </Flex>
                     </Heading>
                   <Text>
-                    I am the younger twin brother. I love the web3 and am learning more about it every day. My hobbies are camping and muscle training.
+                  I am the younger twin brother. I love using programming to manifest my diverse ideas into real-world applications. It's my passion to express these concepts through the creation of apps. Recently, I've been immersed in the world of web3, and I'm eager to play a role in its mass adoption.
                   </Text>
                 </VStack>
                 <VStack align="start" spacing={5} mb={8}>
