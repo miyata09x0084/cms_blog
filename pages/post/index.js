@@ -11,7 +11,7 @@ const PostIndex = ({posts}) => {
   const fadeIn = useSpring({
     from: { opacity: 0 },
     to: { opacity: 1 },
-    config: config.slow,
+    config: config.gentle,
   });
 
   const slideIn = useSpring({
