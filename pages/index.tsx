@@ -3,11 +3,10 @@ import Link from 'next/link';
 import Head from 'next/head';
 import { getPosts } from '../services';
 import { PostCard } from '../components';
-import { Box, Text, Image, Flex, Heading, VStack, useColorModeValue, Button } from '@chakra-ui/react';
+import { Box, Text, Image, Flex, Heading, VStack, useColorModeValue, Button, Progress } from '@chakra-ui/react';
 import { useSpring, animated, config, to } from 'react-spring';
-import { WavingImage }from '../components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHandPeace } from '@fortawesome/free-solid-svg-icons'
+import { faHandPeace, faCaretRight, faFaceLaughBeam } from '@fortawesome/free-solid-svg-icons'
 
 
 interface Props {
@@ -130,11 +129,11 @@ const Home: NextPage<Props> = ({posts}) => {
                     <Heading as="h2" fontSize="2xl" fontWeight="900">
                       <Flex alignItems="center">
                         <Text marginRight="4px">About</Text>
-                        <FontAwesomeIcon icon={faHandPeace} />
+                        <FontAwesomeIcon icon={faFaceLaughBeam} />
                       </Flex>
                     </Heading>
                   <Text>
-                  I am the younger twin brother. I love using programming to manifest my diverse ideas into real-world applications. It's my passion to express these concepts through the creation of apps. Recently, I've been immersed in the world of web3, and I'm eager to play a role in its mass adoption.
+                    I am the younger twin brother. I love using programming to manifest my diverse ideas into real-world applications. It's my passion to express these concepts through the creation of apps. Recently, I've been immersed in the world of web3, and I'm eager to play a role in its mass adoption.
                   </Text>
                 </VStack>
                 <VStack align="start" spacing={5} mb={8}>
@@ -153,9 +152,10 @@ const Home: NextPage<Props> = ({posts}) => {
                 </VStack>
                 <Flex justifyContent="center" mb={12}>
                   <Link href="/work">
-                      <Button backgroundColor="var(--secondary-button)" color="var(--secondary-text)" _hover={{bg: "var(--secondary-button-hover)"}} py={1.5} px={3}  fontWeight="600" borderRadius="4px">
+                      <Button backgroundColor="var(--secondary-button)" color="var(--secondary-text)" _hover={{bg: "var(--secondary-button-hover)"}} p={4}  fontWeight="600" borderRadius="4px">
                       <Flex alignItems="center">
-                        <Text>Creations</Text>
+                        <Text mr={2}>Creations</Text>
+                        <FontAwesomeIcon icon={faCaretRight} />
                       </Flex>
                       </Button>
                   </Link>
@@ -170,9 +170,10 @@ const Home: NextPage<Props> = ({posts}) => {
                 </VStack>
                 <Flex justifyContent="center" mb={12}>
                   <Link href="/post">
-                    <Button backgroundColor="var(--primary-button)" color="var(--secondary-text)" _hover={{bg: "var(--primary-button-hover)"}} py={1.5} px={3} fontWeight="600" borderRadius="4px">
+                    <Button backgroundColor="var(--primary-button)" color="var(--secondary-text)" _hover={{bg: "var(--primary-button-hover)"}}  p={4} fontWeight="600" borderRadius="4px">
                       <Flex alignItems="center">
-                        <Text>Posts</Text>
+                        <Text mr={2}>Posts</Text>
+                        <FontAwesomeIcon icon={faCaretRight} />
                       </Flex>
                     </Button>
                   </Link>
