@@ -84,7 +84,7 @@ const Home: NextPage<Props> = ({posts}) => {
               <Box marginLeft="8px" mt={14} >
                 <VStack align="start" spacing={5} mb={12}>
                   <Heading as="h2" fontSize="2xl" fontWeight="900">
-                    Bio
+                    / Bio
                   </Heading>
                   <VStack align="start" spacing={1.5}>
                     <Flex>
@@ -127,7 +127,7 @@ const Home: NextPage<Props> = ({posts}) => {
                 <VStack align="start" spacing={5} mb={12}>
                     <Heading as="h2" fontSize="2xl" fontWeight="900">
                       <Flex alignItems="center">
-                        <Text marginRight="4px">About</Text>
+                        <Text marginRight="4px">/ About</Text>
                         <FontAwesomeIcon icon={faFaceLaughBeam} />
                       </Flex>
                     </Heading>
@@ -137,7 +137,7 @@ const Home: NextPage<Props> = ({posts}) => {
                 </VStack>
                 <VStack align="start" spacing={5} mb={8}>
                   <Heading as="h2" fontSize="2xl" fontWeight="900">
-                    Creations
+                    / Creations
                   </Heading>
                   <Box color={color}>
                     <Flex justifyContent="space-between" width="100%" height="100%">
