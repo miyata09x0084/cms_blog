@@ -161,7 +161,7 @@ const Home: NextPage<Props> = ({posts}) => {
                 </Flex>
                 <VStack align="start" spacing={5}>
                   <Heading as="h2" fontSize="2xl" fontWeight="900">
-                    Posts
+                    / Posts
                   </Heading>
                     <VStack align="start">
                         {posts.map((post, index) => (<PostCard post={post.node} key={index} />))}
