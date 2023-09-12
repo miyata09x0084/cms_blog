@@ -35,12 +35,12 @@ const Header = () => {
     <header>
         <Box pt={6} pb={9} maxWidth="768px" fontSize="xl" px={{base: 4, md: 0}}  mx="auto">
           <Flex>
-              <Text letterSpacing="-1px"  fontWeight="800" display="flex" alignItems="center">
+              <Flex letterSpacing="-1px"  fontWeight="800" alignItems="center">
                 <FontAwesomeIcon icon={faCat} />
                 <Link href="/" passHref>
-                    Rio Miyata
+                    <Text>RioMiyata</Text>
                 </Link>
-              </Text>
+              </Flex>
               <Spacer />
               <HStack spacing={5} display={{base: "none", md: "flex"}} fontWeight="500">
                 <MenuItems/>
