@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Header, Footer } from './';
 import { cookieStorageManagerSSR, localStorageManager, Box, useColorModeValue } from "@chakra-ui/react";
 
-const Layout = ({ children, cookies }) => {
+const Layout = ({ children }) => {
 
   const colorModeManager =
     typeof cookies === "string"
