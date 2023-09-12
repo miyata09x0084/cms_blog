@@ -28,7 +28,7 @@ const Footer = () => {
                     </Link>
                 </HStack>
                 <Link href="https://twitter.com/riomiyatta?ref_src=twsrc%5Etfw" data-size="large" data-show-screen-name="false" data-show-count="false">
-                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
                     <Flex
                         alignItems="center"
                         onMouseEnter={() => setIsIconHover(true)}

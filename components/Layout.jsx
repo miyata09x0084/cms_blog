@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Header, Footer } from './';
 import { cookieStorageManagerSSR, localStorageManager, Box, useColorModeValue } from "@chakra-ui/react";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, cookies }) => {
 
   const colorModeManager =
     typeof cookies === "string"
@@ -13,7 +13,7 @@ const Layout = ({ children }) => {
   const color = useColorModeValue("var(--primary-text)", "var(--dark-text)");
 
   return (
-      <body>
+      <div>
         <style>
             {`
               body:before {
@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
             {children}
             <Footer />
         </Box>
-      </body>
+      </div>
   )
 }
 

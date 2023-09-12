@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import Link from 'next/link';
 import Head from 'next/head';
 import { getPosts } from '../services';
-import { PostCard } from '../components';
+import { PostCard, TypingAnimation } from '../components';
 import { Box, Text, Image, Flex, Heading, VStack, useColorModeValue, Button, Progress } from '@chakra-ui/react';
 import { useSpring, animated, config, to } from 'react-spring';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -16,9 +16,9 @@ interface Props {
 const AnimatedBox = animated(Box);
 
 const Home: NextPage<Props> = ({posts}) => {
-  const bgSub = useColorModeValue("var(--secondary-bg)", "var(--dark-bg-sub)");
-  const color = useColorModeValue('var(--primary-text)', 'var(--dark-text)');
-  const colorSub = useColorModeValue('var(--secondary-text)', 'var(--dark-text)');
+  // const bgSub = useColorModeValue("var(--secondary-bg)", "var(--dark-bg-sub)");
+  // const color = useColorModeValue('var(--primary-text)', 'var(--dark-text)');
+  // const colorSub = useColorModeValue('var(--secondary-text)', 'var(--dark-text)');
 
   const fadeIn = useSpring({
     from: { opacity: 0 },
@@ -59,25 +59,26 @@ const Home: NextPage<Props> = ({posts}) => {
                       width="100%"
                       height={{ base: '240px', md: '350px' }}  // ここで高さを設定。スマホでは自動、デスクトップでは300pxに設定。必要に応じて調整
                   />
-                  <Box>
-                    <Flex w="100%" justifyContent="center" alignItems="center" pt={1} fontFamily="Noto Sans JP">
-                        <Text mx={{base: 2, md: 0}}  px={3} fontWeight="900" bg={bgSub} pt={0.5} pb={2} borderRadius={12} textAlign="center" color={colorSub}>
+                  {/* <Box>
+                    <Flex w="100%" justifyContent="center" alignItems="center" pt={1} fontFamily="Noto Sans JP" >
+                        <Text mx={{base: 2, md: 0}}  px={3} fontWeight="900"  pt={0.5} pb={2} borderRadius={12} textAlign="center" bg="brown">
                           <Box className='typing-animation' px={1.5}>Hello, I'm Full Stack Developer based in Japan.</Box>
                         </Text>
                     </Flex>
-                </Box>
+                  </Box> */}
+                  <TypingAnimation />
                 <Flex width="100%" justifyContent="center" mt={14} alignItems="center">
                   <Box mr="1px">
-                    <Text fontSize="4xl" fontWeight="800" mb="-7px" >Rio Miyata</Text>
+                    <Text fontSize="4xl" fontWeight="800" >Rio Miyata</Text>
                     <Text fontSize="lg" fontWeight="500" >Developer | Artist </Text>
                   </Box>
                     <Image
-                      src='/assets/images/self-image.jpeg'
-                      boxSize='69px'
+                      src='/assets/images/self-image.jpg'
+                      boxSize='72px'
                       borderRadius='full'
-                      ml="1"
+                      ml="2"
                       border="1px solid #664D03"
-                      transform="scaleX(-1) rotate(-7deg)"
+                      transform="scaleX(-1) rotate(-8deg)"
                       alt='Rio Miyata'
                     />
                 </Flex>
@@ -139,7 +140,7 @@ const Home: NextPage<Props> = ({posts}) => {
                   <Heading as="h2" fontSize="2xl" fontWeight="900">
                     / Creations
                   </Heading>
-                  <Box color={color}>
+                  <Box >
                     <Flex justifyContent="space-between" width="100%" height="100%">
                       <Box w="280px">
                         <Link href="https://merkletree-dapp.web.app" target="_blank" rel="noopener noreferrer">
@@ -151,7 +152,7 @@ const Home: NextPage<Props> = ({posts}) => {
                 </VStack>
                 <Flex justifyContent="center" mb={12}>
                   <Link href="/work">
-                      <Button backgroundColor="var(--secondary-button)" color="var(--secondary-text)" _hover={{bg: "var(--secondary-button-hover)"}} p={4}  fontWeight="600" borderRadius="4px">
+                      <Button p={4}  fontWeight="600" borderRadius="4px" bg="#049872" color="#EDDFD6">
                       <Flex alignItems="center">
                         <Text mr={2}>Creations</Text>
                         <FontAwesomeIcon icon={faCaretRight} />
@@ -169,7 +170,7 @@ const Home: NextPage<Props> = ({posts}) => {
                 </VStack>
                 <Flex justifyContent="center" mb={12}>
                   <Link href="/post">
-                    <Button backgroundColor="var(--primary-button)" color="var(--secondary-text)" _hover={{bg: "var(--primary-button-hover)"}}  p={4} fontWeight="600" borderRadius="4px">
+                    <Button   p={4} fontWeight="600" borderRadius="4px" bg="#8505b0" color="#EDDFD6">
                       <Flex alignItems="center">
                         <Text mr={2}>Posts</Text>
                         <FontAwesomeIcon icon={faCaretRight} />
