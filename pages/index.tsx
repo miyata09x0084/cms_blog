@@ -150,6 +150,7 @@ const Home: NextPage<Props> = ({posts}) => {
                           bg="#049872"
                           color="#EDDFD6"
                           boxShadow="2px 2px 6px rgb(4, 152, 114, 0.3)"
+                          _hover={{ bg: "#02735F" }}
                         >
                           <Flex alignItems="center">
                             <Text>Creations</Text>
@@ -174,6 +175,7 @@ const Home: NextPage<Props> = ({posts}) => {
                           bg="#8505b0"
                           color="#EDDFD6"
                           boxShadow="2px 2px 12px rgb(133, 5, 176, 0.3)"
+                          _hover={{ bg: "#6A0486" }}
                         >
                         <Flex alignItems="center">
                           <Text>Posts</Text>
