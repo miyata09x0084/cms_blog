@@ -48,6 +48,11 @@ const Home: NextPage<Props> = ({posts}) => {
     <Box>
       <Head>
         <title>Rio Miyata's Website</title>
+        <link
+          rel="preload"
+          href="assets/images/typing-image.png"
+          as="image"
+        />
       </Head>
       <Box>
             <Box maxWidth="580px" mx="auto" px={{base: 5, md: 0}} fontSize="17px" letterSpacing="0.03em" lineHeight="1.5">
