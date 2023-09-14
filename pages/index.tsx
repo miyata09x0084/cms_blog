@@ -53,6 +53,11 @@ const Home: NextPage<Props> = ({posts}) => {
           href="assets/images/typing-image.png"
           as="image"
         />
+        <link
+          rel="preload"
+          href="assets/images/self-image.jpg"
+          as="image"
+        />
       </Head>
       <Box>
             <Box maxWidth="580px" mx="auto" px={{base: 5, md: 0}} fontSize="17px" letterSpacing="0.03em" lineHeight="1.5">
