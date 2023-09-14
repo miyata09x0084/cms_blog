@@ -68,22 +68,22 @@ const Home: NextPage<Props> = ({posts}) => {
                   height={{ base: '240px', md: '350px' }}  // ここで高さを設定。スマホでは自動、デスクトップでは300pxに設定。必要に応じて調整
                   />
               <TypingAnimation />
+              <Flex width="100%" justifyContent="center" mt={14} alignItems="center">
+                <Box mr="1px">
+                  <Text fontSize="4xl" fontWeight="800" >Rio Miyata</Text>
+                  <Text fontSize="lg" fontWeight="500" >Developer | Artist </Text>
+                </Box>
+                  <Image
+                    src='/assets/images/self-image.jpg'
+                    boxSize='72px'
+                    borderRadius='full'
+                    ml="2"
+                    border="1px solid #664D03"
+                    transform="scaleX(-1) rotate(-8deg)"
+                    alt='Rio Miyata'
+                  />
+              </Flex>
               <AnimatedBox style={slideIn}>
-                <Flex width="100%" justifyContent="center" mt={14} alignItems="center">
-                  <Box mr="1px">
-                    <Text fontSize="4xl" fontWeight="800" >Rio Miyata</Text>
-                    <Text fontSize="lg" fontWeight="500" >Developer | Artist </Text>
-                  </Box>
-                    <Image
-                      src='/assets/images/self-image.jpg'
-                      boxSize='72px'
-                      borderRadius='full'
-                      ml="2"
-                      border="1px solid #664D03"
-                      transform="scaleX(-1) rotate(-8deg)"
-                      alt='Rio Miyata'
-                    />
-                </Flex>
                 <Box marginLeft="8px" mt={14} >
                   <VStack align="start" spacing={5} mb={12}>
                     <Heading as="h2" fontSize="2xl" fontWeight="900">
