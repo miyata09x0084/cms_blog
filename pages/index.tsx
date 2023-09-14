@@ -7,6 +7,7 @@ import { Box, Text, Image, Flex, Heading, VStack, useColorModeValue, Button, Pro
 import { useSpring, animated, config, to } from 'react-spring';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHandPeace, faCaretRight, faFaceLaughBeam } from '@fortawesome/free-solid-svg-icons'
+import { useEffect } from 'react';
 
 
 interface Props {
@@ -20,6 +21,12 @@ const Home: NextPage<Props> = ({posts}) => {
   // const color = useColorModeValue('var(--primary-text)', 'var(--dark-text)');
   // const colorSub = useColorModeValue('var(--secondary-text)', 'var(--dark-text)');
 
+  useEffect(() => {
+    const img = new window.Image();
+    img.src = "/assets/images/typing-image.png";
+    img.src = "/assets/images/self-image.jpg";
+  }, []);
+
   const fadeIn = useSpring({
     from: { opacity: 0 },
     to: { opacity: 1 },
@@ -30,16 +37,6 @@ const Home: NextPage<Props> = ({posts}) => {
     <Box>
       <Head>
         <title>Rio Miyata's Website</title>
-        {/* <link
-          rel="preload"
-          href="assets/images/typing-image.png"
-          as="image"
-        />
-        <link
-          rel="preload"
-          href="assets/images/self-image.jpg"
-          as="image"
-        /> */}
       </Head>
       <Box>
             <Box maxWidth="580px" mx="auto" px={{base: 5, md: 0}} fontSize="17px" letterSpacing="0.03em" lineHeight="1.5">
