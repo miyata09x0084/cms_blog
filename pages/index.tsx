@@ -30,7 +30,7 @@ const Home: NextPage<Props> = ({posts}) => {
     <Box>
       <Head>
         <title>Rio Miyata's Website</title>
-        <link
+        {/* <link
           rel="preload"
           href="assets/images/typing-image.png"
           as="image"
@@ -39,7 +39,7 @@ const Home: NextPage<Props> = ({posts}) => {
           rel="preload"
           href="assets/images/self-image.jpg"
           as="image"
-        />
+        /> */}
       </Head>
       <Box>
             <Box maxWidth="580px" mx="auto" px={{base: 5, md: 0}} fontSize="17px" letterSpacing="0.03em" lineHeight="1.5">
@@ -152,7 +152,6 @@ const Home: NextPage<Props> = ({posts}) => {
                         >
                           <Flex alignItems="center">
                             <Text>Creations</Text>
-                            <FontAwesomeIcon icon={faCaretRight} />
                           </Flex>
                         </Button>
                     </Link>
@@ -177,7 +176,6 @@ const Home: NextPage<Props> = ({posts}) => {
                         >
                         <Flex alignItems="center">
                           <Text>Posts</Text>
-                          <FontAwesomeIcon icon={faCaretRight} />
                         </Flex>
                       </Button>
                     </Link>
