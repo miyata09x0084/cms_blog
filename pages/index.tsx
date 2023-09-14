@@ -23,12 +23,6 @@ const Home: NextPage<Props> = ({posts}) => {
   const fadeIn = useSpring({
     from: { opacity: 0 },
     to: { opacity: 1 },
-    config: config.gentle,
-  });
-
-  const slideIn = useSpring({
-    from: { transform: 'translate3d(0, 10px, 0)' },
-    to: { transform: 'translate3d(0, 0, 0)' },
     config: config.slow,
   });
 
@@ -83,7 +77,7 @@ const Home: NextPage<Props> = ({posts}) => {
                     alt='Rio Miyata'
                   />
               </Flex>
-              <AnimatedBox style={slideIn}>
+              <AnimatedBox style={fadeIn}>
                 <Box marginLeft="8px" mt={14} >
                   <VStack align="start" spacing={5} mb={12}>
                     <Heading as="h2" fontSize="2xl" fontWeight="900">
