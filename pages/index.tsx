@@ -24,21 +24,21 @@ const Home: NextPage<Props> = ({posts}) => {
   const fadeIn = useSpring({
     from: { opacity: 0 },
     to: { opacity: 1 },
-    config: config.gentle,
+    config: config.slow,
   });
 
   return (
     <Box>
       <Head>
         <title>Rio Miyata's Website</title>
-        <Link
+        <link
           rel="preload"
           href="assets/images/typing-image.png"
           as="image"
         />
-        <Link
+        <link
           rel="preload"
-          href="assets/images/self-image.jpg"
+          href="assets/images/typing-image.png"
           as="image"
         />
       </Head>
@@ -142,21 +142,19 @@ const Home: NextPage<Props> = ({posts}) => {
                     </Box>
                   </VStack>
                   <Flex justifyContent="center" mb={12}>
-                    <Link href="/work" >
-                        <Box bg="#049872" borderRadius="25px" boxShadow="2px 2px 6px rgb(4, 152, 114, 0.3)">
-                          <Button
-                            p={5}
-                            fontWeight="600"
-                            color="#EDDFD6"
-                            borderRadius="25px"
-                            boxShadow="2px 2px 6px rgb(4, 152, 114, 0.3)"
-                            _hover={{ bg: "#049872", borderRadius: "25px", boxShadow: "2px 2px 12px rgb(4, 152, 114, 0.3)" }}
-                          >
-                            <Flex alignItems="center">
-                              <Text>Creations</Text>
-                            </Flex>
-                          </Button>
-                        </Box>
+                    <Link href="/work">
+                        <Button
+                          p={5}
+                          fontWeight="600"
+                          borderRadius="25px"
+                          bg="#049872"
+                          color="#EDDFD6"
+                          boxShadow="2px 2px 6px rgb(4, 152, 114, 0.3)"
+                        >
+                          <Flex alignItems="center">
+                            <Text>Creations</Text>
+                          </Flex>
+                        </Button>
                     </Link>
                   </Flex>
                   <VStack align="start" spacing={5}>
@@ -168,23 +166,20 @@ const Home: NextPage<Props> = ({posts}) => {
                       </VStack>
                   </VStack>
                   <Flex justifyContent="center" mb={12}>
-                  <Box bg="#8505b0" borderRadius="25px" boxShadow="2px 2px 6px rgb(133, 5, 176, 0.3)">
-                      <Link href="/post">
-                        <Button
-                            p={5}
-                            fontWeight="600"
-                            borderRadius="25px"
-                            bg="#8505b0"
-                            color="#EDDFD6"
-                            boxShadow="2px 2px 12px rgb(133, 5, 176, 0.3)"
-                            _hover={{ bg: "#8505b0", borderRadius: "25px", boxShadow: "2px 2px 12px rgb(133, 5, 176, 0.3)" }}
-                          >
-                          <Flex alignItems="center">
-                            <Text>Posts</Text>
-                          </Flex>
-                        </Button>
-                      </Link>
-                    </Box>
+                    <Link href="/post">
+                      <Button
+                          p={5}
+                          fontWeight="600"
+                          borderRadius="25px"
+                          bg="#8505b0"
+                          color="#EDDFD6"
+                          boxShadow="2px 2px 12px rgb(133, 5, 176, 0.3)"
+                        >
+                        <Flex alignItems="center">
+                          <Text>Posts</Text>
+                        </Flex>
+                      </Button>
+                    </Link>
                   </Flex>
                 </Box>
               </AnimatedBox>
