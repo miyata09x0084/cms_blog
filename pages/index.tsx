@@ -38,7 +38,7 @@ const Home: NextPage<Props> = ({posts}) => {
         />
         <link
           rel="preload"
-          href="assets/images/typing-image.png"
+          href="assets/images/self-image.png"
           as="image"
         />
       </Head>
