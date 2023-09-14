@@ -27,7 +27,7 @@ const Home: NextPage<Props> = ({posts}) => {
   });
 
   const slideIn = useSpring({
-    from: { transform: 'translate3d(0, 15px, 0)' },
+    from: { transform: 'translate3d(0, 10px, 0)' },
     to: { transform: 'translate3d(0, 0, 0)' },
     config: config.slow,
   });
