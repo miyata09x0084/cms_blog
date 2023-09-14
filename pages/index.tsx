@@ -26,18 +26,6 @@ const Home: NextPage<Props> = ({posts}) => {
     config: config.slow,
   });
 
-  const rotate = useSpring({
-    from: { x: -22, y: -22, z: - 180 },
-    to: { x:  0, y: 0, z: 10 },
-    config: {tension: 90, friction: 3},
-  })
-
-  const translate = useSpring({
-    form: {tx: 2000, ty: 2000, tz: 0},
-    to : {tx: 0, ty: 0, tz: 400},
-    config: {tension: 20, friction: 1},
-  })
-
   return (
     <Box>
       <Head>
@@ -140,7 +128,12 @@ const Home: NextPage<Props> = ({posts}) => {
                       <Flex justifyContent="space-between" width="100%" height="100%">
                         <Box w="280px">
                           <Link href="https://merkletree-dapp.web.app" target="_blank" rel="noopener noreferrer">
-                            <Image src="/assets/images/nft-mint-dapp.png" alt="Image 1" borderRadius="15px" boxShadow="1px 2px 28px rgb(35, 31, 24, 0.05)"/>
+                            <Image
+                              src="/assets/images/nft-mint-dapp.png"
+                              alt="Image 1"
+                              borderRadius="15px"
+                              boxShadow="1px 2px 12px rgb(35, 31, 24, 0.1)"
+                            />
                           </Link>
                         </Box>
                       </Flex>
@@ -148,11 +141,18 @@ const Home: NextPage<Props> = ({posts}) => {
                   </VStack>
                   <Flex justifyContent="center" mb={12}>
                     <Link href="/work">
-                        <Button p={4}  fontWeight="600" borderRadius="4px" bg="#049872" color="#EDDFD6">
-                        <Flex alignItems="center">
-                          <Text mr={2}>Creations</Text>
-                          <FontAwesomeIcon icon={faCaretRight} />
-                        </Flex>
+                        <Button
+                          p={5}
+                          fontWeight="600"
+                          borderRadius="25px"
+                          bg="#049872"
+                          color="#EDDFD6"
+                          boxShadow="2px 2px 6px rgb(4, 152, 114, 0.3)"
+                        >
+                          <Flex alignItems="center">
+                            <Text>Creations</Text>
+                            <FontAwesomeIcon icon={faCaretRight} />
+                          </Flex>
                         </Button>
                     </Link>
                   </Flex>
@@ -166,9 +166,16 @@ const Home: NextPage<Props> = ({posts}) => {
                   </VStack>
                   <Flex justifyContent="center" mb={12}>
                     <Link href="/post">
-                      <Button   p={4} fontWeight="600" borderRadius="4px" bg="#8505b0" color="#EDDFD6">
+                      <Button
+                          p={5}
+                          fontWeight="600"
+                          borderRadius="25px"
+                          bg="#8505b0"
+                          color="#EDDFD6"
+                          boxShadow="2px 2px 12px rgb(133, 5, 176, 0.3)"
+                        >
                         <Flex alignItems="center">
-                          <Text mr={2}>Posts</Text>
+                          <Text>Posts</Text>
                           <FontAwesomeIcon icon={faCaretRight} />
                         </Flex>
                       </Button>
