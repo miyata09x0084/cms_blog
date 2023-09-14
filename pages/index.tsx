@@ -47,6 +47,7 @@ const Home: NextPage<Props> = ({posts}) => {
                   src="/assets/images/typing-image.png"
                   alt='keyboard'
                   width="100%"
+                  borderRadius="4px"
                   height={{ base: '240px', md: '350px' }}  // ここで高さを設定。スマホでは自動、デスクトップでは300pxに設定。必要に応じて調整
                   />
               <TypingAnimation />
