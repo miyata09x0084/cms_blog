@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import { getPosts } from '../services';
 import { PostCard, TypingAnimation } from '../components';
-import { Box, Text, Image, Flex, Heading, VStack, useColorModeValue, Button, Progress } from '@chakra-ui/react';
+import { Box, Text, Image, Flex, Heading, VStack, HStack, useColorModeValue, Button, Progress } from '@chakra-ui/react';
 import { useSpring, animated, config, to } from 'react-spring';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHandPeace, faCaretRight, faFaceLaughBeam } from '@fortawesome/free-solid-svg-icons'
@@ -31,7 +31,7 @@ const Home: NextPage<Props> = ({posts}) => {
     <Box>
       <Head>
         <title>Rio Miyata's Website</title>
-        <link
+        {/* <link
           rel="preload"
           href="assets/images/typing-image.png"
           as="image"
@@ -40,7 +40,7 @@ const Home: NextPage<Props> = ({posts}) => {
           rel="preload"
           href="assets/images/self-image.png"
           as="image"
-        />
+        /> */}
       </Head>
       <Box>
             <Box maxWidth="580px" mx="auto" px={{base: 5, md: 0}} fontSize="17px" letterSpacing="0.03em" lineHeight="1.5">
@@ -71,7 +71,7 @@ const Home: NextPage<Props> = ({posts}) => {
                 <Box marginLeft="8px" mt={14} >
                   <VStack align="start" spacing={5} mb={12}>
                     <Heading as="h2" fontSize="2xl" fontWeight="900">
-                      / Bio
+                      /Bio
                     </Heading>
                     <VStack align="start" spacing={1.5}>
                       <Flex>
@@ -113,10 +113,10 @@ const Home: NextPage<Props> = ({posts}) => {
                   </VStack>
                   <VStack align="start" spacing={5} mb={12}>
                       <Heading as="h2" fontSize="2xl" fontWeight="900">
-                        <Flex alignItems="center">
-                          <Text marginRight="4px">/ About</Text>
+                        <HStack alignItems="center">
+                          <Text>/About</Text>
                           <FontAwesomeIcon icon={faFaceLaughBeam} />
-                        </Flex>
+                        </HStack>
                       </Heading>
                     <Text>
                       I am the younger twin brother. I love using programming to manifest my diverse ideas into real-world applications. It's my passion to express these concepts through the creation of apps. Recently, I've been immersed in the world of web3, and I'm eager to play a role in its mass adoption.
@@ -124,7 +124,7 @@ const Home: NextPage<Props> = ({posts}) => {
                   </VStack>
                   <VStack align="start" spacing={5} mb={8}>
                     <Heading as="h2" fontSize="2xl" fontWeight="900">
-                      / Creations
+                      /Creations
                     </Heading>
                     <Box >
                       <Flex justifyContent="space-between" width="100%" height="100%">
@@ -160,7 +160,7 @@ const Home: NextPage<Props> = ({posts}) => {
                   </Flex>
                   <VStack align="start" spacing={5}>
                     <Heading as="h2" fontSize="2xl" fontWeight="900">
-                      / Posts
+                      /Posts
                     </Heading>
                       <VStack align="start">
                           {posts.map((post, index) => (<PostCard post={post.node} key={index} />))}
