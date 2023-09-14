@@ -21,22 +21,26 @@ const Home: NextPage<Props> = ({posts}) => {
   // const color = useColorModeValue('var(--primary-text)', 'var(--dark-text)');
   // const colorSub = useColorModeValue('var(--secondary-text)', 'var(--dark-text)');
 
-  useEffect(() => {
-    const img = new window.Image();
-    img.src = "/assets/images/typing-image.png";
-    img.src = "/assets/images/self-image.jpg";
-  }, []);
-
   const fadeIn = useSpring({
     from: { opacity: 0 },
     to: { opacity: 1 },
-    config: config.slow,
+    config: config.gentle,
   });
 
   return (
     <Box>
       <Head>
         <title>Rio Miyata's Website</title>
+        <Link
+          rel="preload"
+          href="assets/images/typing-image.png"
+          as="image"
+        />
+        <Link
+          rel="preload"
+          href="assets/images/self-image.jpg"
+          as="image"
+        />
       </Head>
       <Box>
             <Box maxWidth="580px" mx="auto" px={{base: 5, md: 0}} fontSize="17px" letterSpacing="0.03em" lineHeight="1.5">
@@ -138,19 +142,21 @@ const Home: NextPage<Props> = ({posts}) => {
                     </Box>
                   </VStack>
                   <Flex justifyContent="center" mb={12}>
-                    <Link href="/work">
-                        <Button
-                          p={5}
-                          fontWeight="600"
-                          borderRadius="25px"
-                          bg="#049872"
-                          color="#EDDFD6"
-                          boxShadow="2px 2px 6px rgb(4, 152, 114, 0.3)"
-                        >
-                          <Flex alignItems="center">
-                            <Text>Creations</Text>
-                          </Flex>
-                        </Button>
+                    <Link href="/work" >
+                        <Box bg="#049872" borderRadius="25px" boxShadow="2px 2px 6px rgb(4, 152, 114, 0.3)">
+                          <Button
+                            p={5}
+                            fontWeight="600"
+                            color="#EDDFD6"
+                            borderRadius="25px"
+                            boxShadow="2px 2px 6px rgb(4, 152, 114, 0.3)"
+                            _hover={{ bg: "#049872", borderRadius: "25px", boxShadow: "2px 2px 12px rgb(4, 152, 114, 0.3)" }}
+                          >
+                            <Flex alignItems="center">
+                              <Text>Creations</Text>
+                            </Flex>
+                          </Button>
+                        </Box>
                     </Link>
                   </Flex>
                   <VStack align="start" spacing={5}>
@@ -162,20 +168,23 @@ const Home: NextPage<Props> = ({posts}) => {
                       </VStack>
                   </VStack>
                   <Flex justifyContent="center" mb={12}>
-                    <Link href="/post">
-                      <Button
-                          p={5}
-                          fontWeight="600"
-                          borderRadius="25px"
-                          bg="#8505b0"
-                          color="#EDDFD6"
-                          boxShadow="2px 2px 12px rgb(133, 5, 176, 0.3)"
-                        >
-                        <Flex alignItems="center">
-                          <Text>Posts</Text>
-                        </Flex>
-                      </Button>
-                    </Link>
+                  <Box bg="#8505b0" borderRadius="25px" boxShadow="2px 2px 6px rgb(133, 5, 176, 0.3)">
+                      <Link href="/post">
+                        <Button
+                            p={5}
+                            fontWeight="600"
+                            borderRadius="25px"
+                            bg="#8505b0"
+                            color="#EDDFD6"
+                            boxShadow="2px 2px 12px rgb(133, 5, 176, 0.3)"
+                            _hover={{ bg: "#8505b0", borderRadius: "25px", boxShadow: "2px 2px 12px rgb(133, 5, 176, 0.3)" }}
+                          >
+                          <Flex alignItems="center">
+                            <Text>Posts</Text>
+                          </Flex>
+                        </Button>
+                      </Link>
+                    </Box>
                   </Flex>
                 </Box>
               </AnimatedBox>
