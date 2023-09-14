@@ -16,6 +16,14 @@ interface Props {
 
 const AnimatedBox = animated(Box);
 
+function usePreloadImage(src) {
+  useEffect(() => {
+    const img = new window.Image();
+    img.src = src;
+  }, [src]);
+}
+
+
 const Home: NextPage<Props> = ({posts}) => {
   // const bgSub = useColorModeValue("var(--secondary-bg)", "var(--dark-bg-sub)");
   // const color = useColorModeValue('var(--primary-text)', 'var(--dark-text)');
@@ -27,20 +35,13 @@ const Home: NextPage<Props> = ({posts}) => {
     config: config.slow,
   });
 
+  usePreloadImage("/assets/images/typing-image.png");
+  usePreloadImage("/assets/images/self-image.png");
+
   return (
     <Box>
       <Head>
         <title>Rio Miyata's Website</title>
-        {/* <link
-          rel="preload"
-          href="assets/images/typing-image.png"
-          as="image"
-        />
-        <link
-          rel="preload"
-          href="assets/images/self-image.png"
-          as="image"
-        /> */}
       </Head>
       <Box>
             <Box maxWidth="580px" mx="auto" px={{base: 5, md: 0}} fontSize="17px" letterSpacing="0.03em" lineHeight="1.5">
