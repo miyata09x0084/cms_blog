@@ -16,7 +16,7 @@ interface Props {
 
 const AnimatedBox = animated(Box);
 
-function usePreloadImage(src) {
+function usePreloadImage(src: any) {
   useEffect(() => {
     const img = new window.Image();
     img.src = src;
