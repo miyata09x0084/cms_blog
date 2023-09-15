@@ -136,6 +136,7 @@ const Home: NextPage<Props> = ({posts}) => {
                               alt="Image 1"
                               borderRadius="15px"
                               boxShadow="1px 2px 12px rgb(35, 31, 24, 0.1)"
+                              loading="lazy"
                             />
                           </Link>
                         </Box>
