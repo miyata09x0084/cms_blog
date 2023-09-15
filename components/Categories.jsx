@@ -17,7 +17,7 @@ const Categories = () => {
   const colorSub = useColorModeValue("var(--secondary-text)", "var(--dark-bg)");
 
   return (
-    <Flex justifyContent="center" alignItems="center" width="100%" mt="40px" py="40px" borderTop="1px solid #bababa" borderBottom="1px solid #bababa" mb="30px" color={color}>
+    <Flex justifyContent="center" alignItems="center" width="100%" mt="40px" py="40px" borderTop="1px solid #C6BFAC" borderBottom="1px solid #C6BFAC" mb="30px" color={color}>
       {categories.map((category) => (
         <Box key={category.slug} mx="10px">
           <Link href={`/category/${category.slug}`} >
