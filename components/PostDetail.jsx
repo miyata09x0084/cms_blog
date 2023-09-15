@@ -65,7 +65,7 @@ const PostDetail = ({ post }) => {
     <AnimatedBox w="100%" h="100vh" bg={bg} style={slideIn}>
       <VStack align="start" maxW="600px" mx="auto" px={{ base: "8", md: "0" }} color={color} pt="40px">
           <Box pt="12px" pb="3px">
-            <Heading as="h1" size="md" className='pb-1 mb-1 border-b border-gray-300'>
+            <Heading as="h1" size="md" className='pb-1 mb-1' borderBottom="1px solid #C6BFAC">
               {post.title}
             </Heading>
             <VStack align="start" mb="4px">
