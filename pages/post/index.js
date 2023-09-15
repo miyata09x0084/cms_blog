@@ -15,7 +15,7 @@ const PostIndex = ({posts}) => {
   });
 
   const slideIn = useSpring({
-    from: { transform: 'translate3d(0, 60px, 0)' },
+    from: { transform: 'translate3d(0, 30px, 0)' },
     to: { transform: 'translate3d(0, 0, 0)' },
     config: config.slow,
   });
