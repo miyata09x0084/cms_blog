@@ -53,6 +53,7 @@ const Home: NextPage<Props> = ({posts}) => {
                   height={{ base: '240px', md: '310px' }}  // ここで高さを設定。スマホでは自動、デスクトップでは300pxに設定。必要に応じて調整
                   />
               <TypingAnimation />
+              <AnimatedBox style={fadeIn}>
               <Flex width="100%" justifyContent="center" mt={14} alignItems="center">
                 <Box mr="1px">
                   <Text fontSize="4xl" fontWeight="800" >Rio Miyata</Text>
@@ -68,7 +69,6 @@ const Home: NextPage<Props> = ({posts}) => {
                     alt='Rio Miyata'
                   />
               </Flex>
-              <AnimatedBox style={fadeIn}>
                 <Box marginLeft="8px" mt={14} >
                   <VStack align="start" spacing={5} mb={12}>
                     <Heading as="h2" fontSize="2xl" fontWeight="900">
