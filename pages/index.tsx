@@ -64,7 +64,7 @@ const Home: NextPage<Props> = ({posts}) => {
                     borderRadius='full'
                     ml="2"
                     border="1px solid #664D03"
-                    transform="scaleX(-1) rotate(-8deg)"
+                    transform="scaleX(-1) rotate(4deg)"
                     alt='Rio Miyata'
                   />
               </Flex>
