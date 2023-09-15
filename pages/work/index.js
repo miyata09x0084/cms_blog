@@ -41,7 +41,7 @@ const WorkIndex = () => {
       >
         <Flex justifyContent="space-between" width="100%" height="100%">
           <Box width="370px">
-            <Link href="https://merkletree-dapp.web.app" _hover={{ textDecoration: 'none' }} target="_blank" rel="noopener noreferrer">
+            <Link href="https://kangeki-dapps.web.app/" _hover={{ textDecoration: 'none' }} target="_blank" rel="noopener noreferrer">
               <Image src="/assets/images/dev-image1.png" alt="Image1" borderRadius="15px" boxShadow="1px 2px 28px rgb(35, 31, 24, 0.05)"/>
               <Text fontWeight="bold" fontSize="xl" mt="4">SoulBound Token DApp</Text>
               <Text fontSize="md" mt="1">A decentralized application for creating and managing NFTs on the ethereum.</Text>
