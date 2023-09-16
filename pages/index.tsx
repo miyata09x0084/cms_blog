@@ -29,6 +29,11 @@ const Home: NextPage<Props> = ({posts}) => {
     config: config.slow,
   });
 
+  const slideIn = useSpring({
+    from: { transform: 'translate3d(0, 23px, 0)' },
+    to: { transform: 'translate3d(0, 0, 0)' },
+    config: config.slow,
+  });
 
   return (
     <Box>
@@ -37,15 +42,19 @@ const Home: NextPage<Props> = ({posts}) => {
       </Head>
       <Box>
             <Box maxWidth="580px" mx="auto" px={{base: 5, md: 0}} fontSize="17px" letterSpacing="0.03em" lineHeight="1.5">
-              <Image
-                  src="/assets/images/typing-image.png"
-                  alt='keyboard'
-                  width={580}
-                  height={510}
-                  priority={true}
-                  loading="eager"
-              />
-              <TypingAnimation />
+              <AnimatedBox style={fadeIn}>
+                <Image
+                    src="/assets/images/typing-image.png"
+                    alt='keyboard'
+                    width={580}
+                    height={510}
+                    priority={true}
+                    loading="eager"
+                />
+              </AnimatedBox>
+              <AnimatedBox style={slideIn}>
+                <TypingAnimation />
+              </AnimatedBox>
               <AnimatedBox style={fadeIn}>
               <Flex width="100%" justifyContent="center" mt={14} alignItems="center">
                 <Box>
