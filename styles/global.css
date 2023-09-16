@@ -147,3 +147,7 @@ a:hover {
   transform: scaleX(-1);
   margin-left: 3px;
 }
+
+.round-card {
+  border-radius: 6%;
+}

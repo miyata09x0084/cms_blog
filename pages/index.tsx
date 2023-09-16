@@ -140,7 +140,7 @@ const Home: NextPage<Props> = ({posts}) => {
                               height={158} // 適切な高さを設定
                               quality={90}
                               loading="lazy"
-                              className="yourClassNameForStyling" // クラス名でスタイルを追加
+                              className="round-card" // クラス名でスタイルを追加
                             />
                           </Link>
                         </Box>
