@@ -42,16 +42,14 @@ const Home: NextPage<Props> = ({posts}) => {
       </Head>
       <Box>
             <Box maxWidth="580px" mx="auto" px={{base: 5, md: 0}} fontSize="17px" letterSpacing="0.03em" lineHeight="1.5">
-              <AnimatedBox style={fadeIn}>
-                <Image
-                    src="/assets/images/typing-image.png"
-                    alt='keyboard'
-                    width={580}
-                    height={510}
-                    priority={true}
-                    loading="eager"
-                />
-              </AnimatedBox>
+              <Image
+                  src="/assets/images/typing-image.png"
+                  alt='keyboard'
+                  width={580}
+                  height={510}
+                  priority={true}
+                  loading="eager"
+              />
               <AnimatedBox style={slideIn}>
                 <TypingAnimation />
               </AnimatedBox>
