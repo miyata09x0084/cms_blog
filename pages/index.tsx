@@ -26,13 +26,13 @@ const Home: NextPage<Props> = ({posts}) => {
   const fadeIn = useSpring({
     from: { opacity: 0 },
     to: { opacity: 1 },
-    config: config.slow,
+    config: config.molasses,
   });
 
   const slideIn = useSpring({
-    from: { transform: 'translate3d(0, 23px, 0)' },
+    from: { transform: 'translate3d(0, 500px, 0)' },
     to: { transform: 'translate3d(0, 0, 0)' },
-    config: config.slow,
+    config: config.wobbly,
   });
 
   return (

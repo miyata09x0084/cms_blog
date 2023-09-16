@@ -27,8 +27,14 @@ const WorkIndex = () => {
     config: config.slow,
   });
 
+  const fadeIn = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    config: config.molasses,
+  });
+
   return (
-    <AnimatedBox style={slideIn}>
+    <AnimatedBox style={fadeIn}>
       <Box
         align="start"
         mx="auto"
