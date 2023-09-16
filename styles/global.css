@@ -141,3 +141,9 @@ a:hover {
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+.round-image {
+  border-radius: 50%;
+  transform: scaleX(-1);
+  margin-left: 3px;
+}

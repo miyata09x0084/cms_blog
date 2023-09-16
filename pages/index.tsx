@@ -1,9 +1,10 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
 import Head from 'next/head';
+import Image from 'next/image';
 import { getPosts } from '../services';
 import { PostCard, TypingAnimation } from '../components';
-import { Box, Text, Image, Flex, Heading, VStack, HStack, useColorModeValue, Button, Progress } from '@chakra-ui/react';
+import { Box, Text, Flex, Heading, VStack, HStack, useColorModeValue, Button, Progress } from '@chakra-ui/react';
 import { useSpring, animated, config, to } from 'react-spring';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHandPeace, faCaretRight, faFaceLaughBeam } from '@fortawesome/free-solid-svg-icons'
@@ -16,20 +17,11 @@ interface Props {
 
 const AnimatedBox = animated(Box);
 
-function usePreloadImage(src: string) {
-  useEffect(() => {
-    const img = new window.Image();
-    img.src = src;
-  }, [src]);
-}
-
 
 const Home: NextPage<Props> = ({posts}) => {
   // const bgSub = useColorModeValue("var(--secondary-bg)", "var(--dark-bg-sub)");
   // const color = useColorModeValue('var(--primary-text)', 'var(--dark-text)');
   // const colorSub = useColorModeValue('var(--secondary-text)', 'var(--dark-text)');
-  usePreloadImage("/assets/images/typing-image.png");
-  usePreloadImage("/assets/images/self-image.png");
 
   const fadeIn = useSpring({
     from: { opacity: 0 },
@@ -48,26 +40,27 @@ const Home: NextPage<Props> = ({posts}) => {
               <Image
                   src="/assets/images/typing-image.png"
                   alt='keyboard'
-                  width="100%"
-                  borderRadius="4px"
-                  height={{ base: '240px', md: '310px' }}  // ここで高さを設定。スマホでは自動、デスクトップでは300pxに設定。必要に応じて調整
-                  />
+                  width={580}
+                  height={510}
+                  priority={true}
+                  loading="eager"
+              />
               <TypingAnimation />
               <AnimatedBox style={fadeIn}>
               <Flex width="100%" justifyContent="center" mt={14} alignItems="center">
-                <Box mr="1px">
+                <Box>
                   <Text fontSize="4xl" fontWeight="800" >Rio Miyata</Text>
-                  <Text fontSize="lg" fontWeight="500" >Developer | Artist </Text>
+                  <Text fontSize="lg" fontWeight="500" mt="-4px">Developer / Artist </Text>
                 </Box>
-                  <Image
-                    src='/assets/images/self-image.jpg'
-                    boxSize='72px'
-                    borderRadius='full'
-                    ml="2"
-                    border="1px solid #664D03"
-                    transform="scaleX(-1) rotate(4deg)"
-                    alt='Rio Miyata'
-                  />
+                <Image
+                  src='/assets/images/self-image.jpg'
+                  width={72}
+                  height={72}
+                  priority={true}
+                  loading="eager"
+                  className="round-image"
+                  alt='Rio Miyata'
+                />
               </Flex>
                 <Box marginLeft="8px" mt={14} >
                   <VStack align="start" spacing={5} mb={12}>
@@ -134,9 +127,11 @@ const Home: NextPage<Props> = ({posts}) => {
                             <Image
                               src="/assets/images/dev-image1.png"
                               alt="Image 1"
-                              borderRadius="15px"
-                              boxShadow="1px 2px 12px rgb(35, 31, 24, 0.1)"
+                              width={280}
+                              height={158} // 適切な高さを設定
+                              quality={90}
                               loading="lazy"
+                              className="yourClassNameForStyling" // クラス名でスタイルを追加
                             />
                           </Link>
                         </Box>
