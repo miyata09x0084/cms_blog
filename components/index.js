@@ -6,3 +6,4 @@ export { default as Header } from './Header';
 export { default as Loader } from './Loader';
 export { default as Footer } from './Footer'
 export { default as TypingAnimation } from './TypingAnimation'
+export { default as ContactForm } from './ContactForm'
