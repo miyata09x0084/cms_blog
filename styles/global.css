@@ -99,7 +99,7 @@ a:hover {
 @media screen and (min-width: 768px) {
   .typing-animation {
     white-space: nowrap;
-    animation: typing 3.3s steps(32, end) forwards;
+    animation: typing 4.2s steps(32, end) forwards;
     margin-bottom: -7px;
   }
 
