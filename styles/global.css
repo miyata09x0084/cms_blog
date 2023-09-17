@@ -100,7 +100,7 @@ a:hover {
   .typing-animation {
     white-space: nowrap;
     animation: typing 3.3s steps(30, end) forwards;
-    margin-bottom: -7px;
+    margin-bottom: -7px;  
   }
 
   .typing-animation::after {
@@ -109,7 +109,7 @@ a:hover {
     top: 0;
     right: 0;
     height: 100%;
-    width: 2px;
+    width: 3px;
     background-color: currentColor;
     animation: blink-caret 1.2s step-end infinite;
   }
@@ -127,7 +127,7 @@ a:hover {
     from, to {
       opacity: 1;
     }
-    50% {
+    60% {
       opacity: 0;
     }
   }
