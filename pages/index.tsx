@@ -57,7 +57,7 @@ const Home: NextPage<Props> = ({posts}) => {
               <Flex width="100%" justifyContent="center" mt={14} alignItems="center">
                 <Box>
                   <Text fontSize="4xl" fontWeight="800" >Rio Miyata</Text>
-                  <Text fontSize="lg" fontWeight="500" mt="-4px">Developer / Artist </Text>
+                  <Text fontSize="lg" fontWeight="900" mt="-4px">Developer / Artist </Text>
                 </Box>
                 <Image
                   src='/assets/images/self-image.jpg'
