@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import Image from 'next/image';
 import { getPosts } from '../services';
-import { PostCard, TypingAnimation } from '../components';
+import { PostCard, TypingAnimation, ContactForm } from '../components';
 import { Box, Text, Flex, Heading, VStack, HStack, useColorModeValue, Button, Progress } from '@chakra-ui/react';
 import { useSpring, animated, config, to } from 'react-spring';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -154,7 +154,7 @@ const Home: NextPage<Props> = ({posts}) => {
                           bg="#8505b0"
                           color="#EDDFD6"
                           boxShadow="2px 2px 10px rgb(133, 5, 176, 0.3)"
-                          _hover={{ opacity: 0.8 }}
+                          _hover={{ opacity: 0.7 }}
                         >
                           <Flex alignItems="center">
                             <Text>Creations</Text>
@@ -179,7 +179,7 @@ const Home: NextPage<Props> = ({posts}) => {
                           bg="#0530b0"
                           color="#EDDFD6"
                           boxShadow="2px 2px 10px rgb(5, 48, 176, 0.3)"
-                          _hover={{ opacity: 0.8 }}
+                          _hover={{ opacity: 0.7 }}
                         >
                         <Flex alignItems="center">
                           <Text>Posts</Text>
