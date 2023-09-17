@@ -59,7 +59,7 @@ const ContactForm = () => {
                     borderRadius="25px"
                     bg="#664D03"
                     color="#EDDFD6"
-                    boxShadow="2px 2px 10px rgb(5, 48, 176, 0.3)"
+                    boxShadow="2px 2px 10px rgb(102, 77, 3, 0.3)"
                     _hover={{ opacity: 0.7 }}
                 >
                 Send Message
