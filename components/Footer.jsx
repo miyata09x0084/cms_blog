@@ -10,7 +10,7 @@ const Footer = () => {
 
   return (
     <footer>
-      <Box w="100vw" h="100%" pt={10} pb={14}>
+      <Box w="100vw" h="100%" pt={16} pb={8}>
         <Box maxWidth="768px" fontSize="xl" px={{base: 4, md: 0}}  mx="auto">
             <Flex justifyContent="space-between" alignItems="center">
                 <HStack mx={1} spacing={6} display="flex" alignItems="center">
