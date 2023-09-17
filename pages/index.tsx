@@ -41,7 +41,7 @@ const Home: NextPage<Props> = ({posts}) => {
         <title>Rio Miyata's Website</title>
       </Head>
       <Box>
-            <Box maxWidth="580px" mx="auto" px={{base: 5, md: 0}} fontSize="17px" letterSpacing="0.03em" lineHeight="1.5">
+            <Box maxWidth="580px" mx="auto" px={{base: 5, md: 0}} fontSize="17px" letterSpacing="0.06em" lineHeight="1.5">
               <Image
                   src="/assets/images/typing-image.png"
                   alt='keyboard'
@@ -189,6 +189,7 @@ const Home: NextPage<Props> = ({posts}) => {
                   </Flex>
                 </Box>
               </AnimatedBox>
+              <ContactForm />
             </Box>
       </Box>
     </Box>
