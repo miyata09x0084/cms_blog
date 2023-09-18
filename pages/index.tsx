@@ -198,7 +198,7 @@ const Home: NextPage<Props> = ({posts}) => {
                 </Box>
               </AnimatedBox>
               {/* <ContactForm /> */}
-                <VStack align="start"  spacing={5} mb={12}>
+                <VStack align="start"  mb={6}>
                   <Heading as="h2" fontSize="2xl" fontWeight="900">
                     /Contact 📬
                   </Heading>
@@ -218,7 +218,7 @@ const Home: NextPage<Props> = ({posts}) => {
                     _hover={{ opacity: 0.7 }}
                   >
                     <Flex alignItems="center">
-                      <Text ml={2}>TwitterでDMを送る</Text>
+                      <Text>TwitterでDMを送る</Text>
                     </Flex>
                   </Button>
                 </Flex>
