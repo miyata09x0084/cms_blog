@@ -198,6 +198,30 @@ const Home: NextPage<Props> = ({posts}) => {
                 </Box>
               </AnimatedBox>
               {/* <ContactForm /> */}
+                <VStack align="start"  spacing={5} mb={12}>
+                  <Heading as="h2" fontSize="2xl" fontWeight="900">
+                    /Contact 📬
+                  </Heading>
+                </VStack>
+                <Flex justifyContent="center" mb={12}>
+                  <Button
+                    as="a"
+                    href="https://twitter.com/riomiyatta?ref_src=twsrc%5Etfw"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    p={5}
+                    fontWeight="600"
+                    borderRadius="25px"
+                    bg="#664D03"
+                    color="#EDDFD6"
+                    boxShadow="2px 2px 10px rgb(102, 77, 3, 0.3)"
+                    _hover={{ opacity: 0.7 }}
+                  >
+                    <Flex alignItems="center">
+                      <Text ml={2}>TwitterでDMを送る</Text>
+                    </Flex>
+                  </Button>
+                </Flex>
             </Box>
       </Box>
     </Box>
