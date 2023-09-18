@@ -10,17 +10,27 @@ const ContactForm = () => {
   const toast = useToast();
 
   const onSubmit = async (data) => {
+    console.log("onSubmit called", data);
     setIsLoading(true);
     try {
-      // ここに送信処理を書く（例: APIエンドポイントへのPOSTリクエスト）
-      console.log(data);
+        const response = await fetch("/api/contact", {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        });
 
-      toast({
-        title: "Message sent successfully!",
-        status: "success",
-        duration: 5000,
-        isClosable: true,
-      });
+        if (!response.ok) {
+            throw new Error("Network response was not ok.");
+        }
+
+        toast({
+            title: "Message sent successfully!",
+            status: "success",
+            duration: 5000,
+            isClosable: true,
+        });
 
     } catch (error) {
       toast({
@@ -44,7 +54,7 @@ const ContactForm = () => {
                 <VStack spacing={4} width="100%">
                 <FormControl isInvalid={!!errors.email}>
                     <FormLabel htmlFor="email">Email</FormLabel>
-                    <Input id="email" {...register("email", { required: "Email is required", pattern: { value: /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z]{2,}$/, message: "Invalid email address" } })} placeholder="Your Email" bg="white" color="gray.800" />
+                    <Input id="email" {...register("email", { required: "Email is required", pattern: { value: /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/, message: "Invalid email address" } })} placeholder="Your Email" bg="white" color="gray.800" />
                     <FormErrorMessage>{errors.email?.message}</FormErrorMessage>
                 </FormControl>
                 <FormControl isInvalid={!!errors.message}>
@@ -52,18 +62,20 @@ const ContactForm = () => {
                     <Textarea id="message" {...register("message", { required: "Message is required" })} placeholder="Your Message" bg="white" color="gray.800" />
                     <FormErrorMessage>{errors.message?.message}</FormErrorMessage>
                 </FormControl>
-                <Button
-                    p={5}
-                    isLoading={isLoading}
-                    fontWeight="600"
-                    borderRadius="25px"
-                    bg="#664D03"
-                    color="#EDDFD6"
-                    boxShadow="2px 2px 10px rgb(102, 77, 3, 0.3)"
-                    _hover={{ opacity: 0.7 }}
-                >
-                Send Message
-                </Button>
+                    <Button
+                        type="submit"
+                        // onClick={() => console.log("Button clicked")}
+                        p={5}
+                        isLoading={isLoading}
+                        fontWeight="600"
+                        borderRadius="25px"
+                        bg="#664D03"
+                        color="#EDDFD6"
+                        boxShadow="2px 2px 10px rgb(102, 77, 3, 0.3)"
+                        _hover={{ opacity: 0.7 }}
+                    >
+                        Send Message
+                    </Button>
                 </VStack>
             </form>
         </Box>
