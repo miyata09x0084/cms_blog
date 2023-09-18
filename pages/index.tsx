@@ -113,6 +113,14 @@ const Home: NextPage<Props> = ({posts}) => {
                     </VStack>
                   </VStack>
                   <VStack align="start" spacing={5} mb={12}>
+                    <Heading as="h2" fontSize="2xl" fontWeight="900">
+                      /I ❤️
+                    </Heading>
+                    <Text>
+                      #Camping #Cooking #Traveling #Web3 #Blockchain #NFT #WorkingOut #HotSpring
+                    </Text>
+                  </VStack>
+                  <VStack align="start" spacing={5} mb={12}>
                       <Heading as="h2" fontSize="2xl" fontWeight="900">
                         <HStack alignItems="center">
                           <Text>/About</Text>
