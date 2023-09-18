@@ -189,7 +189,7 @@ const Home: NextPage<Props> = ({posts}) => {
                   </Flex>
                 </Box>
               </AnimatedBox>
-              <ContactForm />
+              {/* <ContactForm /> */}
             </Box>
       </Box>
     </Box>
