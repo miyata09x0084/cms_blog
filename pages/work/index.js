@@ -53,6 +53,7 @@ const WorkIndex = () => {
                 alt="Image1"
                 borderRadius="15px"
                 boxShadow="1px 2px 28px rgb(35, 31, 24, 0.05)"
+                quality={90}
                 priority={true}
                 loading="eager"
               />
