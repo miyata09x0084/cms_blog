@@ -34,7 +34,7 @@ const Footer = () => {
                         onMouseEnter={() => setIsIconHover(true)}
                         onMouseLeave={() => setIsIconHover(false)}
                     >
-                        {isIconHover ? (<FontAwesomeIcon icon={faTwitter} bounce/> )
+                        {isIconHover ? (<FontAwesomeIcon icon={faTwitter} bounce width={20} height={20} mr={1}/> )
                         : (<FontAwesomeIcon icon={faTwitter} width={20} height={20} mr={1}/>) }
                         <Text ml={0.5}>Follow</Text>
                     </Flex>
