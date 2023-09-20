@@ -156,7 +156,6 @@ const Home: NextPage<Props> = ({posts}) => {
                   <Flex justifyContent="center" mb={12}>
                     <Link href="/work">
                         <Button
-                          p={5}
                           fontWeight="600"
                           borderRadius="25px"
                           bg="#8505b0"
@@ -181,7 +180,6 @@ const Home: NextPage<Props> = ({posts}) => {
                   <Flex justifyContent="center" mb={12}>
                     <Link href="/post">
                       <Button
-                          p={5}
                           fontWeight="600"
                           borderRadius="25px"
                           bg="#0530b0"
@@ -209,7 +207,6 @@ const Home: NextPage<Props> = ({posts}) => {
                     href="https://twitter.com/riomiyatta?ref_src=twsrc%5Etfw"
                     target="_blank"
                     rel="noopener noreferrer"
-                    p={5}
                     fontWeight="600"
                     borderRadius="25px"
                     bg="#664D03"
