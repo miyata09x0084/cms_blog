@@ -8,12 +8,12 @@ const TypingAnimation = () => {
   useEffect(() => {
     const typed = new Typed(el.current, {
       strings: [
-        "Hello, ^400 I'm Full Stack Developer based in Japan. ^4000" ,
-        "Enjoy browsing my website! ^4000",
+        "Hello, ^300 I'm Full Stack Developer ^300 based in Japan. ^5000" ,
+        "Enjoy ^300 browsing my website! ^5000",
       ],
       smartBackspace: true,
       typeSpeed: 50,
-      backSpeed: 35,
+      backSpeed: 20,
       loop: true,
     });
 
