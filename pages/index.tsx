@@ -165,7 +165,7 @@ const Home: NextPage<Props> = ({posts}) => {
                         >
                           <Flex alignItems="center" mr={-1}>
                             <Text>Creations</Text>
-                            <FontAwesomeIcon icon={faCaretRight} width={17} height={17}/>
+                            <FontAwesomeIcon icon={faCaretRight} width={15} height={15}/>
                           </Flex>
                         </Button>
                     </Link>
@@ -190,7 +190,7 @@ const Home: NextPage<Props> = ({posts}) => {
                         >
                         <Flex alignItems="center" mr={-1}>
                           <Text>Posts</Text>
-                          <FontAwesomeIcon icon={faCaretRight} width={17} height={17}/>
+                          <FontAwesomeIcon icon={faCaretRight} width={15} height={15}/>
                         </Flex>
                       </Button>
                     </Link>
@@ -218,7 +218,7 @@ const Home: NextPage<Props> = ({posts}) => {
                   >
                     <Flex alignItems="center" mr={-1}>
                       <Text>TwitterでDMを送る</Text>
-                      <FontAwesomeIcon icon={faCaretRight} width={17} height={17}/>
+                      <FontAwesomeIcon icon={faCaretRight} width={15} height={15}/>
                     </Flex>
                   </Button>
                 </Flex>
