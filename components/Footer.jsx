@@ -16,13 +16,13 @@ const Footer = () => {
                 <HStack mx={1} spacing={6} display="flex" alignItems="center">
                     <Link href="https://github.com/miyata09x0084" target="_blank" rel="noopener noreferrer">
                         <Flex alignItems="center">
-                            <FontAwesomeIcon icon={faGithub}/>
-                            <Text ml={0.5}>Github</Text>
+                            <FontAwesomeIcon icon={faGithub} width={20} height={20}/>
+                            <Text ml={1}>Github</Text>
                         </Flex>
                     </Link>
                     <Link href="https://etherscan.io/address/0x906b1f02B8BBCA762896d368e40C77c857Db6A0B" target="_blank" rel="noopener noreferrer">
                         <Flex alignItems="center">
-                            <Image src="/assets/images/etherscan-logo-circle.png" alt="github-icon" w="19px" h="19px" mr={0.5}/>
+                            <Image src="/assets/images/etherscan-logo-circle.png" alt="github-icon" w="19px" h="19px" mr={1}/>
                             <Text>Etherscan</Text>
                         </Flex>
                     </Link>
@@ -35,7 +35,7 @@ const Footer = () => {
                         onMouseLeave={() => setIsIconHover(false)}
                     >
                         {isIconHover ? (<FontAwesomeIcon icon={faTwitter} bounce/> )
-                        : (<FontAwesomeIcon icon={faTwitter}/>)}
+                        : (<FontAwesomeIcon icon={faTwitter} width={20} height={20} mr={1}/>) }
                         <Text ml={0.5}>Follow</Text>
                     </Flex>
                 </Link>
