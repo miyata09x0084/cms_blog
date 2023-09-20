@@ -34,7 +34,7 @@ const Header = () => {
 
   return (
     <header>
-        <Box pt={6} pb={9} maxWidth="768px" fontSize="xl" px={{base: 4, md: 0}}  mx="auto">
+        <Box pt={5} pb={9} maxWidth="768px" fontSize="xl" px={{base: 4, md: 0}}  mx="auto">
           <Flex>
               <Flex letterSpacing="-1px"  fontWeight="700" alignItems="center">
                 <FontAwesomeIcon width={23} height={23} icon={faCat} />
