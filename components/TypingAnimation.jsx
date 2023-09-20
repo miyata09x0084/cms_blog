@@ -24,7 +24,7 @@ const TypingAnimation = () => {
 
   return (
     <Flex w="100%" justifyContent="center" alignItems="center" pt={2}>
-      <Box mx={{ base: 2, md: 0 }} px={3} fontWeight="700" pt={1} pb={2} borderRadius={17} textAlign="center" bg="#664D03" color="#EDDFD6">
+      <Box mx={{ base: 2, md: 0 }} px={4} fontWeight="700" pt={1} pb={2} borderRadius={17} textAlign="center" bg="#664D03" color="#EDDFD6">
         <span ref={el} />
       </Box>
     </Flex>
