@@ -163,8 +163,9 @@ const Home: NextPage<Props> = ({posts}) => {
                           boxShadow="2px 2px 10px rgb(133, 5, 176, 0.3)"
                           _hover={{ opacity: 0.7 }}
                         >
-                          <Flex alignItems="center">
+                          <Flex alignItems="center" mr={-1}>
                             <Text>Creations</Text>
+                            <FontAwesomeIcon icon={faCaretRight} width={17} height={17}/>
                           </Flex>
                         </Button>
                     </Link>
@@ -177,7 +178,7 @@ const Home: NextPage<Props> = ({posts}) => {
                           {posts.map((post, index) => (<PostCard post={post.node} key={index} />))}
                       </VStack>
                   </VStack>
-                  <Flex justifyContent="center" mb={12}>
+                  <Flex justifyContent="center" mb={12} >
                     <Link href="/post">
                       <Button
                           fontWeight="600"
@@ -187,8 +188,9 @@ const Home: NextPage<Props> = ({posts}) => {
                           boxShadow="2px 2px 10px rgb(5, 48, 176, 0.3)"
                           _hover={{ opacity: 0.7 }}
                         >
-                        <Flex alignItems="center">
+                        <Flex alignItems="center" mr={-1}>
                           <Text>Posts</Text>
+                          <FontAwesomeIcon icon={faCaretRight} width={17} height={17}/>
                         </Flex>
                       </Button>
                     </Link>
@@ -214,8 +216,9 @@ const Home: NextPage<Props> = ({posts}) => {
                     boxShadow="2px 2px 10px rgb(102, 77, 3, 0.3)"
                     _hover={{ opacity: 0.7 }}
                   >
-                    <Flex alignItems="center">
+                    <Flex alignItems="center" mr={-1}>
                       <Text>TwitterでDMを送る</Text>
+                      <FontAwesomeIcon icon={faCaretRight} width={17} height={17}/>
                     </Flex>
                   </Button>
                 </Flex>

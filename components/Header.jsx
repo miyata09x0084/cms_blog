@@ -38,7 +38,6 @@ const Header = () => {
           <Flex>
               <Flex letterSpacing="-1px"  fontWeight="700" alignItems="center">
                 <FontAwesomeIcon width={23} height={23} icon={faCat} />
-                {/* <Image src="/assets/image/cat.svg" alt="Cat Icon"  /> */}
                 <Link href="/" passHref>
                     <Text>RioMiyata</Text>
                 </Link>
