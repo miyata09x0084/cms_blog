@@ -8,6 +8,7 @@ import SunIcon from './ToggleSwitch/icons/SunIcon';
 import MoonIcon from './ToggleSwitch/icons/MoonIcon';
 import { Link as ChakraLink } from '@chakra-ui/react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 
 const Header = () => {
@@ -36,7 +37,8 @@ const Header = () => {
         <Box pt={6} pb={9} maxWidth="768px" fontSize="xl" px={{base: 4, md: 0}}  mx="auto">
           <Flex>
               <Flex letterSpacing="-1px"  fontWeight="700" alignItems="center">
-                <FontAwesomeIcon icon={faCat} />
+                <FontAwesomeIcon width={23} height={23} icon={faCat} />
+                {/* <Image src="/assets/image/cat.svg" alt="Cat Icon"  /> */}
                 <Link href="/" passHref>
                     <Text>RioMiyata</Text>
                 </Link>
