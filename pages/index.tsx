@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import Image from 'next/image';
 import { getPosts } from '../services';
-import { PostCard, TypingAnimation, ContactForm } from '../components';
+import { PostCard, TypingAnimation } from '../components';
 import { Box, Text, Flex, Heading, VStack, HStack, useColorModeValue, Button, Progress } from '@chakra-ui/react';
 import { useSpring, animated, config, to } from 'react-spring';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
