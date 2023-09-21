@@ -165,7 +165,7 @@ const Home: NextPage<Props> = ({posts}) => {
                           pb={1}
                         >
                           <Flex alignItems="center" mr={-1}>
-                            <Text>Creations</Text>
+                            <Text mr={0.5}>Creations</Text>
                             <FontAwesomeIcon icon={faCaretRight} width={15} height={15}/>
                           </Flex>
                         </Button>
@@ -191,7 +191,7 @@ const Home: NextPage<Props> = ({posts}) => {
                           pb={1}
                         >
                         <Flex alignItems="center" mr={-1}>
-                          <Text>Posts</Text>
+                          <Text mr={0.5}>Posts</Text>
                           <FontAwesomeIcon icon={faCaretRight} width={15} height={15}/>
                         </Flex>
                       </Button>
