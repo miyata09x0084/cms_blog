@@ -20,11 +20,6 @@ const PostIndex = ({posts}) => {
     config: config.slow,
   });
 
-  const { colorMode } = useColorMode();
-  const bg = useColorModeValue("var(--primary-bg)", "var(--dark-bg)");
-  const color = useColorModeValue("var(--primary-text)", "var(--dark-text)");
-  const colorSub = useColorModeValue("var(--secondary-text)", "var(--dark-bg)");
-
 
   return (
     <AnimatedBox style={fadeIn}>
