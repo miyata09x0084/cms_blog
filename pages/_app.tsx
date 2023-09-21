@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
-        <Chakra cookies={pageProps.cookies} >
+        <Chakra>
           <Layout>
             <Component {...pageProps} />
           </Layout>
@@ -17,5 +17,3 @@ function MyApp({ Component, pageProps }: AppProps) {
 }
 
 export default MyApp
-
-export { getServerSideProps } from '../components/Chakra';
