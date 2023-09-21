@@ -19,12 +19,12 @@ const CategoryPost = ({ posts }) => {
   }
 
   return (
-    <AnimatedBox align="start" mx="auto" maxW="600px" px={{ base: "4", md: "0" }} mb="8" style={slideIn}>
+    <Box align="start" mx="auto" maxW="600px" px={{ base: "4", md: "0" }} mb="8">
     <Categories />
     {posts.map((post, index) => (
         <PostCard key={index} post={post.node} />
     ))}
-</AnimatedBox>
+</Box>
   )
 }
 
