@@ -162,6 +162,7 @@ const Home: NextPage<Props> = ({posts}) => {
                           color="#EDDFD6"
                           boxShadow="2px 2px 10px rgb(133, 5, 176, 0.3)"
                           _hover={{ opacity: 0.4 }}
+                          pb={1}
                         >
                           <Flex alignItems="center" mr={-1}>
                             <Text>Creations</Text>
@@ -187,6 +188,7 @@ const Home: NextPage<Props> = ({posts}) => {
                           color="#EDDFD6"
                           boxShadow="2px 2px 10px rgb(5, 48, 176, 0.3)"
                           _hover={{ opacity: 0.4 }}
+                          pb={1}
                         >
                         <Flex alignItems="center" mr={-1}>
                           <Text>Posts</Text>
@@ -215,6 +217,7 @@ const Home: NextPage<Props> = ({posts}) => {
                     color="#EDDFD6"
                     boxShadow="2px 2px 10px rgb(102, 77, 3, 0.3)"
                     _hover={{ opacity: 0.4 }}
+                    pb={0.5}
                   >
                     <Flex alignItems="center" mr={-1}>
                       <Text>TwitterでDMを送る</Text>
