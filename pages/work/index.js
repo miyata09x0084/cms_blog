@@ -31,14 +31,14 @@ const WorkIndex = () => {
       <Box
         align="start"
         mx="auto"
-        maxW="767px"
+        maxW="550px"
         height="100%"
         px={{ base: '8', md: '0' }}
         mb="8"
         pt="40px"
       >
-        <Flex justifyContent="space-between" width="100%" height="100%">
-          <Box width="370px">
+        <Flex justifyContent="center" width="100%" height="100%">
+          <Box width="450px">
             <Link href="https://kangeki-dapps.web.app/" _hover={{ textDecoration: 'none' }} target="_blank" rel="noopener noreferrer">
               <Image
                 src="/assets/images/dev-image1.png"

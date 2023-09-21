@@ -19,7 +19,7 @@ const CategoryPost = ({ posts }) => {
   }
 
   return (
-    <Box align="start" mx="auto" maxW="600px" px={{ base: "4", md: "0" }} mb="8">
+    <Box align="start" mx="auto" maxW="550px" px={{ base: "4", md: "0" }} mb="8">
     <Categories />
     {posts.map((post, index) => (
         <PostCard key={index} post={post.node} />
