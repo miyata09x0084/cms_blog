@@ -22,7 +22,7 @@ const PostIndex = ({posts}) => {
 
 
   return (
-    <AnimatedBox style={fadeIn}>
+    <AnimatedBox style={slideIn}>
         <VStack align="start" mx="auto" maxW="550px" px={{ base: "4", md: "0" }} mb="8" className="M PLUS Rounded 1c">
             <Categories />
             {posts.map((post, index) => (<PostCard post={post.node} key={index} />))}

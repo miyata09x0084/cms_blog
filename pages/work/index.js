@@ -27,7 +27,7 @@ const WorkIndex = () => {
   });
 
   return (
-    <AnimatedBox style={fadeIn}>
+    <AnimatedBox style={slideIn}>
       <Box
         align="start"
         mx="auto"
