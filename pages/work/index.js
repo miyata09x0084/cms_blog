@@ -12,13 +12,6 @@ import {
 import { useSpring, animated, config } from 'react-spring';
 
 const WorkIndex = () => {
-  const { colorMode } = useColorMode();
-  const bg = useColorModeValue('var(--primary-bg)', 'var(--dark-bg)');
-  const color = useColorModeValue('var(--primary-text)', 'var(--dark-text)');
-  const colorSub = useColorModeValue(
-    'var(--secondary-text)',
-    'var(--dark-bg)'
-  );
 
   const AnimatedBox = animated(Box);
   const slideIn = useSpring({
@@ -42,7 +35,6 @@ const WorkIndex = () => {
         height="100%"
         px={{ base: '8', md: '0' }}
         mb="8"
-        color={color}
         pt="40px"
       >
         <Flex justifyContent="space-between" width="100%" height="100%">
