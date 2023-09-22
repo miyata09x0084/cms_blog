@@ -38,6 +38,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             });
           `,
         }}
+      />
         <Chakra>
           <Layout>
             <Component {...pageProps} />
