@@ -4,11 +4,10 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { getPosts } from '../services';
 import { PostCard, TypingAnimation } from '../components';
-import { Box, Text, Flex, Heading, VStack, HStack, useColorModeValue, Button, Progress } from '@chakra-ui/react';
+import { Box, Text, Flex, Heading, VStack, HStack, useColorModeValue, Button } from '@chakra-ui/react';
 import { useSpring, animated, config, to } from 'react-spring';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHandPeace, faCaretRight, faFaceLaughBeam } from '@fortawesome/free-solid-svg-icons'
-import { useEffect } from 'react';
+import {  faCaretRight, faFaceLaughBeam } from '@fortawesome/free-solid-svg-icons'
 
 
 interface Props {
