@@ -91,7 +91,7 @@ const Home: NextPage<Props> = ({posts}) => {
                       <Flex>
                         <Text mr="10px" fontWeight="900">2019</Text>
                         <Box>
-                          <Text>Full Stack Engineering Course @Tech Camp</Text>
+                          <Text>Server-Side Engineering Course @Tech Camp</Text>
                           <Text>フルスタックエンジニアコース修了</Text>
                         </Box>
                       </Flex>
