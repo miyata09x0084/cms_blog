@@ -149,9 +149,7 @@ const Home: NextPage<Props> = ({ posts }) => {
 
                     <Box>
                       <Text>Freelance Software Engineer</Text>
-                      <Text>
-                        フリーランスのソフトウェアエンジニアとしての活動開始
-                      </Text>
+                      <Text>フリーランスの活動開始</Text>
                     </Box>
                   </Flex>
                 </VStack>
