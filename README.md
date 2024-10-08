@@ -54,8 +54,6 @@ npm run dev
 yarn dev
 ```
 
-That's it. You're all set to start exploring the Minimal Design Blog Site. Enjoy＼😌／
-
 ### Quick Link
 [React JS](https://reactjs.org/)</br>
 [Next.js](https://nextjs.org/)</br>
