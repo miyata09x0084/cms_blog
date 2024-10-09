@@ -158,7 +158,9 @@ const Home: NextPage<Props> = ({ posts }) => {
                 <Heading as="h2" fontSize="2xl" fontWeight="900">
                   /Interests
                 </Heading>
-                <Text>#FoodTouring #Camping #Traveling</Text>
+                <Text>
+                  #FoodTouring #Camping #Traveling
+                </Text>
               </VStack>
 
               <VStack align="start" spacing={5} mb={12}>
