@@ -195,17 +195,17 @@ const Home: NextPage<Props> = ({ posts }) => {
                           src="/assets/images/dev-image1.png"
                           alt="Image 1"
                           width={280}
-                          height={158} // 適切な高さを設定
+                          height={158}
                           quality={90}
                           loading="lazy"
-                          className="round-card" // クラス名でスタイルを追加
+                          className="round-card"
                         />
                       </Link>
                     </Box>
                   </Flex>
                 </Box>
               </VStack>
-              <Flex justifyContent="center" mb={12}>
+              <Flex justifyContent="center" mb={10}>
                 <Link href="/work">
                   <Button
                     fontWeight="600"
@@ -231,28 +231,32 @@ const Home: NextPage<Props> = ({ posts }) => {
                 <Heading as="h2" fontSize="2xl" fontWeight="900">
                   /Posts
                 </Heading>
-                <VStack align="start">
+                {/* <VStack align="start">
                   {posts.map((post, index) => (
                     <PostCard post={post.node} key={index} />
                   ))}
+                </VStack> */}
+                <VStack align="start" mb={5}>
+                  <iframe
+                    className="note-embed"
+                    src="https://note.com/embed/notes/n3e17e24dd31c"
+                    style={{
+                      border: 0,
+                      display: "block",
+                      maxWidth: "99%",
+                      width: "494px",
+                      padding: "0px",
+                      position: "static",
+                      visibility: "visible",
+                    }}
+                    height="400"
+                  ></iframe>
+                  <script
+                    async
+                    src="https://note.com/scripts/embed.js"
+                  ></script>
                 </VStack>
               </VStack>
-              <iframe
-                className="note-embed"
-                src="https://note.com/embed/notes/n3e17e24dd31c"
-                style={{
-                  border: 0,
-                  display: "block",
-                  maxWidth: "99%",
-                  width: "494px",
-                  padding: "0px",
-                  margin: "10px 0px",
-                  position: "static",
-                  visibility: "visible",
-                }}
-                height="400"
-              ></iframe>
-              <script async src="https://note.com/scripts/embed.js"></script>
               <Flex justifyContent="center" mb={12}>
                 <Link href="/post">
                   <Button
@@ -277,7 +281,7 @@ const Home: NextPage<Props> = ({ posts }) => {
               </Flex>
             </Box>
           </AnimatedBox>
-          {/* <ContactForm /> */}
+
           <VStack align="start" mb={6}>
             <Heading as="h2" fontSize="2xl" fontWeight="900">
               /Contact
