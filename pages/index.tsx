@@ -148,7 +148,7 @@ const Home: NextPage<Props> = ({ posts }) => {
                     </VStack>
 
                     <Box>
-                      <Text>Freelance Software Engineer</Text>
+                      <Text>Freelance Software Engineer @Japan</Text>
                       <Text>フリーランスの活動開始</Text>
                     </Box>
                   </Flex>
@@ -158,9 +158,7 @@ const Home: NextPage<Props> = ({ posts }) => {
                 <Heading as="h2" fontSize="2xl" fontWeight="900">
                   /Interests
                 </Heading>
-                <Text>
-                  #FoodTouring #Camping #Traveling
-                </Text>
+                <Text>#FoodTouring #Camping #Traveling</Text>
               </VStack>
 
               <VStack align="start" spacing={5} mb={12}>
@@ -239,6 +237,22 @@ const Home: NextPage<Props> = ({ posts }) => {
                   ))}
                 </VStack>
               </VStack>
+              <iframe
+                className="note-embed"
+                src="https://note.com/embed/notes/n3e17e24dd31c"
+                style={{
+                  border: 0,
+                  display: "block",
+                  maxWidth: "99%",
+                  width: "494px",
+                  padding: "0px",
+                  margin: "10px 0px",
+                  position: "static",
+                  visibility: "visible",
+                }}
+                height="400"
+              ></iframe>
+              <script async src="https://note.com/scripts/embed.js"></script>
               <Flex justifyContent="center" mb={12}>
                 <Link href="/post">
                   <Button
