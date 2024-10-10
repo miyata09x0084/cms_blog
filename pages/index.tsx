@@ -126,7 +126,7 @@ const Home: NextPage<Props> = ({ posts }) => {
                       2019
                     </Text>
                     <Box>
-                      <Text>Server-Side Engineering Course @Tech Camp</Text>
+                      ＃<Text>Server-Side Engineering Course @Tech Camp</Text>
                       <Text>サーバーサイドエンジニアコース修了</Text>
                     </Box>
                   </Flex>
@@ -158,7 +158,7 @@ const Home: NextPage<Props> = ({ posts }) => {
                 <Heading as="h2" fontSize="2xl" fontWeight="900">
                   /Interests
                 </Heading>
-                <Text>#FoodTouring #Camping #Traveling</Text>
+                <Text>#Thinking #FoodTouring #Camping #Traveling</Text>
               </VStack>
 
               <VStack align="start" spacing={5} mb={12}>
