@@ -165,7 +165,6 @@ const Home: NextPage<Props> = ({ posts }) => {
                 <Heading as="h2" fontSize="2xl" fontWeight="900">
                   <HStack alignItems="center">
                     <Text>/About</Text>
-                    <FontAwesomeIcon icon={faFaceLaughBeam} />
                   </HStack>
                 </Heading>
                 <Text>
