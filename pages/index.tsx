@@ -231,6 +231,7 @@ const Home: NextPage<Props> = ({ posts }) => {
                 <Heading as="h2" fontSize="2xl" fontWeight="900">
                   /Posts
                 </Heading>
+                {/* ブログの埋め込み */}
                 {/* <VStack align="start">
                   {posts.map((post, index) => (
                     <PostCard post={post.node} key={index} />
