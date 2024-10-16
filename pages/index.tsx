@@ -126,7 +126,7 @@ const Home: NextPage<Props> = ({ posts }) => {
                       2019
                     </Text>
                     <Box>
-                      ＃<Text>Server-Side Engineering Course @Tech Camp</Text>
+                      <Text>Server-Side Engineering Course @Tech Camp</Text>
                       <Text>サーバーサイドエンジニアコース修了</Text>
                     </Box>
                   </Flex>
