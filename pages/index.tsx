@@ -209,7 +209,7 @@ const Home: NextPage<Props> = ({ posts }) => {
                   <Button
                     fontWeight="600"
                     borderRadius="25px"
-                    bg="#8505b0"
+                    bg="#8505b0 !important" // 強制的に背景色を適用
                     color="#EDDFD6"
                     boxShadow="2px 2px 10px rgba(133, 5, 176, 0.3)"
                     _hover={{ opacity: 0.4 }}
@@ -226,20 +226,6 @@ const Home: NextPage<Props> = ({ posts }) => {
                   </Button>
                 </Link>
               </Flex>
-              <Button
-                fontWeight="600"
-                borderRadius="25px"
-                bg="#8505b0"
-                color="#EDDFD6"
-                boxShadow="2px 2px 10px rgba(133, 5, 176, 0.3)"
-                _hover={{ opacity: 0.4 }}
-                pb={1}
-              >
-                <Flex alignItems="center" mr={-1}>
-                  <Text mr={0.5}>Creations</Text>
-                  <FontAwesomeIcon icon={faCaretRight} width={15} height={15} />
-                </Flex>
-              </Button>
               <VStack align="start" spacing={5}>
                 <Heading as="h2" fontSize="2xl" fontWeight="900">
                   /Posts
