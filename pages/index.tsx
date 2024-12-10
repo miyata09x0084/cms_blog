@@ -262,7 +262,7 @@ const Home: NextPage<Props> = ({ posts }) => {
                   <Button
                     fontWeight="600"
                     borderRadius="25px"
-                    bg="#0530b0"
+                    bg="#0530b0 !important" // 強制的に背景色を適用
                     color="#EDDFD6"
                     boxShadow="2px 2px 10px rgba(5, 48, 176, 0.3)"
                     _hover={{ opacity: 0.4 }}
