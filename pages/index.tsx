@@ -205,7 +205,7 @@ const Home: NextPage<Props> = ({ posts }) => {
                 </Box>
               </VStack>
               <Flex justifyContent="center" mb={10}>
-                <Link href="/work">
+                <Link href="/work" passHref>
                   <Button
                     fontWeight="600"
                     borderRadius="25px"
