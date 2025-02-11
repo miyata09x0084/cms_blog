@@ -85,7 +85,7 @@ const Home: NextPage<Props> = ({ posts }) => {
                 </Text>
               </Box>
               <Image
-                src="/assets/images/face-image.jpg"
+                src="/assets/images/face-image.png"
                 width={72}
                 height={72}
                 priority={true}
