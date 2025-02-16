@@ -66,10 +66,7 @@ const Home: NextPage<Props> = ({ posts }) => {
             priority={true}
             loading="eager"
           />
-          <AnimatedBox style={slideIn}>
-            <TypingAnimation />
-          </AnimatedBox>
-          <AnimatedBox style={fadeIn}>
+          <TypingAnimation />
             <Flex
               width="100%"
               justifyContent="center"
@@ -280,7 +277,6 @@ const Home: NextPage<Props> = ({ posts }) => {
                 </Link>
               </Flex>
             </Box>
-          </AnimatedBox>
 
           <VStack align="start" mb={6}>
             <Heading as="h2" fontSize="2xl" fontWeight="900">

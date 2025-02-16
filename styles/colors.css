@@ -1,18 +1,18 @@
 :root {
-    --primary-bg: #EDDFD6;
-    --primary-text: #000000;
-    --primary-button: #049872; /* darkened from #F2B33D */
-    --primary-button-hover: #049872; /* darkened from #d99e1a */
-    --secondary-button: #8505b0; /* darkened from #5DBA5A */
-    --secondary-button-hover: #8505b0; /* darkened from #419c3e */
-    --secondary-bg: #664D03;
-    --secondary-text: #EDDFD6;
-    --tertiary-text: #514331;
-    --dark-bg: #222222;
-    --dark-bg-sub: #3a3a3a;
-    --dark-text: #00C4B4;
-    --dark-text-sub: #fcf9f4;
-    --dark-button: #00C4B4;
-    --sun-icon: #ab9a00;
-    --moon-icon: #985EFF;
+  --primary-bg: #fff;
+  --primary-text: #000000;
+  --primary-button: #049872; /* darkened from #F2B33D */
+  --primary-button-hover: #049872; /* darkened from #d99e1a */
+  --secondary-button: #8505b0; /* darkened from #5DBA5A */
+  --secondary-button-hover: #8505b0; /* darkened from #419c3e */
+  --secondary-bg: #664d03;
+  --secondary-text: #eddfd6;
+  --tertiary-text: #514331;
+  --dark-bg: #222222;
+  --dark-bg-sub: #3a3a3a;
+  --dark-text: #00c4b4;
+  --dark-text-sub: #fcf9f4;
+  --dark-button: #00c4b4;
+  --sun-icon: #ab9a00;
+  --moon-icon: #985eff;
 }
