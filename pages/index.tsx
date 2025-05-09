@@ -278,7 +278,6 @@ const Home: NextPage<Props> = ({ posts }) => {
           <Flex justifyContent="center" mb={12}>
             <Button
               as="a"
-              href="https://twitter.com/riomiyatta?ref_src=twsrc%5Etfw"
               target="_blank"
               rel="noopener noreferrer"
               fontWeight="600"

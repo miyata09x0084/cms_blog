@@ -48,41 +48,36 @@ const Footer = () => {
                 </Flex>
               </Link>
             </HStack>
-            <Link
+            {/* <Link
               href="https://twitter.com/riomiyatta?ref_src=twsrc%5Etfw"
               data-size="large"
               data-show-screen-name="false"
               data-show-count="false"
+            > */}
+            <Flex
+              alignItems="center"
+              onMouseEnter={() => setIsIconHover(true)}
+              onMouseLeave={() => setIsIconHover(false)}
             >
-              <script
-                async
-                src="https://platform.twitter.com/widgets.js"
-                charSet="utf-8"
-              ></script>
-              <Flex
-                alignItems="center"
-                onMouseEnter={() => setIsIconHover(true)}
-                onMouseLeave={() => setIsIconHover(false)}
-              >
-                {isIconHover ? (
-                  <FontAwesomeIcon
-                    icon={faTwitter}
-                    bounce
-                    width={20}
-                    height={20}
-                    mr={1}
-                  />
-                ) : (
-                  <FontAwesomeIcon
-                    icon={faTwitter}
-                    width={20}
-                    height={20}
-                    mr={1}
-                  />
-                )}
-                <Text ml={0.5}>Follow</Text>
-              </Flex>
-            </Link>
+              {isIconHover ? (
+                <FontAwesomeIcon
+                  icon={faTwitter}
+                  bounce
+                  width={20}
+                  height={20}
+                  mr={1}
+                />
+              ) : (
+                <FontAwesomeIcon
+                  icon={faTwitter}
+                  width={20}
+                  height={20}
+                  mr={1}
+                />
+              )}
+              <Text ml={0.5}>Follow</Text>
+            </Flex>
+            {/* </Link> */}
           </Flex>
         </Box>
       </Box>
