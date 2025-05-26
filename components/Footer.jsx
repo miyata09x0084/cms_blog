@@ -48,36 +48,35 @@ const Footer = () => {
                 </Flex>
               </Link>
             </HStack>
-            {/* <Link
-              href="https://twitter.com/riomiyatta?ref_src=twsrc%5Etfw"
-              data-size="large"
-              data-show-screen-name="false"
-              data-show-count="false"
-            > */}
-            <Flex
-              alignItems="center"
-              onMouseEnter={() => setIsIconHover(true)}
-              onMouseLeave={() => setIsIconHover(false)}
+            <Link
+              href="https://x.com/WebDev_Ryo"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              {isIconHover ? (
-                <FontAwesomeIcon
-                  icon={faTwitter}
-                  bounce
-                  width={20}
-                  height={20}
-                  mr={1}
-                />
-              ) : (
-                <FontAwesomeIcon
-                  icon={faTwitter}
-                  width={20}
-                  height={20}
-                  mr={1}
-                />
-              )}
-              <Text ml={0.5}>Follow</Text>
-            </Flex>
-            {/* </Link> */}
+              <Flex
+                alignItems="center"
+                onMouseEnter={() => setIsIconHover(true)}
+                onMouseLeave={() => setIsIconHover(false)}
+              >
+                {isIconHover ? (
+                  <FontAwesomeIcon
+                    icon={faTwitter}
+                    bounce
+                    width={20}
+                    height={20}
+                    mr={1}
+                  />
+                ) : (
+                  <FontAwesomeIcon
+                    icon={faTwitter}
+                    width={20}
+                    height={20}
+                    mr={1}
+                  />
+                )}
+                <Text ml={0.5}>Follow</Text>
+              </Flex>
+            </Link>
           </Flex>
         </Box>
       </Box>
