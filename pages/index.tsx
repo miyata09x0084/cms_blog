@@ -277,9 +277,6 @@ const Home: NextPage<Props> = ({ posts }) => {
           </VStack>
           <Flex justifyContent="center" mb={12}>
             <Button
-              as="a"
-              target="_blank"
-              rel="noopener noreferrer"
               fontWeight="600"
               borderRadius="25px"
               bg="#664D03"
