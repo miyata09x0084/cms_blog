@@ -279,7 +279,7 @@ const Home: NextPage<Props> = ({ posts }) => {
             <Button
               fontWeight="600"
               borderRadius="25px"
-              bg="#664D03"
+              bg="#664D03 !important"
               color="#EDDFD6"
               boxShadow="2px 2px 10px rgb(102, 77, 3, 0.3)"
               _hover={{ opacity: 0.4 }}
