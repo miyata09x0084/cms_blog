@@ -1,6 +1,68 @@
 import { Box, Flex } from "@chakra-ui/react";
+import { useState, useEffect } from "react";
 
 const TypingAnimation = () => {
+  const texts = [
+    "Hi, I'm Full Stack Developer based in Japan.",
+    "Welcome! Thanks for visiting my site!"
+  ];
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const [displayText, setDisplayText] = useState("");
+  const [isTyping, setIsTyping] = useState(true);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [showCursor, setShowCursor] = useState(true);
+
+  useEffect(() => {
+    let typingInterval;
+    let cursorInterval;
+    let index = isDeleting ? displayText.length : 0;
+    const currentText = texts[currentTextIndex];
+
+    const animate = () => {
+      if (!isDeleting) {
+        // タイピング中
+        if (index <= currentText.length) {
+          setDisplayText(currentText.slice(0, index));
+          index++;
+        } else {
+          // タイピング完了、少し待ってから削除開始
+          clearInterval(typingInterval);
+          setTimeout(() => {
+            setIsDeleting(true);
+            setIsTyping(false);
+          }, 2000);
+          return;
+        }
+      } else {
+        // バックスペース中
+        if (index > 0) {
+          index--;
+          setDisplayText(currentText.slice(0, index));
+        } else {
+          // 削除完了、次のテキストに移動して再度タイピング開始
+          clearInterval(typingInterval);
+          setCurrentTextIndex((prev) => (prev + 1) % texts.length);
+          setIsDeleting(false);
+          setIsTyping(true);
+          return;
+        }
+      }
+    };
+
+    // カーソル点滅アニメーション
+    cursorInterval = setInterval(() => {
+      setShowCursor(prev => !prev);
+    }, 500);
+
+    // アニメーション実行
+    typingInterval = setInterval(animate, 80);
+
+    return () => {
+      clearInterval(typingInterval);
+      clearInterval(cursorInterval);
+    };
+  }, [isDeleting, currentTextIndex]);
+
   return (
     <Flex w="100%" justifyContent="center" alignItems="center" pt={4}>
       <Box
@@ -12,8 +74,23 @@ const TypingAnimation = () => {
         borderRadius={17}
         textAlign="center"
         border="1px solid #000"
+        height="40px"
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
       >
-        <span>Hi, I'm Full Stack Developer based in Japan.</span>
+        <span>
+          {displayText || "\u00A0"}
+          <span 
+            style={{
+              opacity: showCursor ? 1 : 0,
+              fontWeight: "normal",
+              fontSize: "1.2em"
+            }}
+          >
+            |
+          </span>
+        </span>
       </Box>
     </Flex>
   );
