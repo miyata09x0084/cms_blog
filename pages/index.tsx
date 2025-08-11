@@ -201,9 +201,9 @@ const Home: NextPage<Props> = ({ posts }) => {
                 <Button
                   fontWeight="600"
                   borderRadius="25px"
-                  bg="#8505b0 !important" // 強制的に背景色を適用
+                  bg="#6366f1 !important" // 強制的に背景色を適用
                   color="#EDDFD6"
-                  boxShadow="2px 2px 10px rgba(133, 5, 176, 0.3)"
+                  boxShadow="2px 2px 10px rgba(99, 102, 241, 0.3)"
                   _hover={{ opacity: 0.4 }}
                   pb={1}
                 >
@@ -251,9 +251,9 @@ const Home: NextPage<Props> = ({ posts }) => {
                 <Button
                   fontWeight="600"
                   borderRadius="25px"
-                  bg="#0530b0 !important" // 強制的に背景色を適用
+                  bg="#8b5cf6 !important" // 強制的に背景色を適用
                   color="#EDDFD6"
-                  boxShadow="2px 2px 10px rgba(5, 48, 176, 0.3)"
+                  boxShadow="2px 2px 10px rgba(139, 92, 246, 0.3)"
                   _hover={{ opacity: 0.4 }}
                   pb={1}
                 >
@@ -279,9 +279,9 @@ const Home: NextPage<Props> = ({ posts }) => {
             <Button
               fontWeight="600"
               borderRadius="25px"
-              bg="#664D03 !important"
+              bg="#06b6d4 !important"
               color="#EDDFD6"
-              boxShadow="2px 2px 10px rgb(102, 77, 3, 0.3)"
+              boxShadow="2px 2px 10px rgba(6, 182, 212, 0.3)"
               _hover={{ opacity: 0.4 }}
               pb={0.5}
             >
