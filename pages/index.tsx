@@ -51,21 +51,23 @@ const Home: NextPage<Props> = ({ posts }) => {
       </Head>
       <Box>
         <Box
-          maxWidth="550px"
+          maxWidth={{ base: "100%", md: "768px", lg: "900px" }}
           mx="auto"
-          px={{ base: 5, md: 0 }}
+          px={{ base: 6, md: 8, lg: 12 }}
           fontSize="17px"
           letterSpacing="0.06em"
           lineHeight="1.5"
         >
-          <Image
-            src="/assets/images/typing-image.png"
-            alt="keyboard"
-            width={550}
-            height={510}
-            priority={true}
-            loading="eager"
-          />
+          <Flex justifyContent="center" width="100%">
+            <Image
+              src="/assets/images/typing-image.png"
+              alt="keyboard"
+              width={550}
+              height={510}
+              priority={true}
+              loading="eager"
+            />
+          </Flex>
           <TypingAnimation />
           <Flex
             width="100%"
@@ -174,27 +176,25 @@ const Home: NextPage<Props> = ({ posts }) => {
               <Heading as="h2" fontSize="2xl" fontWeight="900">
                 /Creations
               </Heading>
-              <Box>
-                <Flex justifyContent="space-between" width="100%" height="100%">
-                  <Box w="280px">
-                    <Link
-                      href="https://kangeki-dapps.web.app/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Image
-                        src="/assets/images/dev-image1.png"
-                        alt="Image 1"
-                        width={280}
-                        height={158}
-                        quality={90}
-                        loading="lazy"
-                        className="round-card"
-                      />
-                    </Link>
-                  </Box>
-                </Flex>
-              </Box>
+              <Flex justifyContent="center" width="100%">
+                <Box maxW="280px">
+                  <Link
+                    href="https://kangeki-dapps.web.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      src="/assets/images/dev-image1.png"
+                      alt="Image 1"
+                      width={280}
+                      height={158}
+                      quality={90}
+                      loading="lazy"
+                      className="round-card"
+                    />
+                  </Link>
+                </Box>
+              </Flex>
             </VStack>
             <Flex justifyContent="center" mb={10}>
               <Link href="/work">
@@ -202,7 +202,7 @@ const Home: NextPage<Props> = ({ posts }) => {
                   fontWeight="600"
                   borderRadius="25px"
                   bg="#6366f1 !important" // 強制的に背景色を適用
-                  color="#EDDFD6"
+                  color="#ffffff"
                   boxShadow="2px 2px 10px rgba(99, 102, 241, 0.3)"
                   _hover={{ opacity: 0.4 }}
                   pb={1}
@@ -252,7 +252,7 @@ const Home: NextPage<Props> = ({ posts }) => {
                   fontWeight="600"
                   borderRadius="25px"
                   bg="#8b5cf6 !important" // 強制的に背景色を適用
-                  color="#EDDFD6"
+                  color="#ffffff"
                   boxShadow="2px 2px 10px rgba(139, 92, 246, 0.3)"
                   _hover={{ opacity: 0.4 }}
                   pb={1}
@@ -280,7 +280,7 @@ const Home: NextPage<Props> = ({ posts }) => {
               fontWeight="600"
               borderRadius="25px"
               bg="#06b6d4 !important"
-              color="#EDDFD6"
+              color="#ffffff"
               boxShadow="2px 2px 10px rgba(6, 182, 212, 0.3)"
               _hover={{ opacity: 0.4 }}
               pb={0.5}
