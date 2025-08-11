@@ -218,33 +218,35 @@ const Home: NextPage<Props> = ({ posts }) => {
                 </Button>
               </Link>
             </Flex>
-            <VStack align="start" spacing={5}>
+            <VStack align="center" spacing={5}>
               <Heading as="h2" fontSize="2xl" fontWeight="900">
                 /Posts
               </Heading>
               {/* ブログの埋め込み */}
-              {/* <VStack align="start">
+              {/* <VStack align="center">
                   {posts.map((post, index) => (
                     <PostCard post={post.node} key={index} />
                   ))}
                 </VStack> */}
-              <VStack align="start" mb={5}>
-                <iframe
-                  className="note-embed"
-                  src="https://note.com/embed/notes/n3e17e24dd31c"
-                  style={{
-                    border: 0,
-                    display: "block",
-                    maxWidth: "99%",
-                    width: "494px",
-                    padding: "0px",
-                    position: "static",
-                    visibility: "visible",
-                  }}
-                  height="400"
-                ></iframe>
-                <script async src="https://note.com/scripts/embed.js"></script>
-              </VStack>
+              <Flex justifyContent="center" width="100%" mb={5}>
+                <Box maxWidth="494px" width="100%">
+                  <iframe
+                    className="note-embed"
+                    src="https://note.com/embed/notes/n3e17e24dd31c"
+                    style={{
+                      border: 0,
+                      display: "block",
+                      maxWidth: "100%",
+                      width: "100%",
+                      padding: "0px",
+                      position: "static",
+                      visibility: "visible",
+                    }}
+                    height="400"
+                  ></iframe>
+                  <script async src="https://note.com/scripts/embed.js"></script>
+                </Box>
+              </Flex>
             </VStack>
             <Flex justifyContent="center" mb={12}>
               <Link href="/post">
