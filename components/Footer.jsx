@@ -17,8 +17,8 @@ const Footer = () => {
 
   return (
     <footer>
-      <Box w="100vw" h="100%" pt={16} pb={8}>
-        <Box maxWidth="768px" fontSize="xl" px={{ base: 4, md: 0 }} mx="auto">
+      <Box h="100%" pt={16} pb={8} maxWidth="768px" mx="auto" px={{ base: 4, md: 0 }}>
+        <Box fontSize="xl">
           <Flex justifyContent="space-between" alignItems="center">
             <HStack mx={1} spacing={6} display="flex" alignItems="center">
               <Link
@@ -77,6 +77,7 @@ const Footer = () => {
       </Box>
       <Box
         fontSize="sm"
+        maxWidth="768px"
         px={{ base: 4, md: 0 }}
         mx="auto"
         mb={6}

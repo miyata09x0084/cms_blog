@@ -24,7 +24,7 @@ const PostIndex = ({ posts }) => {
       <VStack
         align="start"
         mx="auto"
-        maxW="550px"
+        maxW="768px"
         px={{ base: "4", md: "0" }}
         mb="8"
         className="M PLUS Rounded 1c"

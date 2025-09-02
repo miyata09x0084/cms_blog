@@ -31,9 +31,9 @@ const WorkIndex = () => {
       <Box
         align="start"
         mx="auto"
-        maxW="550px"
+        maxW="768px"
         height="100%"
-        px={{ base: '8', md: '0' }}
+        px={{ base: '4', md: '0' }}
         mb="8"
         pt="40px"
       >

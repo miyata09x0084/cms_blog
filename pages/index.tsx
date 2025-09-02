@@ -51,9 +51,9 @@ const Home: NextPage<Props> = ({ posts }) => {
       </Head>
       <Box>
         <Box
-          maxWidth={{ base: "100%", md: "768px", lg: "900px" }}
+          maxWidth="768px"
           mx="auto"
-          px={{ base: 6, md: 8, lg: 12 }}
+          px={{ base: 4, md: 0 }}
           fontSize="17px"
           letterSpacing="0.06em"
           lineHeight="1.5"
