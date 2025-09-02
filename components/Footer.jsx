@@ -13,7 +13,6 @@ import { faTwitter, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   const [isIconHover, setIsIconHover] = useState(false);
-  const color = useColorModeValue("var(--tertiary-text)", "var(--dark-text)");
 
   return (
     <footer>
