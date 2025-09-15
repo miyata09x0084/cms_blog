@@ -3,8 +3,10 @@ import { useState, useEffect } from "react";
 
 const TypingAnimation = () => {
   const texts = [
+    "< Welcome to my creative space />",
+    "Let's create something wonderful together!",
     "Hi, I'm Full Stack Developer based in Japan.",
-    "Welcome! Thanks for visiting my site!"
+    "Scroll down to discover more▼"
   ];
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
@@ -84,7 +86,7 @@ const TypingAnimation = () => {
       >
         <span>
           {displayText || "\u00A0"}
-          <span 
+          <span
             style={{
               opacity: showCursor ? 1 : 0,
               fontWeight: "normal",
