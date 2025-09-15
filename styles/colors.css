@@ -1,18 +1,18 @@
 :root {
-  --primary-bg: #f8fafc;
-  --primary-text: #1e293b;
-  --primary-button: #6366f1; /* インディゴ */
-  --primary-button-hover: #4f46e5; /* 濃いインディゴ */
-  --secondary-button: #8b5cf6; /* 紫 */
-  --secondary-button-hover: #7c3aed; /* 濃い紫 */
-  --secondary-bg: #e2e8f0;
-  --secondary-text: #475569;
-  --tertiary-text: #64748b;
-  --dark-bg: #0f172a;
-  --dark-bg-sub: #1e293b;
-  --dark-text: #06b6d4;
-  --dark-text-sub: #f1f5f9;
-  --dark-button: #06b6d4;
-  --sun-icon: #f59e0b;
-  --moon-icon: #8b5cf6;
+  --primary-bg: #EDDFD6;
+  --primary-text: #000000;
+  --primary-button: #049872; /* darkened from #F2B33D */
+  --primary-button-hover: #049872; /* darkened from #d99e1a */
+  --secondary-button: #8505b0; /* darkened from #5DBA5A */
+  --secondary-button-hover: #8505b0; /* darkened from #419c3e */
+  --secondary-bg: #664D03;
+  --secondary-text: #EDDFD6;
+  --tertiary-text: #514331;
+  --dark-bg: #222222;
+  --dark-bg-sub: #3a3a3a;
+  --dark-text: #00C4B4;
+  --dark-text-sub: #fcf9f4;
+  --dark-button: #00C4B4;
+  --sun-icon: #ab9a00;
+  --moon-icon: #985EFF;
 }
