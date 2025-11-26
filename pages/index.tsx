@@ -176,7 +176,28 @@ const Home: NextPage<Props> = ({ posts }) => {
               <Heading as="h2" fontSize="2xl" fontWeight="900">
                 /Creations
               </Heading>
-              <Flex justifyContent="center" width="100%">
+              <HStack spacing={4} width="100%" justifyContent="center">
+                <Box maxW="280px">
+                  <Link
+                    href="https://slide-pilot-474305.web.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Box
+                      bg="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+                      width={280}
+                      height={303}
+                      borderRadius="15px"
+                      display="flex"
+                      flexDirection="column"
+                      alignItems="center"
+                      justifyContent="center"
+                    >
+                      <Text color="white" fontSize="md" fontWeight="600">Multimodal LLM App</Text>
+                      <Text color="whiteAlpha.700" fontSize="sm" mt={2}>PDF → Video</Text>
+                    </Box>
+                  </Link>
+                </Box>
                 <Box maxW="280px">
                   <Link
                     href="https://kangeki-dapps.web.app/"
@@ -185,26 +206,26 @@ const Home: NextPage<Props> = ({ posts }) => {
                   >
                     <Image
                       src="/assets/images/dev-image1.png"
-                      alt="Image 1"
+                      alt="SoulBound Token DApp"
                       width={280}
-                      height={158}
+                      height={303}
                       quality={90}
                       loading="lazy"
                       className="round-card"
                     />
                   </Link>
                 </Box>
-              </Flex>
+              </HStack>
             </VStack>
-            <Flex justifyContent="center" mb={10}>
+            <Flex justifyContent="center" mb={6}>
               <Link href="/work">
                 <Button
                   fontWeight="600"
                   borderRadius="25px"
-                  bg="#6366f1 !important" // 強制的に背景色を適用
+                  bg="#4a5568 !important"
                   color="#ffffff"
-                  boxShadow="2px 2px 10px rgba(99, 102, 241, 0.3)"
-                  _hover={{ opacity: 0.4 }}
+                  boxShadow="2px 2px 10px rgba(74, 85, 104, 0.2)"
+                  _hover={{ opacity: 0.7 }}
                   pb={1}
                 >
                   <Flex alignItems="center" mr={-1}>
@@ -218,7 +239,7 @@ const Home: NextPage<Props> = ({ posts }) => {
                 </Button>
               </Link>
             </Flex>
-            <VStack align="center" spacing={5}>
+            <VStack align="start" spacing={5}>
               <Heading as="h2" fontSize="2xl" fontWeight="900">
                 /Posts
               </Heading>
@@ -253,10 +274,10 @@ const Home: NextPage<Props> = ({ posts }) => {
                 <Button
                   fontWeight="600"
                   borderRadius="25px"
-                  bg="#8b5cf6 !important" // 強制的に背景色を適用
+                  bg="#4a5568 !important"
                   color="#ffffff"
-                  boxShadow="2px 2px 10px rgba(139, 92, 246, 0.3)"
-                  _hover={{ opacity: 0.4 }}
+                  boxShadow="2px 2px 10px rgba(74, 85, 104, 0.2)"
+                  _hover={{ opacity: 0.7 }}
                   pb={1}
                 >
                   <Flex alignItems="center" mr={-1}>
@@ -281,10 +302,10 @@ const Home: NextPage<Props> = ({ posts }) => {
             <Button
               fontWeight="600"
               borderRadius="25px"
-              bg="#06b6d4 !important"
+              bg="#4a5568 !important"
               color="#ffffff"
-              boxShadow="2px 2px 10px rgba(6, 182, 212, 0.3)"
-              _hover={{ opacity: 0.4 }}
+              boxShadow="2px 2px 10px rgba(74, 85, 104, 0.2)"
+              _hover={{ opacity: 0.7 }}
               pb={0.5}
             >
               <Flex alignItems="center" mr={-1}>
