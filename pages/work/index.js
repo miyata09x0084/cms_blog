@@ -1,30 +1,20 @@
 import React from 'react';
 import {
   Box,
-  useColorMode,
-  useColorModeValue,
   Image,
-  Flex,
   Link,
-  Spacer,
   Text,
   SimpleGrid,
 } from '@chakra-ui/react';
 import { useSpring, animated, config } from 'react-spring';
 
-const WorkIndex = () => {
+const AnimatedBox = animated(Box);
 
-  const AnimatedBox = animated(Box);
+const WorkIndex = () => {
   const slideIn = useSpring({
     from: { transform: 'translate3d(0, 30px, 0)' },
     to: { transform: 'translate3d(0, 0, 0)' },
     config: config.slow,
-  });
-
-  const fadeIn = useSpring({
-    from: { opacity: 0 },
-    to: { opacity: 1 },
-    config: config.molasses,
   });
 
   return (
