@@ -46,30 +46,35 @@ const Footer = () => {
                 </Flex>
               </Link>
             </HStack>
-            <Flex
-              alignItems="center"
-              onMouseEnter={() => setIsIconHover(true)}
-              onMouseLeave={() => setIsIconHover(false)}
-              cursor="not-allowed"
+            <Link
+              href="https://x.com/WebDev_Ryo"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              {isIconHover ? (
-                <FontAwesomeIcon
-                  icon={faTwitter}
-                  bounce
-                  width={20}
-                  height={20}
-                  mr={1}
-                />
-              ) : (
-                <FontAwesomeIcon
-                  icon={faTwitter}
-                  width={20}
-                  height={20}
-                  mr={1}
-                />
-              )}
-              <Text ml={0.5}>Follow</Text>
-            </Flex>
+              <Flex
+                alignItems="center"
+                onMouseEnter={() => setIsIconHover(true)}
+                onMouseLeave={() => setIsIconHover(false)}
+              >
+                {isIconHover ? (
+                  <FontAwesomeIcon
+                    icon={faTwitter}
+                    bounce
+                    width={20}
+                    height={20}
+                    mr={1}
+                  />
+                ) : (
+                  <FontAwesomeIcon
+                    icon={faTwitter}
+                    width={20}
+                    height={20}
+                    mr={1}
+                  />
+                )}
+                <Text ml={0.5}>X</Text>
+              </Flex>
+            </Link>
           </Flex>
         </Box>
       </Box>
