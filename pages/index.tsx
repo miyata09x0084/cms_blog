@@ -167,9 +167,7 @@ const Home: NextPage<Props> = ({ posts }) => {
                 </HStack>
               </Heading>
               <Text>
-                I am the younger twin brother. I love using programming to
-                manifest my diverse ideas into real-world applications. It's my
-                passion to express these concepts through the creation of apps.
+                I solve problems through code. With 4 years in full-stack development (TypeScript/React/NestJS), I craft systems designed for evolution. Now diving into AI agents with LangGraph—because the best way to understand new tech is to build with it.
               </Text>
             </VStack>
             <VStack align="start" spacing={5} mb={8}>
@@ -249,25 +247,24 @@ const Home: NextPage<Props> = ({ posts }) => {
                     <PostCard post={post.node} key={index} />
                   ))}
                 </VStack> */}
-              <Flex justifyContent="center" width="100%" mb={5}>
-                <Box maxWidth="494px" width="100%">
-                  <iframe
-                    className="note-embed"
-                    src="https://note.com/embed/notes/n3e17e24dd31c"
-                    style={{
-                      border: 0,
-                      display: "block",
-                      maxWidth: "100%",
-                      width: "100%",
-                      padding: "0px",
-                      position: "static",
-                      visibility: "visible",
-                    }}
-                    height="400"
-                  ></iframe>
-                  <script async src="https://note.com/scripts/embed.js"></script>
-                </Box>
-              </Flex>
+              <VStack align="start" spacing={2} width="100%" mb={5}>
+                <a
+                  href="https://note.com/miyata_ryo3/n/n547f8cd950c5"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "#0066cc", textDecoration: "underline", fontSize: "16px" }}
+                >
+                  ネットの安全はなぜ？ 行きは簡単なのに戻るのは驚くほど難しい数学が鍵 (2025.12.26)
+                </a>
+                <a
+                  href="https://note.com/miyata_ryo3/n/n3e17e24dd31c"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "#0066cc", textDecoration: "underline", fontSize: "16px" }}
+                >
+                  人を表すソウルバンドトークンとよばれるNFT (2023.1.23)
+                </a>
+              </VStack>
             </VStack>
             <Flex justifyContent="center" mb={12}>
               <Link href="/post">
