@@ -19,7 +19,15 @@ const Categories = () => {
   return (
     <Flex justifyContent="center" alignItems="center" width="100%" mt="40px" py="40px" borderTop="1px solid #C6BFAC" borderBottom="1px solid #C6BFAC" mb="30px" color={color}>
       {categories.map((category) => (
-        <Box key={category.slug} mx="10px">
+        <Box
+          key={category.slug}
+          mx="10px"
+          style={
+            category.slug === "blockchain" || category.slug === "nft"
+              ? { textDecoration: "line-through", opacity: 0.6 }
+              : {}
+          }
+        >
           <Link href={`/category/${category.slug}`} >
               {category.name}
           </Link>
