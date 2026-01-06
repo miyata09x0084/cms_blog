@@ -31,6 +31,7 @@ const Home: NextPage<Props> = ({ posts }) => {
   // const bgSub = useColorModeValue("var(--secondary-bg)", "var(--dark-bg-sub)");
   // const color = useColorModeValue('var(--primary-text)', 'var(--dark-text)');
   // const colorSub = useColorModeValue('var(--secondary-text)', 'var(--dark-text)');
+  const linkColor = useColorModeValue("#0066cc", "var(--dark-text)");
 
   const fadeIn = useSpring({
     from: { opacity: 0 },
@@ -103,7 +104,7 @@ const Home: NextPage<Props> = ({ posts }) => {
                   href="https://note.com/miyata_ryo3/n/n547f8cd950c5"
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ color: "#0066cc", textDecoration: "underline", fontSize: "16px" }}
+                  style={{ color: linkColor, textDecoration: "underline", fontSize: "16px" }}
                 >
                   ネットの安全はなぜ？ 行きは簡単なのに戻るのは驚くほど難しい数学が鍵 (2025.12.26)
                 </a>
@@ -111,7 +112,7 @@ const Home: NextPage<Props> = ({ posts }) => {
                   href="https://note.com/miyata_ryo3/n/n3e17e24dd31c"
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ color: "#0066cc", textDecoration: "underline", fontSize: "16px" }}
+                  style={{ color: linkColor, textDecoration: "underline", fontSize: "16px" }}
                 >
                   人を表すソウルバンドトークンとよばれるNFT (2023.1.23)
                 </a>
