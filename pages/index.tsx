@@ -266,22 +266,6 @@ const Home: NextPage<Props> = ({ posts }) => {
                 </Flex>
               </VStack>
             </VStack>
-            <VStack align="start" spacing={5} mb={12}>
-              <Heading as="h2" fontSize="2xl" fontWeight="900">
-                <HStack alignItems="center">
-                  <Text>/About</Text>
-                </HStack>
-              </Heading>
-              <Text>
-                I solve problems through code. With 4 years in full-stack development (TypeScript/React/NestJS), I craft systems designed for evolution. Now diving into AI agents with LangGraph—because the best way to understand new tech is to build with it.
-              </Text>
-            </VStack>
-            <VStack align="start" spacing={5} mb={12}>
-              <Heading as="h2" fontSize="2xl" fontWeight="900">
-                /Interests
-              </Heading>
-              <Text>#Thinking #FoodTouring #Camping #Traveling</Text>
-            </VStack>
           </Box>
         </Box>
       </Box>
