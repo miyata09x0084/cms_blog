@@ -3,7 +3,6 @@ import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
 import { getPosts } from "../services";
-import { PostCard, TypingAnimation } from "../components";
 import {
   Box,
   Text,
@@ -12,261 +11,214 @@ import {
   VStack,
   HStack,
   useColorModeValue,
-  Button,
 } from "@chakra-ui/react";
-import { useSpring, animated, config, to } from "react-spring";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCaretRight,
-  faFaceLaughBeam,
-} from "@fortawesome/free-solid-svg-icons";
 
 interface Props {
   posts: Array<any>;
 }
 
-const AnimatedBox = animated(Box);
-
 const Home: NextPage<Props> = ({ posts }) => {
-  // const bgSub = useColorModeValue("var(--secondary-bg)", "var(--dark-bg-sub)");
-  // const color = useColorModeValue('var(--primary-text)', 'var(--dark-text)');
-  // const colorSub = useColorModeValue('var(--secondary-text)', 'var(--dark-text)');
-  const linkColor = useColorModeValue("#0066cc", "var(--dark-text)");
-
-  const fadeIn = useSpring({
-    from: { opacity: 0 },
-    to: { opacity: 1 },
-    config: config.molasses,
-  });
-
-  const slideIn = useSpring({
-    from: { transform: "translate3d(0, 500px, 0)" },
-    to: { transform: "translate3d(0, 0, 0)" },
-    config: config.wobbly,
-  });
+  const linkColor = useColorModeValue("var(--accent)", "var(--dark-accent)");
+  const textSecondary = useColorModeValue("var(--text-secondary)", "var(--dark-text-secondary)");
+  const borderColor = useColorModeValue("var(--border)", "var(--dark-border)");
 
   return (
-    <Box>
+    <Box className="fade-in">
       <Head>
         <title>Rio Miyata's Website</title>
       </Head>
-      <Box>
-        <Box
-          maxWidth="768px"
-          mx="auto"
-          px={{ base: 4, md: 0 }}
-          fontSize="17px"
-          letterSpacing="0.06em"
-          lineHeight="1.5"
-        >
-          <Flex justifyContent="center" width="100%">
-            <Image
-              src="/assets/images/typing-image.png"
-              alt="keyboard"
-              width={550}
-              height={510}
-              priority={true}
-              loading="eager"
-            />
-          </Flex>
-          <TypingAnimation />
-          <Flex
-            width="100%"
-            justifyContent="center"
-            mt={14}
-            alignItems="center"
-          >
-            <Box>
-              <Text fontSize="4xl" fontWeight="800">
-                Rio Miyata
-              </Text>
-              <Text fontSize="lg" fontWeight="900" mt="-4px">
-                Software Engineer
-              </Text>
-            </Box>
-            <Image
-              src="/assets/images/self-image.jpg"
-              width={72}
-              height={72}
-              priority={true}
-              loading="eager"
-              className="round-image"
-              alt="Rio Miyata"
-            />
-          </Flex>
-          <Box marginLeft="8px" mt={14}>
-            <VStack align="start" spacing={5}>
-              <Heading as="h2" fontSize="2xl" fontWeight="900">
-                /Posts
-              </Heading>
-              <VStack align="start" spacing={2} width="100%" mb={5}>
-                <a
-                  href="https://note.com/miyata_ryo3/n/n547f8cd950c5"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: linkColor, textDecoration: "underline", fontSize: "16px" }}
-                >
-                  ネットの安全はなぜ？ 行きは簡単なのに戻るのは驚くほど難しい数学が鍵 (2025.12.26)
-                </a>
-                <a
-                  href="https://note.com/miyata_ryo3/n/n3e17e24dd31c"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: linkColor, textDecoration: "underline", fontSize: "16px" }}
-                >
-                  人を表すソウルバンドトークンとよばれるNFT (2023.1.23)
-                </a>
-              </VStack>
-            </VStack>
-            <Flex justifyContent="center" mb={6}>
-              <Link href="/post">
-                <Button
-                  fontWeight="600"
-                  borderRadius="25px"
-                  bg="#4a5568 !important"
-                  color="#ffffff"
-                  boxShadow="2px 2px 10px rgba(74, 85, 104, 0.2)"
-                  _hover={{ opacity: 0.7 }}
-                  pb={1}
-                >
-                  <Flex alignItems="center" mr={-1}>
-                    <Text mr={0.5}>Posts</Text>
-                    <FontAwesomeIcon
-                      icon={faCaretRight}
-                      width={15}
-                      height={15}
-                    />
-                  </Flex>
-                </Button>
-              </Link>
-            </Flex>
-            <VStack align="start" spacing={5} mb={8}>
-              <Heading as="h2" fontSize="2xl" fontWeight="900">
-                /Creations
-              </Heading>
-              <HStack spacing={4} width="100%" justifyContent="center">
-                <Box maxW="280px">
-                  <Link
-                    href="https://slide-pilot-474305.web.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Box
-                      bg="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
-                      width={280}
-                      height={303}
-                      borderRadius="15px"
-                      display="flex"
-                      flexDirection="column"
-                      alignItems="center"
-                      justifyContent="center"
-                    >
-                      <Text color="white" fontSize="md" fontWeight="600">Multimodal LLM App</Text>
-                      <Text color="whiteAlpha.700" fontSize="sm" mt={2}>PDF → Video</Text>
-                    </Box>
-                  </Link>
-                </Box>
-                <Box maxW="280px">
-                  <Link
-                    href="https://kangeki-dapps.web.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Image
-                      src="/assets/images/dev-image1.png"
-                      alt="SoulBound Token DApp"
-                      width={280}
-                      height={303}
-                      quality={90}
-                      loading="lazy"
-                      className="round-card"
-                    />
-                  </Link>
-                </Box>
-              </HStack>
-            </VStack>
-            <Flex justifyContent="center" mb={6}>
-              <Link href="/work">
-                <Button
-                  fontWeight="600"
-                  borderRadius="25px"
-                  bg="#4a5568 !important"
-                  color="#ffffff"
-                  boxShadow="2px 2px 10px rgba(74, 85, 104, 0.2)"
-                  _hover={{ opacity: 0.7 }}
-                  pb={1}
-                >
-                  <Flex alignItems="center" mr={-1}>
-                    <Text mr={0.5}>Creations</Text>
-                    <FontAwesomeIcon
-                      icon={faCaretRight}
-                      width={15}
-                      height={15}
-                    />
-                  </Flex>
-                </Button>
-              </Link>
-            </Flex>
-            <VStack align="start" spacing={5} mb={12}>
-              <Heading as="h2" fontSize="2xl" fontWeight="900">
-                /Bio
-              </Heading>
-              <VStack align="start" spacing={1.5}>
-                <Flex>
-                  <Text mr="10px" fontWeight="900">
-                    1989
-                  </Text>
-                  <Box>
-                    <Text>Born in Aichi, Japan </Text>
-                    <Text>日本の愛知県出身</Text>
-                  </Box>
-                </Flex>
-                <Flex>
-                  <Text mr="10px" fontWeight="900">
-                    2014
-                  </Text>
-                  <Box>
-                    <Text>
-                      Master's Degree, Graduate School of Science and
-                      Engineering @Hosei University
-                    </Text>
-                    <Text>法政大学理工学研究科 修士課程修了</Text>
-                  </Box>
-                </Flex>
-                <Flex>
-                  <Text mr="10px" fontWeight="900">
-                    2019
-                  </Text>
-                  <Box>
-                    <Text>Server-Side Engineering Course @Tech Camp</Text>
-                    <Text>サーバーサイドエンジニアコース修了</Text>
-                  </Box>
-                </Flex>
-                <Flex>
-                  <Text mr="10px" fontWeight="900">
-                    2020
-                  </Text>
-                  <Box>
-                    <Text>Web Developer @AnkhSystems (Digital Media)</Text>
-                    <Text>アンクシステムズ-デジタルメディア開発</Text>
-                  </Box>
-                </Flex>
-                <Flex>
-                  <VStack spacing={0} align="center" mr="10px">
-                    <Text fontWeight="900">2023</Text>
-                    <Text fontWeight="900" transform="rotate(90deg)" pb="5px">
-                      〜
-                    </Text>
-                  </VStack>
-
-                  <Box>
-                    <Text>Freelance Software Engineer @Japan</Text>
-                    <Text>フリーランスの活動開始</Text>
-                  </Box>
-                </Flex>
-              </VStack>
-            </VStack>
+      <Box
+        maxWidth="720px"
+        mx="auto"
+        px={{ base: 5, md: 0 }}
+        py={16}
+        fontSize="15px"
+        letterSpacing="0.01em"
+        lineHeight="1.7"
+      >
+        {/* Hero */}
+        <Flex alignItems="center" mb={16}>
+          <Box flex="1">
+            <Text fontSize="3xl" fontWeight="700" letterSpacing="-0.02em">
+              Rio Miyata
+            </Text>
+            <Text fontSize="md" fontWeight="500" color={textSecondary} mt={1}>
+              Software Engineer
+            </Text>
           </Box>
+          <Image
+            src="/assets/images/self-image.jpg"
+            width={72}
+            height={72}
+            priority={true}
+            loading="eager"
+            className="round-image"
+            alt="Rio Miyata"
+          />
+        </Flex>
+
+        {/* About */}
+        <Box mb={16}>
+          <Text fontSize="15px" lineHeight="1.8" color={textSecondary}>
+            Hi there — I'm Rio, a freelance software engineer based in
+            Japan. I build web applications and love diving into emerging
+            technologies like blockchain and AI. With a background in
+            science and engineering, I enjoy approaching problems from
+            both analytical and creative angles. Always happy to connect
+            — feel free to reach out anytime.
+          </Text>
+        </Box>
+
+        {/* Posts */}
+        <Box mb={16}>
+          <Heading as="h2" fontSize="sm" fontWeight="600" textTransform="uppercase" letterSpacing="0.1em" color={textSecondary} mb={6}>
+            Posts
+          </Heading>
+          <VStack align="start" spacing={4}>
+            <Box
+              as="a"
+              href="https://note.com/miyata_ryo3/n/n547f8cd950c5"
+              target="_blank"
+              rel="noopener noreferrer"
+              w="100%"
+              py={3}
+              borderBottom="1px solid"
+              borderColor={borderColor}
+              transition="color 0.2s"
+              _hover={{ color: linkColor }}
+            >
+              <Flex justifyContent="space-between" alignItems="baseline" flexWrap="wrap" gap={2}>
+                <Text fontSize="15px">ネットの安全はなぜ？ 行きは簡単なのに戻るのは驚くほど難しい数学が鍵</Text>
+                <Text fontSize="sm" color={textSecondary} flexShrink={0}>2025.12.26</Text>
+              </Flex>
+            </Box>
+            <Box
+              as="a"
+              href="https://note.com/miyata_ryo3/n/n3e17e24dd31c"
+              target="_blank"
+              rel="noopener noreferrer"
+              w="100%"
+              py={3}
+              borderBottom="1px solid"
+              borderColor={borderColor}
+              transition="color 0.2s"
+              _hover={{ color: linkColor }}
+            >
+              <Flex justifyContent="space-between" alignItems="baseline" flexWrap="wrap" gap={2}>
+                <Text fontSize="15px">人を表すソウルバンドトークンとよばれるNFT</Text>
+                <Text fontSize="sm" color={textSecondary} flexShrink={0}>2023.1.23</Text>
+              </Flex>
+            </Box>
+          </VStack>
+          <Box mt={6}>
+            <Link href="/post">
+              <Text
+                as="span"
+                fontSize="sm"
+                fontWeight="500"
+                color={linkColor}
+                transition="opacity 0.2s"
+                _hover={{ opacity: 0.7 }}
+              >
+                All posts &rarr;
+              </Text>
+            </Link>
+          </Box>
+        </Box>
+
+        {/* Creations */}
+        <Box mb={16}>
+          <Heading as="h2" fontSize="sm" fontWeight="600" textTransform="uppercase" letterSpacing="0.1em" color={textSecondary} mb={6}>
+            Creations
+          </Heading>
+          <HStack spacing={6} width="100%" alignItems="flex-start" flexWrap={{ base: "wrap", md: "nowrap" }}>
+            <Box flex="1" minW={{ base: "100%", md: "0" }}>
+              <Link
+                href="https://slide-pilot-474305.web.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Box
+                  bg="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+                  borderRadius="12px"
+                  aspectRatio="1"
+                  display="flex"
+                  flexDirection="column"
+                  alignItems="center"
+                  justifyContent="center"
+                  transition="transform 0.2s, box-shadow 0.2s"
+                  _hover={{ transform: "translateY(-2px)", boxShadow: "0 8px 30px rgba(0,0,0,0.12)" }}
+                >
+                  <Text color="white" fontSize="md" fontWeight="600">Multimodal LLM App</Text>
+                  <Text color="whiteAlpha.700" fontSize="sm" mt={2}>PDF &rarr; Video</Text>
+                </Box>
+              </Link>
+            </Box>
+            <Box flex="1" minW={{ base: "100%", md: "0" }}>
+              <Link
+                href="https://kangeki-dapps.web.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Box
+                  borderRadius="12px"
+                  overflow="hidden"
+                  transition="transform 0.2s, box-shadow 0.2s"
+                  _hover={{ transform: "translateY(-2px)", boxShadow: "0 8px 30px rgba(0,0,0,0.12)" }}
+                >
+                  <Image
+                    src="/assets/images/dev-image1.png"
+                    alt="SoulBound Token DApp"
+                    width={400}
+                    height={400}
+                    quality={90}
+                    loading="lazy"
+                    style={{ width: "100%", height: "auto" }}
+                  />
+                </Box>
+              </Link>
+            </Box>
+          </HStack>
+          <Box mt={6}>
+            <Link href="/work">
+              <Text
+                as="span"
+                fontSize="sm"
+                fontWeight="500"
+                color={linkColor}
+                transition="opacity 0.2s"
+                _hover={{ opacity: 0.7 }}
+              >
+                All creations &rarr;
+              </Text>
+            </Link>
+          </Box>
+        </Box>
+
+        {/* Bio */}
+        <Box mb={16}>
+          <Heading as="h2" fontSize="sm" fontWeight="600" textTransform="uppercase" letterSpacing="0.1em" color={textSecondary} mb={6}>
+            Bio
+          </Heading>
+          <VStack align="start" spacing={3}>
+            {[
+              { year: "1989", text: "Born in Aichi, Japan", sub: "日本の愛知県出身" },
+              { year: "2014", text: "Master's Degree, Graduate School of Science and Engineering @Hosei University", sub: "法政大学理工学研究科 修士課程修了" },
+              { year: "2019", text: "Server-Side Engineering Course @Tech Camp", sub: "サーバーサイドエンジニアコース修了" },
+              { year: "2020", text: "Web Developer @AnkhSystems (Digital Media)", sub: "アンクシステムズ-デジタルメディア開発" },
+              { year: "2023–", text: "Freelance Software Engineer @Japan", sub: "フリーランスの活動開始" },
+            ].map((item) => (
+              <Flex key={item.year} py={2} borderBottom="1px solid" borderColor={borderColor} w="100%">
+                <Text fontWeight="600" fontSize="sm" minW="60px" color={textSecondary}>
+                  {item.year}
+                </Text>
+                <Box>
+                  <Text fontSize="15px">{item.text}</Text>
+                  <Text fontSize="sm" color={textSecondary}>{item.sub}</Text>
+                </Box>
+              </Flex>
+            ))}
+          </VStack>
         </Box>
       </Box>
     </Box>

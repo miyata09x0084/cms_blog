@@ -5,48 +5,41 @@ import {
   Link,
   Text,
   SimpleGrid,
+  useColorModeValue,
 } from '@chakra-ui/react';
-import { useSpring, animated, config } from 'react-spring';
-
-const AnimatedBox = animated(Box);
 
 const WorkIndex = () => {
-  const slideIn = useSpring({
-    from: { transform: 'translate3d(0, 30px, 0)' },
-    to: { transform: 'translate3d(0, 0, 0)' },
-    config: config.slow,
-  });
+  const borderColor = useColorModeValue("var(--border)", "var(--dark-border)");
+  const textSecondary = useColorModeValue("var(--text-secondary)", "var(--dark-text-secondary)");
 
   return (
-    <AnimatedBox style={slideIn}>
+    <Box className="fade-in">
       <Box
-        align="start"
         mx="auto"
-        maxW="768px"
-        height="100%"
-        px={{ base: '4', md: '0' }}
+        maxW="720px"
+        px={{ base: '5', md: '0' }}
         mb="8"
-        pt="40px"
+        py={12}
       >
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
           <Box>
             <Link href="https://slide-pilot-474305.web.app/" _hover={{ textDecoration: 'none' }} target="_blank" rel="noopener noreferrer">
               <Box
                 bg="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
-                borderRadius="15px"
-                boxShadow="1px 2px 28px rgb(35, 31, 24, 0.05)"
+                borderRadius="12px"
                 display="flex"
                 flexDirection="column"
                 alignItems="center"
                 justifyContent="center"
-                aspectRatio="860/930"
-                p={6}
+                aspectRatio="1"
+                transition="transform 0.2s, box-shadow 0.2s"
+                _hover={{ transform: "translateY(-2px)", boxShadow: "0 8px 30px rgba(0,0,0,0.12)" }}
               >
                 <Text color="white" fontSize="lg" fontWeight="600" textAlign="center">Multimodal LLM App</Text>
-                <Text color="whiteAlpha.700" fontSize="md" mt={3}>PDF → Video</Text>
+                <Text color="whiteAlpha.700" fontSize="md" mt={3}>PDF &rarr; Video</Text>
               </Box>
-              <Text fontWeight="bold" fontSize="xl" mt="4">Multimode Lab</Text>
-              <Text fontSize="md" mt="1">PDFから動画を自動生成する実験プロダクト。LangGraphで構築したエージェントがPDF解析からスライド生成、ナレーション、動画化までを自動で行います。</Text>
+              <Text fontWeight="600" fontSize="lg" mt="4">Multimode Lab</Text>
+              <Text fontSize="sm" mt="1" color={textSecondary} lineHeight="1.7">An experimental product that auto-generates videos from PDFs. An agent built with LangGraph handles everything from PDF parsing to slide generation, narration, and video creation.</Text>
             </Link>
           </Box>
           <Box>
@@ -54,19 +47,17 @@ const WorkIndex = () => {
               <Image
                 src="/assets/images/dev-image1.png"
                 alt="SoulBound Token DApp"
-                borderRadius="15px"
-                boxShadow="1px 2px 28px rgb(35, 31, 24, 0.05)"
-                quality={90}
-                priority={true}
-                loading="eager"
+                borderRadius="12px"
+                transition="transform 0.2s, box-shadow 0.2s"
+                _hover={{ transform: "translateY(-2px)", boxShadow: "0 8px 30px rgba(0,0,0,0.12)" }}
               />
-              <Text fontWeight="bold" fontSize="xl" mt="4">SoulBound Token DApp</Text>
-              <Text fontSize="md" mt="1">A decentralized application for creating and managing NFTs on the ethereum.</Text>
+              <Text fontWeight="600" fontSize="lg" mt="4">SoulBound Token DApp</Text>
+              <Text fontSize="sm" mt="1" color={textSecondary} lineHeight="1.7">A decentralized application for creating and managing NFTs on the ethereum.</Text>
             </Link>
           </Box>
         </SimpleGrid>
       </Box>
-    </AnimatedBox>
+    </Box>
   );
 };
 

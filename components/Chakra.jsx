@@ -1,11 +1,11 @@
-import { ChakraProvider, extendTheme, cookieStorageManagerSSR, localStorageManager } from "@chakra-ui/react";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 
 export function Chakra({children}) {
 
     const googleFont = extendTheme({
         fonts: {
-            heading: `'Noto Sans JP', sans-serif`,
-            body: `'Noto Sans JP', sans-serif`,
+            heading: `'Inter', 'Noto Sans JP', sans-serif`,
+            body: `'Inter', 'Noto Sans JP', sans-serif`,
         },
     })
 

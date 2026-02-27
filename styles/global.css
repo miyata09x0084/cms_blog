@@ -3,147 +3,37 @@
 @tailwind utilities;
 @import "./colors.css";
 
-html:before,
-body:before {
-  content: '';
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: -1;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
   text-decoration: none;
-}
-
-.button-mycolor{
-  background-color:#F1FAEE;
-}
-
-.font-mycolor {
-  color: #524C44;
-}
-
-.logo-size {
-  width: 22px;
-}
-
-.toggle-container {
-  padding-top: 20px;
-  display: flex;
-  justify-content: right;
-  align-items: center;
-}
-
-.theme-toggle-button {
-  border: none;
-  cursor: pointer;
-  padding: 0;
-
-}
-
-.theme-toggle-button.sun {
-  /* Add any styles specific to the sun state */
-  animation: rotateSun 1.0s ease-in-out forwards;
-  border-radius: 100%;
-}
-
-.theme-toggle-button.moon {
-  /* Add any styles specific to the moon state */
-  animation: rotateMoon 0.5s ease-in-out forwards;
-  border-radius: 100%;
-}
-
-@keyframes rotateSun {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(180deg);
-  }
-}
-
-@keyframes rotateMoon {
-  0% {
-    transform: rotate(30deg); /* Match the initial rotation angle */
-  }
-  100% {
-    transform: rotate(210deg); /* Rotate 180 degrees from the initial angle */
-  }
-}
-
-.inverted-image {
-  /* filter: invert(0%); */
-  transform: scaleX(-1);
-}
-
-.rotate-image{
-  transform: rotate(-46deg);
-  margin-left: 4px;
-}
-
-.chakra-ui-dark a {
-  color: var(--dark-text);
+  transition: color 0.2s ease;
 }
 
 a:hover {
   text-decoration: none;
 }
 
-.typing-animation {
-  display: inline-block;
-  overflow: hidden;
-  position: relative;
-  padding-right: 3px;
+.chakra-ui-dark a {
+  color: var(--dark-text);
 }
 
-@media screen and (min-width: 768px) {
-  .typing-animation {
-    white-space: nowrap;
-    animation: typing 4.2s steps(32, end) forwards;
-    margin-bottom: -7px;
-  }
-
-  .typing-animation::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 3px;
-    background-color: currentColor;
-    animation: blink-caret 1.2s step-end infinite;
-  }
-
-  @keyframes typing {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
-  }
-
-  @keyframes blink-caret {
-    from, to {
-      opacity: 1;
-    }
-    60% {
-      opacity: 0;
-    }
-  }
+.chakra-ui-dark a:hover {
+  color: var(--dark-accent);
 }
 
-.blurry-texture {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 40px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.theme-toggle-button {
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.2s ease;
+}
+
+.theme-toggle-button:hover {
+  opacity: 0.7;
 }
 
 .round-image {
@@ -154,4 +44,20 @@ a:hover {
 
 .round-card {
   border-radius: 5%;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
 }
