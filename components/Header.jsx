@@ -24,14 +24,9 @@ const Header = () => {
         >
           <Flex alignItems="center">
               <Link href="/" passHref>
-                <HStack spacing={1.5} align="center">
-                  <Icon viewBox="0 0 24 24" boxSize={5} aria-hidden="true">
-                    <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-                  </Icon>
-                  <Text fontSize="lg" fontWeight="700" letterSpacing="-0.04em">
-                    RM
-                  </Text>
-                </HStack>
+                <Icon viewBox="0 0 24 24" boxSize={5} aria-hidden="true">
+                  <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                </Icon>
               </Link>
               <Spacer />
               <IconButton
