@@ -59,14 +59,33 @@ const Home: NextPage<Props> = ({ posts }) => {
 
         {/* About */}
         <Box mb={16}>
-          <Text fontSize="15px" lineHeight="1.8" color={textSecondary}>
-            Hi there — I'm Rio, a freelance software engineer based in
-            Japan. I build web applications and love diving into emerging
-            technologies like blockchain and AI. With a background in
-            science and engineering, I enjoy approaching problems from
-            both analytical and creative angles. Always happy to connect
-            — feel free to reach out anytime.
-          </Text>
+          <VStack align="start" spacing={4}>
+            <Text fontSize="15px" lineHeight="1.8" color={textSecondary}>
+              I&apos;m a full-stack engineer with a focus on building web
+              applications that are structured to last. I enjoy working across
+              the entire stack — from crafting intuitive, component-driven UIs
+              to designing backend architectures with clean module boundaries
+              and strong data integrity. What drives me is creating systems
+              where both the user experience and the underlying code are equally
+              well thought out.
+            </Text>
+            <Text fontSize="15px" lineHeight="1.8" color={textSecondary}>
+              Most recently, I built a home-buying simulation platform from
+              scratch, owning the entire stack end to end — designing a NestJS
+              API layer with dependency-aware modularization, building the React
+              frontend with optimized state management, and setting up secure
+              file handling with AWS S3. What I&apos;m most proud of is the
+              deliberate investment in long-term maintainability: automated API
+              documentation, model visualization with PlantUML, and coding
+              standards that kept the codebase approachable well beyond the
+              initial build.
+            </Text>
+            <Text fontSize="15px" lineHeight="1.8" color={textSecondary}>
+              Outside of work, you can usually find me soaking in hot springs
+              around Japan, hunting down cozy local cafés, or tinkering with
+              whatever side project has my attention that week.
+            </Text>
+          </VStack>
         </Box>
 
         {/* Posts */}
