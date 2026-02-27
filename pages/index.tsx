@@ -71,14 +71,13 @@ const Home: NextPage<Props> = ({ posts }) => {
             </Text>
             <Text fontSize="15px" lineHeight="1.8" color={textSecondary}>
               Most recently, I built a home-buying simulation platform from
-              scratch, owning the entire stack end to end — designing a NestJS
-              API layer with dependency-aware modularization, building the React
-              frontend with optimized state management, and setting up secure
-              file handling with AWS S3. What I&apos;m most proud of is the
-              deliberate investment in long-term maintainability: automated API
-              documentation, model visualization with PlantUML, and coding
-              standards that kept the codebase approachable well beyond the
-              initial build.
+              scratch, owning the entire stack end to end — designing an API
+              layer with deliberate module boundaries, building the frontend
+              with optimized state management, and setting up secure file
+              handling in the cloud. What I&apos;m most proud of is the
+              investment in long-term maintainability: automated documentation,
+              visual architecture mapping, and coding standards that kept the
+              codebase approachable well beyond the initial build.
             </Text>
             <Text fontSize="15px" lineHeight="1.8" color={textSecondary}>
               Outside of work, you can usually find me soaking in hot springs
