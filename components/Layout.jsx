@@ -1,32 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Header, Footer } from './';
-import { cookieStorageManagerSSR, localStorageManager, Box, useColorModeValue } from "@chakra-ui/react";
+import { Box, useColorModeValue } from "@chakra-ui/react";
 
 const Layout = ({ children }) => {
 
-  const colorModeManager =
-    typeof cookies === "string"
-      ? cookieStorageManagerSSR(cookies)
-      : localStorageManager
-
-  const bg= useColorModeValue("var(--primary-bg)", "var(--dark-bg)");
-  const color = useColorModeValue("var(--primary-text)", "var(--dark-text)");
+  const bg = useColorModeValue("var(--bg)", "var(--dark-bg)");
+  const color = useColorModeValue("var(--text)", "var(--dark-text)");
 
   return (
-      <div>
-        <style>
-            {`
-              body:before {
-                  background-color: ${bg};
-              }
-            `}
-        </style>
-        <Box bg={bg} color={color} w="100%" h="100%">
-            <Header />
-            {children}
-            <Footer />
-        </Box>
-      </div>
+    <Box bg={bg} color={color} minH="100vh">
+      <Header />
+      {children}
+      <Footer />
+    </Box>
   )
 }
 

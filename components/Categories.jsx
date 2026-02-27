@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { Box, Flex, useColorModeValue } from '@chakra-ui/react';
 import { getCategories } from '../services';
-import { Box, Flex, useColorMode, useColorModeValue } from '@chakra-ui/react';
 
 const Categories = () => {
   const [categories, setCategories] = useState([]);
@@ -11,27 +11,42 @@ const Categories = () => {
       .then((newCategories) => setCategories(newCategories))
   }, [])
 
-  const { colorMode } = useColorMode();
-  const bg = useColorModeValue("var(--primary-bg)", "var(--dark-bg)");
-  const color = useColorModeValue("var(--primary-text)", "var(--dark-text)");
-  const colorSub = useColorModeValue("var(--secondary-text)", "var(--dark-bg)");
+  const borderColor = useColorModeValue("var(--border)", "var(--dark-border)");
+  const textSecondary = useColorModeValue("var(--text-secondary)", "var(--dark-text-secondary)");
+  const accentColor = useColorModeValue("var(--accent)", "var(--dark-accent)");
 
   return (
-    <Flex justifyContent="center" alignItems="center" width="100%" mt="40px" py="40px" borderTop="1px solid #C6BFAC" borderBottom="1px solid #C6BFAC" mb="30px" color={color}>
+    <Flex
+      flexWrap="wrap"
+      gap={2}
+      width="100%"
+      py={6}
+      mb={6}
+      borderBottom="1px solid"
+      borderColor={borderColor}
+    >
       {categories.map((category) => (
-        <Box
-          key={category.slug}
-          mx="10px"
-          style={
-            category.slug === "blockchain" || category.slug === "nft"
-              ? { textDecoration: "line-through", opacity: 0.6 }
-              : {}
-          }
-        >
-          <Link href={`/category/${category.slug}`} >
-              {category.name}
-          </Link>
-        </Box>
+        <Link key={category.slug} href={`/category/${category.slug}`}>
+          <Box
+            px={3}
+            py={1}
+            fontSize="sm"
+            fontWeight="500"
+            border="1px solid"
+            borderColor={borderColor}
+            borderRadius="full"
+            transition="all 0.2s"
+            _hover={{ borderColor: accentColor, color: accentColor }}
+            color={textSecondary}
+            style={
+              category.slug === "blockchain" || category.slug === "nft"
+                ? { textDecoration: "line-through", opacity: 0.4 }
+                : {}
+            }
+          >
+            {category.name}
+          </Box>
+        </Link>
       ))}
     </Flex>
   )

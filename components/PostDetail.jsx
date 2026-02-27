@@ -1,26 +1,14 @@
 import React from 'react';
 import moment from 'moment';
-import { Box, Heading,VStack, useColorMode, useColorModeValue } from '@chakra-ui/react';
-import { animated, useSpring, config } from 'react-spring';
+import { Box, Heading, VStack, Text, useColorModeValue } from '@chakra-ui/react';
 
 const PostDetail = ({ post }) => {
 
-  const { colorMode } = useColorMode();
-  const bg = useColorModeValue("var(--primary-bg)", "var(--dark-bg)");
-  const color = useColorModeValue("var(--primary-text)", "var(--dark-text)");
-  const colorSub = useColorModeValue("var(--secondary-text)", "var(--dark-bg)");
-
-  const AnimatedBox = animated(Box);
-  const slideIn = useSpring({
-    from: { transform: 'translate3d(0, 40px, 0)' },
-    to: { transform: 'translate3d(0, 0, 0)' },
-    config: config.slow,
-  });
+  const borderColor = useColorModeValue("var(--border)", "var(--dark-border)");
+  const textSecondary = useColorModeValue("var(--text-secondary)", "var(--dark-text-secondary)");
 
   const getContentFragment = (index, text, obj, type) => {
     let modifiedText = text;
-
-    // {console.log(index, text, obj, type)}
 
     if (obj) {
       if (obj.bold) {
@@ -62,24 +50,24 @@ const PostDetail = ({ post }) => {
   };
 
   return (
-    <AnimatedBox w="100%" h="100vh" bg={bg} style={slideIn}>
-      <VStack align="start" maxW="768px" mx="auto" px={{ base: "4", md: "0" }} color={color} pt="40px">
-          <Box pt="12px" pb="3px">
-            <Heading as="h1" size="md" className='pb-1 mb-1' borderBottom="1px solid #C6BFAC">
+    <Box className="fade-in" w="100%" minH="100vh">
+      <VStack align="start" maxW="720px" mx="auto" px={{ base: "5", md: "0" }} pt={12} pb={16}>
+          <Box w="100%">
+            <Text fontSize="sm" color={textSecondary} mb={2}>
+              {moment(post.createdAt).format('MMM DD, YYYY')}
+            </Text>
+            <Heading as="h1" fontSize="2xl" fontWeight="700" letterSpacing="-0.02em" mb={8} pb={4} borderBottom="1px solid" borderColor={borderColor}>
               {post.title}
             </Heading>
-            <VStack align="start" mb="4px">
-              <Box>
-                {moment(post.createdAt).format('MMM DD YYYY')}
-              </Box>
-            </VStack>
-            {post.content.raw.children.map((typeObj, index) => {
-              const children =typeObj.children.map((item, itemIndex) => getContentFragment(itemIndex, item.text, item))
-              return getContentFragment(index, children, typeObj, typeObj.type)
-            })}
+            <Box fontSize="15px" lineHeight="1.9" letterSpacing="0.01em">
+              {post.content.raw.children.map((typeObj, index) => {
+                const children = typeObj.children.map((item, itemIndex) => getContentFragment(itemIndex, item.text, item))
+                return getContentFragment(index, children, typeObj, typeObj.type)
+              })}
+            </Box>
           </Box>
       </VStack>
-    </AnimatedBox>
+    </Box>
   )
 }
 

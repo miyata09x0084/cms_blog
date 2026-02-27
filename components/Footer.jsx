@@ -1,94 +1,63 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Box,
   Flex,
   Text,
   HStack,
-  Image,
 } from "@chakra-ui/react";
 import Link from "next/link";
+import { useColorModeValue } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
-  const [isIconHover, setIsIconHover] = useState(false);
+  const borderColor = useColorModeValue("var(--border)", "var(--dark-border)");
+  const textSecondary = useColorModeValue("var(--text-secondary)", "var(--dark-text-secondary)");
 
   return (
     <footer>
-      <Box h="100%" pt={16} pb={8} maxWidth="768px" mx="auto" px={{ base: 4, md: 0 }}>
-        <Box fontSize="xl">
-          <Flex justifyContent="space-between" alignItems="center">
-            <HStack mx={1} spacing={6} display="flex" alignItems="center">
-              <Link
-                href="https://github.com/miyata09x0084"
-                target="_blank"
-                rel="noopener noreferrer"
+      <Box
+        maxWidth="720px"
+        mx="auto"
+        px={{ base: 5, md: 0 }}
+        py={8}
+        borderTop="1px solid"
+        borderColor={borderColor}
+        mt={16}
+      >
+        <Flex justifyContent="space-between" alignItems="center" fontSize="sm" color={textSecondary}>
+          <Text>
+            &copy; {new Date().getFullYear()} Rio Miyata
+          </Text>
+          <HStack spacing={5}>
+            <Link
+              href="https://github.com/miyata09x0084"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Box
+                as="span"
+                transition="opacity 0.2s"
+                _hover={{ opacity: 0.6 }}
               >
-                <Flex alignItems="center">
-                  <FontAwesomeIcon icon={faGithub} width={20} height={20} />
-                  <Text ml={1}>Github</Text>
-                </Flex>
-              </Link>
-              <Link
-                href="https://etherscan.io/address/0x906b1f02B8BBCA762896d368e40C77c857Db6A0B"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Flex alignItems="center">
-                  <Image
-                    src="/assets/images/etherscan-logo-circle.png"
-                    alt="github-icon"
-                    w="19px"
-                    h="19px"
-                    mr={1}
-                  />
-                  <Text>Etherscan</Text>
-                </Flex>
-              </Link>
-            </HStack>
+                <FontAwesomeIcon icon={faGithub} width={18} height={18} />
+              </Box>
+            </Link>
             <Link
               href="https://x.com/WebDev_Ryo"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Flex
-                alignItems="center"
-                onMouseEnter={() => setIsIconHover(true)}
-                onMouseLeave={() => setIsIconHover(false)}
+              <Box
+                as="span"
+                transition="opacity 0.2s"
+                _hover={{ opacity: 0.6 }}
               >
-                {isIconHover ? (
-                  <FontAwesomeIcon
-                    icon={faTwitter}
-                    bounce
-                    width={20}
-                    height={20}
-                    mr={1}
-                  />
-                ) : (
-                  <FontAwesomeIcon
-                    icon={faTwitter}
-                    width={20}
-                    height={20}
-                    mr={1}
-                  />
-                )}
-                <Text ml={0.5}>X</Text>
-              </Flex>
+                <FontAwesomeIcon icon={faTwitter} width={18} height={18} />
+              </Box>
             </Link>
-          </Flex>
-        </Box>
-      </Box>
-      <Box
-        fontSize="sm"
-        maxWidth="768px"
-        px={{ base: 4, md: 0 }}
-        mx="auto"
-        mb={6}
-        textAlign="center"
-        color="gray.700"
-      >
-        <Text>Built and designed by Ryo(Rio) Miyata.</Text>
-        <Text>All rights reserved. ©</Text>
+          </HStack>
+        </Flex>
       </Box>
     </footer>
   );
