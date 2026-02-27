@@ -221,7 +221,7 @@ const Home: NextPage<Props> = ({ posts }) => {
           <VStack align="start" spacing={3}>
             {[
               { year: "1989", text: "Born in Aichi, Japan", sub: "日本の愛知県出身" },
-              { year: "2014", text: "Master's Degree, Graduate School of Science and Engineering @Hosei University", sub: "法政大学理工学研究科 修士課程修了" },
+              { year: "2015", text: "Master's Degree, Graduate School of Science and Engineering @Hosei University", sub: "法政大学大学院理工学研究科 修士課程修了" },
               { year: "2019", text: "Server-Side Engineering Course @Tech Camp", sub: "サーバーサイドエンジニアコース修了" },
               { year: "2020", text: "Web Developer @AnkhSystems (Digital Media)", sub: "アンクシステムズ-デジタルメディア開発" },
               { year: "2023–", text: "Freelance Software Engineer @Japan", sub: "フリーランスの活動開始" },
