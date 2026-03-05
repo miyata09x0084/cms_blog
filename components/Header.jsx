@@ -1,6 +1,8 @@
 import React from 'react';
-import { Box, Flex, Text, Spacer, HStack, IconButton, Icon } from '@chakra-ui/react';
+import { Box, Flex, Spacer, IconButton } from '@chakra-ui/react';
 import { useColorMode, useColorModeValue } from "@chakra-ui/react"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCat } from '@fortawesome/free-solid-svg-icons';
 import SunIcon from './ToggleSwitch/icons/SunIcon';
 import MoonIcon from './ToggleSwitch/icons/MoonIcon';
 import Link from 'next/link';
@@ -24,9 +26,7 @@ const Header = () => {
         >
           <Flex alignItems="center">
               <Link href="/" passHref>
-                <Icon viewBox="0 0 24 24" boxSize={5} aria-hidden="true">
-                  <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-                </Icon>
+                <FontAwesomeIcon width={20} height={20} icon={faCat} />
               </Link>
               <Spacer />
               <IconButton
