@@ -45,6 +45,9 @@ const Home: NextPage<Props> = ({ posts }) => {
             <Text fontSize="md" fontWeight="500" color={textSecondary} mt={1}>
               Software Engineer
             </Text>
+            <Text fontSize="xs" fontWeight="400" fontStyle="italic" color={textSecondary} mt={2} letterSpacing="0.03em">
+              First principles, then make.
+            </Text>
           </Box>
           <Image
             src="/assets/images/self-image.jpg"
