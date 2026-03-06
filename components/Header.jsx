@@ -1,11 +1,9 @@
 import React from 'react';
 import { Box, Flex, Spacer, IconButton } from '@chakra-ui/react';
 import { useColorMode, useColorModeValue } from "@chakra-ui/react"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCat } from '@fortawesome/free-solid-svg-icons';
 import SunIcon from './ToggleSwitch/icons/SunIcon';
 import MoonIcon from './ToggleSwitch/icons/MoonIcon';
-import Link from 'next/link';
+import CatLogo from './CatLogo';
 
 const Header = () => {
 
@@ -25,9 +23,7 @@ const Header = () => {
           borderColor={borderColor}
         >
           <Flex alignItems="center">
-              <Link href="/" passHref>
-                <FontAwesomeIcon width={20} height={20} icon={faCat} />
-              </Link>
+              <CatLogo />
               <Spacer />
               <IconButton
                 className="theme-toggle-button"
