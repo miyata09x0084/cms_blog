@@ -78,10 +78,7 @@ const Home: NextPage<Props> = ({ posts }) => {
             <Text fontSize="md" fontWeight="500" color={textSecondary} mt={1}>
               Software Engineer
             </Text>
-            <TypingAnimation
-              key={greetingMessages ? "ai" : "default"}
-              messages={greetingMessages}
-            />
+            <TypingAnimation messages={greetingMessages} />
           </Box>
           <Image
             src="/assets/images/self-image.jpg"
