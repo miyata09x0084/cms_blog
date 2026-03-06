@@ -8,9 +8,11 @@ const DEFAULT_TEXTS = [
   "Thanks for stopping by!",
 ];
 
-const TYPING_SPEEDS = [50, 35, 25];
-const PAUSE_AFTER_TYPING = 2000;
-const FADE_DURATION = 400;
+const TYPING_SPEEDS = [110, 85, 65];
+const PAUSE_AFTER_TYPING = 3500;
+const FADE_DURATION = 500;
+const TYPING_JITTER = 0.4;
+const FADE_IN_DELAY = 300;
 
 // Phases: typing -> paused -> fading-out -> fading-in -> typing
 const TypingAnimation = ({ messages }) => {
@@ -61,7 +63,9 @@ const TypingAnimation = ({ messages }) => {
   // Get typing speed based on cycle count
   const getTypingSpeed = useCallback(() => {
     const idx = Math.min(cycleCount, TYPING_SPEEDS.length - 1);
-    return TYPING_SPEEDS[idx];
+    const base = TYPING_SPEEDS[idx];
+    const jitter = 1 + (Math.random() * 2 - 1) * TYPING_JITTER;
+    return Math.round(base * jitter);
   }, [cycleCount]);
 
   // Reduced motion: show full text, fade between messages
@@ -124,7 +128,7 @@ const TypingAnimation = ({ messages }) => {
       // Small delay then start typing
       const timeout = setTimeout(() => {
         setPhase("typing");
-      }, 100);
+      }, FADE_IN_DELAY);
       return () => clearTimeout(timeout);
     }
   }, [reducedMotion, phase, displayText, textIndex, getTypingSpeed, applyPendingMessages]);
