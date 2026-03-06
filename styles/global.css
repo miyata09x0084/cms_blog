@@ -185,3 +185,10 @@ a:hover {
 .fade-in {
   animation: fadeIn 0.5s ease-out forwards;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .typing-animation,
+  .typing-animation::after {
+    animation: none !important;
+  }
+}
