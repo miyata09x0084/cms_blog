@@ -13,8 +13,8 @@ const theme = extendTheme({
     },
     colors: {
         brand: {
-            accent: '#0070F3',
-            accentDark: '#3291FF',
+            accent: '#049872',
+            accentDark: '#00C4B4',
         },
     },
 })

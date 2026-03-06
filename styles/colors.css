@@ -1,12 +1,31 @@
 :root {
-  --bg: #FFFFFF;
-  --text: #171717;
-  --text-secondary: #666666;
-  --accent: #0070F3;
-  --border: #EAEAEA;
-  --dark-bg: #000000;
-  --dark-text: #EDEDED;
-  --dark-text-secondary: #888888;
-  --dark-accent: #3291FF;
-  --dark-border: #333333;
+  /* 新しい変数名 (各コンポーネントが参照) */
+  --bg: #EDDFD6;
+  --text: #000000;
+  --text-secondary: #514331;
+  --accent: #049872;
+  --border: #664D03;
+
+  /* ダークモード */
+  --dark-bg: #222222;
+  --dark-text: #00C4B4;
+  --dark-text-secondary: #fcf9f4;
+  --dark-accent: #00C4B4;
+  --dark-border: #3a3a3a;
+
+  /* 旧変数名 (ColorTheme/index.jsx が参照) */
+  --primary-bg: #EDDFD6;
+  --primary-text: #000000;
+  --primary-button: #049872;
+  --primary-button-hover: #049872;
+  --secondary-button: #8505b0;
+  --secondary-button-hover: #8505b0;
+  --secondary-bg: #664D03;
+  --secondary-text: #EDDFD6;
+  --tertiary-text: #514331;
+  --dark-bg-sub: #3a3a3a;
+  --dark-text-sub: #fcf9f4;
+  --dark-button: #00C4B4;
+  --sun-icon: #ab9a00;
+  --moon-icon: #985EFF;
 }
