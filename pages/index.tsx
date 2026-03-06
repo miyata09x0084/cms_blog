@@ -5,7 +5,6 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { getPosts } from "../services";
 import TypingAnimation from "../components/TypingAnimation";
-import AskRio from "../components/AskRio";
 import {
   Box,
   Text,
@@ -83,7 +82,6 @@ const Home: NextPage<Props> = ({ posts }) => {
               key={greetingMessages ? "ai" : "default"}
               messages={greetingMessages}
             />
-            {AI_ENABLED && <AskRio />}
           </Box>
           <Image
             src="/assets/images/self-image.jpg"
