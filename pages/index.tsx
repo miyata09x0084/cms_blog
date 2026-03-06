@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 import { getPosts } from "../services";
 import TypingAnimation from "../components/TypingAnimation";
 import {
@@ -14,6 +15,8 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 
+const AI_ENABLED = process.env.NEXT_PUBLIC_AI_ENABLED === "true";
+
 interface Props {
   posts: Array<any>;
 }
@@ -22,6 +25,35 @@ const Home: NextPage<Props> = ({ posts }) => {
   const linkColor = useColorModeValue("var(--accent)", "var(--dark-accent)");
   const textSecondary = useColorModeValue("var(--text-secondary)", "var(--dark-text-secondary)");
   const borderColor = useColorModeValue("var(--border)", "var(--dark-border)");
+
+  const [greetingMessages, setGreetingMessages] = useState<string[] | null>(null);
+
+  useEffect(() => {
+    if (!AI_ENABLED) return;
+
+    const fetchGreetings = async () => {
+      try {
+        const res = await fetch("/api/greeting", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            hour: new Date().getHours(),
+            referrer: document.referrer || undefined,
+            isReturning: !!localStorage.getItem("rio_visited"),
+          }),
+        });
+        const data = await res.json();
+        if (data.messages && Array.isArray(data.messages)) {
+          setGreetingMessages(data.messages);
+        }
+      } catch {
+        // Fallback: keep using default messages
+      }
+      localStorage.setItem("rio_visited", new Date().toISOString());
+    };
+
+    fetchGreetings();
+  }, []);
 
   return (
     <Box className="fade-in">
@@ -46,7 +78,10 @@ const Home: NextPage<Props> = ({ posts }) => {
             <Text fontSize="md" fontWeight="500" color={textSecondary} mt={1}>
               Software Engineer
             </Text>
-            <TypingAnimation />
+            <TypingAnimation
+              key={greetingMessages ? "ai" : "default"}
+              messages={greetingMessages}
+            />
           </Box>
           <Image
             src="/assets/images/self-image.jpg"

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Box, Text, useColorModeValue } from "@chakra-ui/react";
 
-const texts = [
+const DEFAULT_TEXTS = [
   "Welcome to my website!",
   "Feel free to look around.",
   "Thanks for stopping by!",
@@ -12,7 +12,8 @@ const DELETING_SPEED = 30;
 const PAUSE_AFTER_TYPING = 2000;
 const PAUSE_AFTER_DELETING = 500;
 
-const TypingAnimation = () => {
+const TypingAnimation = ({ messages }) => {
+  const texts = messages || DEFAULT_TEXTS;
   const [textIndex, setTextIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -20,7 +21,7 @@ const TypingAnimation = () => {
   const borderColor = useColorModeValue("var(--border)", "var(--dark-border)");
 
   useEffect(() => {
-    const currentFullText = texts[textIndex];
+    const currentFullText = texts[textIndex % texts.length];
 
     if (!isDeleting) {
       // Typing phase
@@ -47,12 +48,12 @@ const TypingAnimation = () => {
         // Finished deleting, pause then move to next text
         const timeout = setTimeout(() => {
           setIsDeleting(false);
-          setTextIndex((prev) => (prev + 1) % texts.length);
+          setTextIndex((prev) => (prev + 1) % (texts.length || 1));
         }, PAUSE_AFTER_DELETING);
         return () => clearTimeout(timeout);
       }
     }
-  }, [displayText, isDeleting, textIndex]);
+  }, [displayText, isDeleting, textIndex, texts]);
 
   return (
     <Box
