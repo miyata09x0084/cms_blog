@@ -2,7 +2,6 @@ import type { NextPage } from "next";
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
-import { useState, useEffect } from "react";
 import { getPosts } from "../services";
 import TypingAnimation from "../components/TypingAnimation";
 import {
@@ -15,8 +14,6 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 
-const AI_ENABLED = process.env.NEXT_PUBLIC_AI_ENABLED === "true";
-
 interface Props {
   posts: Array<any>;
 }
@@ -25,35 +22,6 @@ const Home: NextPage<Props> = ({ posts }) => {
   const linkColor = useColorModeValue("var(--accent)", "var(--dark-accent)");
   const textSecondary = useColorModeValue("var(--text-secondary)", "var(--dark-text-secondary)");
   const borderColor = useColorModeValue("var(--border)", "var(--dark-border)");
-
-  const [greetingMessages, setGreetingMessages] = useState<string[] | null>(null);
-
-  useEffect(() => {
-    if (!AI_ENABLED) return;
-
-    const fetchGreetings = async () => {
-      try {
-        const res = await fetch("/api/greeting", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            hour: new Date().getHours(),
-            referrer: document.referrer || undefined,
-            isReturning: !!localStorage.getItem("rio_visited"),
-          }),
-        });
-        const data = await res.json();
-        if (data.messages && Array.isArray(data.messages)) {
-          setGreetingMessages(data.messages);
-        }
-      } catch {
-        // Fallback: keep using default messages
-      }
-      localStorage.setItem("rio_visited", new Date().toISOString());
-    };
-
-    fetchGreetings();
-  }, []);
 
   return (
     <Box className="fade-in">
@@ -70,30 +38,35 @@ const Home: NextPage<Props> = ({ posts }) => {
         lineHeight="1.7"
       >
         {/* Hero */}
-        <Flex alignItems="center" mb={16}>
-          <Box flex="1">
-            <Text fontSize="3xl" fontWeight="700" letterSpacing="-0.02em">
-              Rio Miyata
-            </Text>
-            <Text fontSize="md" fontWeight="500" color={textSecondary} mt={1}>
-              Software Engineer
-            </Text>
-            <TypingAnimation messages={greetingMessages} />
-          </Box>
-          <Image
-            src="/assets/images/self-image.jpg"
-            width={72}
-            height={72}
-            priority={true}
-            loading="eager"
-            className="round-image"
-            alt="Rio Miyata"
-          />
-        </Flex>
+        <Box mb={16}>
+          <TypingAnimation />
+          <Text fontSize="3xl" fontWeight="700" letterSpacing="-0.02em">
+            Rio Miyata
+          </Text>
+          <Text fontSize="md" fontWeight="500" color={textSecondary} mt={1}>
+            Software Engineer
+          </Text>
+        </Box>
 
         {/* About */}
         <Box mb={16}>
-          <VStack align="start" spacing={4}>
+          <Flex
+            direction={{ base: "column", md: "row" }}
+            alignItems={{ base: "center", md: "flex-start" }}
+            gap={6}
+          >
+            <Box flexShrink={0}>
+              <Image
+                src="/assets/images/self-image.jpg"
+                width={80}
+                height={80}
+                priority={false}
+                loading="lazy"
+                className="round-image"
+                alt="Rio Miyata"
+              />
+            </Box>
+            <VStack align="start" spacing={4}>
             <Text fontSize="15px" lineHeight="1.8" color={textSecondary}>
               I&apos;m a full-stack engineer with a focus on building web
               applications that are structured to last. I enjoy working across
@@ -118,7 +91,8 @@ const Home: NextPage<Props> = ({ posts }) => {
               around Japan, hunting down cozy local cafés, or tinkering with
               whatever side project has my attention that week.
             </Text>
-          </VStack>
+            </VStack>
+          </Flex>
         </Box>
 
         {/* Posts */}
