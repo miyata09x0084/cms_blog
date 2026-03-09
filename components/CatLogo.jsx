@@ -22,11 +22,11 @@ const REACTIONS = [
   // click 1: small bounce
   { animClass: "cat-bounce", floats: [] },
   // click 2
-  { animClass: "cat-bounce-big", floats: [{ text: "\u306B\u3083", icon: null }] },
+  { animClass: "cat-bounce-big", floats: [{ text: "Meow", icon: null }] },
   // click 3
-  { animClass: "cat-bounce-big", floats: [{ text: "\u306B\u3083", icon: null }] },
+  { animClass: "cat-bounce-big", floats: [{ text: "Meow", icon: null }] },
   // click 4
-  { animClass: "cat-spin", floats: [{ text: "\u306B\u3083\u3093!", icon: null }, { text: null, icon: faPaw }] },
+  { animClass: "cat-spin", floats: [{ text: "Meow!", icon: null }, { text: null, icon: faPaw }] },
   // click 5
   { animClass: "cat-spin", floats: [{ text: null, icon: faPaw }, { text: null, icon: faPaw }] },
   // click 6
@@ -34,7 +34,7 @@ const REACTIONS = [
   // click 7
   { animClass: "cat-wiggle", floats: [{ text: null, icon: faHeart }, { text: null, icon: faHeart }] },
   // click 8
-  { animClass: "cat-purr", floats: [{ text: "\u3054\u308D\u3054\u308D...", icon: null }, { text: null, icon: faFish }] },
+  { animClass: "cat-purr", floats: [{ text: "Purr...", icon: null }, { text: null, icon: faFish }] },
   // click 9
   { animClass: "cat-purr", floats: [{ text: null, icon: faFish }, { text: null, icon: faFish }] },
 ];
