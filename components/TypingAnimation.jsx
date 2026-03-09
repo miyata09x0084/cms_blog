@@ -2,98 +2,94 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { Box, Text, useColorModeValue } from "@chakra-ui/react";
 import { useReducedMotion } from "../lib/useReducedMotion";
 
-const DEFAULT_TEXTS = [
-  "Welcome to my website!",
-  "Feel free to look around.",
-  "Thanks for stopping by!",
-];
-
 const TYPING_SPEEDS = [110, 85, 65];
 const PAUSE_AFTER_TYPING = 3500;
 const FADE_DURATION = 500;
 const TYPING_JITTER = 0.4;
 const FADE_IN_DELAY = 300;
 
+const INTRO_MESSAGE = "I'm a fullstack developer based in Japan.";
+
+function getTimeBasedMessages() {
+  const hour = new Date().getHours();
+  if (hour >= 6 && hour < 12) {
+    return [
+      INTRO_MESSAGE,
+      "Good morning! Great to see you here.",
+      "Hope your day is off to a good start.",
+      "Welcome — grab a coffee and explore.",
+    ];
+  } else if (hour >= 12 && hour < 18) {
+    return [
+      INTRO_MESSAGE,
+      "Good afternoon! Thanks for visiting.",
+      "Hope you're having a great day so far.",
+      "Take your time — there's lots to see.",
+    ];
+  } else {
+    return [
+      INTRO_MESSAGE,
+      "Good evening! Thanks for stopping by.",
+      "Winding down? Take your time here.",
+      "Welcome — enjoy the quiet browse.",
+    ];
+  }
+}
+
 // Phases: typing -> paused -> fading-out -> fading-in -> typing
-const TypingAnimation = ({ messages }) => {
-  const texts = messages || DEFAULT_TEXTS;
+const TypingAnimation = () => {
+  const texts = useRef(getTimeBasedMessages());
   const reducedMotion = useReducedMotion();
 
   const [textIndex, setTextIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
   const [phase, setPhase] = useState("typing"); // typing | paused | fading-out | fading-in
   const [opacity, setOpacity] = useState(1);
-  const [cycleCount, setCycleCount] = useState(0);
+  const [stopped, setStopped] = useState(false);
 
-  // Track messages prop changes to transition smoothly
-  const pendingMessages = useRef(null);
-  const currentTexts = useRef(texts);
-  const prevMessagesRef = useRef(messages);
+  const totalMessagesShown = useRef(0);
 
   const borderColor = useColorModeValue("var(--border)", "var(--dark-border)");
 
-  // Detect messages prop change
-  useEffect(() => {
-    if (prevMessagesRef.current !== messages) {
-      prevMessagesRef.current = messages;
-      const newTexts = messages || DEFAULT_TEXTS;
-      // If currently typing or paused, queue the new messages for after current cycle
-      if (phase === "typing" || phase === "paused") {
-        pendingMessages.current = newTexts;
-      } else {
-        // If in a fade transition, apply immediately since we're between messages
-        currentTexts.current = newTexts;
-        pendingMessages.current = null;
-      }
-    }
-  }, [messages, phase]);
-
-  // Apply pending messages at cycle boundary
-  const applyPendingMessages = useCallback(() => {
-    if (pendingMessages.current) {
-      currentTexts.current = pendingMessages.current;
-      pendingMessages.current = null;
-      setTextIndex(0);
-      setCycleCount(0);
-      return true;
-    }
-    return false;
-  }, []);
-
-  // Get typing speed based on cycle count
+  // Get typing speed based on totalMessagesShown tier
   const getTypingSpeed = useCallback(() => {
-    const idx = Math.min(cycleCount, TYPING_SPEEDS.length - 1);
+    const tier = Math.floor(totalMessagesShown.current / 2);
+    const idx = Math.min(tier, TYPING_SPEEDS.length - 1);
     const base = TYPING_SPEEDS[idx];
     const jitter = 1 + (Math.random() * 2 - 1) * TYPING_JITTER;
     return Math.round(base * jitter);
-  }, [cycleCount]);
+  }, []);
 
   // Reduced motion: show full text, fade between messages
   useEffect(() => {
-    if (!reducedMotion) return;
+    if (!reducedMotion || stopped) return;
 
-    const currentFullText = currentTexts.current[textIndex % currentTexts.current.length];
+    const currentFullText = texts.current[textIndex % texts.current.length];
     setDisplayText(currentFullText);
     setOpacity(1);
 
     const timeout = setTimeout(() => {
       setOpacity(0);
       setTimeout(() => {
-        applyPendingMessages();
-        setTextIndex((prev) => (prev + 1) % currentTexts.current.length);
-        setCycleCount((c) => c + 1);
+        totalMessagesShown.current += 1;
+        if (totalMessagesShown.current >= texts.current.length) {
+          setStopped(true);
+          setOpacity(1);
+          return;
+        }
+        setTextIndex((prev) => (prev + 1) % texts.current.length);
         setOpacity(1);
       }, FADE_DURATION);
     }, PAUSE_AFTER_TYPING);
 
     return () => clearTimeout(timeout);
-  }, [reducedMotion, textIndex, applyPendingMessages]);
+  }, [reducedMotion, textIndex, stopped]);
 
   // Normal animation: phase-based state machine
   useEffect(() => {
-    if (reducedMotion) return;
+    if (reducedMotion || stopped) return;
 
-    const currentFullText = currentTexts.current[textIndex % currentTexts.current.length];
+    const currentFullText = texts.current[textIndex % texts.current.length];
 
     if (phase === "typing") {
       if (displayText.length < currentFullText.length) {
@@ -106,6 +102,12 @@ const TypingAnimation = ({ messages }) => {
         setPhase("paused");
       }
     } else if (phase === "paused") {
+      // Check stop condition before scheduling next transition
+      totalMessagesShown.current += 1;
+      if (totalMessagesShown.current >= texts.current.length) {
+        setStopped(true);
+        return;
+      }
       const timeout = setTimeout(() => {
         setPhase("fading-out");
         setOpacity(0);
@@ -113,12 +115,7 @@ const TypingAnimation = ({ messages }) => {
       return () => clearTimeout(timeout);
     } else if (phase === "fading-out") {
       const timeout = setTimeout(() => {
-        // Apply pending messages if any, or advance index
-        const applied = applyPendingMessages();
-        if (!applied) {
-          setTextIndex((prev) => (prev + 1) % currentTexts.current.length);
-        }
-        setCycleCount((c) => c + 1);
+        setTextIndex((prev) => (prev + 1) % texts.current.length);
         setDisplayText("");
         setPhase("fading-in");
         setOpacity(1);
@@ -131,65 +128,80 @@ const TypingAnimation = ({ messages }) => {
       }, FADE_IN_DELAY);
       return () => clearTimeout(timeout);
     }
-  }, [reducedMotion, phase, displayText, textIndex, getTypingSpeed, applyPendingMessages]);
+  }, [reducedMotion, phase, displayText, textIndex, getTypingSpeed, stopped]);
 
-  const currentFullText = currentTexts.current[textIndex % currentTexts.current.length];
+  const currentFullText = texts.current[textIndex % texts.current.length];
 
   return (
     <Box
       role="status"
       aria-live="polite"
-      display="inline-block"
-      border="1px solid"
-      borderColor={borderColor}
-      borderRadius={17}
-      px={{ base: 3, md: 4 }}
-      py={2}
-      mt={3}
+      display="flex"
+      justifyContent="center"
+      w="100%"
+      mb={{ base: 5, md: 6 }}
     >
-      {/* Visually hidden full text for screen readers */}
       <Box
-        as="span"
-        position="absolute"
-        width="1px"
-        height="1px"
-        overflow="hidden"
-        clipPath="inset(50%)"
+        display="inline-flex"
+        alignItems="center"
+        border="1px solid"
+        borderColor={borderColor}
+        borderRadius={20}
+        px={{ base: 5, md: 8 }}
+        py={{ base: 4, md: 5 }}
+        minH={{ base: "60px", md: "72px" }}
       >
-        {currentFullText}
-      </Box>
+        {/* Visually hidden full text for screen readers */}
+        <Box
+          as="span"
+          position="absolute"
+          width="1px"
+          height="1px"
+          overflow="hidden"
+          clipPath="inset(50%)"
+        >
+          {currentFullText}
+        </Box>
 
-      <Text
-        fontSize={{ base: "xs", md: "sm" }}
-        fontWeight="400"
-        letterSpacing="0.01em"
-        aria-hidden="true"
-        style={{
-          opacity,
-          transition: `opacity ${FADE_DURATION}ms ease`,
-        }}
-      >
-        {displayText}
-        {!reducedMotion && (
+        <Text
+          fontSize={{ base: "md", md: "lg" }}
+          fontWeight="400"
+          letterSpacing="0.01em"
+          aria-hidden="true"
+        >
           <Box
             as="span"
-            aria-hidden="true"
-            display="inline-block"
-            w="1px"
-            h="1em"
-            bg="currentColor"
-            ml="2px"
-            verticalAlign="text-bottom"
-            animation="blink 1s step-end infinite"
-            sx={{
-              "@keyframes blink": {
-                "0%, 100%": { opacity: 1 },
-                "50%": { opacity: 0 },
-              },
+            style={{
+              opacity,
+              transition: `opacity ${FADE_DURATION}ms ease`,
             }}
-          />
-        )}
-      </Text>
+          >
+            {displayText}
+            {!reducedMotion && !stopped && (
+              <Box
+                as="span"
+                aria-hidden="true"
+                display="inline-block"
+                w="2px"
+                h="1em"
+                bg="currentColor"
+                ml="2px"
+                verticalAlign="text-bottom"
+                animation="blink 1s step-end infinite"
+                sx={{
+                  "@keyframes blink": {
+                    "0%, 100%": { opacity: 1 },
+                    "50%": { opacity: 0 },
+                  },
+                }}
+              />
+            )}
+          </Box>
+          <Box as="span" visibility="hidden" aria-hidden="true">
+            {currentFullText.slice(displayText.length)}
+          </Box>
+        </Text>
+      </Box>
     </Box>
   );
 };

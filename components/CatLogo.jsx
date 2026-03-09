@@ -236,7 +236,7 @@ const CatLogo = () => {
             className={getIconClass()}
             onAnimationEnd={handleAnimationEnd}
           >
-            <FontAwesomeIcon width={20} height={20} icon={faCat} />
+            <FontAwesomeIcon width={26} height={26} icon={faCat} />
           </Box>
         </Box>
       </Link>

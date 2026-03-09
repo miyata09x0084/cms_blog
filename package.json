@@ -9,7 +9,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "@ai-sdk/openai": "^3.0.41",
     "@chakra-ui/icons": "^2.0.17",
     "@chakra-ui/react": "^2.5.1",
     "@chakra-ui/transition": "^2.0.15",
@@ -21,7 +20,6 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@next/font": "^13.2.4",
     "@sendgrid/mail": "^7.7.0",
-    "ai": "^6.0.116",
     "axios": "^1.5.0",
     "email-validator": "^2.0.4",
     "framer-motion": "^10.8.5",
