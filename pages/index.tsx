@@ -11,6 +11,7 @@ import {
   Heading,
   VStack,
   HStack,
+  Spacer,
   useColorModeValue,
 } from "@chakra-ui/react";
 
@@ -37,63 +38,62 @@ const Home: NextPage<Props> = ({ posts }) => {
         letterSpacing="0.01em"
         lineHeight="1.7"
       >
-        {/* Hero */}
-        <Box mb={16}>
+        {/* Typing */}
+        <Box mb={8}>
           <TypingAnimation />
-          <Text fontSize="3xl" fontWeight="700" letterSpacing="-0.02em">
-            Rio Miyata
-          </Text>
-          <Text fontSize="md" fontWeight="500" color={textSecondary} mt={1}>
-            Software Engineer
-          </Text>
         </Box>
 
+        {/* Hero */}
+        <Flex mb={16} alignItems="center">
+          <Box>
+            <Text fontSize="3xl" fontWeight="700" letterSpacing="-0.02em">
+              Rio Miyata
+            </Text>
+            <Text fontSize="md" fontWeight="500" color={textSecondary} mt={1}>
+              Software Engineer
+            </Text>
+          </Box>
+          <Spacer />
+          <Box flexShrink={0}>
+            <Image
+              src="/assets/images/self-image.jpg"
+              width={80}
+              height={80}
+              priority={false}
+              loading="lazy"
+              className="round-image"
+              alt="Rio Miyata"
+            />
+          </Box>
+        </Flex>
+
         {/* About */}
-        <Box mb={16}>
-          <Flex
-            direction={{ base: "column", md: "row" }}
-            alignItems={{ base: "center", md: "flex-start" }}
-            gap={6}
-          >
-            <Box flexShrink={0}>
-              <Image
-                src="/assets/images/self-image.jpg"
-                width={80}
-                height={80}
-                priority={false}
-                loading="lazy"
-                className="round-image"
-                alt="Rio Miyata"
-              />
-            </Box>
-            <VStack align="start" spacing={4}>
-            <Text fontSize="15px" lineHeight="1.8" color={textSecondary}>
-              I&apos;m a full-stack engineer with a focus on building web
-              applications that are structured to last. I enjoy working across
-              the entire stack — from crafting intuitive, component-driven UIs
-              to designing backend architectures with clean module boundaries
-              and strong data integrity. What drives me is creating systems
-              where both the user experience and the underlying code are equally
-              well thought out.
-            </Text>
-            <Text fontSize="15px" lineHeight="1.8" color={textSecondary}>
-              Most recently, I built a home-buying simulation platform from
-              scratch, owning the entire stack end to end — designing an API
-              layer with deliberate module boundaries, building the frontend
-              with optimized state management, and setting up secure file
-              handling in the cloud. What I&apos;m most proud of is the
-              investment in long-term maintainability: automated documentation,
-              visual architecture mapping, and coding standards that kept the
-              codebase approachable well beyond the initial build.
-            </Text>
-            <Text fontSize="15px" lineHeight="1.8" color={textSecondary}>
-              Outside of work, you can usually find me soaking in hot springs
-              around Japan, hunting down cozy local cafés, or tinkering with
-              whatever side project has my attention that week.
-            </Text>
-            </VStack>
-          </Flex>
-        </Box>
+        <VStack align="start" spacing={4} mb={16}>
+          <Text fontSize="15px" lineHeight="1.8" color={textSecondary}>
+            I&apos;m a full-stack engineer with a focus on building web
+            applications that are structured to last. I enjoy working across
+            the entire stack — from crafting intuitive, component-driven UIs
+            to designing backend architectures with clean module boundaries
+            and strong data integrity. What drives me is creating systems
+            where both the user experience and the underlying code are equally
+            well thought out.
+          </Text>
+          <Text fontSize="15px" lineHeight="1.8" color={textSecondary}>
+            Most recently, I built a home-buying simulation platform from
+            scratch, owning the entire stack end to end — designing an API
+            layer with deliberate module boundaries, building the frontend
+            with optimized state management, and setting up secure file
+            handling in the cloud. What I&apos;m most proud of is the
+            investment in long-term maintainability: automated documentation,
+            visual architecture mapping, and coding standards that kept the
+            codebase approachable well beyond the initial build.
+          </Text>
+          <Text fontSize="15px" lineHeight="1.8" color={textSecondary}>
+            Outside of work, you can usually find me soaking in hot springs
+            around Japan, hunting down cozy local cafés, or tinkering with
+            whatever side project has my attention that week.
+          </Text>
+        </VStack>
 
         {/* Posts */}
         <Box mb={16}>
