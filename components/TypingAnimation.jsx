@@ -8,7 +8,7 @@ const FADE_DURATION = 500;
 const TYPING_JITTER = 0.4;
 const FADE_IN_DELAY = 300;
 
-const INTRO_MESSAGE = "I'm a fullstack developer based in Japan.";
+const INTRO_MESSAGE = "Hi! I'm a fullstack developer based in Japan.";
 
 function getTimeBasedMessages() {
   const hour = new Date().getHours();
