@@ -110,7 +110,7 @@ const Home: NextPage<Props> = ({ posts }) => {
         {/* Posts */}
         <Box mb={16}>
           <Heading as="h2" fontSize="sm" fontWeight="600" textTransform="uppercase" letterSpacing="0.1em" color={textSecondary} mb={6}>
-            Posts
+            /Posts
           </Heading>
           <VStack align="start" spacing={4}>
             <Box
@@ -167,7 +167,7 @@ const Home: NextPage<Props> = ({ posts }) => {
         {/* Creations */}
         <Box mb={16}>
           <Heading as="h2" fontSize="sm" fontWeight="600" textTransform="uppercase" letterSpacing="0.1em" color={textSecondary} mb={6}>
-            Creations
+            /Creations
           </Heading>
           <HStack spacing={6} width="100%" alignItems="flex-start" flexWrap={{ base: "wrap", md: "nowrap" }}>
             <Box flex="1" minW={{ base: "100%", md: "0" }}>
@@ -236,7 +236,7 @@ const Home: NextPage<Props> = ({ posts }) => {
         {/* Bio */}
         <Box mb={16}>
           <Heading as="h2" fontSize="sm" fontWeight="600" textTransform="uppercase" letterSpacing="0.1em" color={textSecondary} mb={6}>
-            Bio
+            /Bio
           </Heading>
           <VStack align="start" spacing={3}>
             {[
@@ -257,6 +257,26 @@ const Home: NextPage<Props> = ({ posts }) => {
               </Flex>
             ))}
           </VStack>
+        </Box>
+
+        {/* Interests */}
+        <Box mb={16}>
+          <Heading as="h2" fontSize="sm" fontWeight="600" textTransform="uppercase" letterSpacing="0.1em" color={textSecondary} mb={6}>
+            /Interests
+          </Heading>
+          <HStack spacing={3} flexWrap="wrap">
+            {[
+              "Morning coffee",
+              "Campfire cooking",
+              "Hot spring hopping",
+              "The beauty of physics",
+              "First principles",
+            ].map((item) => (
+              <Text key={item} fontSize="15px" color={textSecondary}>
+                #{item}
+              </Text>
+            ))}
+          </HStack>
         </Box>
       </Box>
     </Box>
