@@ -271,6 +271,7 @@ const Home: NextPage<Props> = ({ posts }) => {
               "Hot spring hopping",
               "The beauty of physics",
               "First principles",
+              "Running",
             ].map((item) => (
               <Text key={item} fontSize="15px" color={textSecondary}>
                 #{item}
