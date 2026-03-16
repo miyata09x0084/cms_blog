@@ -8,7 +8,7 @@ import {
 import Link from "next/link";
 import { useColorModeValue } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTwitter, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   const borderColor = useColorModeValue("var(--border)", "var(--dark-border)");
@@ -41,19 +41,6 @@ const Footer = () => {
                 _hover={{ opacity: 0.6 }}
               >
                 <FontAwesomeIcon icon={faGithub} width={18} height={18} />
-              </Box>
-            </Link>
-            <Link
-              href="https://x.com/WebDev_Ryo"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Box
-                as="span"
-                transition="opacity 0.2s"
-                _hover={{ opacity: 0.6 }}
-              >
-                <FontAwesomeIcon icon={faTwitter} width={18} height={18} />
               </Box>
             </Link>
           </HStack>
