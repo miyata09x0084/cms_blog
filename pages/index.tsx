@@ -38,6 +38,18 @@ const Home: NextPage<Props> = ({ posts }) => {
         letterSpacing="0.01em"
         lineHeight="1.7"
       >
+        {/* Hero Image */}
+        <Flex justifyContent="center" width="100%" mb={8}>
+          <Image
+            src="/assets/images/typing-image.png"
+            alt="keyboard"
+            width={550}
+            height={510}
+            priority={true}
+            loading="eager"
+          />
+        </Flex>
+
         {/* Typing */}
         <Box mb={8}>
           <TypingAnimation />
