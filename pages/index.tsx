@@ -201,6 +201,7 @@ const Home: NextPage<Props> = ({ posts }) => {
                 <Box
                   borderRadius="12px"
                   overflow="hidden"
+                  aspectRatio="1"
                   transition="transform 0.2s, box-shadow 0.2s"
                   _hover={{ transform: "translateY(-2px)", boxShadow: "0 8px 30px rgba(0,0,0,0.12)" }}
                 >
@@ -211,7 +212,7 @@ const Home: NextPage<Props> = ({ posts }) => {
                     height={400}
                     quality={90}
                     loading="lazy"
-                    style={{ width: "100%", height: "auto" }}
+                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
                   />
                 </Box>
               </Link>
