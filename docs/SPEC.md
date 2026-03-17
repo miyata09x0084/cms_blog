@@ -163,7 +163,7 @@ const idx = Math.min(tier, TYPING_SPEEDS.length - 1);
       width={80}
       height={80}
       className="round-image"
-      alt="Rio Miyata"
+      alt="Ryo Miyata"
     />
   </Box>
   <VStack align="start" spacing={4}>

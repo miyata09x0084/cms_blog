@@ -27,7 +27,7 @@ const Home: NextPage<Props> = ({ posts }) => {
   return (
     <Box className="fade-in">
       <Head>
-        <title>Rio Miyata's Website</title>
+        <title>Ryo Miyata's Website</title>
       </Head>
       <Box
         maxWidth="720px"
@@ -59,7 +59,7 @@ const Home: NextPage<Props> = ({ posts }) => {
         <Flex mb={16} alignItems="center">
           <Box>
             <Text fontSize="3xl" fontWeight="700" letterSpacing="-0.02em">
-              Rio Miyata
+              Ryo Miyata
             </Text>
             <Text fontSize="md" fontWeight="500" color={textSecondary} mt={1}>
               Software Engineer
@@ -74,7 +74,7 @@ const Home: NextPage<Props> = ({ posts }) => {
               priority={false}
               loading="lazy"
               className="round-image"
-              alt="Rio Miyata"
+              alt="Ryo Miyata"
             />
           </Box>
         </Flex>

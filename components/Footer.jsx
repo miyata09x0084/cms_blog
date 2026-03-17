@@ -27,7 +27,7 @@ const Footer = () => {
       >
         <Flex justifyContent="space-between" alignItems="center" fontSize="sm" color={textSecondary}>
           <Text>
-            &copy; {new Date().getFullYear()} Rio Miyata
+            &copy; {new Date().getFullYear()} Ryo Miyata
           </Text>
           <HStack spacing={5}>
             <Link
