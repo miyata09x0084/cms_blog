@@ -4,8 +4,8 @@ import {
   Flex,
   Text,
   HStack,
+  Link,
 } from "@chakra-ui/react";
-import Link from "next/link";
 import { useColorModeValue } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter, faGithub } from "@fortawesome/free-brands-svg-icons";
