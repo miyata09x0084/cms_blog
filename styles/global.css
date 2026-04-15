@@ -193,99 +193,11 @@ a:hover {
   animation: fadeIn 0.5s ease-out forwards;
 }
 
-/* ── Cat Logo Animations ─────────────────────── */
-
-/* Hover: curious head tilt */
-@keyframes catCurious {
-  0%   { transform: rotate(0deg); }
-  40%  { transform: rotate(-8deg); }
-  100% { transform: rotate(6deg); }
-}
-
-/* Click 1: small bounce */
-@keyframes catBounce {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-4px); }
-}
-
-/* Click 2-3: bigger bounce */
-@keyframes catBounceBig {
-  0%, 100% { transform: translateY(0); }
-  40%      { transform: translateY(-8px); }
-  70%      { transform: translateY(-3px); }
-}
-
-/* Click 4-5: 360 spin */
-@keyframes catSpin {
-  0%   { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* Click 6-7: wiggle left-right */
-@keyframes catWiggle {
-  0%, 100% { transform: translateX(0); }
-  20%      { transform: translateX(-3px); }
-  40%      { transform: translateX(3px); }
-  60%      { transform: translateX(-2px); }
-  80%      { transform: translateX(2px); }
-}
-
-/* Click 8-9: purring vibration */
-@keyframes catPurr {
-  0%, 100% { transform: translate(0, 0); }
-  10%      { transform: translate(-1px, 1px); }
-  20%      { transform: translate(1px, -1px); }
-  30%      { transform: translate(-1px, 0); }
-  40%      { transform: translate(1px, 1px); }
-  50%      { transform: translate(-1px, -1px); }
-  60%      { transform: translate(0, 1px); }
-  70%      { transform: translate(1px, 0); }
-  80%      { transform: translate(-1px, 1px); }
-  90%      { transform: translate(1px, -1px); }
-}
-
-/* Click 10+: party mode */
-@keyframes catParty {
-  0%   { transform: rotate(0deg) scale(1); }
-  25%  { transform: rotate(15deg) scale(1.15); }
-  50%  { transform: rotate(-10deg) scale(1.05); }
-  75%  { transform: rotate(360deg) scale(1.1); }
-  100% { transform: rotate(0deg) scale(1); }
-}
-
-/* Idle: ear twitch */
-@keyframes catIdleTwitch {
-  0%, 100% { transform: rotate(0deg) translateY(0); }
-  25%      { transform: rotate(-10deg) translateY(-2px); }
-  55%      { transform: rotate(6deg) translateY(-1px); }
-  80%      { transform: rotate(-3deg); }
-}
-
-.cat-curious       { animation: catCurious 0.4s ease-out forwards; }
-.cat-bounce        { animation: catBounce 0.3s ease-out; }
-.cat-bounce-big    { animation: catBounceBig 0.4s ease-out; }
-.cat-spin          { animation: catSpin 0.5s ease-in-out; }
-.cat-wiggle        { animation: catWiggle 0.4s ease-in-out; }
-.cat-purr          { animation: catPurr 0.3s linear infinite; }
-.cat-party         { animation: catParty 0.8s ease-in-out; }
-.cat-idle-twitch   { animation: catIdleTwitch 0.4s ease-in-out; }
-
 /* ── Reduced motion ──────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
   .typing-animation,
   .typing-animation::after {
-    animation: none !important;
-  }
-
-  .cat-curious,
-  .cat-bounce,
-  .cat-bounce-big,
-  .cat-spin,
-  .cat-wiggle,
-  .cat-purr,
-  .cat-party,
-  .cat-idle-twitch {
     animation: none !important;
   }
 }
