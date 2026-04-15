@@ -127,20 +127,7 @@ const Home: NextPage<Props> = ({ posts }) => {
             <Heading as="h2" fontSize="2xl" fontWeight="900">
               /Interests
             </Heading>
-            <HStack spacing={3} flexWrap="wrap">
-              {[
-                "Morning coffee",
-                "Campfire cooking",
-                "Hot spring hopping",
-                "The beauty of physics",
-                "First principles",
-                "Running",
-              ].map((item) => (
-                <Text key={item} fontSize="md">
-                  #{item}
-                </Text>
-              ))}
-            </HStack>
+            <Text>#Thinking #FoodTouring #Camping #Traveling</Text>
           </VStack>
 
           {/* Posts */}
