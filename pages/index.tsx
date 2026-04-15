@@ -87,22 +87,13 @@ const Home: NextPage<Props> = ({ posts }) => {
             <Heading as="h2" fontSize="2xl" fontWeight="900">
               /About Me
             </Heading>
-            <VStack align="start" spacing={4}>
-              <Text>
-                I&apos;m the younger of a pair of twins, which might be why I&apos;ve
-                always felt most alive turning ideas into something real. My head
-                runs on a steady stream of half-formed concepts, and programming
-                is the craft that lets me pull them out and shape them into apps
-                people can actually use.
-              </Text>
-              <Text>
-                Outside of building things, I start most mornings with a slow
-                pour-over coffee, chipping away at whatever side project has my
-                attention that week. When I can, I escape to hot springs around
-                Japan or hunt down cozy local cafés — the quiet places that make
-                it easier to think.
-              </Text>
-            </VStack>
+            <Text>
+              I&apos;m the younger of a pair of twins, which might be why I&apos;ve
+              always felt most alive turning ideas into something real. My head
+              runs on a steady stream of half-formed concepts, and programming
+              is the craft that lets me pull them out and shape them into apps
+              people can actually use.
+            </Text>
           </VStack>
 
           {/* Bio */}
