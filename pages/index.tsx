@@ -162,7 +162,7 @@ const Home: NextPage<Props> = ({ posts }) => {
               </Box>
             </VStack>
           </VStack>
-          <Flex justifyContent="center" mb={6}>
+          <Flex justifyContent="center" mb={14}>
             <Link href="/post">
               <Button
                 fontWeight="600"
@@ -239,7 +239,7 @@ const Home: NextPage<Props> = ({ posts }) => {
               </Box>
             </HStack>
           </VStack>
-          <Flex justifyContent="center" mb={6}>
+          <Flex justifyContent="center" mb={14}>
             <Link href="/work">
               <Button
                 fontWeight="600"
@@ -252,6 +252,31 @@ const Home: NextPage<Props> = ({ posts }) => {
               >
                 <Flex alignItems="center" mr={-1}>
                   <Text mr={0.5}>Creations</Text>
+                  <FontAwesomeIcon icon={faCaretRight} width={15} height={15} />
+                </Flex>
+              </Button>
+            </Link>
+          </Flex>
+
+          {/* Contact Me */}
+          <VStack align="start" spacing={5} mb={8}>
+            <Heading as="h2" fontSize="2xl" fontWeight="900">
+              /Contact Me
+            </Heading>
+          </VStack>
+          <Flex justifyContent="center" mb={6}>
+            <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfp__zqzghA2tSgqdr7WubZP0hqpxhw-5YJRMDj0RkdEcITlw/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">
+              <Button
+                fontWeight="600"
+                borderRadius="25px"
+                bg="#049872 !important"
+                color="#EDDFD6"
+                boxShadow="2px 2px 10px rgba(4, 152, 114, 0.3)"
+                _hover={{ opacity: 0.4 }}
+                pb={1}
+              >
+                <Flex alignItems="center" mr={-1}>
+                  <Text mr={0.5}>Contact</Text>
                   <FontAwesomeIcon icon={faCaretRight} width={15} height={15} />
                 </Flex>
               </Button>
