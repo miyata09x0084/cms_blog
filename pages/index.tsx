@@ -79,33 +79,75 @@ const Home: NextPage<Props> = ({ posts }) => {
           </Box>
         </Flex>
 
-        {/* About */}
-        <VStack align="start" spacing={4} mb={16}>
-          <Text fontSize="15px" lineHeight="1.8" color={textSecondary}>
-            I&apos;m a full-stack engineer with a focus on building web
-            applications that are structured to last. I enjoy working across
-            the entire stack — from crafting intuitive, component-driven UIs
-            to designing backend architectures with clean module boundaries
-            and strong data integrity. What drives me is creating systems
-            where both the user experience and the underlying code are equally
-            well thought out.
-          </Text>
-          <Text fontSize="15px" lineHeight="1.8" color={textSecondary}>
-            Most recently, I built a home-buying simulation platform from
-            scratch, owning the entire stack end to end — designing an API
-            layer with deliberate module boundaries, building the frontend
-            with optimized state management, and setting up secure file
-            handling in the cloud. What I&apos;m most proud of is the
-            investment in long-term maintainability: automated documentation,
-            visual architecture mapping, and coding standards that kept the
-            codebase approachable well beyond the initial build.
-          </Text>
-          <Text fontSize="15px" lineHeight="1.8" color={textSecondary}>
-            Outside of work, you can usually find me soaking in hot springs
-            around Japan, hunting down cozy local cafés, or tinkering with
-            whatever side project has my attention that week.
-          </Text>
-        </VStack>
+        {/* About Me */}
+        <Box mb={16}>
+          <Heading as="h2" fontSize="sm" fontWeight="600" textTransform="uppercase" letterSpacing="0.1em" color={textSecondary} mb={6}>
+            /About Me
+          </Heading>
+          <VStack align="start" spacing={4}>
+            <Text fontSize="15px" lineHeight="1.8" color={textSecondary}>
+              I&apos;m the younger of a pair of twins, which might be why I&apos;ve
+              always felt most alive turning ideas into something real. My head
+              runs on a steady stream of half-formed concepts, and programming
+              is the craft that lets me pull them out and shape them into apps
+              people can actually use.
+            </Text>
+            <Text fontSize="15px" lineHeight="1.8" color={textSecondary}>
+              Outside of building things, I start most mornings with a slow
+              pour-over coffee, chipping away at whatever side project has my
+              attention that week. When I can, I escape to hot springs around
+              Japan or hunt down cozy local cafés — the quiet places that make
+              it easier to think.
+            </Text>
+          </VStack>
+        </Box>
+
+        {/* Bio */}
+        <Box mb={16}>
+          <Heading as="h2" fontSize="sm" fontWeight="600" textTransform="uppercase" letterSpacing="0.1em" color={textSecondary} mb={6}>
+            /Bio
+          </Heading>
+          <VStack align="start" spacing={3}>
+            {[
+              { year: "1989", text: "Born in Aichi, Japan", sub: "日本の愛知県出身" },
+              { year: "2015", text: "Master's Degree, Graduate School of Science and Engineering @Hosei University", sub: "法政大学大学院理工学研究科 修士課程修了" },
+              { year: "2019", text: "Server-Side Engineering Course @Tech Camp", sub: "サーバーサイドエンジニアコース修了" },
+              { year: "2020", text: "Web Developer @AnkhSystems (Digital Media)", sub: "アンクシステムズ-デジタルメディア開発" },
+              { year: "2023–", text: "Freelance Software Engineer @Japan", sub: "フリーランスの活動開始" },
+            ].map((item) => (
+              <Flex key={item.year} py={2} borderBottom="1px solid" borderColor={borderColor} w="100%">
+                <Text fontWeight="600" fontSize="sm" minW="60px" color={textSecondary}>
+                  {item.year}
+                </Text>
+                <Box>
+                  <Text fontSize="15px">{item.text}</Text>
+                  <Text fontSize="sm" color={textSecondary}>{item.sub}</Text>
+                </Box>
+              </Flex>
+            ))}
+          </VStack>
+        </Box>
+
+        {/* Interests */}
+        <Box mb={16}>
+          <Heading as="h2" fontSize="sm" fontWeight="600" textTransform="uppercase" letterSpacing="0.1em" color={textSecondary} mb={6}>
+            /Interests
+          </Heading>
+          <HStack spacing={3} flexWrap="wrap">
+            {[
+              "Morning coffee",
+              "Campfire cooking",
+              "Hot spring hopping",
+              "The beauty of physics",
+              "First principles",
+              "Running",
+            ].map((item) => (
+              <Text key={item} fontSize="15px" color={textSecondary}>
+                #{item}
+              </Text>
+            ))}
+          </HStack>
+        </Box>
 
         {/* Posts */}
         <Box mb={16}>
@@ -113,23 +155,6 @@ const Home: NextPage<Props> = ({ posts }) => {
             /Posts
           </Heading>
           <VStack align="start" spacing={4}>
-            <Box
-              as="a"
-              href="https://note.com/miyata_ryo3/n/n547f8cd950c5"
-              target="_blank"
-              rel="noopener noreferrer"
-              w="100%"
-              py={3}
-              borderBottom="1px solid"
-              borderColor={borderColor}
-              transition="color 0.2s"
-              _hover={{ color: linkColor }}
-            >
-              <Flex justifyContent="space-between" alignItems="baseline" flexWrap="wrap" gap={2}>
-                <Text fontSize="15px">ネットの安全はなぜ？ 行きは簡単なのに戻るのは驚くほど難しい数学が鍵</Text>
-                <Text fontSize="sm" color={textSecondary} flexShrink={0}>2025.12.26</Text>
-              </Flex>
-            </Box>
             <Box
               as="a"
               href="https://note.com/miyata_ryo3/n/n3e17e24dd31c"
@@ -232,53 +257,6 @@ const Home: NextPage<Props> = ({ posts }) => {
               </Text>
             </Link>
           </Box>
-        </Box>
-
-        {/* Bio */}
-        <Box mb={16}>
-          <Heading as="h2" fontSize="sm" fontWeight="600" textTransform="uppercase" letterSpacing="0.1em" color={textSecondary} mb={6}>
-            /Bio
-          </Heading>
-          <VStack align="start" spacing={3}>
-            {[
-              { year: "1989", text: "Born in Aichi, Japan", sub: "日本の愛知県出身" },
-              { year: "2015", text: "Master's Degree, Graduate School of Science and Engineering @Hosei University", sub: "法政大学大学院理工学研究科 修士課程修了" },
-              { year: "2019", text: "Server-Side Engineering Course @Tech Camp", sub: "サーバーサイドエンジニアコース修了" },
-              { year: "2020", text: "Web Developer @AnkhSystems (Digital Media)", sub: "アンクシステムズ-デジタルメディア開発" },
-              { year: "2023–", text: "Freelance Software Engineer @Japan", sub: "フリーランスの活動開始" },
-            ].map((item) => (
-              <Flex key={item.year} py={2} borderBottom="1px solid" borderColor={borderColor} w="100%">
-                <Text fontWeight="600" fontSize="sm" minW="60px" color={textSecondary}>
-                  {item.year}
-                </Text>
-                <Box>
-                  <Text fontSize="15px">{item.text}</Text>
-                  <Text fontSize="sm" color={textSecondary}>{item.sub}</Text>
-                </Box>
-              </Flex>
-            ))}
-          </VStack>
-        </Box>
-
-        {/* Interests */}
-        <Box mb={16}>
-          <Heading as="h2" fontSize="sm" fontWeight="600" textTransform="uppercase" letterSpacing="0.1em" color={textSecondary} mb={6}>
-            /Interests
-          </Heading>
-          <HStack spacing={3} flexWrap="wrap">
-            {[
-              "Morning coffee",
-              "Campfire cooking",
-              "Hot spring hopping",
-              "The beauty of physics",
-              "First principles",
-              "Running",
-            ].map((item) => (
-              <Text key={item} fontSize="15px" color={textSecondary}>
-                #{item}
-              </Text>
-            ))}
-          </HStack>
         </Box>
       </Box>
     </Box>
