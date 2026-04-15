@@ -148,6 +148,18 @@ const Home: NextPage<Props> = ({ posts }) => {
               >
                 人を表すソウルバンドトークンとよばれるNFT (2023.1.23)
               </Box>
+              <Box
+                as="a"
+                href="https://qiita.com/MiyataRyo/items/6a5f6aa510afddae0701"
+                target="_blank"
+                rel="noopener noreferrer"
+                color={linkColor}
+                textDecoration="underline"
+                fontSize="16px"
+                _hover={{ opacity: 0.7 }}
+              >
+                Herokuへのデプロイ手順｜Rails + MySQL (2020.3.23)
+              </Box>
             </VStack>
           </VStack>
           <Flex justifyContent="center" mb={6}>

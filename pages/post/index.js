@@ -42,6 +42,23 @@ const PostIndex = ({ posts }) => {
               <Text fontSize="md" fontWeight="600">人を表すソウルバンドトークンとよばれるNFT</Text>
             </VStack>
           </Box>
+          <Box
+            as="a"
+            href="https://qiita.com/MiyataRyo/items/6a5f6aa510afddae0701"
+            target="_blank"
+            rel="noopener noreferrer"
+            w="100%"
+            pb={5}
+            borderBottom="1px solid"
+            borderColor={borderColor}
+            transition="color 0.2s"
+            _hover={{ color: linkColor }}
+          >
+            <VStack align="start" spacing={2}>
+              <Text fontSize="sm" color={textSecondary}>2020.3.23</Text>
+              <Text fontSize="md" fontWeight="600">Herokuへのデプロイ手順｜Rails + MySQL</Text>
+            </VStack>
+          </Box>
         </VStack>
       </Box>
     </Box>
