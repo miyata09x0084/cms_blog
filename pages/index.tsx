@@ -86,28 +86,18 @@ const Home: NextPage<Props> = ({ posts }) => {
           </Heading>
           <VStack align="start" spacing={4}>
             <Text fontSize="15px" lineHeight="1.8" color={textSecondary}>
-              I&apos;m a full-stack engineer with a focus on building web
-              applications that are structured to last. I enjoy working across
-              the entire stack — from crafting intuitive, component-driven UIs
-              to designing backend architectures with clean module boundaries
-              and strong data integrity. What drives me is creating systems
-              where both the user experience and the underlying code are equally
-              well thought out.
+              I&apos;m the younger of a pair of twins, which might be why I&apos;ve
+              always felt most alive turning ideas into something real. My head
+              runs on a steady stream of half-formed concepts, and programming
+              is the craft that lets me pull them out and shape them into apps
+              people can actually use.
             </Text>
             <Text fontSize="15px" lineHeight="1.8" color={textSecondary}>
-              Most recently, I built a home-buying simulation platform from
-              scratch, owning the entire stack end to end — designing an API
-              layer with deliberate module boundaries, building the frontend
-              with optimized state management, and setting up secure file
-              handling in the cloud. What I&apos;m most proud of is the
-              investment in long-term maintainability: automated documentation,
-              visual architecture mapping, and coding standards that kept the
-              codebase approachable well beyond the initial build.
-            </Text>
-            <Text fontSize="15px" lineHeight="1.8" color={textSecondary}>
-              Outside of work, you can usually find me soaking in hot springs
-              around Japan, hunting down cozy local cafés, or tinkering with
-              whatever side project has my attention that week.
+              Outside of building things, I start most mornings with a slow
+              pour-over coffee, chipping away at whatever side project has my
+              attention that week. When I can, I escape to hot springs around
+              Japan or hunt down cozy local cafés — the quiet places that make
+              it easier to think.
             </Text>
           </VStack>
         </Box>
