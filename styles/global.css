@@ -3,6 +3,11 @@
 @tailwind utilities;
 @import "./colors.css";
 
+html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
 html:before,
 body:before {
   content: '';
