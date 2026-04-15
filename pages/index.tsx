@@ -115,23 +115,6 @@ const Home: NextPage<Props> = ({ posts }) => {
           <VStack align="start" spacing={4}>
             <Box
               as="a"
-              href="https://note.com/miyata_ryo3/n/n547f8cd950c5"
-              target="_blank"
-              rel="noopener noreferrer"
-              w="100%"
-              py={3}
-              borderBottom="1px solid"
-              borderColor={borderColor}
-              transition="color 0.2s"
-              _hover={{ color: linkColor }}
-            >
-              <Flex justifyContent="space-between" alignItems="baseline" flexWrap="wrap" gap={2}>
-                <Text fontSize="15px">ネットの安全はなぜ？ 行きは簡単なのに戻るのは驚くほど難しい数学が鍵</Text>
-                <Text fontSize="sm" color={textSecondary} flexShrink={0}>2025.12.26</Text>
-              </Flex>
-            </Box>
-            <Box
-              as="a"
               href="https://note.com/miyata_ryo3/n/n3e17e24dd31c"
               target="_blank"
               rel="noopener noreferrer"
