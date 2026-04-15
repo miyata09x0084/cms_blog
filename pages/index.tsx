@@ -136,7 +136,20 @@ const Home: NextPage<Props> = ({ posts }) => {
             <Heading as="h2" fontSize="2xl" fontWeight="900">
               /Interests
             </Heading>
-            <Text>#Thinking #FoodTouring #Camping #Traveling</Text>
+            <HStack spacing={3} flexWrap="wrap">
+              {[
+                "Morning coffee",
+                "Campfire cooking",
+                "Hot spring hopping",
+                "The beauty of physics",
+                "First principles",
+                "Running",
+              ].map((item) => (
+                <Text key={item} fontSize="md">
+                  #{item}
+                </Text>
+              ))}
+            </HStack>
           </VStack>
 
           {/* Posts */}
@@ -253,32 +266,6 @@ const Home: NextPage<Props> = ({ posts }) => {
                 </Flex>
               </Button>
             </Link>
-          </Flex>
-
-          {/* Contact */}
-          <VStack align="start" spacing={5} mb={12}>
-            <Heading as="h2" fontSize="2xl" fontWeight="900">
-              /Contact 📬
-            </Heading>
-          </VStack>
-          <Flex justifyContent="center" mb={12}>
-            <Button
-              as="a"
-              href="https://x.com/WebDev_Ryo"
-              target="_blank"
-              rel="noopener noreferrer"
-              p={5}
-              fontWeight="600"
-              borderRadius="25px"
-              bg="#664D03"
-              color="#EDDFD6"
-              boxShadow="2px 2px 10px rgb(102, 77, 3, 0.3)"
-              _hover={{ opacity: 0.7 }}
-            >
-              <Flex alignItems="center">
-                <Text ml={2}>TwitterでDMを送る</Text>
-              </Flex>
-            </Button>
           </Flex>
         </Box>
       </Box>
