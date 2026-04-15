@@ -13,7 +13,7 @@ const CategoryPost = ({ posts }) => {
 
   return (
     <Box className="fade-in">
-      <VStack align="start" mx="auto" maxW="720px" px={{ base: "5", md: "0" }} mb="8" py={8}>
+      <VStack align="start" mx="auto" maxW="768px" px={{ base: "4", md: "0" }} mb="8" pt="40px" spacing={6}>
         <Categories />
         {posts.map((post, index) => (
             <PostCard key={index} post={post.node} />

@@ -16,10 +16,10 @@ const WorkIndex = () => {
     <Box className="fade-in">
       <Box
         mx="auto"
-        maxW="720px"
-        px={{ base: '5', md: '0' }}
+        maxW="768px"
+        px={{ base: '4', md: '0' }}
         mb="8"
-        py={12}
+        pt="40px"
       >
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
           <Box display="flex" flexDirection="column" height="100%">

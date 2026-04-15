@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import { Box, Heading, VStack, Text, useColorModeValue } from '@chakra-ui/react';
+import { Box, Heading, VStack, useColorModeValue } from '@chakra-ui/react';
 
 const PostDetail = ({ post }) => {
 
@@ -50,22 +50,22 @@ const PostDetail = ({ post }) => {
   };
 
   return (
-    <Box className="fade-in" w="100%" minH="100vh">
-      <VStack align="start" maxW="720px" mx="auto" px={{ base: "5", md: "0" }} pt={12} pb={16}>
-          <Box w="100%">
-            <Text fontSize="sm" color={textSecondary} mb={2}>
-              {moment(post.createdAt).format('MMM DD, YYYY')}
-            </Text>
-            <Heading as="h1" fontSize="2xl" fontWeight="700" letterSpacing="-0.02em" mb={8} pb={4} borderBottom="1px solid" borderColor={borderColor}>
-              {post.title}
-            </Heading>
-            <Box fontSize="15px" lineHeight="1.9" letterSpacing="0.01em">
-              {post.content.raw.children.map((typeObj, index) => {
-                const children = typeObj.children.map((item, itemIndex) => getContentFragment(itemIndex, item.text, item))
-                return getContentFragment(index, children, typeObj, typeObj.type)
-              })}
+    <Box className="fade-in" w="100%" h="100vh">
+      <VStack align="start" maxW="768px" mx="auto" px={{ base: "4", md: "0" }} pt="40px">
+        <Box pt="12px" pb="3px" w="100%">
+          <Heading as="h1" size="md" pb={1} mb={1} borderBottom="1px solid" borderColor={borderColor}>
+            {post.title}
+          </Heading>
+          <VStack align="start" mb="4px">
+            <Box color={textSecondary}>
+              {moment(post.createdAt).format('MMM DD YYYY')}
             </Box>
-          </Box>
+          </VStack>
+          {post.content.raw.children.map((typeObj, index) => {
+            const children = typeObj.children.map((item, itemIndex) => getContentFragment(itemIndex, item.text, item))
+            return getContentFragment(index, children, typeObj, typeObj.type)
+          })}
+        </Box>
       </VStack>
     </Box>
   )
