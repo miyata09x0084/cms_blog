@@ -8,37 +8,11 @@ const FADE_DURATION = 500;
 const TYPING_JITTER = 0.4;
 const FADE_IN_DELAY = 300;
 
-const INTRO_MESSAGE = "Hi! I'm a fullstack developer based in Japan.";
-
-function getTimeBasedMessages() {
-  const hour = new Date().getHours();
-  if (hour >= 6 && hour < 12) {
-    return [
-      INTRO_MESSAGE,
-      "Good morning! Great to see you here.",
-      "Hope your day is off to a good start.",
-      "Welcome — grab a coffee and explore.",
-    ];
-  } else if (hour >= 12 && hour < 18) {
-    return [
-      INTRO_MESSAGE,
-      "Good afternoon! Thanks for visiting.",
-      "Hope you're having a great day so far.",
-      "Take your time — there's lots to see.",
-    ];
-  } else {
-    return [
-      INTRO_MESSAGE,
-      "Good evening! Thanks for stopping by.",
-      "Winding down? Take your time here.",
-      "Welcome — enjoy the quiet browse.",
-    ];
-  }
-}
+const INTRO_MESSAGE = "Hi, I'm Full Stack Developer based in Japan.";
 
 // Phases: typing -> paused -> fading-out -> fading-in -> typing
 const TypingAnimation = () => {
-  const texts = useRef(getTimeBasedMessages());
+  const texts = useRef([INTRO_MESSAGE]);
   const reducedMotion = useReducedMotion();
 
   const [textIndex, setTextIndex] = useState(0);
@@ -177,25 +151,24 @@ const TypingAnimation = () => {
             }}
           >
             {displayText}
-            {!reducedMotion && !stopped && (
-              <Box
-                as="span"
-                aria-hidden="true"
-                display="inline-block"
-                w="2px"
-                h="1em"
-                bg="currentColor"
-                ml="2px"
-                verticalAlign="text-bottom"
-                animation="blink 1s step-end infinite"
-                sx={{
-                  "@keyframes blink": {
-                    "0%, 100%": { opacity: 1 },
-                    "50%": { opacity: 0 },
-                  },
-                }}
-              />
-            )}
+            <Box
+              as="span"
+              aria-hidden="true"
+              display="inline-block"
+              w="2px"
+              h="1em"
+              bg="currentColor"
+              ml="2px"
+              verticalAlign="text-bottom"
+              visibility={!reducedMotion && !stopped ? "visible" : "hidden"}
+              animation={!reducedMotion && !stopped ? "blink 1s step-end infinite" : "none"}
+              sx={{
+                "@keyframes blink": {
+                  "0%, 100%": { opacity: 1 },
+                  "50%": { opacity: 0 },
+                },
+              }}
+            />
           </Box>
           <Box as="span" visibility="hidden" aria-hidden="true">
             {currentFullText.slice(displayText.length)}

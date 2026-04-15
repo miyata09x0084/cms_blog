@@ -1,7 +1,7 @@
 import React from "react";
 import { getPosts } from "../../services";
 import { Categories, PostCard } from "../../components";
-import { VStack, Box, Flex, Text, Heading, useColorModeValue } from "@chakra-ui/react";
+import { VStack, Box, Text, useColorModeValue } from "@chakra-ui/react";
 
 const PostIndex = ({ posts }) => {
   const linkColor = useColorModeValue("var(--accent)", "var(--dark-accent)");
@@ -11,19 +11,17 @@ const PostIndex = ({ posts }) => {
   return (
     <Box className="fade-in">
       <Box
-        maxWidth="720px"
+        maxWidth="768px"
         mx="auto"
-        px={{ base: 5, md: 0 }}
-        py={16}
-        fontSize="15px"
-        letterSpacing="0.01em"
-        lineHeight="1.7"
+        px={{ base: 4, md: 0 }}
+        pt="40px"
+        pb={16}
+        fontSize="17px"
+        letterSpacing="0.06em"
+        lineHeight="1.5"
       >
-        <Heading as="h2" fontSize="sm" fontWeight="600" textTransform="uppercase" letterSpacing="0.1em" color={textSecondary} mb={6}>
-          Posts
-        </Heading>
         <Categories />
-        <VStack align="start" spacing={4}>
+        <VStack align="start" spacing={6}>
           {posts.map((post, index) => (
             <PostCard post={post.node} key={index} />
           ))}
@@ -33,16 +31,16 @@ const PostIndex = ({ posts }) => {
             target="_blank"
             rel="noopener noreferrer"
             w="100%"
-            py={3}
+            pb={5}
             borderBottom="1px solid"
             borderColor={borderColor}
             transition="color 0.2s"
             _hover={{ color: linkColor }}
           >
-            <Flex justifyContent="space-between" alignItems="baseline" flexWrap="wrap" gap={2}>
-              <Text fontSize="15px">人を表すソウルバンドトークンとよばれるNFT</Text>
-              <Text fontSize="sm" color={textSecondary} flexShrink={0}>2023.1.23</Text>
-            </Flex>
+            <VStack align="start" spacing={2}>
+              <Text fontSize="sm" color={textSecondary}>2023.1.23</Text>
+              <Text fontSize="md" fontWeight="600">人を表すソウルバンドトークンとよばれるNFT</Text>
+            </VStack>
           </Box>
         </VStack>
       </Box>

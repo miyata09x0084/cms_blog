@@ -8,11 +8,20 @@ const Layout = ({ children }) => {
   const color = useColorModeValue("var(--text)", "var(--dark-text)");
 
   return (
-    <Box bg={bg} color={color} minH="100vh">
-      <Header />
-      {children}
-      <Footer />
-    </Box>
+    <div>
+      <style>
+        {`
+          body:before {
+            background-color: ${bg};
+          }
+        `}
+      </style>
+      <Box bg={bg} color={color} w="100%" h="100%">
+        <Header />
+        {children}
+        <Footer />
+      </Box>
+    </div>
   )
 }
 

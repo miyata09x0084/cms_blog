@@ -4,8 +4,8 @@ export function Chakra({children}) {
 
     const googleFont = extendTheme({
         fonts: {
-            heading: `'Inter', 'Noto Sans JP', sans-serif`,
-            body: `'Inter', 'Noto Sans JP', sans-serif`,
+            heading: `'Noto Sans JP', sans-serif`,
+            body: `'Noto Sans JP', sans-serif`,
         },
     })
 
