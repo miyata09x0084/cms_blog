@@ -107,6 +107,53 @@ const Home: NextPage<Props> = ({ posts }) => {
           </Text>
         </VStack>
 
+        {/* Bio */}
+        <Box mb={16}>
+          <Heading as="h2" fontSize="sm" fontWeight="600" textTransform="uppercase" letterSpacing="0.1em" color={textSecondary} mb={6}>
+            /Bio
+          </Heading>
+          <VStack align="start" spacing={3}>
+            {[
+              { year: "1989", text: "Born in Aichi, Japan", sub: "日本の愛知県出身" },
+              { year: "2015", text: "Master's Degree, Graduate School of Science and Engineering @Hosei University", sub: "法政大学大学院理工学研究科 修士課程修了" },
+              { year: "2019", text: "Server-Side Engineering Course @Tech Camp", sub: "サーバーサイドエンジニアコース修了" },
+              { year: "2020", text: "Web Developer @AnkhSystems (Digital Media)", sub: "アンクシステムズ-デジタルメディア開発" },
+              { year: "2023–", text: "Freelance Software Engineer @Japan", sub: "フリーランスの活動開始" },
+            ].map((item) => (
+              <Flex key={item.year} py={2} borderBottom="1px solid" borderColor={borderColor} w="100%">
+                <Text fontWeight="600" fontSize="sm" minW="60px" color={textSecondary}>
+                  {item.year}
+                </Text>
+                <Box>
+                  <Text fontSize="15px">{item.text}</Text>
+                  <Text fontSize="sm" color={textSecondary}>{item.sub}</Text>
+                </Box>
+              </Flex>
+            ))}
+          </VStack>
+        </Box>
+
+        {/* Interests */}
+        <Box mb={16}>
+          <Heading as="h2" fontSize="sm" fontWeight="600" textTransform="uppercase" letterSpacing="0.1em" color={textSecondary} mb={6}>
+            /Interests
+          </Heading>
+          <HStack spacing={3} flexWrap="wrap">
+            {[
+              "Morning coffee",
+              "Campfire cooking",
+              "Hot spring hopping",
+              "The beauty of physics",
+              "First principles",
+              "Running",
+            ].map((item) => (
+              <Text key={item} fontSize="15px" color={textSecondary}>
+                #{item}
+              </Text>
+            ))}
+          </HStack>
+        </Box>
+
         {/* Posts */}
         <Box mb={16}>
           <Heading as="h2" fontSize="sm" fontWeight="600" textTransform="uppercase" letterSpacing="0.1em" color={textSecondary} mb={6}>
@@ -215,53 +262,6 @@ const Home: NextPage<Props> = ({ posts }) => {
               </Text>
             </Link>
           </Box>
-        </Box>
-
-        {/* Bio */}
-        <Box mb={16}>
-          <Heading as="h2" fontSize="sm" fontWeight="600" textTransform="uppercase" letterSpacing="0.1em" color={textSecondary} mb={6}>
-            /Bio
-          </Heading>
-          <VStack align="start" spacing={3}>
-            {[
-              { year: "1989", text: "Born in Aichi, Japan", sub: "日本の愛知県出身" },
-              { year: "2015", text: "Master's Degree, Graduate School of Science and Engineering @Hosei University", sub: "法政大学大学院理工学研究科 修士課程修了" },
-              { year: "2019", text: "Server-Side Engineering Course @Tech Camp", sub: "サーバーサイドエンジニアコース修了" },
-              { year: "2020", text: "Web Developer @AnkhSystems (Digital Media)", sub: "アンクシステムズ-デジタルメディア開発" },
-              { year: "2023–", text: "Freelance Software Engineer @Japan", sub: "フリーランスの活動開始" },
-            ].map((item) => (
-              <Flex key={item.year} py={2} borderBottom="1px solid" borderColor={borderColor} w="100%">
-                <Text fontWeight="600" fontSize="sm" minW="60px" color={textSecondary}>
-                  {item.year}
-                </Text>
-                <Box>
-                  <Text fontSize="15px">{item.text}</Text>
-                  <Text fontSize="sm" color={textSecondary}>{item.sub}</Text>
-                </Box>
-              </Flex>
-            ))}
-          </VStack>
-        </Box>
-
-        {/* Interests */}
-        <Box mb={16}>
-          <Heading as="h2" fontSize="sm" fontWeight="600" textTransform="uppercase" letterSpacing="0.1em" color={textSecondary} mb={6}>
-            /Interests
-          </Heading>
-          <HStack spacing={3} flexWrap="wrap">
-            {[
-              "Morning coffee",
-              "Campfire cooking",
-              "Hot spring hopping",
-              "The beauty of physics",
-              "First principles",
-              "Running",
-            ].map((item) => (
-              <Text key={item} fontSize="15px" color={textSecondary}>
-                #{item}
-              </Text>
-            ))}
-          </HStack>
         </Box>
       </Box>
     </Box>
