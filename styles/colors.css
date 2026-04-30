@@ -1,13 +1,12 @@
 :root {
-  /* 1-bit pure two-color tokens */
+  /* 1-bit pure two-color tokens — dark default */
   --bg: #0A0A0A;
   --fg: #E8E8E8;
   --border: var(--fg);
 }
 
-/* Light mode = inverted */
-[data-theme="light"]:root,
-.chakra-ui-light:root {
+/* Light mode = inverted. Chakra v2 sets data-theme on <html>. */
+[data-theme="light"] {
   --bg: #E8E8E8;
   --fg: #0A0A0A;
 }
