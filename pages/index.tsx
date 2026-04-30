@@ -1,299 +1,126 @@
 import type { NextPage } from "next";
 import Link from "next/link";
 import Head from "next/head";
-import Image from "next/image";
 import { getPosts } from "../services";
-import TypingAnimation from "../components/TypingAnimation";
-import {
-  Box,
-  Text,
-  Flex,
-  Heading,
-  VStack,
-  HStack,
-  Spacer,
-  Button,
-  useColorModeValue,
-} from "@chakra-ui/react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
+import { SectionHeading, DitherBlock } from "../components/ui";
+
+interface PostNode {
+  node: {
+    title: string;
+    slug: string;
+    createdAt: string;
+    categories?: { name: string; slug: string }[];
+  };
+}
 
 interface Props {
-  posts: Array<any>;
+  posts: PostNode[];
 }
 
 const Home: NextPage<Props> = ({ posts }) => {
-  const linkColor = useColorModeValue("var(--accent)", "var(--dark-accent)");
-  const textSecondary = useColorModeValue("var(--text-secondary)", "var(--dark-text-secondary)");
-  const borderColor = useColorModeValue("var(--border)", "var(--dark-border)");
+  const recent = posts.slice(0, 3);
 
   return (
-    <Box className="fade-in">
+    <div>
       <Head>
-        <title>Ryo Miyata&apos;s Website</title>
+        <title>Ryo Miyata — Home</title>
       </Head>
-      <Box
-        maxWidth="768px"
-        mx="auto"
-        px={{ base: 4, md: 0 }}
-        fontSize="17px"
-        letterSpacing="0.06em"
-        lineHeight="1.5"
-      >
-        {/* Hero Image */}
-        <Flex justifyContent="center" width="100%">
-          <Image
-            src="/assets/images/typing-image.png"
-            alt="keyboard"
-            width={550}
-            height={510}
-            priority={true}
-            loading="eager"
-          />
-        </Flex>
 
-        {/* Typing */}
-        <Box mt={8}>
-          <TypingAnimation />
-        </Box>
+      {/* Hero */}
+      <section className="px-5 pt-8 pb-6">
+        <h1 className="font-pixel text-[42px] leading-none tracking-[-0.02em]">
+          RYO<br />MIYATA
+          <span className="cursor-blink ml-1 w-[14px] h-[36px] align-[-4px]" />
+        </h1>
+        <div className="font-pixel text-[11px] mt-3 opacity-85 tracking-wider">
+          FULL-STACK DEVELOPER · BASED IN JAPAN
+        </div>
+        <div className="font-jp text-[13px] mt-4 leading-[1.7]">
+          ものを作っては考え、考えてはまた作る。<br />
+          <span className="opacity-60">Building software, slowly.</span>
+        </div>
+      </section>
 
-        {/* Hero */}
-        <Flex mt={14} alignItems="center">
-          <Box>
-            <Text fontSize="4xl" fontWeight="800" letterSpacing="-0.02em">
-              Ryo Miyata
-            </Text>
-            <Text fontSize="lg" fontWeight="900" mt="-4px">
-              web developer
-            </Text>
-          </Box>
-          <Spacer />
-          <Box flexShrink={0}>
-            <Image
-              src="/assets/images/self-image.jpg"
-              width={72}
-              height={72}
-              priority={false}
-              loading="lazy"
-              className="round-image"
-              alt="Ryo Miyata"
-            />
-          </Box>
-        </Flex>
+      <DitherBlock />
 
-        <Box marginLeft="8px" mt={14}>
-          {/* About Me */}
-          <VStack align="start" spacing={5} mb={14}>
-            <Heading as="h2" fontSize="2xl" fontWeight="900">
-              /About Me
-            </Heading>
-            <Text>
-              I&apos;m the younger of a pair of twins, which might be why I&apos;ve
-              always felt most alive turning ideas into something real. My head
-              runs on a steady stream of half-formed concepts, and programming
-              is the craft that lets me pull them out and shape them into apps
-              people can actually use.
-            </Text>
-          </VStack>
+      {/* About */}
+      <section className="px-5 py-5 border-t border-current">
+        <SectionHeading>about</SectionHeading>
+        <p className="font-jp text-[13px] leading-[1.8]">
+          双子の弟として生まれ、頭の中に湧きつづける半端なアイデアをかたちにすることに最も生を感じる。プログラミングはそれを引き出して、人が使えるアプリへと立ち上げるための職人芸。2020年から開発、2023年からフリーランス。
+        </p>
+      </section>
 
-          {/* Bio */}
-          <VStack align="start" spacing={5} mb={14}>
-            <Heading as="h2" fontSize="2xl" fontWeight="900">
-              /Bio
-            </Heading>
-            <VStack align="start" spacing={3} w="100%">
-              {[
-                { year: "1989", text: "Born in Aichi, Japan", sub: "日本の愛知県出身" },
-                { year: "2015", text: "Master's Degree, Graduate School of Science and Engineering @Hosei University", sub: "法政大学大学院理工学研究科 修士課程修了" },
-                { year: "2019", text: "Server-Side Engineering Course @Tech Camp", sub: "サーバーサイドエンジニアコース修了" },
-                { year: "2020", text: "Web Developer @AnkhSystems (Digital Media)", sub: "アンクシステムズ-デジタルメディア開発" },
-                { year: "2023–", text: "Freelance Software Engineer @Japan", sub: "フリーランスの活動開始" },
-              ].map((item) => (
-                <Flex key={item.year} py={2} borderBottom="1px solid" borderColor={borderColor} w="100%">
-                  <Text fontWeight="700" fontSize="md" minW="70px">
-                    {item.year}
-                  </Text>
-                  <Box>
-                    <Text fontSize="md">{item.text}</Text>
-                    <Text fontSize="sm" color={textSecondary}>{item.sub}</Text>
-                  </Box>
-                </Flex>
-              ))}
-            </VStack>
-          </VStack>
+      {/* Interests */}
+      <section className="px-5 py-5 border-t border-current">
+        <SectionHeading>interests</SectionHeading>
+        <div className="font-pixel text-[11px] tracking-wider">
+          ▸ THINKING &nbsp;▸ FOOD-TOURING &nbsp;▸ CAMPING &nbsp;▸ TRAVELING
+        </div>
+      </section>
 
-          {/* Interests */}
-          <VStack align="start" spacing={5} mb={14}>
-            <Heading as="h2" fontSize="2xl" fontWeight="900">
-              /Interests
-            </Heading>
-            <Text>#Thinking #FoodTouring #Camping #Traveling</Text>
-          </VStack>
-
-          {/* Posts */}
-          <VStack align="start" spacing={5}>
-            <Heading as="h2" fontSize="2xl" fontWeight="900">
-              /Posts
-            </Heading>
-            <VStack align="start" spacing={2} width="100%" mb={5}>
-              <Box
-                as="a"
-                href="https://note.com/miyata_ryo3/n/n3e17e24dd31c"
-                target="_blank"
-                rel="noopener noreferrer"
-                color={linkColor}
-                textDecoration="underline"
-                fontSize="16px"
-                _hover={{ opacity: 0.7 }}
-              >
-                人を表すソウルバンドトークンとよばれるNFT (2023.1.23)
-              </Box>
-              <Box
-                as="a"
-                href="https://qiita.com/MiyataRyo/items/6a5f6aa510afddae0701"
-                target="_blank"
-                rel="noopener noreferrer"
-                color={linkColor}
-                textDecoration="underline"
-                fontSize="16px"
-                _hover={{ opacity: 0.7 }}
-              >
-                Herokuへのデプロイ手順｜Rails + MySQL (2020.3.23)
-              </Box>
-            </VStack>
-          </VStack>
-          <Flex justifyContent="center" mb={14}>
-            <Link href="/post">
-              <Button
-                fontWeight="600"
-                borderRadius="25px"
-                bg="#8505b0 !important"
-                color="#EDDFD6"
-                boxShadow="2px 2px 10px rgba(133, 5, 176, 0.3)"
-                _hover={{ opacity: 0.4 }}
-                pb={1}
-              >
-                <Flex alignItems="center" mr={-1}>
-                  <Text mr={0.5}>Posts</Text>
-                  <FontAwesomeIcon icon={faCaretRight} width={15} height={15} />
-                </Flex>
-              </Button>
+      {/* Posts */}
+      <section className="px-5 py-5 border-t border-current">
+        <SectionHeading>posts</SectionHeading>
+        <div>
+          {recent.map((p) => (
+            <Link
+              key={p.node.slug}
+              href={`/post/${p.node.slug}`}
+              className="grid grid-cols-[12px_1fr_auto] gap-3 py-1.5 border-b border-current border-dashed text-[12px] no-underline hover:bg-[var(--fg)] hover:text-[var(--bg)]"
+            >
+              <span className="font-pixel">▸</span>
+              <span>{p.node.title}</span>
+              <span className="font-pixel text-[10px] opacity-60">
+                {new Date(p.node.createdAt).toISOString().slice(0, 7).replace('-', '.')}
+              </span>
             </Link>
-          </Flex>
+          ))}
+        </div>
+        <Link href="/post" className="inline-block mt-3 font-pixel text-[11px] underline">
+          view all posts ▸
+        </Link>
+      </section>
 
-          {/* Creations */}
-          <VStack align="start" spacing={5} mb={8}>
-            <Heading as="h2" fontSize="2xl" fontWeight="900">
-              /Creations
-            </Heading>
-            <HStack spacing={6} width="100%" alignItems="stretch" flexWrap={{ base: "wrap", md: "nowrap" }}>
-              <Box flex="1" minW={{ base: "100%", md: "0" }} display="flex">
-                <Link
-                  href="https://slide-pilot-474305.web.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ width: "100%" }}
-                >
-                  <Box
-                    bg="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
-                    borderRadius="15px"
-                    aspectRatio="1"
-                    display="flex"
-                    flexDirection="column"
-                    alignItems="center"
-                    justifyContent="center"
-                    transition="transform 0.2s, box-shadow 0.2s"
-                    _hover={{ transform: "translateY(-2px)", boxShadow: "0 8px 30px rgba(0,0,0,0.12)" }}
-                  >
-                    <Text color="white" fontSize="md" fontWeight="600">Multimodal LLM App</Text>
-                    <Text color="whiteAlpha.700" fontSize="sm" mt={2}>PDF → Video</Text>
-                  </Box>
-                </Link>
-              </Box>
-              <Box flex="1" minW={{ base: "100%", md: "0" }} display="flex">
-                <Link
-                  href="https://kangeki-dapps.web.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ width: "100%" }}
-                >
-                  <Box
-                    borderRadius="15px"
-                    overflow="hidden"
-                    aspectRatio="1"
-                    transition="transform 0.2s, box-shadow 0.2s"
-                    _hover={{ transform: "translateY(-2px)", boxShadow: "0 8px 30px rgba(0,0,0,0.12)" }}
-                  >
-                    <Image
-                      src="/assets/images/dev-image1.png"
-                      alt="SoulBound Token DApp"
-                      width={400}
-                      height={400}
-                      quality={90}
-                      loading="lazy"
-                      className="round-card"
-                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                    />
-                  </Box>
-                </Link>
-              </Box>
-            </HStack>
-          </VStack>
-          <Flex justifyContent="center" mb={14}>
-            <Link href="/work">
-              <Button
-                fontWeight="600"
-                borderRadius="25px"
-                bg="#0530b0 !important"
-                color="#EDDFD6"
-                boxShadow="2px 2px 10px rgba(5, 48, 176, 0.3)"
-                _hover={{ opacity: 0.4 }}
-                pb={1}
-              >
-                <Flex alignItems="center" mr={-1}>
-                  <Text mr={0.5}>Creations</Text>
-                  <FontAwesomeIcon icon={faCaretRight} width={15} height={15} />
-                </Flex>
-              </Button>
-            </Link>
-          </Flex>
+      {/* Creations */}
+      <section className="px-5 py-5 border-t border-current">
+        <SectionHeading>creations</SectionHeading>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
+          <a href="https://slide-pilot-474305.web.app/" target="_blank" rel="noopener noreferrer" className="border border-current p-2.5 no-underline hover:bg-[var(--fg)] hover:text-[var(--bg)]">
+            <div className="font-pixel text-[11px]">SLIDE PILOT</div>
+            <div className="text-[11px] mt-1 opacity-85">Multimodal LLM で PDF を動画に変換</div>
+            <span className="inline-block mt-2 font-pixel text-[9px] opacity-60 border border-current px-1.5 py-px">LLM · WEB</span>
+          </a>
+          <a href="https://kangeki-dapps.web.app/" target="_blank" rel="noopener noreferrer" className="border border-current p-2.5 no-underline hover:bg-[var(--fg)] hover:text-[var(--bg)]">
+            <div className="font-pixel text-[11px]">KANGEKI DAPP</div>
+            <div className="text-[11px] mt-1 opacity-85">SoulBound Token を発行する分散アプリ</div>
+            <span className="inline-block mt-2 font-pixel text-[9px] opacity-60 border border-current px-1.5 py-px">WEB3 · DAPP</span>
+          </a>
+        </div>
+        <Link href="/work" className="inline-block mt-3.5 font-pixel text-[11px] underline">
+          view all creations ▸
+        </Link>
+      </section>
 
-          {/* Contact Me */}
-          <VStack align="start" spacing={5} mb={8}>
-            <Heading as="h2" fontSize="2xl" fontWeight="900">
-              /Contact Me
-            </Heading>
-          </VStack>
-          <Flex justifyContent="center" mb={6}>
-            <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfp__zqzghA2tSgqdr7WubZP0hqpxhw-5YJRMDj0RkdEcITlw/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">
-              <Button
-                fontWeight="600"
-                borderRadius="25px"
-                bg="#049872 !important"
-                color="#EDDFD6"
-                boxShadow="2px 2px 10px rgba(4, 152, 114, 0.3)"
-                _hover={{ opacity: 0.4 }}
-                pb={1}
-              >
-                <Flex alignItems="center" mr={-1}>
-                  <Text mr={0.5}>Contact</Text>
-                  <FontAwesomeIcon icon={faCaretRight} width={15} height={15} />
-                </Flex>
-              </Button>
-            </Link>
-          </Flex>
-        </Box>
-      </Box>
-    </Box>
+      {/* Contact */}
+      <section className="px-5 py-5 border-t border-current">
+        <SectionHeading>contact</SectionHeading>
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfp__zqzghA2tSgqdr7WubZP0hqpxhw-5YJRMDj0RkdEcITlw/viewform?usp=publish-editor"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-pixel text-[12px] underline"
+        >
+          ▸ open contact form (google)
+        </a>
+      </section>
+    </div>
   );
 };
 
 export async function getStaticProps() {
   const posts = (await getPosts()) || [];
-
-  return {
-    props: { posts },
-  };
+  return { props: { posts } };
 }
 
 export default Home;
