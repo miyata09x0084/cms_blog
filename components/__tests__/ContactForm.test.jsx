@@ -132,3 +132,40 @@ describe('<ContactForm /> error banner', () => {
     expect(await screen.findByText(/ロボット判定に失敗/)).toBeInTheDocument();
   });
 });
+
+describe('<ContactForm /> inline validation', () => {
+  afterEach(() => {
+    jest.restoreAllMocks();
+    delete global.fetch;
+  });
+
+  it('shows inline email error and does not call fetch', async () => {
+    const fetchSpy = jest.fn();
+    global.fetch = fetchSpy;
+    const user = userEvent.setup();
+    render(<ContactForm />);
+    await user.type(screen.getByLabelText(/NAME/i), 'Ryo');
+    await user.type(screen.getByLabelText(/EMAIL/i), 'abc'); // invalid
+    await user.type(screen.getByLabelText(/MESSAGE/i), 'これは10文字以上の本文。');
+    await act(async () => {
+      window.onTurnstileSuccess('tk-x');
+    });
+    await user.click(screen.getByRole('button', { name: /send message/i }));
+    expect(await screen.findByText(/メールアドレスの形式/)).toBeInTheDocument();
+    expect(fetchSpy).not.toHaveBeenCalled();
+  });
+
+  it('shows inline body length error', async () => {
+    global.fetch = jest.fn();
+    const user = userEvent.setup();
+    render(<ContactForm />);
+    await user.type(screen.getByLabelText(/NAME/i), 'Ryo');
+    await user.type(screen.getByLabelText(/EMAIL/i), 'ryo@example.com');
+    await user.type(screen.getByLabelText(/MESSAGE/i), 'short');
+    await act(async () => {
+      window.onTurnstileSuccess('tk-x');
+    });
+    await user.click(screen.getByRole('button', { name: /send message/i }));
+    expect(await screen.findByText(/10〜2000 文字/)).toBeInTheDocument();
+  });
+});

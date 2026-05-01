@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { validate } from '../lib/validateContact';
 
 const inputClass =
   'w-full border border-current bg-transparent px-2 py-1.5 text-[13px] font-jp focus:outline-none focus:bg-[var(--fg)] focus:text-[var(--bg)] disabled:opacity-50';
@@ -12,6 +13,7 @@ const ContactForm = () => {
   const [turnstileToken, setTurnstileToken] = useState('');
   const [status, setStatus] = useState('idle'); // idle | submitting | done
   const [errorCode, setErrorCode] = useState(null); // null | 'captcha_failed' | 'send_failed' | 'network'
+  const [fieldErrors, setFieldErrors] = useState([]);
 
   useEffect(() => {
     window.onTurnstileSuccess = (token) => setTurnstileToken(token);
@@ -30,6 +32,12 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!canSubmit) return;
+    const errs = validate({ name, email, body, turnstileToken });
+    if (errs.length > 0) {
+      setFieldErrors(errs);
+      return;
+    }
+    setFieldErrors([]);
     setStatus('submitting');
     setErrorCode(null);
     try {
@@ -81,7 +89,7 @@ const ContactForm = () => {
   const fieldsDisabled = status === 'submitting';
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} noValidate>
       {errorCode && (
         <div className="border border-current p-2 mb-3 font-pixel text-[11px]">
           {errorCode === 'captcha_failed'
@@ -99,6 +107,9 @@ const ContactForm = () => {
           onChange={(e) => setName(e.target.value)}
           disabled={fieldsDisabled}
         />
+        {fieldErrors.includes('name') && (
+          <p className="font-pixel text-[10px] mt-1">▸ お名前を入力してください（50字以内）</p>
+        )}
       </div>
 
       <div className="mb-4">
@@ -111,6 +122,9 @@ const ContactForm = () => {
           onChange={(e) => setEmail(e.target.value)}
           disabled={fieldsDisabled}
         />
+        {fieldErrors.includes('email') && (
+          <p className="font-pixel text-[10px] mt-1">▸ メールアドレスの形式が正しくありません</p>
+        )}
       </div>
 
       <div className="mb-4">
@@ -123,6 +137,9 @@ const ContactForm = () => {
           onChange={(e) => setBody(e.target.value)}
           disabled={fieldsDisabled}
         />
+        {fieldErrors.includes('body') && (
+          <p className="font-pixel text-[10px] mt-1">▸ 本文は 10〜2000 文字で入力してください</p>
+        )}
       </div>
 
       <div
