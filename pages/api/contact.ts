@@ -18,6 +18,12 @@ export default async function handler(
     return res.status(405).json({ ok: false, error: 'method_not_allowed' });
   }
 
+  const { TURNSTILE_SECRET_KEY, RESEND_API_KEY, CONTACT_TO_EMAIL } = process.env;
+  if (!TURNSTILE_SECRET_KEY || !RESEND_API_KEY || !CONTACT_TO_EMAIL) {
+    console.error('[contact] missing env');
+    return res.status(500).json({ ok: false, error: 'internal' });
+  }
+
   const { name, email, body, turnstileToken } = (req.body ?? {}) as Record<string, unknown>;
 
   const fields = validate({ name, email, body, turnstileToken });
@@ -25,7 +31,6 @@ export default async function handler(
     return res.status(400).json({ ok: false, error: 'invalid_input', fields });
   }
 
-  const turnstileSecret = process.env.TURNSTILE_SECRET_KEY!;
   const ip = (req.headers['x-forwarded-for'] as string | undefined)?.split(',')[0]?.trim() ?? '';
   let captchaPassed = false;
   try {
@@ -33,10 +38,11 @@ export default async function handler(
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams({
-        secret: turnstileSecret,
+        secret: TURNSTILE_SECRET_KEY,
         response: String(turnstileToken),
         remoteip: ip,
       }),
+      signal: AbortSignal.timeout(5000),
     });
     const json = (await verify.json()) as { success?: boolean };
     captchaPassed = json.success === true;
@@ -53,10 +59,10 @@ export default async function handler(
   const safeBody = String(body);
 
   try {
-    const resend = new Resend(process.env.RESEND_API_KEY!);
+    const resend = new Resend(RESEND_API_KEY);
     await resend.emails.send({
       from: 'Contact Form <onboarding@resend.dev>',
-      to: process.env.CONTACT_TO_EMAIL!,
+      to: CONTACT_TO_EMAIL,
       replyTo: safeEmail,
       subject: `[ryo-miyata.jp] ${safeName} からのお問い合わせ`,
       text: `From: ${safeName} <${safeEmail}>\n\n${safeBody}`,

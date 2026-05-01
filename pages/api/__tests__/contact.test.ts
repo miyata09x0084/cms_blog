@@ -118,6 +118,19 @@ describe('POST /api/contact', () => {
   });
 });
 
+describe('POST /api/contact: env missing', () => {
+  it('returns 500 internal when RESEND_API_KEY is missing', async () => {
+    delete process.env.RESEND_API_KEY;
+    const req = makeReq();
+    const res = makeRes();
+    await handler(req, res);
+    expect(res._status).toBe(500);
+    expect(res._body).toEqual({ ok: false, error: 'internal' });
+    expect(global.fetch).not.toHaveBeenCalled();
+    expect(mockSend).not.toHaveBeenCalled();
+  });
+});
+
 describe('POST /api/contact: subject sanitization', () => {
   it('removes \\r and \\n from name when building subject (header injection guard)', async () => {
     const req = makeReq({
