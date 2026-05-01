@@ -36,8 +36,7 @@ const Home: NextPage<Props> = ({ posts }) => {
           FULL-STACK DEVELOPER · BASED IN JAPAN
         </div>
         <div className="font-jp text-[13px] mt-4 leading-[1.7]">
-          ものを作っては考え、考えてはまた作る。<br />
-          <span className="opacity-60">Building software, slowly.</span>
+          ものを作っては考え、考えてはまた作る。
         </div>
       </section>
 
@@ -110,14 +109,9 @@ const Home: NextPage<Props> = ({ posts }) => {
       {/* Contact */}
       <section className="px-5 py-5 border-t border-current">
         <SectionHeading>contact</SectionHeading>
-        <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSfp__zqzghA2tSgqdr7WubZP0hqpxhw-5YJRMDj0RkdEcITlw/viewform?usp=publish-editor"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-pixel text-[12px] underline"
-        >
-          ▸ open contact form (google)
-        </a>
+        <Link href="/contact" className="font-pixel text-[12px] underline">
+          ▸ open contact form
+        </Link>
       </section>
     </div>
   );
