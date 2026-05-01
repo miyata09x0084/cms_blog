@@ -11,6 +11,7 @@ const ContactForm = () => {
   const [body, setBody] = useState('');
   const [turnstileToken, setTurnstileToken] = useState('');
   const [status, setStatus] = useState('idle'); // idle | submitting | done
+  const [errorCode, setErrorCode] = useState(null); // null | 'captcha_failed' | 'send_failed' | 'network'
 
   useEffect(() => {
     window.onTurnstileSuccess = (token) => setTurnstileToken(token);
@@ -30,6 +31,7 @@ const ContactForm = () => {
     e.preventDefault();
     if (!canSubmit) return;
     setStatus('submitting');
+    setErrorCode(null);
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
@@ -38,11 +40,23 @@ const ContactForm = () => {
       });
       if (res.ok) {
         setStatus('done');
-      } else {
-        setStatus('idle');
+        return;
       }
-    } catch {
+      const data = await res.json().catch(() => ({}));
+      const code = data?.error === 'captcha_failed' ? 'captcha_failed' : 'send_failed';
+      setErrorCode(code);
       setStatus('idle');
+      if (typeof window !== 'undefined' && window.turnstile?.reset) {
+        window.turnstile.reset();
+      }
+      setTurnstileToken('');
+    } catch {
+      setErrorCode('network');
+      setStatus('idle');
+      if (typeof window !== 'undefined' && window.turnstile?.reset) {
+        window.turnstile.reset();
+      }
+      setTurnstileToken('');
     }
   };
 
@@ -68,6 +82,13 @@ const ContactForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
+      {errorCode && (
+        <div className="border border-current p-2 mb-3 font-pixel text-[11px]">
+          {errorCode === 'captcha_failed'
+            ? '▸ ロボット判定に失敗しました。再度お試しください'
+            : '▸ 送信に失敗しました。少し時間をおいて再度お試しください'}
+        </div>
+      )}
       <div className="mb-4">
         <label className={labelClass} htmlFor="cf-name">NAME</label>
         <input

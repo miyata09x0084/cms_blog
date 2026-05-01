@@ -80,3 +80,55 @@ describe('<ContactForm /> submitting and done', () => {
     expect(screen.queryByLabelText(/NAME/i)).not.toBeInTheDocument();
   });
 });
+
+describe('<ContactForm /> error banner', () => {
+  afterEach(() => {
+    jest.restoreAllMocks();
+    delete global.fetch;
+  });
+
+  it('shows generic banner and resets Turnstile when API returns 502 send_failed', async () => {
+    const resetMock = jest.fn();
+    window.turnstile = { reset: resetMock };
+    global.fetch = jest.fn().mockResolvedValue({
+      ok: false,
+      status: 502,
+      json: async () => ({ ok: false, error: 'send_failed' }),
+    });
+
+    const user = userEvent.setup();
+    render(<ContactForm />);
+    await user.type(screen.getByLabelText(/NAME/i), 'Ryo');
+    await user.type(screen.getByLabelText(/EMAIL/i), 'ryo@example.com');
+    await user.type(screen.getByLabelText(/MESSAGE/i), 'これは10文字以上の本文。');
+    await act(async () => {
+      window.onTurnstileSuccess('tk-x');
+    });
+    await user.click(screen.getByRole('button', { name: /send message/i }));
+
+    expect(await screen.findByText(/送信に失敗しました/)).toBeInTheDocument();
+    expect(screen.getByLabelText(/NAME/i)).toBeInTheDocument(); // form still present
+    expect(resetMock).toHaveBeenCalled();
+  });
+
+  it('shows captcha-specific banner when API returns 400 captcha_failed', async () => {
+    window.turnstile = { reset: jest.fn() };
+    global.fetch = jest.fn().mockResolvedValue({
+      ok: false,
+      status: 400,
+      json: async () => ({ ok: false, error: 'captcha_failed' }),
+    });
+
+    const user = userEvent.setup();
+    render(<ContactForm />);
+    await user.type(screen.getByLabelText(/NAME/i), 'Ryo');
+    await user.type(screen.getByLabelText(/EMAIL/i), 'ryo@example.com');
+    await user.type(screen.getByLabelText(/MESSAGE/i), 'これは10文字以上の本文。');
+    await act(async () => {
+      window.onTurnstileSuccess('tk-x');
+    });
+    await user.click(screen.getByRole('button', { name: /send message/i }));
+
+    expect(await screen.findByText(/ロボット判定に失敗/)).toBeInTheDocument();
+  });
+});
