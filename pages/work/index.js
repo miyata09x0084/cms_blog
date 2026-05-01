@@ -4,6 +4,12 @@ import { DitherBlock, StatusBar } from '../../components/ui';
 
 const works = [
   {
+    title: 'DAILY COWORKER',
+    href: 'https://github.com/miyata09x0084/daily-coworker',
+    desc: 'Claude Code 上に構築した個人向け AI アシスタント。スケジュール管理・リサーチ・記事執筆をスキルとして統合。',
+    tags: 'AI · AGENT',
+  },
+  {
     title: 'SLIDE PILOT',
     href: 'https://slide-pilot-474305.web.app/',
     desc: 'Multimodal LLM で PDF をスライド・ナレーション付き動画へ自動変換するエージェント。LangGraph で構築。',
