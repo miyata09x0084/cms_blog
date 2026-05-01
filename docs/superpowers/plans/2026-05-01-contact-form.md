@@ -516,7 +516,7 @@ export default async function handler(
     return res.status(400).json({ ok: false, error: 'captcha_failed' });
   }
 
-  const safeName = String(name).replace(/[\r\n]/g, ' ');
+  const safeName = String(name).replace(/[\r\n]+/g, ' ');
   const safeEmail = String(email);
   const safeBody = String(body);
 
