@@ -86,6 +86,11 @@ const Home: NextPage<Props> = ({ posts }) => {
       <section className="px-5 py-5 border-t border-current">
         <SectionHeading>creations</SectionHeading>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
+          <a href="https://github.com/miyata09x0084/daily-coworker" target="_blank" rel="noopener noreferrer" className="border border-current p-2.5 no-underline hover:bg-[var(--fg)] hover:text-[var(--bg)]">
+            <div className="font-pixel text-[11px]">DAILY COWORKER</div>
+            <div className="text-[11px] mt-1 opacity-85">Claude Code 上の個人 AI アシスタント</div>
+            <span className="inline-block mt-2 font-pixel text-[9px] opacity-60 border border-current px-1.5 py-px">AI · AGENT</span>
+          </a>
           <a href="https://slide-pilot-474305.web.app/" target="_blank" rel="noopener noreferrer" className="border border-current p-2.5 no-underline hover:bg-[var(--fg)] hover:text-[var(--bg)]">
             <div className="font-pixel text-[11px]">SLIDE PILOT</div>
             <div className="text-[11px] mt-1 opacity-85">Multimodal LLM で PDF を動画に変換</div>
