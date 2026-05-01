@@ -29,12 +29,12 @@ describe('<ContactForm /> idle', () => {
   });
 });
 
-afterEach(() => {
-  jest.restoreAllMocks();
-  delete global.fetch;
-});
-
 describe('<ContactForm /> submitting and done', () => {
+  afterEach(() => {
+    jest.restoreAllMocks();
+    delete global.fetch;
+  });
+
   it('enables button when Turnstile callback fires with a token', async () => {
     const user = userEvent.setup();
     render(<ContactForm />);
