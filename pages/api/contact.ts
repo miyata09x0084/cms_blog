@@ -60,13 +60,17 @@ export default async function handler(
 
   try {
     const resend = new Resend(RESEND_API_KEY);
-    await resend.emails.send({
+    const result = await resend.emails.send({
       from: 'Contact Form <onboarding@resend.dev>',
       to: CONTACT_TO_EMAIL,
       replyTo: safeEmail,
       subject: `[ryo-miyata.jp] ${safeName} からのお問い合わせ`,
       text: `From: ${safeName} <${safeEmail}>\n\n${safeBody}`,
     });
+    if (result.error) {
+      console.error('[contact] resend api error', result.error);
+      return res.status(502).json({ ok: false, error: 'send_failed' });
+    }
   } catch (e) {
     console.error('[contact] resend failed', e);
     return res.status(502).json({ ok: false, error: 'send_failed' });

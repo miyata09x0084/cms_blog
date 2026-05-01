@@ -43,7 +43,7 @@ beforeEach(() => {
   process.env.TURNSTILE_SECRET_KEY = 'test-secret';
   process.env.CONTACT_TO_EMAIL = 'to@example.com';
   mockSend.mockReset();
-  mockSend.mockResolvedValue({ id: 'mail-1' });
+  mockSend.mockResolvedValue({ data: { id: 'mail-1' }, error: null });
   jest.spyOn(global, 'fetch').mockResolvedValue({
     json: async () => ({ success: true }),
   } as Response);
@@ -110,6 +110,21 @@ describe('POST /api/contact', () => {
 
   it('returns 502 send_failed when Resend throws', async () => {
     mockSend.mockRejectedValueOnce(new Error('resend down'));
+    const req = makeReq();
+    const res = makeRes();
+    await handler(req, res);
+    expect(res._status).toBe(502);
+    expect(res._body).toEqual({ ok: false, error: 'send_failed' });
+  });
+
+  it('returns 502 send_failed when Resend returns error object (does not throw)', async () => {
+    mockSend.mockResolvedValueOnce({
+      data: null,
+      error: {
+        name: 'validation_error',
+        message: 'You can only send testing emails to your own email address.',
+      },
+    });
     const req = makeReq();
     const res = makeRes();
     await handler(req, res);
