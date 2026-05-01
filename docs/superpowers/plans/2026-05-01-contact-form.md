@@ -191,7 +191,7 @@ describe('validate()', () => {
   });
 
   it('returns ["email"] when email is 255 chars', () => {
-    const longLocal = 'a'.repeat(245);
+    const longLocal = 'a'.repeat(250);
     expect(validate({ ...valid, email: `${longLocal}@b.cd` })).toEqual(['email']);
   });
 
