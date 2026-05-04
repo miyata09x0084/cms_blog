@@ -54,7 +54,7 @@ const Home: NextPage<Props> = ({ posts }) => {
       <section className="px-5 py-5 border-t border-current">
         <SectionHeading>interests</SectionHeading>
         <div className="font-pixel text-[11px] tracking-wider">
-          ▸ THINKING &nbsp;▸ FOOD-TOURING &nbsp;▸ CAMPING &nbsp;▸ TRAVELING &nbsp;▸ RUNNING ROUTINE &nbsp;▸ COOKING
+          ▸ THINKING &nbsp;▸ FOOD-TOURING &nbsp;▸ TRAVELING &nbsp;▸ RUNNING ROUTINE &nbsp;▸ COOKING
         </div>
       </section>
 
