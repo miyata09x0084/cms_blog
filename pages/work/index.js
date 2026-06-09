@@ -1,65 +1,65 @@
 import React from 'react';
-import Head from 'next/head';
-import { DitherBlock, StatusBar } from '../../components/ui';
-
-const works = [
-  {
-    title: 'DAILY COWORKER',
-    href: 'https://github.com/miyata09x0084/daily-coworker',
-    desc: 'Claude Code 上に構築した個人向け AI アシスタント。スケジュール管理・リサーチ・記事執筆をスキルとして統合。',
-    tags: 'AI · AGENT',
-  },
-  {
-    title: 'SLIDE PILOT',
-    href: 'https://slide-pilot-474305.web.app/',
-    desc: 'Multimodal LLM で PDF をスライド・ナレーション付き動画へ自動変換するエージェント。LangGraph で構築。',
-    tags: 'LLM · WEB',
-  },
-  {
-    title: 'KANGEKI DAPP',
-    href: 'https://kangeki-dapps.web.app/',
-    desc: 'Ethereum 上で SoulBound Token を発行・管理する分散アプリケーション。',
-    tags: 'WEB3 · DAPP',
-  },
-];
+import {
+  Box,
+  Image,
+  Link,
+  Text,
+  SimpleGrid,
+  useColorModeValue,
+} from '@chakra-ui/react';
 
 const WorkIndex = () => {
+  const borderColor = useColorModeValue("var(--border)", "var(--dark-border)");
+  const textSecondary = useColorModeValue("var(--text-secondary)", "var(--dark-text-secondary)");
+
   return (
-    <div>
-      <Head>
-        <title>Ryo Miyata — Creations</title>
-      </Head>
-
-      <div className="px-5 pt-7 pb-3">
-        <div className="font-pixel text-[26px] leading-none">
-          <span className="opacity-50">// </span>creations
-        </div>
-        <div className="font-vt text-[14px] opacity-65 mt-1.5">
-          things i made · {works.length} items
-        </div>
-      </div>
-      <DitherBlock />
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 p-5">
-        {works.map((w) => (
-          <a
-            key={w.title}
-            href={w.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="border border-current p-4 no-underline hover:bg-[var(--fg)] hover:text-[var(--bg)]"
-          >
-            <div className="font-pixel text-[13px]">{w.title}</div>
-            <div className="text-[12px] mt-2 opacity-85 leading-[1.65]">{w.desc}</div>
-            <span className="inline-block mt-3 font-pixel text-[9px] opacity-60 border border-current px-1.5 py-px">
-              {w.tags}
-            </span>
-          </a>
-        ))}
-      </div>
-
-      <StatusBar left={`creations: ${works.length}`} right="updated occasionally" />
-    </div>
+    <Box className="fade-in">
+      <Box
+        mx="auto"
+        maxW="768px"
+        px={{ base: '4', md: '0' }}
+        mb="8"
+        pt="40px"
+      >
+        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
+          <Box display="flex" flexDirection="column" height="100%">
+            <Link href="https://slide-pilot-474305.web.app/" _hover={{ textDecoration: 'none' }} target="_blank" rel="noopener noreferrer" display="flex" flexDirection="column" flex="1">
+              <Box
+                bg="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+                borderRadius="12px"
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+                justifyContent="center"
+                aspectRatio="1"
+                transition="transform 0.2s, box-shadow 0.2s"
+                _hover={{ transform: "translateY(-2px)", boxShadow: "0 8px 30px rgba(0,0,0,0.12)" }}
+              >
+                <Text color="white" fontSize="lg" fontWeight="600" textAlign="center">Multimodal LLM App</Text>
+                <Text color="whiteAlpha.700" fontSize="md" mt={3}>PDF &rarr; Video</Text>
+              </Box>
+              <Text fontWeight="600" fontSize="lg" mt="4">Multimode Lab</Text>
+              <Text fontSize="sm" mt="1" color={textSecondary} lineHeight="1.7" flex="1">An experimental product that auto-generates videos from PDFs. An agent built with LangGraph handles everything from PDF parsing to slide generation, narration, and video creation.</Text>
+            </Link>
+          </Box>
+          <Box display="flex" flexDirection="column" height="100%">
+            <Link href="https://kangeki-dapps.web.app/" _hover={{ textDecoration: 'none' }} target="_blank" rel="noopener noreferrer" display="flex" flexDirection="column" flex="1">
+              <Image
+                src="/assets/images/dev-image1.png"
+                alt="SoulBound Token DApp"
+                borderRadius="12px"
+                aspectRatio="1"
+                objectFit="cover"
+                transition="transform 0.2s, box-shadow 0.2s"
+                _hover={{ transform: "translateY(-2px)", boxShadow: "0 8px 30px rgba(0,0,0,0.12)" }}
+              />
+              <Text fontWeight="600" fontSize="lg" mt="4">SoulBound Token DApp</Text>
+              <Text fontSize="sm" mt="1" color={textSecondary} lineHeight="1.7" flex="1">A decentralized application for creating and managing NFTs on the ethereum.</Text>
+            </Link>
+          </Box>
+        </SimpleGrid>
+      </Box>
+    </Box>
   );
 };
 
