@@ -9,7 +9,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTwitter, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   const textSecondary = useColorModeValue("var(--text-secondary)", "var(--dark-text-secondary)");
@@ -49,26 +49,6 @@ const Footer = () => {
                 </Flex>
               </Link>
             </HStack>
-            <Link
-              href="https://x.com/WebDev_Ryo"
-              target="_blank"
-              rel="noopener noreferrer"
-              _hover={{ textDecoration: "none" }}
-            >
-              <Flex
-                alignItems="center"
-                sx={{
-                  "&:hover .x-icon": {
-                    animation: "iconBounce 0.5s ease",
-                  },
-                }}
-              >
-                <Box as="span" className="x-icon" display="inline-block" mr={1}>
-                  <FontAwesomeIcon icon={faTwitter} width={20} height={20} />
-                </Box>
-                <Text ml={0.5}>X</Text>
-              </Flex>
-            </Link>
           </Flex>
         </Box>
       </Box>
