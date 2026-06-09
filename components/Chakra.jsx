@@ -1,10 +1,17 @@
-import { ChakraProvider } from "@chakra-ui/react";
-import theme from "../theme";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 
-export function Chakra({ children }) {
+export function Chakra({children}) {
+
+    const googleFont = extendTheme({
+        fonts: {
+            heading: `'Noto Sans JP', sans-serif`,
+            body: `'Noto Sans JP', sans-serif`,
+        },
+    })
+
     return (
-        <ChakraProvider theme={theme}>
+        <ChakraProvider theme={googleFont}>
             {children}
         </ChakraProvider>
-    );
+    )
 }

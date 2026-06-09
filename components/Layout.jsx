@@ -1,16 +1,36 @@
 import React from 'react';
 import { Header, Footer } from './';
+import { Box, useColorModeValue } from "@chakra-ui/react";
 
 const Layout = ({ children }) => {
-  return (
-    <div className="min-h-screen flex justify-center">
-      <div className="w-full max-w-[720px] min-h-screen flex flex-col border-x border-current md:border-t md:border-b">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
-      </div>
-    </div>
-  );
-};
 
-export default Layout;
+  const bg = useColorModeValue("var(--bg)", "var(--dark-bg)");
+  const color = useColorModeValue("var(--text)", "var(--dark-text)");
+
+  return (
+    <div>
+      <style>
+        {`
+          body:before {
+            background-color: ${bg};
+          }
+        `}
+      </style>
+      <Box bg={bg} color={color} w="100%" h="100%">
+        <Header />
+        {children}
+        <Footer />
+      </Box>
+    </div>
+  )
+}
+
+export default Layout
+
+export function getServerSideProps({ req }) {
+  return {
+    props: {
+      cookies: req.headers.cookie ?? "",
+    }
+  }
+}
